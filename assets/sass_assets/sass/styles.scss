@@ -1,0 +1,41 @@
+// customize bootstrap variables here:
+
+@import "variables";
+//@import "bootstrap";
+@import "CSS:theme/css/bootstrap.min";
+
+@import "CSS:theme/css/ace";
+//@import "CSS:theme/font-awesome/4.0.3/css/font-awesome.min.css";
+@import "CSS:theme/css/ace-skins";
+@import "CSS:theme/css/ace-rtl.min";
+@import "CSS:theme/css/bootstrap-datetimepicker";
+@import "CSS:theme/css/bootstrap-editable";
+@import "CSS:theme/css/bootstrap-timepicker";
+@import "CSS:theme/css/chosen";
+@import "CSS:theme/css/colorbox";
+@import "CSS:theme/css/colorpicker";
+@import "CSS:theme/css/datepicker";
+@import "CSS:theme/css/daterangepicker";
+@import "CSS:theme/css/dropzone";
+@import "CSS:theme/css/fullcalendar";
+@import "CSS:theme/css/jquery.gritter";
+@import "CSS:theme/css/jquery-ui.custom.min";
+@import "CSS:theme/css/jquery-ui.min";
+@import "CSS:theme/css/prettify";
+@import "CSS:theme/css/select2";
+@import "CSS:theme/css/ui.jqgrid";
+
+.test{
+	@extend .col-md-12;
+}
+
+.lims_header{
+	@extend .navbar;
+	height: 50px;
+}
+html{
+	font-family: monospace, monospace;
+}
+
+
+
