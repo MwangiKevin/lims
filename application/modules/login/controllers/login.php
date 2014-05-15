@@ -13,7 +13,7 @@ class Login extends MY_Controller {
 		$this->view_data['title'] = "LIMS | Login";
 		$this -> load->view("login_v",$this->view_data);
 	}
-
+	
 	/*
 	*
 	*/
