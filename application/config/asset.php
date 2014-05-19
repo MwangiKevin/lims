@@ -85,7 +85,8 @@ $config['js_theme_files']		=	array(
 										array('title'	=> 'style'					,	'file'	=>	'sass/theme/js/fullcalendar.min.js'),
 										array('title'	=> 'style'					,	'file'	=>	'sass/theme/js/jquery.autosize.min.js'),
 										array('title'	=> 'style'					,	'file'	=>	'sass/theme/js/jquery.colorbox-min.js'),
-										array('title'	=> 'style-datatables'		,	'file'	=>	'sass/theme/js/jquery.dataTables.bootstrap.js'),
+										array('title'	=> 'style-datatables-bootstrap'		,	'file'	=>	'sass/theme/js/jquery.dataTables.bootstrap.js'),
+										array('title'	=> 'style'					,	'file'	=>	'sass/theme/js/jquery-ui.min.js'),
 										array('title'	=> 'style-datatables'		,	'file'	=>	'sass/theme/js/jquery.dataTables.min.js'),
 										array('title'	=> 'style'					,	'file'	=>	'sass/theme/js/jquery.easypiechart.min.js'),
 										array('title'	=> 'style'					,	'file'	=>	'sass/theme/js/jquery.gritter.min.js'),
@@ -100,7 +101,6 @@ $config['js_theme_files']		=	array(
 										array('title'	=> 'style'					,	'file'	=>	'sass/theme/js/jquery.ui.touch-punch.min.js'),
 										array('title'	=> 'style'					,	'file'	=>	'sass/theme/js/jquery.validate.min.js'),
 										array('title'	=> 'style'					,	'file'	=>	'sass/theme/js/jquery-ui.custom.min.js'),
-										array('title'	=> 'style'					,	'file'	=>	'sass/theme/js/jquery-ui.min.js'),
 										array('title'	=> 'style'					,	'file'	=>	'sass/theme/js/prettify.js'),
 										array('title'	=> 'style'					,	'file'	=>	'sass/theme/js/select2.min.js'),
 										array('title'	=> 'style'					,	'file'	=>	'sass/theme/js/spin.min.js'),
@@ -120,11 +120,11 @@ $config['js_theme_files']		=	array(
 										array('title'	=> 'style'					,	'file'	=>	'sass/theme/js/jqGrid/jquery.jqGrid.min.js'),
 										array('title'	=> 'style-markdown'			,	'file'	=>	'sass/theme/js/markdown/bootstrap-markdown.min.js'),
 										array('title'	=> 'style-markdown'			,	'file'	=>	'sass/theme/js/markdown/markdown.min.js'),
-										array('title'	=> 'style-x-editable'		,	'file'	=>	'sass/theme/js/x-editable/ace-editable.min.js'),
 										array('title'	=> 'style-x-editable'		,	'file'	=>	'sass/theme/js/x-editable/bootstrap-editable.min.js'),
-										array('title'	=> 'style-jquery'			,	'file'	=>	'sass/theme/ajax.bootstrap.com/ajax/libs/jquery/2.1.0/jquery.min.js'),
+										array('title'	=> 'style-x-editable'		,	'file'	=>	'sass/theme/js/x-editable/ace-editable.min.js'),
+										array('title'	=> 'style-jquery'			,	'file'	=>	'sass/theme/ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js'),
 										array('title'	=> 'style-bootstrap'		,	'file'	=>	'sass/theme/netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js'),
-										array('title'	=> 'style-loaded'					,	'file'	=>	'sass/theme/js/ace.min.js')
+										array('title'	=> 'style-loaded'			,	'file'	=>	'sass/theme/js/ace.min.js')
 									);
 $config['css_theme_files']		=	array(
 
@@ -144,6 +144,8 @@ $config['plugin_js_files']	=	array(
 									array('title'	=> 'calendar'					,	'file'	=>	'Calendar/jquery.prettyPhoto.js'),
 									array('title'	=> 'bootstrap'					,	'file'	=>	'Bootstrap/js/bootstrap.min.js'),
 									array('title'	=> 'dataTables'					,	'file'	=>	'DataTables/media/js/jquery.dataTables.js'),
+									array('title'	=> 'dataTables-bootstrap'		,	'file'	=>	'data-tables-bootstrap-3/js/dataTables.bootstrap.js'),
+									array('title'	=> 'dataTables-bootstrap'		,	'file'	=>	'data-tables-bootstrap-3/js/dataTables.bootstrapPagination.js'),
 									array('title'	=> 'jqueryui'					,	'file'	=>	'jquery_ui/js/jquery-ui-1.10.3.custom.js'),
 									array('title'	=> 'bootstrap-datepicker'		,	'file'	=>	'bootstrapDatepicker/js/bootstrap-datepicker.js'),
 									array('title'	=> 'datepicker'					,	'file'	=>	'datepicker/js/bootstrap-datepicker.js'),
@@ -159,7 +161,7 @@ $config['plugin_js_files']	=	array(
 									array('title'	=> 'ajax_file_uploader'			,	'file'	=>	'ajax_file_uploader/ajaxfileupload.js')
 									
 								);	
-$config['plugin_css_files']	=	array(
-									
+$config['plugin_css_files']	=	array(									
+									array('title'	=> 'dataTables-bootstrap'					,	'file'	=>	'data-tables-bootstrap-3/css/dataTables.bootstrap.css'),
 								);
 /* End of file asset.php */

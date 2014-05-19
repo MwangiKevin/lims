@@ -38,8 +38,8 @@
 |
 */
 
-$route['default_controller'] = "test";
-$route['404_override'] = '';
+$route['default_controller'] = "eid";
+$route['404_override'] = 'eid';
 
 
 /* End of file routes.php */

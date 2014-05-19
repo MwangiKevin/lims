@@ -15,7 +15,7 @@
 		</button>
 
 		<div class="navbar-header pull-left">
-			<a href="#" class="navbar-brand">
+			<a href="<?php echo base_url();?>" class="navbar-brand">
 				<small>
 					<i class="fa fa-leaf"></i>
 					EID LIMS

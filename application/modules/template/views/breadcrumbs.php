@@ -4,11 +4,28 @@
 	</script>
 
 	<ul class="breadcrumb">
-		<li>
+<!-- 		<li>
 			<i class="ace-icon fa fa-home home-icon"></i>
 			<a href="#">Home</a>
 		</li>
-		<li class="active">Dashboard</li>
+		<li class="active">Dashboard</li> -->
+
+		<?php
+			foreach ($breadcrumbs as $key => $value) {
+		?>
+			<li class="<?php echo $value["class"];?>">
+				<?php
+				 	if($key==0){
+				?>
+				<i class="ace-icon fa fa-home home-icon"></i>
+				<?php
+					}
+				?>
+				<a href="<?php echo $value["link"]?>"><?php echo $value["title"]?></a>
+			</li>
+		<?php
+			}
+		?>
 	</ul><!-- /.breadcrumb -->
 
 	<div class="nav-search" id="nav-search">
