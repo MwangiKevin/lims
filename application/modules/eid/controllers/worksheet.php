@@ -26,7 +26,7 @@ class worksheet extends MY_Controller {
 																	"class"		=>	"active"
 																	),
 														2 	=>	array(
-																	"title" 	=>	"Worksheet",
+																	"title" 	=>	"COBAS Worksheet",
 																	"link"		=>	base_url()."eid/worksheet/cobas",
 																	"class"		=>	"active"
 																	)
@@ -51,12 +51,29 @@ class worksheet extends MY_Controller {
 		$this->view_data['title'] 				= "EID | Worksheet | ABBOT";		
 		$this->view_data['menu_select']			= 	array(2,1);
 		$this->view_data['breadcrumbs'][2]		=	array(
-													"title" 	=>	"Worksheet",
+													"title" 	=>	"ABOTT Worksheet",
 													"link"		=>	base_url()."eid/worksheet/abbott",
 													"class"		=>	"active"
 													);
 		
 		$this->template($this->view_data);
+	}
+	public function history(){	
+
+		$this->view_data['content_view'] 		= "eid/worksheet_history_view";
+		$this->view_data['title'] 				= "EID | Worksheet | ABBOT";		
+		$this->view_data['menu_select']			= 	array(2,2);
+		$this->view_data['breadcrumbs'][2]		=	array(
+													"title" 	=>	"Worksheet History",
+													"link"		=>	base_url()."eid/worksheet/history",
+													"class"		=>	"active"
+													);
+		
+		$this->template($this->view_data);
+	}
+	
+	public function print_worksheet($id=null){
+
 	}
 
 }

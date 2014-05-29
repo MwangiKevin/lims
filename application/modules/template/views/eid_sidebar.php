@@ -2,7 +2,7 @@
 	$selected_class = 	"hsub";
 	$display 		=	"display: none;";
 ?>
-<div id="sidebar" class="sidebar   responsive">
+<div id="sidebar" class="sidebar   responsive sidebar-fixed sidebar-scroll">
 	<script type="text/javascript">
 	try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
 	</script>
@@ -342,10 +342,10 @@
 				?>
 
 				<li class="<?php echo $selected_class;?>">
-					<a href="tables.html">
+					<a href="<?php echo base_url("eid/tasks/pending")?>">
 						<i class="menu-icon fa fa-caret-right"></i>
-						<i class="fa fa-square"></i>
-						&nbsp;Completed
+						<i class="fa fa-spinner fa-spin"></i>
+						&nbsp;Pending
 					</a>
 
 					<b class="arrow"></b>
@@ -361,10 +361,10 @@
 				?>
 
 				<li class="<?php echo $selected_class;?>">
-					<a href="jqgrid.html">
+					<a href="<?php echo base_url("eid/tasks/completed")?>">
 						<i class="menu-icon fa fa-caret-right"></i>
-						<i class="fa fa-spinner fa-spin"></i>
-						&nbsp;Pending
+						<i class="fa fa-square"></i>
+						&nbsp;Completed
 					</a>
 
 					<b class="arrow"></b>
@@ -405,7 +405,7 @@
 				?>
 
 				<li class="<?php echo $selected_class;?>">
-					<a href="form-elements.html">
+					<a href="<?php echo base_url("eid/lab_consumption/monthly");?>">
 						<i class="menu-icon fa fa-caret-right"></i>
 						<i class="fa fa-calendar"></i>
 						&nbsp;Monthly Reporting
@@ -424,7 +424,7 @@
 				?>
 
 				<li class="<?php echo $selected_class;?>">
-					<a href="form-wizard.html">
+					<a href="<?php echo base_url("eid/lab_consumption/reports");?>">
 						<i class="menu-icon fa fa-caret-right"></i>
 						<i class="fa fa-clock-o"></i>
 						&nbsp;Historical Reports
@@ -443,7 +443,7 @@
 				?>
 
 				<li class="<?php echo $selected_class;?>">
-					<a href="wysiwyg.html">
+					<a href="<?php echo base_url("eid/lab_consumption/received_consumables");?>">
 						<i class="menu-icon fa fa-caret-right"></i>
 						<i class="fa fa-check-circle-o"></i>
 						&nbsp;Received Consumables/Reagents
@@ -452,51 +452,8 @@
 					<b class="arrow"></b>
 				</li>
 
-			</ul>
-		</li>
-
-		<?php
-			if(isset($menu_select[0]) && $menu_select[0]==6){
-				$selected_class = "active open ";
-				$display 		=	"";
-			}else{
-				$selected_class = "hsub";
-				$display 		=	"display: none;";
-			}
-		?>
-
-		<li class="<?php echo $selected_class;?>">
-			<a href="#" class="dropdown-toggle">
-				<i class="menu-icon fa fa-share-square"></i>
-				<span class="menu-text"> Facility Requisition </span>
-
-				<b class="arrow fa fa-angle-down"></b>
-			</a>
-
-			<b class="arrow"></b>
-
-			<ul class="submenu nav-hide" style="<?php echo $display;?>">
-
 				<?php
-					if(isset($menu_select[0]) && $menu_select[0]==6 && isset($menu_select[1]) && $menu_select[1]==0){
-						$selected_class = "active";
-
-					}else{
-						$selected_class = "hsub";
-					}
-				?>
-				<li class="<?php echo $selected_class;?>">
-					<a href="form-elements.html">
-						<i class="menu-icon fa fa-caret-right"></i>
-						<i class="fa fa-list"></i>
-						&nbsp;Fill Form
-					</a>
-
-					<b class="arrow"></b>
-				</li>
-
-				<?php
-					if(isset($menu_select[0]) && $menu_select[0]==6 && isset($menu_select[1]) && $menu_select[1]==1){
+					if(isset($menu_select[0]) && $menu_select[0]==5 && isset($menu_select[1]) && $menu_select[1]==3){
 						$selected_class = "active";
 
 					}else{
@@ -505,10 +462,10 @@
 				?>
 
 				<li class="<?php echo $selected_class;?>">
-					<a href="form-wizard.html">
-						<i class="menu-icon fa fa-caret-right"></i>
-						<i class="fa fa-clock-o"></i>
-						&nbsp;Requisition History
+					<a href="<?php echo base_url("eid/lab_consumption/inventory");?>">
+						<i class="menu-icon  fa fa-caret-right "></i>
+						<i class="fa fa-check-square-o"></i>
+						&nbsp;inventory
 					</a>
 
 					<b class="arrow"></b>
@@ -516,6 +473,7 @@
 
 			</ul>
 		</li>
+
 
 		<?php
 			if(isset($menu_select[0]) && $menu_select[0]==7){
@@ -548,7 +506,7 @@
 					}
 				?>
 				<li class="<?php echo $selected_class;?>">
-					<a href="form-elements.html">
+					<a href="<?php echo base_url("eid/");?>">
 						<i class="menu-icon fa fa-caret-right"></i>
 						<i class="fa fa-download"></i>
 						&nbsp;Download EID Form
@@ -567,7 +525,7 @@
 				?>
 
 				<li class="<?php echo $selected_class;?>">
-					<a href="form-elements.html">
+					<a href="<?php echo base_url("home/home/Synchronize");?>">
 						<i class="menu-icon fa fa-caret-right"></i>
 						<i class="fa fa-exchange"></i>
 						&nbsp;Synchronize NACP

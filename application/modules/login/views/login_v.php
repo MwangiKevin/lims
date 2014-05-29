@@ -21,6 +21,8 @@
 </head>
 
 <body class="login-layout light-login">
+	<div id="navbar" class="navbar navbar-default ">
+	</div>
 	<div class="main-container">
 		<div class="main-content">
 			<div class="row">

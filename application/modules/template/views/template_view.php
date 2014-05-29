@@ -150,6 +150,15 @@
 		<!-- ace scripts -->
 		<script src="<?php echo base_url();?>assets/sass_assets/sass/theme/js/ace-elements.min.js"></script>
 		<script src="<?php echo base_url();?>assets/sass_assets/sass/theme/js/ace.min.js"></script>
+		<script type="text/javascript"> 
+			$(document).ready(function() {
+
+				$("#sidebar").addClass("sidebar-fixed sidebar-scroll");
+				$("#navbar").addClass("navbar-default navbar-fixed-top");
+				$("#breadcrumbs").addClass("breadcrumbs-fixed");
+				
+			});
+		</script>
 	</body>
 
 	</html>

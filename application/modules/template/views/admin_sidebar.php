@@ -1,7 +1,7 @@
 
-<div id="sidebar" class="sidebar   responsive">
+<div id="sidebar" class="sidebar   responsive sidebar-fixed sidebar-scroll">
 	<script type="text/javascript">
-	try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
+	//try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
 	</script>
 
 	<div class="sidebar-shortcuts" id="sidebar-shortcuts">
