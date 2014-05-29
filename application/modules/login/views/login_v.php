@@ -21,6 +21,8 @@
 </head>
 
 <body class="login-layout light-login">
+	<div id="navbar" class="navbar navbar-default ">
+	</div>
 	<div class="main-container">
 		<div class="main-content">
 			<div class="row">
@@ -50,7 +52,7 @@
 
 										<div class="space-6"></div>
 
-										<form>
+										<?php echo form_open('login/process_credentials');?>
 											<fieldset>
 												<label class="block clearfix">
 													<span class="block input-icon input-icon-right">
@@ -74,7 +76,7 @@
 														<span class="lbl"> Remember Me</span>
 													</label>
 
-													<button type="button" class="width-35 pull-right btn btn-sm btn-primary">
+													<button type="submit" class="width-35 pull-right btn btn-sm btn-primary">
 														<i class="ace-icon fa fa-key"></i>
 														<span class="bigger-110">Login</span>
 													</button>
@@ -116,7 +118,9 @@
 											Enter your email and to receive instructions
 										</p>
 
-										<form>
+										
+										<?php echo form_open('login/request_pwd_reset');?>
+
 											<fieldset>
 												<label class="block clearfix">
 													<span class="block input-icon input-icon-right">

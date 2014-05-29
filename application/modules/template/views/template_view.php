@@ -5,7 +5,8 @@
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<meta charset="utf-8" />
-	<title></title>
+	<title><?php echo $title;?></title>
+	<link rel="SHORTCUT ICON" href="<?php echo base_url();?>assets/img/favicon.ico">
 
 	<link rel='stylesheet' href='<?php echo base_url();?>assets/sass_assets/sass/theme/font-awesome/4.0.3/css/font-awesome.min.css' type='text/css'></link>
 	<!-- <link rel='stylesheet' href='<?php echo base_url();?>assets/plugins/font-awesome/css/font-awesome.min.css' type='text/css'></link> -->
@@ -13,9 +14,12 @@
 
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" />
 
+
+	<script src='<?php echo base_url();?>assets/sass_assets/sass/theme/js/ace-extra.min.js' type='text/javascript'></script>
+
 	
 	<?php      	
-	$this->load->view('utils/dynamicLoads');
+		$this->load->view('utils/dynamicLoads');
 	?>
 
 	<meta name="description" content="overview &amp; stats" />
@@ -146,6 +150,15 @@
 		<!-- ace scripts -->
 		<script src="<?php echo base_url();?>assets/sass_assets/sass/theme/js/ace-elements.min.js"></script>
 		<script src="<?php echo base_url();?>assets/sass_assets/sass/theme/js/ace.min.js"></script>
+		<script type="text/javascript"> 
+			$(document).ready(function() {
+
+				$("#sidebar").addClass("sidebar-fixed sidebar-scroll");
+				$("#navbar").addClass("navbar-default navbar-fixed-top");
+				$("#breadcrumbs").addClass("breadcrumbs-fixed");
+				
+			});
+		</script>
 	</body>
 
 	</html>

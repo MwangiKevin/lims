@@ -1,4 +1,4 @@
-<div id="navbar" class="navbar navbar-default">
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
 	<script type="text/javascript">
 	try{ace.settings.check('navbar' , 'fixed')}catch(e){}
 	</script>
@@ -15,7 +15,7 @@
 		</button>
 
 		<div class="navbar-header pull-left">
-			<a href="#" class="navbar-brand">
+			<a href="<?php echo base_url();?>" class="navbar-brand">
 				<small>
 					<i class="fa fa-leaf"></i>
 					EID LIMS
