@@ -6,6 +6,8 @@ class lab_consumption extends MY_Controller {
 
 	public function __construct(){
 
+		$this->login_reroute(array(2));
+		
 		$this->view_data['content_view'] 	= 	"template/blank";
 		$this->view_data['sidebar'] 		= 	"eid_sidebar";
 		$this->view_data['title'] 			= 	"EID | Lab Consumption";

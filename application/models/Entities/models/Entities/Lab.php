@@ -7,66 +7,66 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Lab
  *
- * Table(name="lab")
- * Entity
+ * @ORM\Table(name="lab")
+ * @ORM\Entity
  */
 class Lab
 {
     /**
      * @var integer
      *
-     * Column(name="id", type="integer", nullable=false)
-     * Id
-     * GeneratedValue(strategy="IDENTITY")
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
 
     /**
      * @var string
      *
-     * Column(name="name", type="string", length=50, nullable=false)
+     * @ORM\Column(name="name", type="string", length=50, nullable=false)
      */
     private $name;
 
     /**
      * @var string
      *
-     * Column(name="email", type="string", length=100, nullable=false)
+     * @ORM\Column(name="email", type="string", length=100, nullable=false)
      */
     private $email;
 
     /**
      * @var string
      *
-     * Column(name="phone_1", type="string", length=50, nullable=false)
+     * @ORM\Column(name="phone_1", type="string", length=50, nullable=false)
      */
     private $phone1;
 
     /**
      * @var string
      *
-     * Column(name="phone_2", type="string", length=50, nullable=false)
+     * @ORM\Column(name="phone_2", type="string", length=50, nullable=false)
      */
     private $phone2;
 
     /**
      * @var integer
      *
-     * Column(name="cobas_count", type="integer", nullable=false)
+     * @ORM\Column(name="cobas_count", type="integer", nullable=false)
      */
     private $cobasCount;
 
     /**
      * @var integer
      *
-     * Column(name="abbott_count", type="integer", nullable=false)
+     * @ORM\Column(name="abbott_count", type="integer", nullable=false)
      */
     private $abbottCount;
 
     /**
      * @var integer
      *
-     * Column(name="district", type="integer", nullable=false)
+     * @ORM\Column(name="district", type="integer", nullable=false)
      */
     private $district;
 

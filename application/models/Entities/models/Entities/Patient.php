@@ -7,59 +7,59 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Patient
  *
- * Table(name="patient")
- * Entity
+ * @ORM\Table(name="patient")
+ * @ORM\Entity
  */
 class Patient
 {
     /**
      * @var integer
      *
-     * Column(name="id", type="integer", nullable=false)
-     * Id
-     * GeneratedValue(strategy="IDENTITY")
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
 
     /**
      * @var integer
      *
-     * Column(name="code", type="integer", nullable=false)
+     * @ORM\Column(name="code", type="integer", nullable=false)
      */
     private $code;
 
     /**
      * @var string
      *
-     * Column(name="name", type="string", length=100, nullable=false)
+     * @ORM\Column(name="name", type="string", length=100, nullable=false)
      */
     private $name;
 
     /**
      * @var \DateTime
      *
-     * Column(name="dob", type="date", nullable=false)
+     * @ORM\Column(name="dob", type="date", nullable=false)
      */
     private $dob;
 
     /**
      * @var integer
      *
-     * Column(name="gender", type="integer", nullable=false)
+     * @ORM\Column(name="gender", type="integer", nullable=false)
      */
     private $gender;
 
     /**
      * @var integer
      *
-     * Column(name="prophylaxis_id", type="integer", nullable=false)
+     * @ORM\Column(name="prophylaxis_id", type="integer", nullable=false)
      */
     private $prophylaxisId;
 
     /**
      * @var integer
      *
-     * Column(name="synced", type="integer", nullable=false)
+     * @ORM\Column(name="synced", type="integer", nullable=false)
      */
     private $synced;
 

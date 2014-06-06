@@ -6,6 +6,8 @@ class worksheet extends MY_Controller {
 
 	public function __construct(){
 
+		$this->login_reroute(array(2));
+
 		$this->view_data['sidebar'] 		= "eid_sidebar";
 		$this->view_data['filter']			=	false;
 		$this->view_data['content_view'] 	= 	"eid/cobas_view";

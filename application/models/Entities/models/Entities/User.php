@@ -2,78 +2,78 @@
 
 namespace models\Entities;
 
-use Doctrine\Mapping as ORM;
+use Doctrine\ORM\Mapping as ORM;
 
 /**
  * User
  *
- * @Table(name="user")
- * @Entity
+ * @ORM\Table(name="user")
+ * @ORM\Entity
  */
 class User
 {
     /**
      * @var integer
      *
-     * @Column(name="id", type="integer", nullable=false)
-     * @Id
-     * @GeneratedValue(strategy="IDENTITY")
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
 
     /**
      * @var string
      *
-     * @Column(name="username", type="string", length=100, nullable=false)
+     * @ORM\Column(name="username", type="string", length=100, nullable=false)
      */
     private $username;
 
     /**
      * @var string
      *
-     * @Column(name="password", type="string", length=100, nullable=false)
+     * @ORM\Column(name="password", type="string", length=100, nullable=false)
      */
     private $password;
 
     /**
      * @var string
      *
-     * @Column(name="name", type="string", length=100, nullable=false)
+     * @ORM\Column(name="name", type="string", length=100, nullable=false)
      */
     private $name;
 
     /**
      * @var integer
      *
-     * @Column(name="user_group_id", type="integer", nullable=false)
+     * @ORM\Column(name="user_group_id", type="integer", nullable=false)
      */
     private $userGroupId;
 
     /**
      * @var string
      *
-     * @Column(name="phone", type="string", length=100, nullable=false)
+     * @ORM\Column(name="phone", type="string", length=100, nullable=false)
      */
     private $phone;
 
     /**
      * @var string
      *
-     * @Column(name="email", type="string", length=100, nullable=false)
+     * @ORM\Column(name="email", type="string", length=100, nullable=false)
      */
     private $email;
 
     /**
      * @var integer
      *
-     * @Column(name="status", type="integer", nullable=false)
+     * @ORM\Column(name="status", type="integer", nullable=false)
      */
     private $status;
 
     /**
      * @var string
      *
-     * @Column(name="activation_clause", type="string", length=800, nullable=false)
+     * @ORM\Column(name="activation_clause", type="string", length=800, nullable=false)
      */
     private $activationClause;
 

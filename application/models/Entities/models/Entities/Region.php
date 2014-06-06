@@ -7,38 +7,38 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Region
  *
- * Table(name="region")
- * Entity
+ * @ORM\Table(name="region")
+ * @ORM\Entity
  */
 class Region
 {
     /**
      * @var integer
      *
-     * Column(name="id", type="integer", nullable=false)
-     * Id
-     * GeneratedValue(strategy="IDENTITY")
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
 
     /**
      * @var string
      *
-     * Column(name="name", type="string", length=30, nullable=false)
+     * @ORM\Column(name="name", type="string", length=30, nullable=false)
      */
     private $name;
 
     /**
      * @var string
      *
-     * Column(name="fusion_id", type="string", length=3, nullable=true)
+     * @ORM\Column(name="fusion_id", type="string", length=3, nullable=true)
      */
     private $fusionId;
 
     /**
      * @var integer
      *
-     * Column(name="status", type="integer", nullable=false)
+     * @ORM\Column(name="status", type="integer", nullable=false)
      */
     private $status;
 

@@ -5,12 +5,12 @@ namespace models\Entities;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Program
+ * HivResult
  *
- * Table(name="program")
+ * Table(name="hiv_result")
  * Entity
  */
-class Program
+class HivResult
 {
     /**
      * @var integer
@@ -24,14 +24,7 @@ class Program
     /**
      * @var string
      *
-     * Column(name="name", type="string", length=25, nullable=false)
-     */
-    private $name;
-
-    /**
-     * @var string
-     *
-     * Column(name="desc", type="string", length=50, nullable=false)
+     * Column(name="desc", type="string", length=40, nullable=false)
      */
     private $desc;
 
@@ -47,33 +40,10 @@ class Program
     }
 
     /**
-     * Set name
-     *
-     * @param string $name
-     * @return Program
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-    
-        return $this;
-    }
-
-    /**
-     * Get name
-     *
-     * @return string 
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
      * Set desc
      *
      * @param string $desc
-     * @return Program
+     * @return HivResult
      */
     public function setDesc($desc)
     {

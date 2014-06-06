@@ -5,35 +5,35 @@ namespace models\Entities;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Program
+ * InfantFeeding
  *
- * Table(name="program")
- * Entity
+ * @ORM\Table(name="infant_feeding")
+ * @ORM\Entity
  */
-class Program
+class InfantFeeding
 {
     /**
      * @var integer
      *
-     * Column(name="id", type="integer", nullable=false)
-     * Id
-     * GeneratedValue(strategy="IDENTITY")
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
 
     /**
      * @var string
      *
-     * Column(name="name", type="string", length=25, nullable=false)
+     * @ORM\Column(name="name", type="string", length=100, nullable=false)
      */
     private $name;
 
     /**
      * @var string
      *
-     * Column(name="desc", type="string", length=50, nullable=false)
+     * @ORM\Column(name="description", type="string", length=100, nullable=false)
      */
-    private $desc;
+    private $description;
 
 
     /**
@@ -50,7 +50,7 @@ class Program
      * Set name
      *
      * @param string $name
-     * @return Program
+     * @return InfantFeeding
      */
     public function setName($name)
     {
@@ -70,25 +70,25 @@ class Program
     }
 
     /**
-     * Set desc
+     * Set description
      *
-     * @param string $desc
-     * @return Program
+     * @param string $description
+     * @return InfantFeeding
      */
-    public function setDesc($desc)
+    public function setDescription($description)
     {
-        $this->desc = $desc;
+        $this->description = $description;
     
         return $this;
     }
 
     /**
-     * Get desc
+     * Get description
      *
      * @return string 
      */
-    public function getDesc()
+    public function getDescription()
     {
-        return $this->desc;
+        return $this->description;
     }
 }

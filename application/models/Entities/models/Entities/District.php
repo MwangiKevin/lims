@@ -5,40 +5,40 @@ namespace models\Entities;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Region
+ * District
  *
- * Table(name="region")
- * Entity
+ * @ORM\Table(name="district")
+ * @ORM\Entity
  */
-class Region
+class District
 {
     /**
      * @var integer
      *
-     * Column(name="id", type="integer", nullable=false)
-     * Id
-     * GeneratedValue(strategy="IDENTITY")
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
 
     /**
      * @var string
      *
-     * Column(name="name", type="string", length=30, nullable=false)
+     * @ORM\Column(name="name", type="string", length=50, nullable=false)
      */
     private $name;
 
     /**
-     * @var string
+     * @var integer
      *
-     * Column(name="fusion_id", type="string", length=3, nullable=true)
+     * @ORM\Column(name="region_id", type="integer", nullable=false)
      */
-    private $fusionId;
+    private $regionId;
 
     /**
      * @var integer
      *
-     * Column(name="status", type="integer", nullable=false)
+     * @ORM\Column(name="status", type="integer", nullable=false)
      */
     private $status;
 
@@ -57,7 +57,7 @@ class Region
      * Set name
      *
      * @param string $name
-     * @return Region
+     * @return District
      */
     public function setName($name)
     {
@@ -77,33 +77,33 @@ class Region
     }
 
     /**
-     * Set fusionId
+     * Set regionId
      *
-     * @param string $fusionId
-     * @return Region
+     * @param integer $regionId
+     * @return District
      */
-    public function setFusionId($fusionId)
+    public function setRegionId($regionId)
     {
-        $this->fusionId = $fusionId;
+        $this->regionId = $regionId;
     
         return $this;
     }
 
     /**
-     * Get fusionId
+     * Get regionId
      *
-     * @return string 
+     * @return integer 
      */
-    public function getFusionId()
+    public function getRegionId()
     {
-        return $this->fusionId;
+        return $this->regionId;
     }
 
     /**
      * Set status
      *
      * @param integer $status
-     * @return Region
+     * @return District
      */
     public function setStatus($status)
     {

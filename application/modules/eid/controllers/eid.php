@@ -6,6 +6,8 @@ class eid extends MY_Controller {
 
 	public function __construct(){
 
+		$this->login_reroute(array(2));
+
 		$this->view_data['content_view'] 	= 	"eid/dashboard_view";
 		$this->view_data['sidebar'] 		= 	"eid_sidebar";
 		$this->view_data['title'] 			= 	"EID | Dashboard";
@@ -24,7 +26,6 @@ class eid extends MY_Controller {
 																	"class"		=>	"active"
 																	)
 												);
-
 	}
 
 	public function index(){

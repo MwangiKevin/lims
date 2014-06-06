@@ -22027,7 +22027,7 @@ th .lbl:only-child, td .lbl:only-child {
 }
 
 /* line 1, ../sass/theme/css/ace.css */
-.infobox, .my-infobox {
+.infobox, .my-infobox, .marete {
   display: inline-block;
   width: 210px;
   height: 66px;
@@ -22045,14 +22045,14 @@ th .lbl:only-child, td .lbl:only-child {
 }
 
 /* line 1, ../sass/theme/css/ace.css */
-.infobox > .infobox-icon, .my-infobox > .infobox-icon {
+.infobox > .infobox-icon, .my-infobox > .infobox-icon, .marete > .infobox-icon {
   display: inline-block;
   vertical-align: top;
   width: 44px;
 }
 
 /* line 1, ../sass/theme/css/ace.css */
-.infobox > .infobox-icon > .ace-icon, .my-infobox > .infobox-icon > .ace-icon {
+.infobox > .infobox-icon > .ace-icon, .my-infobox > .infobox-icon > .ace-icon, .marete > .infobox-icon > .ace-icon {
   display: inline-block;
   height: 42px;
   margin: 0;
@@ -22067,7 +22067,7 @@ th .lbl:only-child, td .lbl:only-child {
 }
 
 /* line 1, ../sass/theme/css/ace.css */
-.infobox > .infobox-icon > .ace-icon:before, .my-infobox > .infobox-icon > .ace-icon:before {
+.infobox > .infobox-icon > .ace-icon:before, .my-infobox > .infobox-icon > .ace-icon:before, .marete > .infobox-icon > .ace-icon:before {
   font-size: 24px;
   display: block;
   padding: 6px 0 7px;
@@ -22082,17 +22082,17 @@ th .lbl:only-child, td .lbl:only-child {
 }
 
 /* line 1, ../sass/theme/css/ace.css */
-.infobox .infobox-content, .my-infobox .infobox-content {
+.infobox .infobox-content, .my-infobox .infobox-content, .marete .infobox-content {
   color: #555;
 }
 
 /* line 1, ../sass/theme/css/ace.css */
-.infobox .infobox-content:first-child, .my-infobox .infobox-content:first-child {
+.infobox .infobox-content:first-child, .my-infobox .infobox-content:first-child, .marete .infobox-content:first-child {
   font-weight: bold;
 }
 
 /* line 1, ../sass/theme/css/ace.css */
-.infobox > .infobox-data, .my-infobox > .infobox-data {
+.infobox > .infobox-data, .my-infobox > .infobox-data, .marete > .infobox-data {
   display: inline-block;
   border-width: 0;
   border-top-width: 0;
@@ -22106,7 +22106,7 @@ th .lbl:only-child, td .lbl:only-child {
 }
 
 /* line 1, ../sass/theme/css/ace.css */
-.infobox > .infobox-data > .infobox-data-number, .my-infobox > .infobox-data > .infobox-data-number {
+.infobox > .infobox-data > .infobox-data-number, .my-infobox > .infobox-data > .infobox-data-number, .marete > .infobox-data > .infobox-data-number {
   display: block;
   font-size: 22px;
   margin: 2px 0 4px;
@@ -22115,7 +22115,7 @@ th .lbl:only-child, td .lbl:only-child {
 }
 
 /* line 1, ../sass/theme/css/ace.css */
-.infobox > .infobox-data > .infobox-text, .my-infobox > .infobox-data > .infobox-text {
+.infobox > .infobox-data > .infobox-text, .my-infobox > .infobox-data > .infobox-text, .marete > .infobox-data > .infobox-text {
   display: block;
   font-size: 16px;
   margin: 2px 0 4px;
@@ -22124,13 +22124,13 @@ th .lbl:only-child, td .lbl:only-child {
 }
 
 /* line 1, ../sass/theme/css/ace.css */
-.infobox.no-border, .no-border.my-infobox {
+.infobox.no-border, .no-border.my-infobox, .no-border.marete {
   border-width: 0 !important;
 }
 
 @media only screen and (max-width: 479px) {
   /* line 1, ../sass/theme/css/ace.css */
-  .infobox, .my-infobox {
+  .infobox, .my-infobox, .marete {
     min-width: 95%;
     margin-top: 2px;
     margin-bottom: 2px;
@@ -22438,7 +22438,7 @@ th .lbl:only-child, td .lbl:only-child {
 }
 
 /* line 1, ../sass/theme/css/ace.css */
-.infobox > .infobox-progress, .my-infobox > .infobox-progress {
+.infobox > .infobox-progress, .my-infobox > .infobox-progress, .marete > .infobox-progress {
   padding-top: 0;
   display: inline-block;
   vertical-align: top;
@@ -22446,7 +22446,7 @@ th .lbl:only-child, td .lbl:only-child {
 }
 
 /* line 1, ../sass/theme/css/ace.css */
-.infobox > .infobox-chart, .my-infobox > .infobox-chart {
+.infobox > .infobox-chart, .my-infobox > .infobox-chart, .marete > .infobox-chart {
   padding-top: 0;
   display: inline-block;
   vertical-align: text-bottom;
@@ -22455,17 +22455,17 @@ th .lbl:only-child, td .lbl:only-child {
 }
 
 /* line 1, ../sass/theme/css/ace.css */
-.infobox > .infobox-chart > .sparkline, .my-infobox > .infobox-chart > .sparkline {
+.infobox > .infobox-chart > .sparkline, .my-infobox > .infobox-chart > .sparkline, .marete > .infobox-chart > .sparkline {
   font-size: 24px;
 }
 
 /* line 1, ../sass/theme/css/ace.css */
-.infobox > .infobox-chart canvas, .my-infobox > .infobox-chart canvas {
+.infobox > .infobox-chart canvas, .my-infobox > .infobox-chart canvas, .marete > .infobox-chart canvas {
   vertical-align: middle !important;
 }
 
 /* line 1, ../sass/theme/css/ace.css */
-.infobox > .stat, .my-infobox > .stat {
+.infobox > .stat, .my-infobox > .stat, .marete > .stat {
   display: inline-block;
   position: absolute;
   right: 20px;
@@ -22479,7 +22479,7 @@ th .lbl:only-child, td .lbl:only-child {
 }
 
 /* line 1, ../sass/theme/css/ace.css */
-.infobox > .stat:before, .my-infobox > .stat:before {
+.infobox > .stat:before, .my-infobox > .stat:before, .marete > .stat:before {
   display: inline-block;
   content: "";
   width: 8px;
@@ -22491,7 +22491,7 @@ th .lbl:only-child, td .lbl:only-child {
 }
 
 /* line 1, ../sass/theme/css/ace.css */
-.infobox > .stat:after, .my-infobox > .stat:after {
+.infobox > .stat:after, .my-infobox > .stat:after, .marete > .stat:after {
   display: inline-block;
   content: "";
   position: absolute;
@@ -22503,33 +22503,33 @@ th .lbl:only-child, td .lbl:only-child {
 }
 
 /* line 1, ../sass/theme/css/ace.css */
-.infobox > .stat.stat-success, .my-infobox > .stat.stat-success {
+.infobox > .stat.stat-success, .my-infobox > .stat.stat-success, .marete > .stat.stat-success {
   color: #77C646;
 }
 
 /* line 1, ../sass/theme/css/ace.css */
-.infobox > .stat.stat-success:before, .my-infobox > .stat.stat-success:before {
+.infobox > .stat.stat-success:before, .my-infobox > .stat.stat-success:before, .marete > .stat.stat-success:before {
   background-color: #77C646;
 }
 
 /* line 1, ../sass/theme/css/ace.css */
-.infobox > .stat.stat-success:after, .my-infobox > .stat.stat-success:after {
+.infobox > .stat.stat-success:after, .my-infobox > .stat.stat-success:after, .marete > .stat.stat-success:after {
   border-bottom-color: #77C646;
 }
 
 /* line 1, ../sass/theme/css/ace.css */
-.infobox > .stat.stat-important, .my-infobox > .stat.stat-important {
+.infobox > .stat.stat-important, .my-infobox > .stat.stat-important, .marete > .stat.stat-important {
   color: #E4564F;
 }
 
 /* line 1, ../sass/theme/css/ace.css */
-.infobox > .stat.stat-important:before, .my-infobox > .stat.stat-important:before {
+.infobox > .stat.stat-important:before, .my-infobox > .stat.stat-important:before, .marete > .stat.stat-important:before {
   background-color: #E4564F;
   top: 3px;
 }
 
 /* line 1, ../sass/theme/css/ace.css */
-.infobox > .stat.stat-important:after, .my-infobox > .stat.stat-important:after {
+.infobox > .stat.stat-important:after, .my-infobox > .stat.stat-important:after, .marete > .stat.stat-important:after {
   border-top-color: #E4564F;
   border-bottom-color: transparent;
   bottom: -6px;
@@ -22537,48 +22537,48 @@ th .lbl:only-child, td .lbl:only-child {
 }
 
 /* line 1, ../sass/theme/css/ace.css */
-.infobox.infobox-dark > .stat, .infobox-dark.my-infobox > .stat {
+.infobox.infobox-dark > .stat, .infobox-dark.my-infobox > .stat, .infobox-dark.marete > .stat {
   color: #FFF;
 }
 
 /* line 1, ../sass/theme/css/ace.css */
-.infobox.infobox-dark > .stat:before, .infobox-dark.my-infobox > .stat:before {
+.infobox.infobox-dark > .stat:before, .infobox-dark.my-infobox > .stat:before, .infobox-dark.marete > .stat:before {
   background-color: #E1E5E8;
 }
 
 /* line 1, ../sass/theme/css/ace.css */
-.infobox.infobox-dark > .stat:after, .infobox-dark.my-infobox > .stat:after {
+.infobox.infobox-dark > .stat:after, .infobox-dark.my-infobox > .stat:after, .infobox-dark.marete > .stat:after {
   border-bottom-color: #E1E5E8;
 }
 
 /* line 1, ../sass/theme/css/ace.css */
-.infobox.infobox-dark > .stat.stat-success, .infobox-dark.my-infobox > .stat.stat-success {
+.infobox.infobox-dark > .stat.stat-success, .infobox-dark.my-infobox > .stat.stat-success, .infobox-dark.marete > .stat.stat-success {
   color: #FFF;
 }
 
 /* line 1, ../sass/theme/css/ace.css */
-.infobox.infobox-dark > .stat.stat-success:before, .infobox-dark.my-infobox > .stat.stat-success:before {
+.infobox.infobox-dark > .stat.stat-success:before, .infobox-dark.my-infobox > .stat.stat-success:before, .infobox-dark.marete > .stat.stat-success:before {
   background-color: #D0E29E;
 }
 
 /* line 1, ../sass/theme/css/ace.css */
-.infobox.infobox-dark > .stat.stat-success:after, .infobox-dark.my-infobox > .stat.stat-success:after {
+.infobox.infobox-dark > .stat.stat-success:after, .infobox-dark.my-infobox > .stat.stat-success:after, .infobox-dark.marete > .stat.stat-success:after {
   border-bottom-color: #D0E29E;
 }
 
 /* line 1, ../sass/theme/css/ace.css */
-.infobox.infobox-dark > .stat.stat-important, .infobox-dark.my-infobox > .stat.stat-important {
+.infobox.infobox-dark > .stat.stat-important, .infobox-dark.my-infobox > .stat.stat-important, .infobox-dark.marete > .stat.stat-important {
   color: #FFF;
 }
 
 /* line 1, ../sass/theme/css/ace.css */
-.infobox.infobox-dark > .stat.stat-important:before, .infobox-dark.my-infobox > .stat.stat-important:before {
+.infobox.infobox-dark > .stat.stat-important:before, .infobox-dark.my-infobox > .stat.stat-important:before, .infobox-dark.marete > .stat.stat-important:before {
   background-color: #FF8482;
   top: 3px;
 }
 
 /* line 1, ../sass/theme/css/ace.css */
-.infobox.infobox-dark > .stat.stat-important:after, .infobox-dark.my-infobox > .stat.stat-important:after {
+.infobox.infobox-dark > .stat.stat-important:after, .infobox-dark.my-infobox > .stat.stat-important:after, .infobox-dark.marete > .stat.stat-important:after {
   border-top-color: #FF8482;
   border-bottom-color: transparent;
   bottom: -6px;
@@ -22586,7 +22586,7 @@ th .lbl:only-child, td .lbl:only-child {
 }
 
 /* line 1, ../sass/theme/css/ace.css */
-.infobox > .badge, .my-infobox > .badge {
+.infobox > .badge, .my-infobox > .badge, .marete > .badge {
   position: absolute;
   right: 20px;
   top: 11px;
@@ -22601,7 +22601,7 @@ th .lbl:only-child, td .lbl:only-child {
 }
 
 /* line 1, ../sass/theme/css/ace.css */
-.infobox.infobox-dark > .badge, .infobox-dark.my-infobox > .badge {
+.infobox.infobox-dark > .badge, .infobox-dark.my-infobox > .badge, .infobox-dark.marete > .badge {
   color: #FFF;
   background-color: rgba(255, 255, 255, 0.2) !important;
   border: 1px solid #F1F1F1;
@@ -22610,17 +22610,17 @@ th .lbl:only-child, td .lbl:only-child {
 }
 
 /* line 1, ../sass/theme/css/ace.css */
-.infobox.infobox-dark > .badge.badge-success > .ace-icon, .infobox-dark.my-infobox > .badge.badge-success > .ace-icon {
+.infobox.infobox-dark > .badge.badge-success > .ace-icon, .infobox-dark.my-infobox > .badge.badge-success > .ace-icon, .infobox-dark.marete > .badge.badge-success > .ace-icon {
   color: #C6E9A1;
 }
 
 /* line 1, ../sass/theme/css/ace.css */
-.infobox.infobox-dark > .badge.badge-important > .ace-icon, .infobox-dark.my-infobox > .badge.badge-important > .ace-icon {
+.infobox.infobox-dark > .badge.badge-important > .ace-icon, .infobox-dark.my-infobox > .badge.badge-important > .ace-icon, .infobox-dark.marete > .badge.badge-important > .ace-icon {
   color: #ECB792;
 }
 
 /* line 1, ../sass/theme/css/ace.css */
-.infobox.infobox-dark > .badge.badge-warning > .ace-icon, .infobox-dark.my-infobox > .badge.badge-warning > .ace-icon {
+.infobox.infobox-dark > .badge.badge-warning > .ace-icon, .infobox-dark.my-infobox > .badge.badge-warning > .ace-icon, .infobox-dark.marete > .badge.badge-warning > .ace-icon {
   color: #ECB792;
 }
 
@@ -34466,7 +34466,7 @@ img.editable-click:hover {
 }
 
 /* line 2823, ../sass/theme/css/ace-skins.css */
-.skin-3 .infobox-container .infobox:not(.infobox-dark), .skin-3 .infobox-container .my-infobox:not(.infobox-dark) {
+.skin-3 .infobox-container .infobox:not(.infobox-dark), .skin-3 .infobox-container .my-infobox:not(.infobox-dark), .skin-3 .infobox-container .marete:not(.infobox-dark) {
   border-style: solid;
   background-color: transparent;
 }
@@ -39409,14 +39409,14 @@ img.editable-click:hover {
 }
 
 /* line 1, ../sass/theme/css/ace-rtl.min.css */
-.rtl .infobox, .rtl .my-infobox {
+.rtl .infobox, .rtl .my-infobox, .rtl .marete {
   margin: -1px -1px 0 0;
   padding: 8px 9px 6px 3px;
   text-align: right;
 }
 
 /* line 1, ../sass/theme/css/ace-rtl.min.css */
-.rtl .infobox > .infobox-icon > .ace-icon, .rtl .my-infobox > .infobox-icon > .ace-icon {
+.rtl .infobox > .infobox-icon > .ace-icon, .rtl .my-infobox > .infobox-icon > .ace-icon, .rtl .marete > .infobox-icon > .ace-icon {
   padding: 1px 2px 0 1px;
   text-align: center;
   -webkit-box-shadow: -1px 1px 0 rgba(0, 0, 0, 0.2);
@@ -39424,12 +39424,12 @@ img.editable-click:hover {
 }
 
 /* line 1, ../sass/theme/css/ace-rtl.min.css */
-.rtl .infobox > .infobox-icon > .ace-icon:before, .rtl .my-infobox > .infobox-icon > .ace-icon:before {
+.rtl .infobox > .infobox-icon > .ace-icon:before, .rtl .my-infobox > .infobox-icon > .ace-icon:before, .rtl .marete > .infobox-icon > .ace-icon:before {
   text-align: center;
 }
 
 /* line 1, ../sass/theme/css/ace-rtl.min.css */
-.rtl .infobox > .infobox-data, .rtl .my-infobox > .infobox-data {
+.rtl .infobox > .infobox-data, .rtl .my-infobox > .infobox-data, .rtl .marete > .infobox-data {
   text-align: right;
   padding-left: 0;
   padding-right: 8px;
@@ -39441,12 +39441,12 @@ img.editable-click:hover {
 }
 
 /* line 1, ../sass/theme/css/ace-rtl.min.css */
-.rtl .infobox > .infobox-chart, .rtl .my-infobox > .infobox-chart {
+.rtl .infobox > .infobox-chart, .rtl .my-infobox > .infobox-chart, .rtl .marete > .infobox-chart {
   text-align: center;
 }
 
 /* line 1, ../sass/theme/css/ace-rtl.min.css */
-.rtl .infobox > .stat, .rtl .my-infobox > .stat {
+.rtl .infobox > .stat, .rtl .my-infobox > .stat, .rtl .marete > .stat {
   right: auto;
   padding-right: 0;
   left: 20px;
@@ -39454,25 +39454,25 @@ img.editable-click:hover {
 }
 
 /* line 1, ../sass/theme/css/ace-rtl.min.css */
-.rtl .infobox > .stat:before, .rtl .my-infobox > .stat:before {
+.rtl .infobox > .stat:before, .rtl .my-infobox > .stat:before, .rtl .marete > .stat:before {
   right: auto;
   left: 4px;
 }
 
 /* line 1, ../sass/theme/css/ace-rtl.min.css */
-.rtl .infobox > .stat:after, .rtl .my-infobox > .stat:after {
+.rtl .infobox > .stat:after, .rtl .my-infobox > .stat:after, .rtl .marete > .stat:after {
   right: auto;
   left: 1px;
 }
 
 /* line 1, ../sass/theme/css/ace-rtl.min.css */
-.rtl .infobox > .badge, .rtl .my-infobox > .badge {
+.rtl .infobox > .badge, .rtl .my-infobox > .badge, .rtl .marete > .badge {
   right: auto;
   left: 20px;
 }
 
 /* line 1, ../sass/theme/css/ace-rtl.min.css */
-.rtl .infobox.infobox-dark > .badge, .rtl .infobox-dark.my-infobox > .badge {
+.rtl .infobox.infobox-dark > .badge, .rtl .infobox-dark.my-infobox > .badge, .rtl .infobox-dark.marete > .badge {
   right: auto;
   left: 2px;
 }
@@ -51920,4 +51920,9 @@ html {
 .my-no-margin-padding {
   padding: 0px;
   margin: 0px;
+}
+
+/* line 73, ../sass/styles.scss */
+.marete {
+  background: #fff;
 }

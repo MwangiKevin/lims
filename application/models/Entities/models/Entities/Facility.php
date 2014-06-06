@@ -7,61 +7,61 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Facility
  *
- * Table(name="facility")
- * Entity
+ * @ORM\Table(name="facility")
+ * @ORM\Entity
  */
 class Facility
 {
     /**
      * @var integer
      *
-     * Column(name="id", type="integer", nullable=false)
-     * Id
-     * GeneratedValue(strategy="IDENTITY")
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
 
     /**
      * @var string
      *
-     * Column(name="name", type="string", length=100, nullable=false)
+     * @ORM\Column(name="name", type="string", length=100, nullable=false)
      */
     private $name;
 
     /**
      * @var integer
      *
-     * Column(name="partner_id", type="integer", nullable=false)
+     * @ORM\Column(name="partner_id", type="integer", nullable=false)
      */
     private $partnerId;
 
     /**
      * @var string
      *
-     * Column(name="email", type="string", length=250, nullable=false)
+     * @ORM\Column(name="email", type="string", length=250, nullable=false)
      */
     private $email;
 
     /**
      * @var string
      *
-     * Column(name="phone", type="string", length=50, nullable=false)
+     * @ORM\Column(name="phone", type="string", length=50, nullable=false)
      */
     private $phone;
 
     /**
      * @var string
      *
-     * Column(name="google_maps", type="string", length=500, nullable=true)
+     * @ORM\Column(name="google_maps", type="string", length=500, nullable=true)
      */
     private $googleMaps;
 
     /**
      * @var \models\Entities\District
      *
-     * ManyToOne(targetEntity="models\Entities\District")
-     * JoinColumns({
-     *   JoinColumn(name="district_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="models\Entities\District")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="district_id", referencedColumnName="id")
      * })
      */
     private $district;

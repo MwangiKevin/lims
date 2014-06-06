@@ -70,5 +70,9 @@ html{
 	padding:0px;
 	margin:0px;
 }
+.marete{
+  @extend .infobox;
+	background:#fff;
+}
 
 

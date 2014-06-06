@@ -5,12 +5,12 @@ namespace models\Entities;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Program
+ * ProphilaxisType
  *
- * Table(name="program")
+ * Table(name="prophilaxis_type")
  * Entity
  */
-class Program
+class ProphilaxisType
 {
     /**
      * @var integer
@@ -22,16 +22,9 @@ class Program
     private $id;
 
     /**
-     * @var string
+     * @var integer
      *
-     * Column(name="name", type="string", length=25, nullable=false)
-     */
-    private $name;
-
-    /**
-     * @var string
-     *
-     * Column(name="desc", type="string", length=50, nullable=false)
+     * Column(name="desc", type="integer", nullable=false)
      */
     private $desc;
 
@@ -47,33 +40,10 @@ class Program
     }
 
     /**
-     * Set name
-     *
-     * @param string $name
-     * @return Program
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-    
-        return $this;
-    }
-
-    /**
-     * Get name
-     *
-     * @return string 
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
      * Set desc
      *
-     * @param string $desc
-     * @return Program
+     * @param integer $desc
+     * @return ProphilaxisType
      */
     public function setDesc($desc)
     {
@@ -85,7 +55,7 @@ class Program
     /**
      * Get desc
      *
-     * @return string 
+     * @return integer 
      */
     public function getDesc()
     {
