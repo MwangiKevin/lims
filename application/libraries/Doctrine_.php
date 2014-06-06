@@ -66,7 +66,7 @@ class Doctrine {
 		// Create EntityManager
 		$this -> em = EntityManager::create($connectionOptions, $config);
 
-		//$this -> autoGenerateEntitiesFromDatabase();
+		$this -> autoGenerateEntitiesFromDatabase();
 	}
 
 	//auto-generate entities

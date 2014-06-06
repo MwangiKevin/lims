@@ -2,85 +2,78 @@
 
 namespace models\Entities;
 
-use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Mapping as ORM;
 
 /**
  * User
  *
- * @ORM\Table(name="user")
- * @ORM\Entity
+ * @Table(name="user")
+ * @Entity
  */
 class User
 {
     /**
      * @var integer
      *
-     * @ORM\Column(name="id", type="integer", nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @Column(name="id", type="integer", nullable=false)
+     * @Id
+     * @GeneratedValue(strategy="IDENTITY")
      */
     private $id;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="username", type="string", length=100, nullable=false)
+     * @Column(name="username", type="string", length=100, nullable=false)
      */
     private $username;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="password", type="string", length=100, nullable=false)
+     * @Column(name="password", type="string", length=100, nullable=false)
      */
     private $password;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=100, nullable=false)
+     * @Column(name="name", type="string", length=100, nullable=false)
      */
     private $name;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="user_group_id", type="integer", nullable=false)
+     * @Column(name="user_group_id", type="integer", nullable=false)
      */
     private $userGroupId;
 
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="user_access_level_id", type="integer", nullable=false)
-     */
-    private $userAccessLevelId;
-
-    /**
      * @var string
      *
-     * @ORM\Column(name="phone", type="string", length=100, nullable=false)
+     * @Column(name="phone", type="string", length=100, nullable=false)
      */
     private $phone;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="email", type="string", length=100, nullable=false)
+     * @Column(name="email", type="string", length=100, nullable=false)
      */
     private $email;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="status", type="integer", nullable=false)
+     * @Column(name="status", type="integer", nullable=false)
      */
     private $status;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="activation_clause", type="string", length=800, nullable=false)
+     * @Column(name="activation_clause", type="string", length=800, nullable=false)
      */
     private $activationClause;
 
@@ -185,29 +178,6 @@ class User
     public function getUserGroupId()
     {
         return $this->userGroupId;
-    }
-
-    /**
-     * Set userAccessLevelId
-     *
-     * @param integer $userAccessLevelId
-     * @return User
-     */
-    public function setUserAccessLevelId($userAccessLevelId)
-    {
-        $this->userAccessLevelId = $userAccessLevelId;
-    
-        return $this;
-    }
-
-    /**
-     * Get userAccessLevelId
-     *
-     * @return integer 
-     */
-    public function getUserAccessLevelId()
-    {
-        return $this->userAccessLevelId;
     }
 
     /**

@@ -7,66 +7,66 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Lab
  *
- * @ORM\Table(name="lab")
- * @ORM\Entity
+ * Table(name="lab")
+ * Entity
  */
 class Lab
 {
     /**
      * @var integer
      *
-     * @ORM\Column(name="id", type="integer", nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * Column(name="id", type="integer", nullable=false)
+     * Id
+     * GeneratedValue(strategy="IDENTITY")
      */
     private $id;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=50, nullable=false)
+     * Column(name="name", type="string", length=50, nullable=false)
      */
     private $name;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="email", type="string", length=100, nullable=false)
+     * Column(name="email", type="string", length=100, nullable=false)
      */
     private $email;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="phone_1", type="string", length=50, nullable=false)
+     * Column(name="phone_1", type="string", length=50, nullable=false)
      */
     private $phone1;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="phone_2", type="string", length=50, nullable=false)
+     * Column(name="phone_2", type="string", length=50, nullable=false)
      */
     private $phone2;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="taqman_count", type="integer", nullable=false)
+     * Column(name="cobas_count", type="integer", nullable=false)
      */
-    private $taqmanCount;
+    private $cobasCount;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="abbott_count", type="integer", nullable=false)
+     * Column(name="abbott_count", type="integer", nullable=false)
      */
     private $abbottCount;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="district", type="integer", nullable=false)
+     * Column(name="district", type="integer", nullable=false)
      */
     private $district;
 
@@ -174,26 +174,26 @@ class Lab
     }
 
     /**
-     * Set taqmanCount
+     * Set cobasCount
      *
-     * @param integer $taqmanCount
+     * @param integer $cobasCount
      * @return Lab
      */
-    public function setTaqmanCount($taqmanCount)
+    public function setCobasCount($cobasCount)
     {
-        $this->taqmanCount = $taqmanCount;
+        $this->cobasCount = $cobasCount;
     
         return $this;
     }
 
     /**
-     * Get taqmanCount
+     * Get cobasCount
      *
      * @return integer 
      */
-    public function getTaqmanCount()
+    public function getCobasCount()
     {
-        return $this->taqmanCount;
+        return $this->cobasCount;
     }
 
     /**

@@ -7,75 +7,61 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Facility
  *
- * @ORM\Table(name="facility")
- * @ORM\Entity
+ * Table(name="facility")
+ * Entity
  */
 class Facility
 {
     /**
      * @var integer
      *
-     * @ORM\Column(name="id", type="integer", nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * Column(name="id", type="integer", nullable=false)
+     * Id
+     * GeneratedValue(strategy="IDENTITY")
      */
     private $id;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=100, nullable=false)
+     * Column(name="name", type="string", length=100, nullable=false)
      */
     private $name;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="partner_id", type="integer", nullable=false)
+     * Column(name="partner_id", type="integer", nullable=false)
      */
     private $partnerId;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="email", type="string", length=250, nullable=false)
+     * Column(name="email", type="string", length=250, nullable=false)
      */
     private $email;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="phone", type="string", length=50, nullable=false)
+     * Column(name="phone", type="string", length=50, nullable=false)
      */
     private $phone;
 
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="rollout_status", type="integer", nullable=false)
-     */
-    private $rolloutStatus;
-
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="rollout_date", type="date", nullable=true)
-     */
-    private $rolloutDate;
-
-    /**
      * @var string
      *
-     * @ORM\Column(name="google_maps", type="string", length=500, nullable=true)
+     * Column(name="google_maps", type="string", length=500, nullable=true)
      */
     private $googleMaps;
 
     /**
      * @var \models\Entities\District
      *
-     * @ORM\ManyToOne(targetEntity="models\Entities\District")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="district_id", referencedColumnName="id")
+     * ManyToOne(targetEntity="models\Entities\District")
+     * JoinColumns({
+     *   JoinColumn(name="district_id", referencedColumnName="id")
      * })
      */
     private $district;
@@ -181,52 +167,6 @@ class Facility
     public function getPhone()
     {
         return $this->phone;
-    }
-
-    /**
-     * Set rolloutStatus
-     *
-     * @param integer $rolloutStatus
-     * @return Facility
-     */
-    public function setRolloutStatus($rolloutStatus)
-    {
-        $this->rolloutStatus = $rolloutStatus;
-    
-        return $this;
-    }
-
-    /**
-     * Get rolloutStatus
-     *
-     * @return integer 
-     */
-    public function getRolloutStatus()
-    {
-        return $this->rolloutStatus;
-    }
-
-    /**
-     * Set rolloutDate
-     *
-     * @param \DateTime $rolloutDate
-     * @return Facility
-     */
-    public function setRolloutDate($rolloutDate)
-    {
-        $this->rolloutDate = $rolloutDate;
-    
-        return $this;
-    }
-
-    /**
-     * Get rolloutDate
-     *
-     * @return \DateTime 
-     */
-    public function getRolloutDate()
-    {
-        return $this->rolloutDate;
     }
 
     /**

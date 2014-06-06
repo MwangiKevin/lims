@@ -7,269 +7,269 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Worksheet
  *
- * @ORM\Table(name="worksheet")
- * @ORM\Entity
+ * Table(name="worksheet")
+ * Entity
  */
 class Worksheet
 {
     /**
      * @var integer
      *
-     * @ORM\Column(name="id", type="integer", nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * Column(name="id", type="integer", nullable=false)
+     * Id
+     * GeneratedValue(strategy="IDENTITY")
      */
     private $id;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="cdc_worksheet_no", type="string", length=100, nullable=false)
+     * Column(name="cdc_worksheet_no", type="string", length=100, nullable=false)
      */
     private $cdcWorksheetNo;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="date_created", type="string", length=100, nullable=false)
+     * Column(name="date_created", type="string", length=100, nullable=false)
      */
     private $dateCreated;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="HIQCAPNo", type="string", length=100, nullable=false)
+     * Column(name="HIQCAPNo", type="string", length=100, nullable=false)
      */
     private $hiqcapno;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="Spek_kit_no", type="string", length=100, nullable=false)
+     * Column(name="Spek_kit_no", type="string", length=100, nullable=false)
      */
     private $spekKitNo;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="updated_by", type="integer", nullable=true)
+     * Column(name="updated_by", type="integer", nullable=true)
      */
     private $updatedBy;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="reviewed_by", type="integer", nullable=true)
+     * Column(name="reviewed_by", type="integer", nullable=true)
      */
     private $reviewedBy;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="created_by", type="integer", nullable=false)
+     * Column(name="created_by", type="integer", nullable=false)
      */
     private $createdBy;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="lot_no", type="string", length=100, nullable=false)
+     * Column(name="lot_no", type="string", length=100, nullable=false)
      */
     private $lotNo;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="rack_no", type="string", length=100, nullable=false)
+     * Column(name="rack_no", type="string", length=100, nullable=false)
      */
     private $rackNo;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="flag", type="integer", nullable=true)
+     * Column(name="flag", type="integer", nullable=true)
      */
     private $flag;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="kit_expiry_date", type="date", nullable=true)
+     * Column(name="kit_expiry_date", type="date", nullable=true)
      */
     private $kitExpiryDate;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="date_cut", type="date", nullable=true)
+     * Column(name="date_cut", type="date", nullable=true)
      */
     private $dateCut;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="date_run", type="date", nullable=true)
+     * Column(name="date_run", type="date", nullable=true)
      */
     private $dateRun;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="date_reviewed", type="date", nullable=true)
+     * Column(name="date_reviewed", type="date", nullable=true)
      */
     private $dateReviewed;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="lab", type="integer", nullable=true)
+     * Column(name="lab", type="integer", nullable=true)
      */
     private $lab;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="review_2_by", type="integer", nullable=true)
+     * Column(name="review_2_by", type="integer", nullable=true)
      */
     private $review2By;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="review_2_date", type="date", nullable=true)
+     * Column(name="review_2_date", type="date", nullable=true)
      */
     private $review2Date;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="type", type="integer", nullable=true)
+     * Column(name="type", type="integer", nullable=true)
      */
     private $type;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="sample_prep_lot_no", type="string", length=100, nullable=true)
+     * Column(name="sample_prep_lot_no", type="string", length=100, nullable=true)
      */
     private $samplePrepLotNo;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="bulk_lysis_lot_no", type="blob", nullable=true)
+     * Column(name="bulk_lysis_lot_no", type="blob", nullable=true)
      */
     private $bulkLysisLotNo;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="sample_prep_expiry_date", type="date", nullable=true)
+     * Column(name="sample_prep_expiry_date", type="date", nullable=true)
      */
     private $samplePrepExpiryDate;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="bulk_lysis_expiry_date", type="date", nullable=true)
+     * Column(name="bulk_lysis_expiry_date", type="date", nullable=true)
      */
     private $bulkLysisExpiryDate;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="control_lot_no", type="string", length=100, nullable=true)
+     * Column(name="control_lot_no", type="string", length=100, nullable=true)
      */
     private $controlLotNo;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="calibrator_lot_no", type="string", length=100, nullable=true)
+     * Column(name="calibrator_lot_no", type="string", length=100, nullable=true)
      */
     private $calibratorLotNo;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="amplification_kit_lot_no", type="string", length=100, nullable=true)
+     * Column(name="amplification_kit_lot_no", type="string", length=100, nullable=true)
      */
     private $amplificationKitLotNo;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="control_expiry_date", type="date", nullable=true)
+     * Column(name="control_expiry_date", type="date", nullable=true)
      */
     private $controlExpiryDate;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="calibrator_expiry_date", type="date", nullable=true)
+     * Column(name="calibrator_expiry_date", type="date", nullable=true)
      */
     private $calibratorExpiryDate;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="amplification_expiry_date", type="date", nullable=true)
+     * Column(name="amplification_expiry_date", type="date", nullable=true)
      */
     private $amplificationExpiryDate;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="status", type="integer", nullable=true)
+     * Column(name="status", type="integer", nullable=true)
      */
     private $status;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="date_cancelled", type="date", nullable=true)
+     * Column(name="date_cancelled", type="date", nullable=true)
      */
     private $dateCancelled;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="cancelled_by", type="integer", nullable=true)
+     * Column(name="cancelled_by", type="integer", nullable=true)
      */
     private $cancelledBy;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="date_updated", type="date", nullable=true)
+     * Column(name="date_updated", type="date", nullable=true)
      */
     private $dateUpdated;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="neg_control_result", type="integer", nullable=true)
+     * Column(name="neg_control_result", type="integer", nullable=true)
      */
     private $negControlResult;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="neg_control_interpretation", type="string", length=100, nullable=true)
+     * Column(name="neg_control_interpretation", type="string", length=100, nullable=true)
      */
     private $negControlInterpretation;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="pos_control_result", type="integer", nullable=true)
+     * Column(name="pos_control_result", type="integer", nullable=true)
      */
     private $posControlResult;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="pos_control_interpretation", type="string", length=100, nullable=true)
+     * Column(name="pos_control_interpretation", type="string", length=100, nullable=true)
      */
     private $posControlInterpretation;
 

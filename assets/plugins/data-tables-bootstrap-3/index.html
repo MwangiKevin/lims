@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>DataTables and Bootstrap 3</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/dataTables.bootstrap.css">
+
+        <script type="text/javascript" src="js/jquery.js"> </script>
+        <script type="text/javascript" src="js/jquery.dataTables.js"> </script>
+        <script type="text/javascript" src="js/bootstrap.min.js"> </script>
+        <script type="text/javascript" src="js/dataTables.bootstrap.js"> </script>
+        <script type="text/javascript" src="js/dataTables.bootstrapPagination.js"> </script>
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('#datatable').dataTable( {
+                    "sDom": "<'row'<'col-xs-6'T><'col-xs-6'f>r>t<'row'<'col-xs-6'i><'col-xs-6'p>>",
+                    "sPaginationType": "bootstrap"
+                } );
+            } );
+        </script>
+    </head>
+    <body id="body">
+       <div class="container">
+          <h1>DataTables and Bootstrap 3</h1>
+          <p>Minimal setup of DataTables with Bootstrap 3.  It uses the following versions:</p>
+          <ul>
+              <li>Bootstrap dist <a href="https://github.com/twbs/bootstrap/releases/download/v3.0.2/bootstrap-3.0.2-dist.zip">3.0.2</a></li>
+              <li>DataTables <a href="http://datatables.net/releases/DataTables-1.9.4.zip">1.9.4</a></li>
+              <li>Bootstrap 3 <a href="https://github.com/DataTables/Plugins/tree/master/integration/bootstrap/3">integration</a>
+                  with DataTables (including the images in ../images/)</li>
+              <li>Bootstrap <a href="http://datatables.net/plug-ins/pagination">pagination plugin</a>, with
+                  <a href="http://datatables.net/forums/discussion/16675/twitter-bootstrap-3">some changes</a>.</li>
+          </ul>
+          <p>All the files needed for this example, from above distribution archives and from above
+              discussions in forums, including this very example page, can be downloaded as an
+              <a href="data-tables-bootstrap-3.zip">archive file</a> (including the version of jQuery
+              included with DataTables, jQuery 1.8.2, so the example is really self-contained).</p>
+          <p>And now, to see how to re-instate the "how many entries per page" dropdown that I used
+              to have with DataTables + Bootstrap 2 ☺</p>
+          <table cellpadding="0" cellspacing="0" border="0"
+                 class="table table-striped table-bordered" id="datatable">
+              <thead>
+                  <tr>
+                      <th>Date</th>
+                      <th>Col 2</th>
+                      <th>Col 3</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr><td>2011-01-01</td><td>foo</td><td>bar</td></tr>
+                  <tr><td>2011-01-02</td><td>foo</td><td>bar</td></tr>
+                  <tr><td>2011-01-03</td><td>foo</td><td>bar</td></tr>
+                  <tr><td>2011-01-04</td><td>foo</td><td>bar</td></tr>
+                  <tr><td>2011-01-05</td><td>foo</td><td>bar</td></tr>
+                  <tr><td>2011-01-06</td><td>foo</td><td>bar</td></tr>
+                  <tr><td>2011-01-07</td><td>foo</td><td>bar</td></tr>
+                  <tr><td>2011-01-08</td><td>foo</td><td>bar</td></tr>
+                  <tr><td>2011-01-09</td><td>foo</td><td>bar</td></tr>
+                  <tr><td>2011-01-10</td><td>foo</td><td>bar</td></tr>
+                  <tr><td>2011-01-11</td><td>foo</td><td>bar</td></tr>
+                  <tr><td>2011-01-12</td><td>foo</td><td>bar</td></tr>
+                  <tr><td>2011-01-13</td><td>foo</td><td>bar</td></tr>
+                  <tr><td>2011-01-14</td><td>foo</td><td>bar</td></tr>
+                  <tr><td>2011-01-15</td><td>foo</td><td>bar</td></tr>
+                  <tr><td>2011-01-16</td><td>foo</td><td>bar</td></tr>
+                  <tr><td>2011-01-17</td><td>foo</td><td>bar</td></tr>
+                  <tr><td>2011-01-18</td><td>foo</td><td>bar</td></tr>
+                  <tr><td>2011-01-19</td><td>foo</td><td>bar</td></tr>
+                  <tr><td>2011-01-20</td><td>foo</td><td>bar</td></tr>
+                  <tr><td>2011-01-21</td><td>foo</td><td>bar</td></tr>
+                  <tr><td>2011-01-22</td><td>foo</td><td>bar</td></tr>
+                  <tr><td>2011-01-23</td><td>foo</td><td>bar</td></tr>
+                  <tr><td>2011-01-24</td><td>foo</td><td>bar</td></tr>
+                  <tr><td>2011-01-25</td><td>foo</td><td>bar</td></tr>
+                  <tr><td>2011-01-26</td><td>foo</td><td>bar</td></tr>
+                  <tr><td>2011-01-27</td><td>foo</td><td>bar</td></tr>
+                  <tr><td>2011-01-28</td><td>foo</td><td>bar</td></tr>
+                  <tr><td>2011-01-29</td><td>foo</td><td>bar</td></tr>
+                  <tr><td>2011-01-30</td><td>foo</td><td>bar</td></tr>
+                  <tr><td>2011-01-31</td><td>foo</td><td>bar</td></tr>
+                  <tr><td>2011-02-01</td><td>foo</td><td>bar</td></tr>
+                  <tr><td>2011-02-02</td><td>foo</td><td>bar</td></tr>
+                  <tr><td>2011-02-03</td><td>foo</td><td>bar</td></tr>
+                  <tr><td>2011-02-04</td><td>foo</td><td>bar</td></tr>
+                  <tr><td>2011-02-05</td><td>foo</td><td>bar</td></tr>
+                  <tr><td>2011-02-06</td><td>foo</td><td>bar</td></tr>
+                  <tr><td>2011-02-07</td><td>foo</td><td>bar</td></tr>
+                  <tr><td>2011-02-08</td><td>foo</td><td>bar</td></tr>
+                  <tr><td>2011-02-09</td><td>foo</td><td>bar</td></tr>
+                  <tr><td>2011-02-10</td><td>foo</td><td>bar</td></tr>
+                  <tr><td>2011-02-11</td><td>foo</td><td>bar</td></tr>
+                  <tr><td>2011-02-12</td><td>foo</td><td>bar</td></tr>
+                  <tr><td>2011-02-13</td><td>foo</td><td>bar</td></tr>
+                  <tr><td>2011-02-14</td><td>foo</td><td>bar</td></tr>
+                  <tr><td>2011-02-15</td><td>foo</td><td>bar</td></tr>
+                  <tr><td>2011-02-16</td><td>foo</td><td>bar</td></tr>
+                  <tr><td>2011-02-17</td><td>foo</td><td>bar</td></tr>
+                  <tr><td>2011-02-18</td><td>foo</td><td>bar</td></tr>
+                  <tr><td>2011-02-19</td><td>foo</td><td>bar</td></tr>
+                  <tr><td>2011-02-20</td><td>foo</td><td>bar</td></tr>
+                  <tr><td>2011-02-21</td><td>foo</td><td>bar</td></tr>
+                  <tr><td>2011-02-22</td><td>foo</td><td>bar</td></tr>
+                  <tr><td>2011-02-23</td><td>foo</td><td>bar</td></tr>
+                  <tr><td>2011-02-24</td><td>foo</td><td>bar</td></tr>
+                  <tr><td>2011-02-25</td><td>foo</td><td>bar</td></tr>
+                  <tr><td>2011-02-26</td><td>foo</td><td>bar</td></tr>
+                  <tr><td>2011-02-27</td><td>foo</td><td>bar</td></tr>
+                  <tr><td>2011-02-28</td><td>foo</td><td>bar</td></tr>
+              </tbody>
+          </table>
+       </div>
+    </body>
+</html>

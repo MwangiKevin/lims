@@ -7,24 +7,24 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * UserGroup
  *
- * @ORM\Table(name="user_group")
- * @ORM\Entity
+ * Table(name="user_group")
+ * Entity
  */
 class UserGroup
 {
     /**
      * @var integer
      *
-     * @ORM\Column(name="id", type="integer", nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * Column(name="id", type="integer", nullable=false)
+     * Id
+     * GeneratedValue(strategy="IDENTITY")
      */
     private $id;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=50, nullable=false)
+     * Column(name="name", type="string", length=50, nullable=false)
      */
     private $name;
 
