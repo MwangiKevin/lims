@@ -4,6 +4,7 @@
 		<a href="#" data-toggle="modal" class="pink"> View Worksheets Created </a>
 	</h4>
 	<div class="hr hr-18 hr-double dotted"></div>
+	
 	<div class="row my-infobox">
 		<div class="table-header">
 			Worksheet info

@@ -8,7 +8,7 @@ class results extends MY_Controller {
 
 		$this->login_reroute(array(2));
 
-		$this->view_data['content_view'] 	= 	"template/blank";
+		$this->view_data['content_view'] 	= 	"eid/update_results";
 		$this->view_data['sidebar'] 		= 	"eid_sidebar";
 		$this->view_data['title'] 			= 	"EID | Results";
 		$this->view_data['filter']			=	false;
@@ -89,5 +89,10 @@ class results extends MY_Controller {
 												);
 		$this -> template($this->view_data);
 	}
-
+	
+	public function update_results()
+	{
+		$this->load->view("update_results_oscar");
+		
+	}
 }
