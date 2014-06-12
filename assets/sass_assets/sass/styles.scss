@@ -70,9 +70,27 @@ html{
 	padding:0px;
 	margin:0px;
 }
-.marete{
-  @extend .infobox;
-	background:#fff;
+
+.my-input-group{
+	@extend input-group;
+	margin-right:4px;
+	margin-left:0px;
+}
+.my-input-group-caption{
+	@extend input-group-addon;
+	width:35%;
+	font-weight: normal;
+	padding: 3px 3px;
+	font-size: 11px; 
+	font-weight: normal; 
+	text-align: center;
+	background-color: #EDF3F4 !important; 
+ 	border-radius: 4px;
+}
+
+.nb{
+	margin:0 0 3px 0 !important;
+	padding:0px !important;
 }
 
 

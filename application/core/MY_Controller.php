@@ -19,8 +19,32 @@ class  MY_Controller  extends  MX_Controller {
 		date_default_timezone_set('Africa/Nairobi');
 		$this->view_data	=  	array_merge($this->view_data,$this->load_libraries(array()));
 		$this->em = $this->doctrine->em;
+
+		$this->timeout();
 	}
 
+	/*
+	*
+	*	Logs the user out after the configred amout of time
+	*
+	*/
+	protected function timeout(){
+		$timeout_max = $this->config->item('login_timeout_max');
+
+		if(!$this-> session-> userdata('last_activity')){
+			$this -> session -> set_userdata('last_activity', strtotime($this->now()));
+		}elseif ($this -> session -> userdata("login_status")==true) {
+			$from_time = $this-> session-> userdata('last_activity');
+			$to_time = strtotime($this->now());
+			$diff = round(abs($to_time - $from_time) / 60,2);
+			if($diff>$timeout_max){			
+				$this->logout();
+			}			
+			$this -> session -> set_userdata('last_activity', strtotime($this->now()));
+		}else{
+			$this -> session -> set_userdata('last_activity', strtotime($this->now()));
+		}
+	}
 
 	/*
 	*
@@ -205,6 +229,16 @@ class  MY_Controller  extends  MX_Controller {
 		$this -> session -> sess_destroy();
 		redirect("login");
 
+	}
+
+
+	public function today(){
+
+		return $today = date('Y-m-d');
+	}
+	public function now(){
+
+		return $now = date('Y-m-d h:i:s a');		
 	}
 
 }

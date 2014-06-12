@@ -131,22 +131,24 @@
 				</li>
 				<li class="light-blue">
 					<a data-toggle="dropdown" href="#" class="dropdown-toggle">
-						<img class="nav-user-photo" src="<?php echo base_url();?>assets/sass_assets/sass/theme/avatars/avatar2.png" alt="Jason's Photo" />
+						<img class="nav-user-photo" src="<?php echo base_url();?>assets/sass_assets/sass/theme/avatars/avatar2.png" alt="user Photo" />
 						<span class="user-info">
 							<small>Welcome,</small>
-							Jason
+							<?php echo $this->session->userdata("name");?>
 						</span>
 
 						<i class="ace-icon fa fa-caret-down"></i>
 					</a>
 
 					<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+						
 						<!-- <li>
 							<a href="user/settings">
 								<i class="ace-icon fa fa-cog"></i>
 								Settings
 							</a>
 						</li> -->
+
 						<li>
 							<a href="<?php echo base_url("user/profile");?>">
 								<i class="ace-icon fa fa-user"></i>

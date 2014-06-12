@@ -9,11 +9,11 @@
 * @usage 		
 */
 
-class blank extends MY_Controller{
+class test extends MY_Controller{
 
 
 	public function __construct(){
-
+		
 		parent::__construct();
 		$this->view_data['content_view'] 	= "test/blank_view";
 		$this->view_data['sidebar'] 		= "eid_sidebar";
@@ -25,8 +25,9 @@ class blank extends MY_Controller{
 	}
 
 	public function index(){
-		
-		$this -> template($this->view_data);
+		echo "<pre/>";
+		print_r($this->session->all_userdata());
+		//echo json_encode($this->session->all_userdata()); ;
 
 	}
 

@@ -6,6 +6,7 @@ class eid extends MY_Controller {
 
 	public function __construct(){
 
+		parent::__construct();
 		$this->login_reroute(array(2));
 
 		$this->view_data['content_view'] 	= 	"eid/dashboard_view";

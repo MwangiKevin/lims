@@ -6,6 +6,7 @@ class requisition extends MY_Controller {
 
 	public function __construct(){
 
+		parent::__construct();
 		$this->login_reroute(array(2));
 
 		$this->view_data['content_view'] 	= 	"eid/requisition_view";
@@ -42,6 +43,10 @@ class requisition extends MY_Controller {
 	public function fill(){		
 		
 		$this -> template($this->view_data);
+	}
+
+	public function submit_requisition(){
+		
 	}
 
 	public function samples(){		
