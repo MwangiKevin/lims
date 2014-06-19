@@ -35,7 +35,7 @@ class lab_consumption extends MY_Controller {
 	}
 
 	public function monthly(){		
-
+		$this->view_data['content_view'] 	= 	"template/blank_monthly_reporting";
 		$this->view_data['menu_select']		= 	array(5,0);
 		$this->view_data['breadcrumbs'][2] =	array(
 														"title" 	=>	"Monthly Reports",
@@ -47,7 +47,7 @@ class lab_consumption extends MY_Controller {
 	}
 
 	public function reports(){		
-
+		$this->view_data['content_view'] 	= 	"template/blank_reports";
 		$this->view_data['menu_select']		= 	array(5,1);
 		$this->view_data['breadcrumbs'][2] =	array(
 														"title" 	=>	"Monthly Reports",
@@ -59,7 +59,7 @@ class lab_consumption extends MY_Controller {
 	}
 
 	public function received_consumables(){		
-
+		$this->view_data['content_view'] 	= 	"template/blank_received_consumables";
 		$this->view_data['menu_select']		= 	array(5,2);
 		$this->view_data['breadcrumbs'][2] =	array(
 														"title" 	=>	"Monthly Reports",
@@ -71,7 +71,7 @@ class lab_consumption extends MY_Controller {
 	}
 
 	public function inventory(){		
-
+		$this->view_data['content_view'] 	= 	"template/blank_inventory";
 		$this->view_data['menu_select']		= 	array(5,3);
 		$this->view_data['breadcrumbs'][2] =	array(
 														"title" 	=>	"Monthly Reports",
