@@ -9,6 +9,11 @@ class vl extends MY_Controller {
 		//$this->view_data['sidebar'] 		= "eid_sidebar";
 		$this->view_data['title'] 			= "Dashboard";
 		$this->view_data['filter']			=	false;
+		
+		
+		$this->view_data['b_color']			=	"skin-2";
+		$this->view_data['topleft_title']	=	"Viral Load";
+		
 		$this->view_data 					=	array_merge($this->view_data,$this->load_libraries(array('dataTables','style-bootstap')));
 	}
 	
@@ -17,7 +22,7 @@ class vl extends MY_Controller {
 		$this->login_reroute(array(2));
 
 		$this->view_data['content_view'] 	= 	"vl/home_page_view";
-		$this->view_data['sidebar'] 		= 	"eid_sidebar";
+		$this->view_data['sidebar'] 		= 	"vl_sidebar";
 		$this->view_data['title'] 			= 	"Viral Load | Dashboard";
 		$this->view_data['filter']			=	false;
 		$this->view_data 					=	array_merge($this->view_data,$this->load_libraries(array()));		

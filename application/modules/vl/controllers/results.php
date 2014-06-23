@@ -8,30 +8,31 @@ class results extends MY_Controller {
 
 		$this->login_reroute(array(2));
 
-		$this->view_data['content_view'] 	= 	"eid/update_results";
-		$this->view_data['sidebar'] 		= 	"eid_sidebar";
-		$this->view_data['title'] 			= 	"EID | Results";
+		$this->view_data['content_view'] 	= 	"vl/update_results";
+		$this->view_data['sidebar'] 		= 	"vl_sidebar";
+		$this->view_data['title'] 			= 	"Viral Load | Results";
 		$this->view_data['filter']			=	false;
 		
-		$this->view_data['b_color']			=	"no-skin";
-		$this->view_data['topleft_title']	=	"EID";
+		
+		$this->view_data['b_color']			=	"skin-2";
+		$this->view_data['topleft_title']	=	"Viral Load";
 		
 		$this->view_data 					=	array_merge($this->view_data,$this->load_libraries(array()));		
 		$this->view_data['menu_select']		= 	array(3,0);
 		$this->view_data['breadcrumbs'] 	=	array(
 														0 	=>	array(
 																	"title" 	=>	"Home",
-																	"link"		=>	base_url()."eid/",
+																	"link"		=>	base_url()."vl/",
 																	"class"		=>	""
 																	),
 														1 	=>	array(
 																	"title" 	=>	"Results",
-																	"link"		=>	base_url()."eid/results",
+																	"link"		=>	base_url()."vl/results",
 																	"class"		=>	"active"
 																	),
 														2 	=>	array(
 																	"title" 	=>	"Update",
-																	"link"		=>	base_url()."eid/results/update",
+																	"link"		=>	base_url()."vl/results/update",
 																	"class"		=>	"active"
 																	)
 												);
@@ -49,22 +50,22 @@ class results extends MY_Controller {
 	}
 
 	public function dispatch(){	
-
+		$this->view_data['content_view'] 	= 	"vl/dispatch";
 		$this->view_data['menu_select']		= 	array(3,1);
 		$this->view_data['breadcrumbs'] 	=	array(
 														0 	=>	array(
 																	"title" 	=>	"Home",
-																	"link"		=>	base_url()."eid/",
+																	"link"		=>	base_url()."vl/",
 																	"class"		=>	""
 																	),
 														1 	=>	array(
 																	"title" 	=>	"Results",
-																	"link"		=>	base_url()."eid/results",
+																	"link"		=>	base_url()."vl/results",
 																	"class"		=>	"active"
 																	),
 														2 	=>	array(
 																	"title" 	=>	"Dispatch",
-																	"link"		=>	base_url()."eid/results/dispatch",
+																	"link"		=>	base_url()."vl/results/dispatch",
 																	"class"		=>	"active"
 																	)
 												);		
@@ -72,31 +73,25 @@ class results extends MY_Controller {
 	}
 
 	public function view(){		
-		
+		$this->view_data['content_view'] 	= 	"vl/view_worksheet";
 		$this->view_data['menu_select']		= 	array(3,2);
 		$this->view_data['breadcrumbs'] 	=	array(
 														0 	=>	array(
 																	"title" 	=>	"Home",
-																	"link"		=>	base_url()."eid/",
+																	"link"		=>	base_url()."vl/",
 																	"class"		=>	""
 																	),
 														1 	=>	array(
 																	"title" 	=>	"Results",
-																	"link"		=>	base_url()."eid/results",
+																	"link"		=>	base_url()."vl/results",
 																	"class"		=>	"active"
 																	),
 														2 	=>	array(
 																	"title" 	=>	"View",
-																	"link"		=>	base_url()."eid/results/view",
+																	"link"		=>	base_url()."vl/results/view",
 																	"class"		=>	"active"
 																	)
 												);
 		$this -> template($this->view_data);
-	}
-	
-	public function update_results()
-	{
-		$this->load->view("update_results_oscar");
-		
 	}
 }

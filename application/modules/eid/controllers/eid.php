@@ -11,6 +11,12 @@ class eid extends MY_Controller {
 		$this->view_data['sidebar'] 		= 	"eid_sidebar";
 		$this->view_data['title'] 			= 	"EID | Dashboard";
 		$this->view_data['filter']			=	false;
+		
+		//skin and top left title
+		$this->view_data['b_color']			=	"no-skin";
+		$this->view_data['topleft_title']					=	"EID";
+		
+		
 		//$this->view_data 					=	array_merge($this->view_data,$this->load_libraries(array()));
 		$this->view_data 					=	array_merge($this->view_data,$this->load_libraries(array('dataTables','style-bootstap')));		
 		$this->view_data['menu_select']		= 	array(0);
