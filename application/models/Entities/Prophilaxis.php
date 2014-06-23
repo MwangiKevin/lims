@@ -2,57 +2,85 @@
 
 namespace models\Entities;
 
-use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Mapping as ORM;
 
 /**
  * Prophilaxis
  *
- * Table(name="prophilaxis")
- * Entity
+ * @Table(name="prophilaxis")
+ * @Entity
  */
 class Prophilaxis
 {
     /**
      * @var integer
      *
-     * Column(name="id", type="integer", nullable=false)
-     * Id
-     * GeneratedValue(strategy="IDENTITY")
+     * @Column(name="id", type="integer", nullable=false)
+     * @Id
+     * @GeneratedValue(strategy="IDENTITY")
      */
     private $id;
 
     /**
      * @var string
      *
-     * Column(name="name", type="string", length=40, nullable=false)
+     * @Column(name="name", type="string", length=40, nullable=false)
      */
     private $name;
 
     /**
-     * @var integer
+     * @var string
      *
-     * Column(name="desc", type="integer", nullable=false)
+     * @Column(name="desc", type="string", length=40, nullable=false)
      */
     private $desc;
 
     /**
      * @var integer
      *
-     * Column(name="program", type="integer", nullable=false)
+     * @Column(name="eid", type="integer", nullable=false)
      */
-    private $program;
+    private $eid;
 
     /**
      * @var integer
      *
-     * Column(name="line", type="integer", nullable=false)
+     * @Column(name="vl", type="integer", nullable=false)
+     */
+    private $vl;
+
+    /**
+     * @var integer
+     *
+     * @Column(name="infant_prophilaxis", type="integer", nullable=false)
+     */
+    private $infantProphilaxis;
+
+    /**
+     * @var integer
+     *
+     * @Column(name="pmtc_pregnancy", type="integer", nullable=false)
+     */
+    private $pmtcPregnancy;
+
+    /**
+     * @var integer
+     *
+     * @Column(name="pmtc_delivery", type="integer", nullable=false)
+     */
+    private $pmtcDelivery;
+
+    /**
+     * @var integer
+     *
+     * @Column(name="line", type="integer", nullable=false)
      */
     private $line;
 
     /**
      * @var integer
      *
-     * Column(name="type", type="integer", nullable=false)
+     * @Column(name="type", type="integer", nullable=false)
      */
     private $type;
 
@@ -93,7 +121,7 @@ class Prophilaxis
     /**
      * Set desc
      *
-     * @param integer $desc
+     * @param string $desc
      * @return Prophilaxis
      */
     public function setDesc($desc)
@@ -106,7 +134,7 @@ class Prophilaxis
     /**
      * Get desc
      *
-     * @return integer 
+     * @return string 
      */
     public function getDesc()
     {
@@ -114,26 +142,118 @@ class Prophilaxis
     }
 
     /**
-     * Set program
+     * Set eid
      *
-     * @param integer $program
+     * @param integer $eid
      * @return Prophilaxis
      */
-    public function setProgram($program)
+    public function setEid($eid)
     {
-        $this->program = $program;
+        $this->eid = $eid;
     
         return $this;
     }
 
     /**
-     * Get program
+     * Get eid
      *
      * @return integer 
      */
-    public function getProgram()
+    public function getEid()
     {
-        return $this->program;
+        return $this->eid;
+    }
+
+    /**
+     * Set vl
+     *
+     * @param integer $vl
+     * @return Prophilaxis
+     */
+    public function setVl($vl)
+    {
+        $this->vl = $vl;
+    
+        return $this;
+    }
+
+    /**
+     * Get vl
+     *
+     * @return integer 
+     */
+    public function getVl()
+    {
+        return $this->vl;
+    }
+
+    /**
+     * Set infantProphilaxis
+     *
+     * @param integer $infantProphilaxis
+     * @return Prophilaxis
+     */
+    public function setInfantProphilaxis($infantProphilaxis)
+    {
+        $this->infantProphilaxis = $infantProphilaxis;
+    
+        return $this;
+    }
+
+    /**
+     * Get infantProphilaxis
+     *
+     * @return integer 
+     */
+    public function getInfantProphilaxis()
+    {
+        return $this->infantProphilaxis;
+    }
+
+    /**
+     * Set pmtcPregnancy
+     *
+     * @param integer $pmtcPregnancy
+     * @return Prophilaxis
+     */
+    public function setPmtcPregnancy($pmtcPregnancy)
+    {
+        $this->pmtcPregnancy = $pmtcPregnancy;
+    
+        return $this;
+    }
+
+    /**
+     * Get pmtcPregnancy
+     *
+     * @return integer 
+     */
+    public function getPmtcPregnancy()
+    {
+        return $this->pmtcPregnancy;
+    }
+
+    /**
+     * Set pmtcDelivery
+     *
+     * @param integer $pmtcDelivery
+     * @return Prophilaxis
+     */
+    public function setPmtcDelivery($pmtcDelivery)
+    {
+        $this->pmtcDelivery = $pmtcDelivery;
+    
+        return $this;
+    }
+
+    /**
+     * Get pmtcDelivery
+     *
+     * @return integer 
+     */
+    public function getPmtcDelivery()
+    {
+        return $this->pmtcDelivery;
     }
 
     /**

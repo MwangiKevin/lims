@@ -17,8 +17,12 @@ class minify_util extends MY_Controller{
 
 										);
 
-	public function __construct(){
-
+	/**
+	* @job =  Constructor
+	*/
+	function __construct() {
+		parent::__construct();
+	
 		$this->load->driver('minify');
 
 	}

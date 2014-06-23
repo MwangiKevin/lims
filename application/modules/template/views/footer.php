@@ -12,3 +12,26 @@
 		</div>
 	</div>
 </div>
+
+<script>
+
+
+$( document ).ready(function() {
+
+    var facilities;
+
+    $.getJSON("<?php echo base_url('assets/json/facilities.json');?>", function(data) {
+        facilities = data;
+        $(".facility-select").select2({ data: facilities });
+    });  
+
+
+});
+
+
+$('.datepicker').datepicker({
+      format: 'dd-m-yyyy',
+      autoclose: true
+});
+
+</script>

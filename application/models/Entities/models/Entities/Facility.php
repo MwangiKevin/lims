@@ -24,9 +24,23 @@ class Facility
     /**
      * @var string
      *
+     * @ORM\Column(name="code", type="string", length=20, nullable=false)
+     */
+    private $code;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="name", type="string", length=100, nullable=false)
      */
     private $name;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="district_id", type="integer", nullable=true)
+     */
+    private $districtId;
 
     /**
      * @var integer
@@ -45,9 +59,30 @@ class Facility
     /**
      * @var string
      *
-     * @ORM\Column(name="phone", type="string", length=50, nullable=false)
+     * @ORM\Column(name="mail_address", type="string", length=60, nullable=false)
      */
-    private $phone;
+    private $mailAddress;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="telephone", type="string", length=50, nullable=false)
+     */
+    private $telephone;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="telephone2", type="string", length=40, nullable=false)
+     */
+    private $telephone2;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="contact_person_phone", type="string", length=100, nullable=false)
+     */
+    private $contactPersonPhone;
 
     /**
      * @var string
@@ -55,16 +90,6 @@ class Facility
      * @ORM\Column(name="google_maps", type="string", length=500, nullable=true)
      */
     private $googleMaps;
-
-    /**
-     * @var \models\Entities\District
-     *
-     * @ORM\ManyToOne(targetEntity="models\Entities\District")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="district_id", referencedColumnName="id")
-     * })
-     */
-    private $district;
 
 
     /**
@@ -75,6 +100,29 @@ class Facility
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set code
+     *
+     * @param string $code
+     * @return Facility
+     */
+    public function setCode($code)
+    {
+        $this->code = $code;
+    
+        return $this;
+    }
+
+    /**
+     * Get code
+     *
+     * @return string 
+     */
+    public function getCode()
+    {
+        return $this->code;
     }
 
     /**
@@ -98,6 +146,29 @@ class Facility
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Set districtId
+     *
+     * @param integer $districtId
+     * @return Facility
+     */
+    public function setDistrictId($districtId)
+    {
+        $this->districtId = $districtId;
+    
+        return $this;
+    }
+
+    /**
+     * Get districtId
+     *
+     * @return integer 
+     */
+    public function getDistrictId()
+    {
+        return $this->districtId;
     }
 
     /**
@@ -147,26 +218,95 @@ class Facility
     }
 
     /**
-     * Set phone
+     * Set mailAddress
      *
-     * @param string $phone
+     * @param string $mailAddress
      * @return Facility
      */
-    public function setPhone($phone)
+    public function setMailAddress($mailAddress)
     {
-        $this->phone = $phone;
+        $this->mailAddress = $mailAddress;
     
         return $this;
     }
 
     /**
-     * Get phone
+     * Get mailAddress
      *
      * @return string 
      */
-    public function getPhone()
+    public function getMailAddress()
     {
-        return $this->phone;
+        return $this->mailAddress;
+    }
+
+    /**
+     * Set telephone
+     *
+     * @param string $telephone
+     * @return Facility
+     */
+    public function setTelephone($telephone)
+    {
+        $this->telephone = $telephone;
+    
+        return $this;
+    }
+
+    /**
+     * Get telephone
+     *
+     * @return string 
+     */
+    public function getTelephone()
+    {
+        return $this->telephone;
+    }
+
+    /**
+     * Set telephone2
+     *
+     * @param string $telephone2
+     * @return Facility
+     */
+    public function setTelephone2($telephone2)
+    {
+        $this->telephone2 = $telephone2;
+    
+        return $this;
+    }
+
+    /**
+     * Get telephone2
+     *
+     * @return string 
+     */
+    public function getTelephone2()
+    {
+        return $this->telephone2;
+    }
+
+    /**
+     * Set contactPersonPhone
+     *
+     * @param string $contactPersonPhone
+     * @return Facility
+     */
+    public function setContactPersonPhone($contactPersonPhone)
+    {
+        $this->contactPersonPhone = $contactPersonPhone;
+    
+        return $this;
+    }
+
+    /**
+     * Get contactPersonPhone
+     *
+     * @return string 
+     */
+    public function getContactPersonPhone()
+    {
+        return $this->contactPersonPhone;
     }
 
     /**
@@ -190,28 +330,5 @@ class Facility
     public function getGoogleMaps()
     {
         return $this->googleMaps;
-    }
-
-    /**
-     * Set district
-     *
-     * @param \models\Entities\District $district
-     * @return Facility
-     */
-    public function setDistrict(\models\Entities\District $district = null)
-    {
-        $this->district = $district;
-    
-        return $this;
-    }
-
-    /**
-     * Get district
-     *
-     * @return \models\Entities\District 
-     */
-    public function getDistrict()
-    {
-        return $this->district;
     }
 }
