@@ -1,4 +1,3 @@
-
 <style>
 /* some elements used in demo only */
 .spinner-preview {
@@ -31,7 +30,6 @@
 				<strong><h2>Create Worksheet (Abbort) EID</h2></strong>
 			</div>
 		</div><!--widget-header widget-header-flat-->
-
 		<div class="row" style="height:50%; margin-bottom: 0px;"><!-- first row-->
 
 			<div id="col-sm-7 infobox-container" style="margin-top: 1%;">
@@ -211,7 +209,6 @@
 				</div>
 			</center>
 		</div><!--second row-->
-
 			<!-- <div class="row" >
 				<div class="col-md-1">column 1</div>
 				<div class="col-md-1">column 2</div>
@@ -225,6 +222,8 @@
 				<input type="button" value="Save & Print"/>
 				
 			</div>
+
+
 		</div><!-- /.main-container -->
 
 		<div class="footer">

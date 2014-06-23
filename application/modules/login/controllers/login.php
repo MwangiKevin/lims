@@ -17,7 +17,6 @@ class Login extends MY_Controller {
 	}
 
 	public function index() {
-
 		$this	->	module_after_login();
 		$this	->	load 	->	view("login_v",$this->view_data);
 	}

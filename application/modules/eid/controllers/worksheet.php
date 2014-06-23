@@ -14,7 +14,6 @@ class worksheet extends MY_Controller {
 		$this->view_data['content_view'] 	= 	"eid/cobas_view";
 		$this->view_data['sidebar'] 		= 	"eid_sidebar";
 		$this->view_data['title'] 			= 	"EID";
-		$this->view_data['filter']			=	false;
 		$this->view_data 					=	array_merge($this->view_data,$this->load_libraries(array()));		
 		$this->view_data['menu_select']		= 	array(2,0);
 		$this->view_data['breadcrumbs'] 	=	array(
@@ -78,5 +77,4 @@ class worksheet extends MY_Controller {
 	public function print_worksheet($id=null){
 
 	}
-
 }
