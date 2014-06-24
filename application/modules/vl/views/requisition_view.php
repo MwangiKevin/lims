@@ -4,7 +4,7 @@
 		<h4 class="lighter">
 			<i class="ace-icon fa fa-hand-o-right icon-animated-hand-pointer blue"></i>
 			<a href="#" data-toggle="modal" class="pink"> Fill The Form and Click Submit </a>
-		</h4>
+		</h4><!--lighter-->
 
 		<div class="hr hr-18 hr-double dotted"></div>
 
@@ -17,185 +17,165 @@
 
 			<div class="widget-body">
 				<div class="widget-main">
-					<div class="row my-infobox" style="padding:8px">
-						<div class="col-xs-3 my-no-margin-padding" >
-							<div class="my-form-info my-form-info-striped"   >
-								<div class="my-form-info-name" style=""> Date Samples Were Collected </div>
-								<div class="my-form-info-value">
-									<span class="editable editable-click" id="username"><?php echo date("Y-F-d");?></span>
-								</div>
-							</div>
-						</div>
-						<div class="col-xs-3 my-no-margin-padding" >
+					Details
+					<div class="row my-infobox">
+						<h4 class="green smaller lighter">Sample</h4>
+							<div class="profile-info-value" style="width: auto; ">
 							<div class="my-form-info my-form-info-striped"  >								
-								<div class="my-form-info-name" style=""> Date Samples Were Received </div>
+								<div class="my-form-info-name" style="margin-top: 5%;"> Facility Name: </div>
+								<div class="my-form-info-value">
+									<select id="form-field-select-1" class="form-control">
+										<option> Facility 1</option>
+										<option> Facility 2</option>
+										<option> Facility 3</option>
+									</select>
+								</div>
+							</div>
+							<div class="my-form-info my-form-info-striped"  >								
+								<div class="my-form-info-name" style="margin-top: 5%;"> Date Samples Were Collected </div>
 								<div class="my-form-info-value">
 									<span class="editable editable-click" id="username"><?php echo date("Y-F-d");?></span>
 								</div>
 							</div>
 						</div>
+						
+						<div class="profile-info-value" style="width: auto; ">
+							
+							<div class="my-form-info my-form-info-striped"  >								
+								<div class="my-form-info-name" style="margin-top: 5%;"> Date Samples Were Dispatched </div>
+								<div class="my-form-info-value">
+									<span class="editable editable-click" id="username"><?php echo date("Y-F-d");?></span>
+								</div>
+							</div>
+							
+							<div class="my-form-info my-form-info-striped"  >								
+								<div class="my-form-info-name" style="margin-top: 5%;"> Date Samples Were Recieved </div>
+								<div class="my-form-info-value">
+									<span class="editable editable-click" id="username"><?php echo date("Y-F-d");?></span>
+								</div>
+							</div>
+						</div>
+							
+						<div class="profile-info-value" style="width: auto; ">
+							<div class="my-form-info my-form-info-striped"  >								
+								<div class="my-form-info-name" style="margin-top: 5%;"> Type of Sample</div>
+								<div class="my-form-info-value">
+									<input class="form-control input-mask-phone" type="text" id="form-field-mask-2">
+								</div>
+							</div>
+							
+							<div class="my-form-info my-form-info-striped"  >								
+								<div class="my-form-info-name" style="margin-top: 5%;"> Status Received</div>
+								<div class="my-form-info-value">
+									<input class="form-control input-mask-phone" type="text" id="form-field-mask-2">
+								</div>
+							</div>
+						</div>
+						
+					</div><!--row my-infobox under Details -->
+
+					<div class="row my-infobox">
+							<div class="profile-info-value" style="width: auto; ">
+								<h4 class="green smaller lighter">Patient</h4>
+								<div class="my-form-info my-form-info-striped" style="margin-top: 3%;"  >
+									<div class="my-form-info-name" > Patient CCC Number: </div>
+									<div class="my-form-info-value">
+									<input class="form-control input-mask-phone" type="text" id="form-field-mask-2"></div>
+								</div>
+								
+								<div class="my-form-info my-form-info-striped"   >
+									<div class="my-form-info-name" > Gender: </div>
+									<div class="my-form-info-value">
+										<label style="display: inline-block">
+								<input class="ace" type="radio" name="form-field-radio">
+								<span class="lbl"> Female</span>
+							</label>
+							&nbsp;
+							<label style="display: inline-block">
+								<input class="ace" type="radio" name="form-field-radio">
+								<span class="lbl"> Male</span>
+							</label>
+									</div>
+								</div>
+								
+								<div class="my-form-info my-form-info-striped"   >
+									<div class="my-form-info-name" > DOB: </div>
+									<div class="my-form-info-value">
+										<input class="form-control input-mask-phone" type="text" id="form-field-mask-2" style="margin-left:10%; width:80%; height: 25px;">
+									</div>
+									
+									<div class="my-form" style="background-color:#edf3f4; color: #336199; 0px; padding: 10%; border: dotted .5px" > Age: </div>
+									<div class="my-form-info-value">
+										<input class="form-control input-mask-phone" type="text" id="form-field-mask-2" style="width:80%; height: 25px;">
+									</div>
+								</div>
+							
+								<div class="my-form-info my-form-info-striped"   >
+									<div class="my-form-info-name" > ART Initation Date: </div>
+									<div class="my-form-info-value">
+										<input class="form-control input-mask-phone" type="text" id="form-field-mask-2">
+									</div>
+								</div>
+								
+								<div class="my-form-info my-form-info-striped"   >
+									<div class="my-form-info-name" > Patient/Caregiver Phone No: </div>
+									<div class="my-form-info-value">
+										<input class="form-control input-mask-phone" type="text" id="form-field-mask-2">
+									</div>
+								</div>
+							</div>
+							
+							<div class="profile-info-value" style="width: auto; ">
+								<h4 class="green smaller lighter">History</h4>
+								
+								<div class="my-form-info my-form-info-striped"  style="margin-top: 4%;" >
+									<div class="my-form-info-name" > Current Regime: </div>
+									<div class="my-form-info-value">
+										<input class="form-control input-mask-phone" type="text" id="form-field-mask-2">
+									</div>
+								</div>
+								
+								<div class="my-form-info my-form-info-striped"   >
+									<div class="my-form-info-name" > 1st or 2nd Line Regimen: </div>
+									<div class="my-form-info-value">
+										<input class="form-control input-mask-phone" type="text" id="form-field-mask-2">
+									</div>
+								</div>
+								
+								<div class="my-form-info my-form-info-striped"   >
+									<div class="my-form-info-name" >  Justification: </div>
+									<div class="my-form-info-value">
+										<input class="form-control input-mask-phone" type="text" id="form-field-mask-2">
+									</div>
+								</div>
+							</div>
+					</div>
+					
+					<div class="row my-infobox">
+						<h4 class="green smaller lighter">Others</h4>
+						
 
 						<div class="col-xs-6 my-no-margin-padding" >
-							<div class="my-infobox" style="height: 54px;">
-								<center>
-									<br/>&nbsp;
-									G4S Courier A/C C00339
-								</center>
-							</div>
-						</div>
-					</div>
-
-					<div class="row my-infobox">
-						<div class="col-xs-3 my-no-margin-padding" >
-							<div class="my-form-info my-form-info-striped"   >
-								<div class="my-form-info-name" > Facility Name </div>
+							<div class="my-form-info my-form-info-striped"  style="width:98.5%;height:88px" >
+								<div class="my-form-info-name" style="width:21%"> <br/>&nbsp;Issues/Requests/Comments<br/>&nbsp;</div>
 								<div class="my-form-info-value">
 									<span class="editable editable-click" id="username"></span>
 								</div>
 							</div>
-							<div class="my-form-info my-form-info-striped"   >
-								<div class="my-form-info-name" > Facility Code </div>
-								<div class="my-form-info-value">
-									<span class="editable editable-click" id="username"></span>
-								</div>
-							</div>
-						</div>
-						<div class="col-xs-3 my-no-margin-padding" >
-							<div class="my-form-info my-form-info-striped"   >
-								<div class="my-form-info-name" > District </div>
-								<div class="my-form-info-value">
-									<span class="editable editable-click" id="username"></span>
-								</div>
-							</div>
-							<div class="my-form-info my-form-info-striped"   >
-								<div class="my-form-info-name" > Region </div>
-								<div class="my-form-info-value">
-									<span class="editable editable-click" id="username"></span>
-								</div>
-							</div>
-						</div>
-						<div class="col-xs-3 my-no-margin-padding" >
-							<div class="my-form-info my-form-info-striped"   >
-								<div class="my-form-info-name" > Telephone 1 </div>
-								<div class="my-form-info-value">
-									<span class="editable editable-click" id="username"></span>
-								</div>
-							</div>
-							<div class="my-form-info my-form-info-striped"   >
-								<div class="my-form-info-name" > Telephone 2 </div>
-								<div class="my-form-info-value">
-									<span class="editable editable-click" id="username"></span>
-								</div>
-							</div>
-						</div>
-						<div class="col-xs-3 my-no-margin-padding" >
-							<div class="my-form-info my-form-info-striped"   >
-								<div class="my-form-info-name" > Contact Person </div>
-								<div class="my-form-info-value">
-									<span class="editable editable-click" id="username"></span>
-								</div>
-							</div>
-							<div class="my-form-info my-form-info-striped"   >
-								<div class="my-form-info-name" > Phone no </div>
-								<div class="my-form-info-value">
-									<span class="editable editable-click" id="username"></span>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="row my-infobox">
-						<div class="col-xs-3 my-no-margin-padding" >
-							<div class="my-form-info my-form-info-striped"   >
-								<div class="my-form-info-name" > Address </div>
-								<div class="my-form-info-value">
-									<span class="editable editable-click" id="username"></span>
-								</div>
-							</div>
-							<div class="my-form-info my-form-info-striped"   >
-								<div class="my-form-info-name" > Email (if available) </div>
-								<div class="my-form-info-value">
-									<span class="editable editable-click" id="username"></span>
-								</div>
-							</div>
-						</div>
-						<div class="col-xs-3 my-no-margin-padding pink" >
-							Samples will be rejected if address is incomplete. 
-							<br/>
-							Indicate the receiving address in case they are rejected. 
-							<br/>
-							(Nearest courier collection office to facility).
 						</div>
 
 						<div class="col-xs-6 my-no-margin-padding" >
 							<div class="my-form-info my-form-info-striped"  style="width:98.5%;height:88px" >
-								<div class="my-form-info-name" style="width:21%"> <br/>&nbsp;Comments<br/>&nbsp;</div>
+								<div class="my-form-info-name" style="width:21%"> <br/>&nbsp;Lab Comments<br/>&nbsp;</div>
 								<div class="my-form-info-value">
 									<span class="editable editable-click" id="username"></span>
 								</div>
 							</div>
 						</div>
-
-					</div>					
-					<h4 class="green smaller lighter">Sample collection material Requisition</h4>
-
-					<div class="row my-infobox" >
-						<div class="col-xs-3 my-no-margin-padding" >
-							<div class="my-form-info my-form-info-striped"   >
-								<div class="my-form-info-name" > Lab Requisition Forms </div>
-								<div class="my-form-info-value">
-									<span class="editable editable-click" id="username"></span>
-								</div>
-							</div>
-							<div class="my-form-info my-form-info-striped"   >
-								<div class="my-form-info-name" > DBS Filter Papers </div>
-								<div class="my-form-info-value">
-									<span class="editable editable-click" id="username"></span>
-								</div>
-							</div>	
-						</div>						
-						<div class="col-xs-3 my-no-margin-padding" >
-							<div class="my-form-info my-form-info-striped"   >
-								<div class="my-form-info-name" > Glycerine Envelops </div>
-								<div class="my-form-info-value">
-									<span class="editable editable-click" id="username"></span>
-								</div>
-							</div>
-							<div class="my-form-info my-form-info-striped"   >
-								<div class="my-form-info-name" > Ziploc Bags </div>
-								<div class="my-form-info-value">
-									<span class="editable editable-click" id="username"></span>
-								</div>
-							</div>
-						</div>
-						<div class="col-xs-3 my-no-margin-padding" >
-							<div class="my-form-info my-form-info-striped"   >
-								<div class="my-form-info-name" > Desiccants </div>
-								<div class="my-form-info-value">
-									<span class="editable editable-click" id="username"></span>
-								</div>
-							</div>
-							<div class="my-form-info my-form-info-striped"  style="height:56px" >
-								<div class="my-form-info-name" > Drying Racks </div>
-								<div class="my-form-info-value">
-									<span class="editable editable-click" id="username"></span>
-								</div>
-							</div>
-						</div>
-						<div class="col-xs-3 my-no-margin-padding" >
-							<div class="my-form-info my-form-info-striped"   >
-								<div class="my-form-info-name" > Lancets </div>
-								<div class="my-form-info-value">
-									<span class="editable editable-click" id="username"></span>
-								</div>
-							</div>
-							<div class="my-form-info my-form-info-striped" style="height:56px"  >
-								<div class="my-form-info-name" > Others (specify) </div>
-								<div class="my-form-info-value">
-									<span class="editable editable-click" id="username"></span>
-								</div>
-							</div>
-						</div>		
-					</div>		
+					</div>	
+									
+					
+							
 
 					<h4 class="green smaller lighter">Tests Requisition</h4>
 					<div class="row my-infobox" style="padding:8px">
@@ -296,11 +276,11 @@
 						Submit
 						<i class="ace-icon fa fa-arrow-right icon-on-right"></i>
 					</button>
-				</div>
+				</div><!-- wizard-actions-->
 				<hr>
-			</div><!-- /.widget-main -->
-		</div><!-- /.widget-body -->
-	</div>
+			</div><!-- /.widget-body -->
+		</div><!-- /.widget-box -->
+	</div><!--col-xs-12-->
 </div><!-- /.col -->
 
 
@@ -319,53 +299,63 @@
 					<div class="col-xs-6 my-no-margin-padding" >
 						<div class="my-form-info my-form-info-striped input-group">
 							<span class="input-group-addon my-form-info-name">
-								Date of Sample Collection
+								Facility
 							</span>
 							<input class="form-control input-mask-phone" type="text" id="form-field-mask-2">
 						</div>	
 						<div class="my-form-info my-form-info-striped input-group">
 							<span class="input-group-addon my-form-info-name">
-								Infant Id
+								Collection Date
 							</span>
 							<input class="form-control input-mask-phone" type="text" id="form-field-mask-2">
 						</div>	
+						<div class="my-form-info my-form-info-striped input-group">
+							<span class="input-group-addon my-form-info-name">
+								Dispatch Date
+							</span>
+							<input class="form-control input-mask-phone" type="text" id="form-field-mask-2">
+						</div>
+						<div class="my-form-info my-form-info-striped input-group">
+							<span class="input-group-addon my-form-info-name">
+								Receieved Date
+							</span>
+							<input class="form-control input-mask-phone" type="text" id="form-field-mask-2">
+						</div>
+						
+						<div class="my-form-info my-form-info-striped input-group">
+							<span class="input-group-addon my-form-info-name">
+								Patient CCC No
+							</span>
+							<input class="form-control input-mask-phone" type="text" id="form-field-mask-2">
+						</div>	
+						
 						<div class="my-form-info my-form-info-striped input-group">
 							<span class="input-group-addon my-form-info-name">
 								Date of Birth
 							</span>
 							<input class="form-control input-mask-phone" type="text" id="form-field-mask-2">
 						</div>	
+						
 						<div class="my-form-info my-form-info-striped input-group">
 							<span class="input-group-addon my-form-info-name">
 								Age
 							</span>
 							<input class="form-control input-mask-phone" type="text" id="form-field-mask-2">
-						</div>	
+						</div>
+							
 						<div class="my-form-info my-form-info-striped input-group">
 							<span class="input-group-addon my-form-info-name">
 								Gender
 							</span>
-							<input class="form-control input-mask-phone" type="text" id="form-field-mask-2">
-						</div>	
-						<div class="my-form-info my-form-info-striped input-group">
-							<span class="input-group-addon my-form-info-name">
-								Entry Point
-							</span>
-							<input class="form-control input-mask-phone" type="text" id="form-field-mask-2">
-						</div>	
-						<div class="my-form-info my-form-info-striped input-group">
-							<span class="input-group-addon my-form-info-name">
-								Prophylaxis
-							</span>
-							<input class="form-control input-mask-phone" type="text" id="form-field-mask-2">
-						</div>						
-					</div>
-					<div class="col-xs-6 my-no-margin-padding" >
-						<div class="my-form-info my-form-info-striped input-group">
-							<span class="input-group-addon my-form-info-name">
-								Feeding
-							</span>
-							<input class="form-control input-mask-phone" type="text" id="form-field-mask-2">
+							<label style="display: inline-block">
+								<input class="ace" type="radio" name="form-field-radio">
+								<span class="lbl"> Female</span>
+							</label>
+							&nbsp;
+							<label style="display: inline-block">
+								<input class="ace" type="radio" name="form-field-radio">
+								<span class="lbl"> Male</span>
+							</label>
 						</div>	
 						<div class="my-form-info my-form-info-striped input-group">
 							<span class="input-group-addon my-form-info-name">
@@ -373,29 +363,57 @@
 							</span>
 							<input class="form-control input-mask-phone" type="text" id="form-field-mask-2">
 						</div>	
+						
 						<div class="my-form-info my-form-info-striped input-group">
 							<span class="input-group-addon my-form-info-name">
-								HIV Status
+								Type of Sample
 							</span>
 							<input class="form-control input-mask-phone" type="text" id="form-field-mask-2">
 						</div>	
 						<div class="my-form-info my-form-info-striped input-group">
 							<span class="input-group-addon my-form-info-name">
-								PMTCT Regimen
+								Status Received 
+							</span>
+							<input class="form-control input-mask-phone" type="text" id="form-field-mask-2">
+						</div>						
+					</div>
+					<div class="col-xs-6 my-no-margin-padding" >
+						<div class="my-form-info my-form-info-striped input-group">
+							<span class="input-group-addon my-form-info-name">
+								ART Initation Date:
+							</span>
+							<input class="form-control input-mask-phone" type="text" id="form-field-mask-2">
+						</div>	
+						
+						<div class="my-form-info my-form-info-striped input-group">
+							<span class="input-group-addon my-form-info-name">
+								Current Regime
 							</span>
 							<input class="form-control input-mask-phone" type="text" id="form-field-mask-2">
 						</div>	
 						<div class="my-form-info my-form-info-striped input-group">
 							<span class="input-group-addon my-form-info-name">
-								Repeat for Rejection
+								Justification
+							</span>
+							<input class="form-control input-mask-phone" type="text" id="form-field-mask-2">
+						</div>	
+						<div class="my-form-info my-form-info-striped input-group">
+							<span class="input-group-addon my-form-info-name">
+								1st or 2nd Line Regimen:
 							</span>
 							<input class="form-control input-mask-phone" type="text" id="form-field-mask-2">
 						</div>	
 						<div class="my-form-info my-form-info-striped input-group">
 							<span class="input-group-addon my-form-info-name" style="height:72px">
-								Confirmatory PCR <br/> @ 9 months
+								Issuse/Comments/<br/>Requests
 							</span>
-							<input class="form-control input-mask-phone" type="text" id="form-field-mask-2">
+							<textarea id="form-field-8" class="form-control" placeholder="Default Text" style="width: 100%; height: 100%;"></textarea>
+						</div>		
+						<div class="my-form-info my-form-info-striped input-group">
+							<span class="input-group-addon my-form-info-name" style="height:72px">
+								Lab Comments
+							</span>
+							<textarea id="form-field-8" class="form-control" placeholder="Default Text" style="width: 100%; height: 100%;"></textarea>
 						</div>						
 					</div>
 				</div>
