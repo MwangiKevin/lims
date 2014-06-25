@@ -23,7 +23,13 @@ $('#facility').change(function() {
 });
 
 $( document ).ready(function() {
-    
+
+    var test_reason;
+
+    $.getJSON("<?php echo base_url('assets/json/test_reasons_eid.json');?>", function(data) {
+        test_reason = data;
+        $(".test_reason").select2({ data: test_reason ,multiple: true});
+    });
 
 
 });
@@ -39,11 +45,13 @@ $(".add").click(function() {
      var next_id = parseInt(id) + 1;
 
 
-     cloned_object.attr("id", next_id);
-     cloned_object.find("input").val("");
-     cloned_object.find("#no").val(next_id);
+    cloned_object.attr("id", next_id);
+    cloned_object.find("input").val("");
+    cloned_object.find("#remove").removeClass( "hide" )
 
-     cloned_object.find("#remove").attr("onclick","remove_row("+next_id+")");
+    cloned_object.find("#test_reason_td").html('<input name="test_reason[]" id="test_reason" value="" class="form-control test_reason"  type="text">');
+
+    cloned_object.find("#remove").attr("onclick","remove_row("+next_id+")");
 
 
      cloned_object.insertAfter('#tests_table tr:last');
@@ -54,6 +62,13 @@ $(".add").click(function() {
      $('.datepicker').datepicker({
           format: 'dd-m-yyyy',
           autoclose: true
+    });
+
+    var test_reason;
+
+    $.getJSON("<?php echo base_url('assets/json/test_reasons_eid.json');?>", function(data) {
+        test_reason = data;
+        $(".test_reason").select2({ data: test_reason ,multiple: true});
     });
 
      return false;

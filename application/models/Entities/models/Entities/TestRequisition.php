@@ -38,13 +38,6 @@ class TestRequisition
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="date_dispatched", type="date", nullable=false)
-     */
-    private $dateDispatched;
-
-    /**
-     * @var \DateTime
-     *
      * @ORM\Column(name="date_received", type="date", nullable=false)
      */
     private $dateReceived;
@@ -146,29 +139,6 @@ class TestRequisition
     public function getFacilityId()
     {
         return $this->facilityId;
-    }
-
-    /**
-     * Set dateDispatched
-     *
-     * @param \DateTime $dateDispatched
-     * @return TestRequisition
-     */
-    public function setDateDispatched($dateDispatched)
-    {
-        $this->dateDispatched = $dateDispatched;
-    
-        return $this;
-    }
-
-    /**
-     * Get dateDispatched
-     *
-     * @return \DateTime 
-     */
-    public function getDateDispatched()
-    {
-        return $this->dateDispatched;
     }
 
     /**

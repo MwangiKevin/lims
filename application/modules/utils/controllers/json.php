@@ -34,7 +34,8 @@ class json extends MY_Controller {
 	* @job = to be run periodically and in case of certain change in lookup tables in the db
 	*/
 	public function write_all_json(){
-
+		$this->write_facilities();
+		$this->write_test_reasons();
 	}
 
 
@@ -61,6 +62,48 @@ class json extends MY_Controller {
 		file_put_contents($p, $facilities);
 
 		echo "Facilities Written <br/> ";
+	}
+	/**
+	* @job = writes test reason info
+	*/
+	public function write_test_reasons(){
+
+		$assoc	=	$this->json_model->test_reasons();
+		$eid_reasons  =	array();
+		$vl_reasons  =	array();
+
+		foreach ($assoc as $key => $value) {
+			if($value["eid"]==1){
+			$eid_reasons[] = array(
+										"id" 	=> $value["id"],
+										"name" 	=> $value["desc"],
+										"value" => $value["id"],
+										"text" 	=> $value["desc"]
+								);
+			}
+		}
+
+		foreach ($assoc as $key => $value) {
+			if($value["vl"]==1){
+			$vl_reasons[] = array(
+										"id" 	=> $value["id"],
+										"name" 	=> $value["desc"],
+										"value" => $value["id"],
+										"text" 	=> $value["desc"]
+								);
+			}
+		}
+
+		$eid_test_reasons 	= 	json_encode($eid_reasons);
+		$vl_test_reasons 	= 	json_encode($vl_reasons);
+
+		$p_eid 	=	$this->path."test_reasons_eid.json";
+		$p_vl 	=	$this->path."test_reasons_vl.json";
+
+		file_put_contents($p_eid, $eid_test_reasons);
+		file_put_contents($p_vl, $vl_test_reasons);
+
+		echo "Test reasons Written <br/> ";
 	}
 
 

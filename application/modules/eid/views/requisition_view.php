@@ -237,19 +237,15 @@
 						<table id="tests_table" class="table table-bordered table-responsive striped">
 							<thead>
 								<tr class="active">
-									<th>#</th>
-									<th style ="width: 18%;">Sample</th>
-									<th style ="width: 32%;">Infant Info</th>
-									<th style ="width: 18%;">Mother Info</th>
-									<th style ="width: 20%">Test Requisition Reason</th>
+									<th style ="width: 25%;">Sample</th>
+									<th style ="width: 35%;">Infant Info</th>
+									<th style ="width: 25%;">Mother Info</th>
+									<th style ="width: 20%">Test Requisition Reasons</th>
 									<th></th>
 								</tr>
 							</thead>
 							<tbody>
 								<tr class="" id = "1" class ="">
-									<td style="vertical-align:middle;">
-										<input id="no" type="text" style="width:25px;"  value="1" readonly required   />
-									</td>
 									<td>						
 										<div class="input-group my-input-group nb">
 											<span class="input-group-addon my-input-group-caption">
@@ -264,7 +260,7 @@
 
 										<div class="input-group my-input-group nb">
 											<span class="input-group-addon my-input-group-caption">
-												Date sent <br/> to lab
+												Date<br/>dispatched
 											</span>
 											<input name="date_sent[]" id="date_sent" class="form-control datepicker" type="text" style="width:100%; 	" required data-date-format="dd-mm-yyyy" />
 											<span class="input-group-addon my-input-group-icon">
@@ -463,8 +459,8 @@
 										</div> -->
 										
 									</td>
-									<td>
-										<div class="control-group">
+									<td id="test_reason_td">
+									<!-- 	<div class="control-group">
 
 											<div class="checkbox">
 												<label>
@@ -489,16 +485,18 @@
 
 											<div class="checkbox">
 												<label>
-													<input name="ill_infant[]" id="ill_infant" type="checkbox" class="ace">
+													<input name="ill_infant[]" id="ill_infant" value="1" type="checkbox" class="ace">
 													<span class="lbl small"> Ill Infant</span>
 												</label>
 											</div>
-										</div>
+
+										</div> -->
+										<input name="test_reason[]" id="test_reason" class="form-control test_reason"  type="text">
 									</td>
 									<td style="vertical-align:middle;">
 										<div class="hidden-sm hidden-xs btn-group">
 
-											<button id="remove" class="btn btn-xs btn-danger" onclick="remove_row(1)" >
+											<button id="remove" class="btn btn-xs btn-danger hide" onclick="remove_row(1)" >
 												<i class="ace-icon fa fa-trash-o bigger-120"></i>
 												Remove
 											</button>

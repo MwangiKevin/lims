@@ -32,4 +32,16 @@ class MY_Model extends CI_Model{
 		return $prophilaxis = $query	->	getArrayResult();
 	}
 
+	public function test_reasons(){
+
+		$query		=	$this	->	em 	->	createQuery("	SELECT 
+																	t
+																FROM 	models\Entities\TestRequisitionReason t
+																ORDER BY t.desc ASC
+														"
+														);
+
+		return $reasons = $query	->	getArrayResult();
+	}
+
 }
