@@ -9,7 +9,7 @@ class lab_consumption extends MY_Controller {
 		$this->login_reroute(array(2));
 		
 		$this->view_data['content_view'] 	= 	"template/blank";
-		$this->view_data['sidebar'] 		= 	"eid_sidebar";
+		$this->view_data['sidebar'] 		= 	"admin_sidebar";
 		$this->view_data['title'] 			= 	"EID | Lab Consumption";
 		$this->view_data['filter']			=	false;
 		$this->view_data 					=	array_merge($this->view_data,$this->load_libraries(array()));		
