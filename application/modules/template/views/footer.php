@@ -30,8 +30,15 @@ $( document ).ready(function() {
 
 
 $('.datepicker').datepicker({
-      format: 'dd-m-yyyy',
-      autoclose: true
+  	format: 'dd-mm-yyyy',
+  	autoclose: true,
+  	showOn: "button",
+    buttonImage: "AppData/Images/calendar.gif",
+    buttonImageOnly: true,
+    showWeek: true,
+    firstDay: 1,
+    maxDate: '+0',
+    regional: 'uk'
 });
 
 </script>

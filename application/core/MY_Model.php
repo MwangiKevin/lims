@@ -31,6 +31,17 @@ class MY_Model extends CI_Model{
 
 		return $prophilaxis = $query	->	getArrayResult();
 	}
+	public function infant_feeding(){
+
+		$query		=	$this	->	em 	->	createQuery("	SELECT 
+																	i
+																FROM 	models\Entities\InfantFeeding i
+																ORDER BY i.name ASC
+														"
+														);
+
+		return $prophilaxis = $query	->	getArrayResult();
+	}
 
 	public function test_reasons(){
 

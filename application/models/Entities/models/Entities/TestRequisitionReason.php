@@ -2,43 +2,43 @@
 
 namespace models\Entities;
 
-use Doctrine\Mapping as ORM;
+use Doctrine\ORM\Mapping as ORM;
 
 /**
  * TestRequisitionReason
  *
- * @Table(name="test_requisition_reason")
- * @Entity
+ * @ORM\Table(name="test_requisition_reason")
+ * @ORM\Entity
  */
 class TestRequisitionReason
 {
     /**
      * @var integer
      *
-     * @Column(name="id", type="integer", nullable=false)
-     * @Id
-     * @GeneratedValue(strategy="IDENTITY")
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
 
     /**
      * @var string
      *
-     * @Column(name="desc", type="string", length=100, nullable=false)
+     * @ORM\Column(name="desc", type="string", length=100, nullable=false)
      */
     private $desc;
 
     /**
      * @var integer
      *
-     * @Column(name="eid", type="integer", nullable=false)
+     * @ORM\Column(name="eid", type="integer", nullable=false)
      */
     private $eid;
 
     /**
      * @var integer
      *
-     * @Column(name="vl", type="integer", nullable=false)
+     * @ORM\Column(name="vl", type="integer", nullable=false)
      */
     private $vl;
 

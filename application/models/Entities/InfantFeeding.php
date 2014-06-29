@@ -2,38 +2,38 @@
 
 namespace models\Entities;
 
-use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Mapping as ORM;
 
 /**
  * InfantFeeding
  *
- * Table(name="infant_feeding")
- * Entity
+ * @Table(name="infant_feeding")
+ * @Entity
  */
 class InfantFeeding
 {
     /**
      * @var integer
      *
-     * Column(name="id", type="integer", nullable=false)
-     * Id
-     * GeneratedValue(strategy="IDENTITY")
+     * @Column(name="id", type="integer", nullable=false)
+     * @Id
+     * @GeneratedValue(strategy="IDENTITY")
      */
     private $id;
 
     /**
      * @var string
      *
-     * Column(name="name", type="string", length=100, nullable=false)
+     * @Column(name="name", type="string", length=100, nullable=false)
      */
     private $name;
 
     /**
      * @var string
      *
-     * Column(name="description", type="string", length=100, nullable=false)
+     * @Column(name="desc", type="string", length=100, nullable=false)
      */
-    private $description;
+    private $desc;
 
 
     /**
@@ -70,25 +70,25 @@ class InfantFeeding
     }
 
     /**
-     * Set description
+     * Set desc
      *
-     * @param string $description
+     * @param string $desc
      * @return InfantFeeding
      */
-    public function setDescription($description)
+    public function setDesc($desc)
     {
-        $this->description = $description;
+        $this->desc = $desc;
     
         return $this;
     }
 
     /**
-     * Get description
+     * Get desc
      *
      * @return string 
      */
-    public function getDescription()
+    public function getDesc()
     {
-        return $this->description;
+        return $this->desc;
     }
 }

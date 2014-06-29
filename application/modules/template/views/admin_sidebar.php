@@ -83,7 +83,7 @@
           //select submenu
 		  if(submenu_select !=''){
             $("#"+submenu_select).removeClass("hsub");
-            $("#"+submenu_select).addClass("active");            
+            $("#"+submenu_select).addClass("active");      
 
           }
 
