@@ -3,14 +3,9 @@
 $( document ).ready(function() {
 
 	$('#tests_table').dataTable({
-		"bProcessing": true,
-		"iDisplayLength": 10,
-	 	"bJQueryUI":true,
-		"bSort":true,
-		 "sPaginationType": "bootstrap",
-	  	//"bPaginate":false,
-	 	//"sScrollY": "200px",
-	  	//"bFilter": false
+            "bProcessing": true,
+            "bServerSide": true,
+            "sAjaxSource": "<?php echo base_url();?>utils/ajax/get_requisition_details_json"
 	});	
 });
 

@@ -56,7 +56,8 @@ class requisition extends MY_Controller {
 	}
 
 	public function submit_requisition(){
-		 echo "<pre>";
+		
+		echo "<pre>";
 		// print_r($this->input->post());
 
 		// requisition
@@ -64,6 +65,7 @@ class requisition extends MY_Controller {
 		$date_received 		=	$this->input->post("date_received");
 		$comments 			=	$this->input->post("comments");
 		$lab_comments 		=	$this->input->post("lab_comments");
+		$entered_by 		=	(int) $this->session->userdata("id");		
 
 		//sample
 		$date_coll 			=	$this->input->post("date_coll");
@@ -117,7 +119,8 @@ class requisition extends MY_Controller {
 									`date_received`,
 									`comments`,
 									`lab_comments`,
-									`program_id`
+									`program_id`,
+									`entered_by`
 								)
 								VALUES(
 									'$test_req_auto_id',
@@ -125,14 +128,16 @@ class requisition extends MY_Controller {
 									'".date('Y-m-d', strtotime($date_received))."',
 									'$comments',
 									'$lab_comments',
-									'1'
+									'1',
+									'$entered_by'
 								)
 							");
 			foreach ($date_coll as $key => $value) {
 
 				//check if patient exists
 				$exists = false;
-				$id = (int) R::getAll("SELECT id  FROM `patient` WHERE `facility_id` ='$facility_id'  AND `patient_code`='$patient_code[$key]'")[0]["id"];
+				
+				$id = (int) R::getAll("SELECT id  FROM `patient` WHERE `facility_id` ='$facility_id'  AND `patient_code`='$patient_code[$key]'");
 				 	
 
 				$this->db->query("INSERT INTO `patient`

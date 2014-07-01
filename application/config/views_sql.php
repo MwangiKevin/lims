@@ -39,4 +39,61 @@ $sql["v_facility_details"]  					= 	"SELECT
 													";
 
 
+$sql["v_Requisition_details"] 						=	"SELECT 
+																`req`.`id` 			 	AS 	`requisition_number`,
+																`req`.`date_received` ,	
+																Date(`req`.`timestamp`)	AS `date_entered`,	
+																`req`.`facility_id` ,	
+																`req`.`program_id`,
+																`req`.`comments`,
+																`req`.`lab_comments`,
+																`req`.`flag` 			AS 	`req_flag`,
+																`req`.`synced` 			AS 	`req_synced`,
+																`req`.`timestamp` 		AS 	`requisition_timestamp`,
+																`fac`.`name`            AS 	`facility_name`,
+																COUNT(`sa`.`id`) 															AS 	`total`,
+																SUM(CASE WHEN `sa`.`acceptance_status`= 'R'    THEN 1 ELSE 0 END) 			AS 	`rejected`,
+																SUM(CASE WHEN `tr`.`result` > 0    THEN 1 ELSE 0 END) 						AS 	`with_results`,
+																`req`.`entered_by` 		AS `user_id`,
+																`usr`.`name` 			AS `entered_by`
+															FROM `test_requisition` `req`
+
+															LEFT JOIN `facility` `fac`
+															ON `req`.`facility_id` = `fac`.`id`
+
+															LEFT JOIN `sample` `sa`
+															ON `req`.`id` = `sa`.`requisition_id`
+
+																LEFT JOIN `sample_test_run` `tr`
+																ON `sa`.`id`=`tr`.`sample_id`
+
+															LEFT JOIN `user` `usr`
+															ON `req`.`entered_by` = `usr`.`id`
+
+															GROUP BY `requisition_number`
+															ORDER BY `date_received` DESC
+
+															LIMIT 500
+
+														
+													";
+
+// $sql["v_sample_details"] 						=	"SELECT 
+// 															`sa`.`id` 				AS 	`sample_id`,
+// 															`sa`.`date_collected`	AS 	`date_collected`,
+// 															`sa`.`date_dispatched`	AS 	`date_dispatched`,
+// 															`sa`.`sample_type`		AS 	`sample_type`,
+// 															`sa`.``					AS 	``,
+// 															`sa`.``					AS 	``,
+// 															`sa`.``					AS 	``,
+// 															`sa`.``					AS 	``,
+// 															`sa`.``					AS 	``,
+// 															`sa`.``					AS 	``,
+// 															`sa`.``					AS 	``,
+
+
+// 													";
+
+
+
 $config["views_sql"] =$sql;
