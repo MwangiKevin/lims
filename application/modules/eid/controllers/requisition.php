@@ -14,6 +14,11 @@ class requisition extends MY_Controller {
 		$this->view_data['title'] 			= 	"EID | Requisition";
 		$this->view_data['filter']			=	false;
 		$this->view_data 					=	array_merge($this->view_data,$this->load_libraries(array("style-date-time")));		
+
+		
+		$this->view_data['b_color']			=	"no-skin";
+		$this->view_data['topleft_title']	=	"EID";
+				
 		$this->view_data['menu_select']		= 	array(1,0);
 		// $this->view_data['menu_select']		= 	"side_dashboard";
 		// $this->view_data['submenu_select']	= 	"none";

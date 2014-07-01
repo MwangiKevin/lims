@@ -18,7 +18,7 @@
 			<a href="<?php echo base_url();?>" class="navbar-brand">
 				<small>
 					<i class="fa fa-leaf"></i>
-					EID LIMS
+					<?php echo $topleft_title; ?> LIMS
 				</small>
 			</a>
 		</div>
