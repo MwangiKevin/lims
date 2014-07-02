@@ -1,0 +1,9 @@
+diff a/application/modules/eid/views/samples_footer_view.php b/application/modules/eid/views/samples_footer_view.php	(rejected hunks)
+@@ -3,7 +3,6 @@
+ $( document ).ready(function() {
+ 
+ 	$('#tests_table').dataTable({
+-		"bSort":true,
+             "bProcessing": true,
+             "bServerSide": true,
+             "sAjaxSource": "<?php echo base_url();?>utils/ajax/get_requisition_details_json"

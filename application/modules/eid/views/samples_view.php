@@ -22,7 +22,7 @@
 				<th>Samples With No Results</th>
 				<th>Batch Status</th>
 				<th>Entered By</th>
-				<!-- <th>Actions</th></tr> -->
+				<th>Actions</th></tr>
 		</thead>
 		<tbody>
 			<tr></tr>
