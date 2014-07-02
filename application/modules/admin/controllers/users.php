@@ -7,7 +7,7 @@ class users extends MY_Controller {
 	public function __construct(){
 		$this->login_reroute(array(1));
 
-		$this->view_data['content_view'] 	= 	"admin/users";
+		$this->view_data['content_view'] 	= 	"admin/users_view";
 		$this->view_data['sidebar'] 		= 	"admin_sidebar";
 		$this->view_data['title'] 			= 	"EID | Dashboard";
 		$this->view_data['filter']			=	false;

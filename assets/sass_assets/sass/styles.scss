@@ -1,14 +1,13 @@
 // customize bootstrap variables here:
 
 @import "variables";
-@import "bootstrap";
-//@import "CSS:theme/css/bootstrap.min";
+//@import "bootstrap";
+@import "CSS:theme/css/bootstrap.min";
 
 @import "CSS:theme/css/ace";
 //@import "CSS:theme/font-awesome/4.0.3/css/font-awesome.min.css";
 @import "CSS:theme/css/ace-skins";
 @import "CSS:theme/css/ace-rtl.min";
-@import "CSS:theme/css/chosen";
 @import "CSS:theme/css/colorbox";
 @import "CSS:theme/css/colorpicker";
 @import "CSS:theme/css/datepicker";
@@ -23,7 +22,9 @@
 @import "CSS:theme/css/jquery-ui.custom.min";
 @import "CSS:theme/css/prettify";
 @import "CSS:theme/css/select2";
+@import "CSS:theme/css/select2-bootstrap";
 @import "CSS:theme/css/ui.jqgrid";
+@import "CSS:theme/css/chosen";
 
 .lims_header{
 	@extend .navbar;
@@ -70,9 +71,47 @@ html{
 	padding:0px;
 	margin:0px;
 }
-.marete{
-  @extend .infobox;
-	background:#fff;
+
+.my-input-group{
+	@extend .input-group;
+	margin-right:4px;
+	margin-left:0px;
+	input{
+		height:34px;
+	}
+	select{
+		height:34px;
+	}
+}
+.my-input-group-caption{
+	@extend .input-group-addon;
+	width:35%;
+	font-weight: normal;
+	padding: 3px 3px;
+	font-size: 11px; 
+	font-weight: normal; 
+	text-align: center;
+	background-color: #EDF3F4 !important; 
+ 	border-radius: 4px;
+}
+.my-input-group-icon{
+	@extend .input-group-addon;
+	width:15%;
+	font-weight: normal;
+	padding: 3px 3px;
+	font-size: 11px; 
+	font-weight: normal; 
+	text-align: center;
+	background-color: #EDF3F4 !important; 
+ 	border-radius: 4px;
+}
+.nb{
+	margin:0 0 3px 0 !important;
+	padding:0px !important;
+
+	select{
+		height:34px;
+	}
 }
 
 

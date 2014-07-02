@@ -5,6 +5,8 @@ if (!defined('BASEPATH'))
 class worksheet extends MY_Controller {
 
 	public function __construct(){
+
+		parent::__construct();
 		$this->login_reroute(array(2));
 
 		$this->view_data['sidebar'] 		= "eid_sidebar";

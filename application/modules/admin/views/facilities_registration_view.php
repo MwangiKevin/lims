@@ -11,15 +11,17 @@
 			<!-- Add new -->
 			<div class="tab-pane active" id="tabs1-add" >
 				<div class="mycontainer">
-					<?php echo form_open('admin/facilities');?>
+					<?php echo form_open('admin/facilities/registration');?>
 		                <div class="input-group" style="width: 100%;padding:4px;">
 							<span class="input-group-addon" style="width: 40%;">Region:</span>
 							<select name="reg" id="reg" required class="textfield form-control" >
 			                   	<option value="">*Select a Region*</option>  
 		                   		<?php
-			                   		foreach ($regions as $reg) {
+                                    
+			                   		foreach ($details as $reg) {
+                                        
 			                  	?>     
-								<option value="<?php echo $reg["region_id"];?>"><?php echo $reg["region_name"];?></option>
+								<option value="<?php echo $reg["facility_id"];?>"><?php echo $reg["facility_name"];?></option>
 								<?php
 			                   		}
 			                  	?>                 					
@@ -28,7 +30,14 @@
 		                <div id="dis_div" class="input-group" style="width: 100%;padding:4px;">
 							<span class="input-group-addon" style="width: 40%;">District:</span>
 							<select name="dis" id="dis" required class="textfield form-control" >
-			                                     					
+			                        <option value="">*Select a District*</option>  
+			                        <?php
+			                   		foreach ($details as $dis) {
+				                  	?>    
+									<option value="<?php echo $dis["district_id"];?>"><?php echo $dis["district_name"];?></option>
+									<?php
+				                   		}
+				                  	?>                  					
 			                </select>
 		                </div>
 		               
@@ -53,24 +62,26 @@
 			</div>
 			<!-- District -->
 			<div class="tab-pane" id="tabs1-District" style="width: 60%;padding:4px;" >		
-				<table id="data-table-dis">
+				<table style="font-size:90%" id="data-table" class="table table-bordered table-responsive">
 					<thead>
 						<tr>
 							<th>#</th>
 							<th>District Name</th>					
 							<th>Region</th>
-							<th>Partner</th>						
+							<th>Partner</th>
+						</tr>						
 					</thead>
 					<tbody>
 						<?php
 							$i=1;
 							foreach ($districts as $dis) {
+                               // print_r($details); die();
 						?>
 						<tr>
 							<td><?php echo $i;?></td>
 							<td><?php echo $dis['district_name'];?></td>
 							<td><?php echo $dis['region_name'];?></td>
-							<td><?php echo $dis['partner_name'];?></td>
+							<td>*******</td>
 						</tr>
 						<?php
 							$i++;
@@ -81,12 +92,13 @@
 			</div>
 			<!-- Region -->
 			<div class="tab-pane" id="tabs1-Region" style="width: 60%;padding:4px;" >	
-				<table id="data-table-reg">
+				<table style="font-size:90%" id="data-table" class="table table-bordered table-responsive">
 					<thead>
 						<tr>
 							<th>#</th>				
 							<th>Region Name</th>
-							<th>Partner</th>						
+							<th>Fusion ID</th>
+						</tr>						
 					</thead>
 					<tbody>
 						<?php
@@ -96,7 +108,7 @@
 						<tr>
 							<td><?php echo $i;?></td>
 							<td><?php echo $reg['region_name'];?></td>
-							<td><?php echo $reg['partner_name'];?></td>
+							<td><?php echo $reg['fusion_id'];?></td>
 						</tr>
 						<?php
 							$i++;

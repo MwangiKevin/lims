@@ -29,18 +29,46 @@ class Prophilaxis
     private $name;
 
     /**
-     * @var integer
+     * @var string
      *
-     * @ORM\Column(name="desc", type="integer", nullable=false)
+     * @ORM\Column(name="desc", type="string", length=40, nullable=false)
      */
     private $desc;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="program", type="integer", nullable=false)
+     * @ORM\Column(name="eid", type="integer", nullable=false)
      */
-    private $program;
+    private $eid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="vl", type="integer", nullable=false)
+     */
+    private $vl;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="infant_prophilaxis", type="integer", nullable=false)
+     */
+    private $infantProphilaxis;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="pmtc_pregnancy", type="integer", nullable=false)
+     */
+    private $pmtcPregnancy;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="pmtc_delivery", type="integer", nullable=false)
+     */
+    private $pmtcDelivery;
 
     /**
      * @var integer
@@ -93,7 +121,7 @@ class Prophilaxis
     /**
      * Set desc
      *
-     * @param integer $desc
+     * @param string $desc
      * @return Prophilaxis
      */
     public function setDesc($desc)
@@ -106,7 +134,7 @@ class Prophilaxis
     /**
      * Get desc
      *
-     * @return integer 
+     * @return string 
      */
     public function getDesc()
     {
@@ -114,26 +142,118 @@ class Prophilaxis
     }
 
     /**
-     * Set program
+     * Set eid
      *
-     * @param integer $program
+     * @param integer $eid
      * @return Prophilaxis
      */
-    public function setProgram($program)
+    public function setEid($eid)
     {
-        $this->program = $program;
+        $this->eid = $eid;
     
         return $this;
     }
 
     /**
-     * Get program
+     * Get eid
      *
      * @return integer 
      */
-    public function getProgram()
+    public function getEid()
     {
-        return $this->program;
+        return $this->eid;
+    }
+
+    /**
+     * Set vl
+     *
+     * @param integer $vl
+     * @return Prophilaxis
+     */
+    public function setVl($vl)
+    {
+        $this->vl = $vl;
+    
+        return $this;
+    }
+
+    /**
+     * Get vl
+     *
+     * @return integer 
+     */
+    public function getVl()
+    {
+        return $this->vl;
+    }
+
+    /**
+     * Set infantProphilaxis
+     *
+     * @param integer $infantProphilaxis
+     * @return Prophilaxis
+     */
+    public function setInfantProphilaxis($infantProphilaxis)
+    {
+        $this->infantProphilaxis = $infantProphilaxis;
+    
+        return $this;
+    }
+
+    /**
+     * Get infantProphilaxis
+     *
+     * @return integer 
+     */
+    public function getInfantProphilaxis()
+    {
+        return $this->infantProphilaxis;
+    }
+
+    /**
+     * Set pmtcPregnancy
+     *
+     * @param integer $pmtcPregnancy
+     * @return Prophilaxis
+     */
+    public function setPmtcPregnancy($pmtcPregnancy)
+    {
+        $this->pmtcPregnancy = $pmtcPregnancy;
+    
+        return $this;
+    }
+
+    /**
+     * Get pmtcPregnancy
+     *
+     * @return integer 
+     */
+    public function getPmtcPregnancy()
+    {
+        return $this->pmtcPregnancy;
+    }
+
+    /**
+     * Set pmtcDelivery
+     *
+     * @param integer $pmtcDelivery
+     * @return Prophilaxis
+     */
+    public function setPmtcDelivery($pmtcDelivery)
+    {
+        $this->pmtcDelivery = $pmtcDelivery;
+    
+        return $this;
+    }
+
+    /**
+     * Get pmtcDelivery
+     *
+     * @return integer 
+     */
+    public function getPmtcDelivery()
+    {
+        return $this->pmtcDelivery;
     }
 
     /**

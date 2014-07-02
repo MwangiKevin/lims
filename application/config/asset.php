@@ -65,7 +65,7 @@ $config['sass_path']		=	'assets/sass_assets/';
 
 $config['js_files']			=	array(									
 
-									array('title'	=> 	'user_profile'			,	'file'	=>	'user/profile.js')
+									array('title'	=> 	'main'			,	'file'	=>	'main.js')
 								);
 $config['css_files']		=	array(
 									array('title' => 'login'	,	'file'	=>	'login/login.css')
@@ -104,11 +104,11 @@ $config['js_theme_files']		=	array(
 										array('title'	=> 'style'					,	'file'	=>	'sass/theme/js/prettify.js'),
 										array('title'	=> 'style'					,	'file'	=>	'sass/theme/js/select2.min.js'),
 										array('title'	=> 'style'					,	'file'	=>	'sass/theme/js/spin.min.js'),
+										array('title'	=> 'style-date-time'		,	'file'	=>	'sass/theme/js/date-time/moment.min.js'),
 										array('title'	=> 'style-date-time'		,	'file'	=>	'sass/theme/js/date-time/bootstrap-datepicker.min.js'),
 										array('title'	=> 'style-date-time'		,	'file'	=>	'sass/theme/js/date-time/bootstrap-datetimepicker.min.js'),
 										array('title'	=> 'style-date-time'		,	'file'	=>	'sass/theme/js/date-time/bootstrap-timepicker.min.js'),
 										array('title'	=> 'style-date-time'		,	'file'	=>	'sass/theme/js/date-time/daterangepicker.min.js'),
-										array('title'	=> 'style-date-time'		,	'file'	=>	'sass/theme/js/date-time/moment.min.js'),
 										array('title'	=> 'style'					,	'file'	=>	'sass/theme/js/flot/jquery.flot.min.js'),
 										array('title'	=> 'style'					,	'file'	=>	'sass/theme/js/flot/jquery.flot.pie.min.js'),
 										array('title'	=> 'style'					,	'file'	=>	'sass/theme/js/flot/jquery.flot.resize.min.js'),
