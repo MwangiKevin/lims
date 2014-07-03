@@ -58,7 +58,7 @@ class facilities extends MY_Controller {
                                    `region_id`,
                                    `region_name`,
                                    `region_fusion_id`
-                            FROM `v_facility_details`";);
+                            FROM `v_facility_details`");
 
     	$districts = R::getAll("	SELECT 
 									`dis`.`id`				AS `district_id`,									
