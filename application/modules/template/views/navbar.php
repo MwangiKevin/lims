@@ -159,7 +159,7 @@
 						<li class="divider"></li>
 
 						<li>
-							<a href="<?php echo base_url("eid/logout");?>">
+							<a href="<?php echo base_url("login/logout");?>">
 								<i class="ace-icon fa fa-power-off"></i>
 								Logout
 							</a>
