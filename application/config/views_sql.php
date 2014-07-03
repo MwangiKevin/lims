@@ -18,16 +18,16 @@ $sql["v_facility_details"]  					= 	"SELECT
 															`fac`.`name` 			AS `facility_name`,
 															`fac`.`email` 			AS `facility_email`,
 															`fac`.`mail_address` 	AS `facility_mail_address`,
+															`fac`.`phone` 		    AS `facility_telephone`,
 															`fac`.`telephone` 		AS `facility_telephone`,
 															`fac`.`telephone2` 		AS `facility_telephone2`,
-															`fac`.`contact_person_phone` 		AS `facility_contact_person_phone`,
 															`fac`.`district_id`, 
 															`dis`.`name` 			AS `district_name`,
 															`dis`.`status` 			AS `district_status`,
 															`dis`.`region_id`,
 															`reg`.`name`			AS `region_name`,
+                                                            `fac`.`contact_person_phone` 		AS `facility_contact_person_phone`,
 															`reg`.`fusion_id`		AS `region_fusion_id`
-
 														FROM `facility` `fac`
 															LEFT JOIN `district` `dis`
 															ON `fac`.`district_id` = `dis`.`id`
@@ -37,7 +37,11 @@ $sql["v_facility_details"]  					= 	"SELECT
 														GROUP BY `facility_id`
 														ORDER BY `facility_name` ASC
 													";
-
+//`fac`.`code` 			AS `facility_code`,
+//`fac`.`mail_address` 	AS `facility_mail_address`,
+//`fac`.`telephone` 		AS `facility_telephone`,
+//`fac`.`telephone2` 		AS `facility_telephone2`,
+//`fac`.`contact_person_phone` 		AS `facility_contact_person_phone`,
 
 $sql["v_Requisition_details"] 						=	"SELECT 
 																`req`.`id` 			 	AS 	`requisition_number`,
