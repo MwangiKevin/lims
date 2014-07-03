@@ -158,10 +158,14 @@ $config['plugin_js_files']	=	array(
 									array('title'	=> 'highcharts'					,	'file'	=>	'Highcharts/js/modules/no-data-to-display.js'),
 									array('title'	=> 'highchart-canvas'			,	'file'	=>	'Highcharts/js/modules/canvas-tools.js'),
 									array('title'	=> 'highcharts_drilldown'		,	'file'	=>	'Highcharts/js/modules/drilldown.js'),
-									array('title'	=> 'ajax_file_uploader'			,	'file'	=>	'ajax_file_uploader/ajaxfileupload.js')
+									array('title'	=> 'ajax_file_uploader'			,	'file'	=>	'ajax_file_uploader/ajaxfileupload.js'),
+									array('title'	=> 'dropzone'					,	'file'	=>	'dropzone/dropzone.min.js'),
+									array('title'	=> 'dropzone'					,	'file'	=>	'dropzone/dropzone-amd-module.min.js')
 									
 								);	
 $config['plugin_css_files']	=	array(									
-									array('title'	=> 'dataTables-bootstrap'					,	'file'	=>	'data-tables-bootstrap-3/css/dataTables.bootstrap.css'),
+									array('title'	=> 'dataTables-bootstrap'		,	'file'	=>	'data-tables-bootstrap-3/css/dataTables.bootstrap.css'),
+									array('title'	=> 'dropzone-basic'				,	'file'	=>	'dropzone/css/basic.css'),
+									array('title'	=> 'dropzone'					,	'file'	=>	'dropzone/css/dropzone.css')
 								);
 /* End of file asset.php */

@@ -31,4 +31,11 @@ class test extends MY_Controller{
 
 	}
 
+	public function t(){
+
+		echo "<pre>";
+		$this->load->module("upload");		
+		print_r($this->upload->read_file_array("C:/m2000rt_275021078_WKS 1327_03132012_171037_R.txt",'txt'));
+	}
+
 }
