@@ -12,27 +12,14 @@
 			<div class="tab-pane active" id="tabs1-add" >
 				<div class="mycontainer">
 					<?php echo form_open('admin/facilities/registration');?>
-		                <div class="input-group" style="width: 100%;padding:4px;">
-							<span class="input-group-addon" style="width: 40%;">Region:</span>
-							<select name="reg" id="reg" required class="textfield form-control" >
-			                   	<option value="">*Select a Region*</option>  
-		                   		<?php
-                                    
-			                   		foreach ($details as $reg) {
-                                        
-			                  	?>     
-								<option value="<?php echo $reg["facility_id"];?>"><?php echo $reg["facility_name"];?></option>
-								<?php
-			                   		}
-			                  	?>                 					
-			                </select>
-		                </div>
+		                
 		                <div id="dis_div" class="input-group" style="width: 100%;padding:4px;">
 							<span class="input-group-addon" style="width: 40%;">District:</span>
 							<select name="dis" id="dis" required class="textfield form-control" >
 			                        <option value="">*Select a District*</option>  
 			                        <?php
-			                   		foreach ($details as $dis) {
+                    
+			                   		foreach ($districts as $dis) {
 				                  	?>    
 									<option value="<?php echo $dis["district_id"];?>"><?php echo $dis["district_name"];?></option>
 									<?php
@@ -40,7 +27,10 @@
 				                  	?>                  					
 			                </select>
 		                </div>
-		               
+		               <div id="fac_name_div" class="input-group" style="width: 100%;padding:4px;">
+							<span class="input-group-addon" style="width: 40%;">Facility Code:</span>
+							<input name="fac_code" id="fac_code" required class="textfield form-control" type="text" />
+						</div>	
 						<div id="fac_name_div" class="input-group" style="width: 100%;padding:4px;">
 							<span class="input-group-addon" style="width: 40%;">Facility Name:</span>
 							<input name="fac_name" id="fac_name" required class="textfield form-control" type="text" />
@@ -52,7 +42,15 @@
 						<div id="fac_phone_div" class="input-group" style="width: 100%;padding:4px;">
 							<span class="input-group-addon" style="width: 40%;">Phone no:</span>
 							<input name="fac_phone" id="fac_phone" required class="textfield form-control" type="text" />
-						</div>															
+						</div>							
+                        <div id="fac_tel1_div" class="input-group" style="width: 100%;padding:4px;">
+							<span class="input-group-addon" style="width: 40%;">Telephone Line 1:</span>
+							<input name="fac_tel1" id="fac_tel1" required class="textfield form-control" type="text" />
+						</div>
+                        <div id="fac_tel2_div" class="input-group" style="width: 100%;padding:4px;">
+							<span class="input-group-addon" style="width: 40%;">Telephone Line 2:</span>
+							<input name="fac_tel2" id="fac_tel2" required class="textfield form-control" type="text" />
+						</div>
 						<div class="right" style="padding:7px;">
 							<button name="viewData" type="submit" onclick="viewData()" class="btn btn-primary btn-minii"><i class="glyphicon glyphicon-save"></i>Save</button>
 							<button name="reset" type="reset"  class="btn btn-default btn-minii"><i class="glyphicon glyphicon-remove"></i>Discard</button>
@@ -62,7 +60,7 @@
 			</div>
 			<!-- District -->
 			<div class="tab-pane" id="tabs1-District" style="width: 60%;padding:4px;" >		
-				<table style="font-size:90%" id="data-table" class="table table-bordered table-responsive">
+				<table style="font-size:90%" id="tests_table" class="table table-bordered table-responsive">
 					<thead>
 						<tr>
 							<th>#</th>
@@ -92,7 +90,7 @@
 			</div>
 			<!-- Region -->
 			<div class="tab-pane" id="tabs1-Region" style="width: 60%;padding:4px;" >	
-				<table style="font-size:90%" id="data-table" class="table table-bordered table-responsive">
+				<table style="font-size:90%" id="tests_table" class="table table-bordered table-responsive">
 					<thead>
 						<tr>
 							<th>#</th>				
@@ -148,3 +146,4 @@
 		</div>
 	</div>
     </div>
+<?php $this->load->view("facilities_details_footer_view");?>

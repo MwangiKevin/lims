@@ -34,15 +34,15 @@ class facilities extends MY_Controller {
 	}
 
 	public function facilities_details(){		
-		$sql  =  "SELECT 
-                        `facility_id`,
-                        `facility_name`,
-                        `facility_email`,
-                        `facility_telephone`,
-                        `district_name`,
-                        `region_name`
-                 FROM `v_facility_details`";
-        $result = R::getAll($sql);
+		$result = R::getAll("SELECT `facility_id`,
+                                   `facility_name`,
+                                   `district_id`,
+                                   `district_name`,
+                                   `district_status`,
+                                   `region_id`,
+                                   `region_name`,
+                                   `region_fusion_id`
+                            FROM `v_facility_details`");
         //print_r($result); die();
         $this->view_data['result']          =   $result;
         $this->view_data['content_view'] 	= 	"admin/facilities_details_view";
@@ -95,8 +95,22 @@ class facilities extends MY_Controller {
 	}
     
     public function registration(){
-        echo "thank you for your registration for the new facilities";
-        $this->index();
-    }
-    
+        $this->form_validation->set_rules('fac_code', 'Region', 'trim|required');
+		$this->form_validation->set_rules('dis', 'District', 'trim|required');
+		$this->form_validation->set_rules('fac_name', 'Facility Name', 'trim|(str)');
+		$this->form_validation->set_rules('fac_email', 'Facility Email', 'trim|required');
+        $this->form_validation->set_rules('fac_phone', 'Facility Phone', 'trim|required');
+        $this->form_validation->set_rules('fac_tel1', 'Facility Telephone 1', 'trim|required');
+        $this->form_validation->set_rules('fac_tel2', 'Facility Telephone 2', 'trim|required');
+        
+		if ($this->form_validation->run() == FALSE) 
+		{
+			echo "The form validation process was failed make sure you go back to your code and do something about it";
+		} else 
+		{
+			echo "The form validation was very successfull you can continue to finalize on the administration section";		
+		}
+		
+	}
+        
 }

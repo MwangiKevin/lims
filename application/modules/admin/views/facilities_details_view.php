@@ -1,13 +1,20 @@
 <div>
-	<div class="row my-infobox" id="facilityDetails">
-		<div class="table-header">
-			<center><b><strong>Facility Details</strong></b></center>
+	
+   
+        <h4 class="lighter">
+           <i class="ace-icon fa fa-hand-o-right icon-animated-hand-pointer blue"></i>
+           <a href="#" data-toggle="modal" class="pink">View Facility Details </a>
+        </h4>
+	    
+    <div class="hr hr-18 hr-double dotted"></div>
+    
+    <div class="row my-infobox" id="facilityDetails">	
+    <div class="table-header">
+			Facility Details
 		</div>
-
-		<br />
-		<table style="font-size:90%" id="data-table" class="table table-bordered table-responsive">
+		<table style="font-size:90%" id="tests_table" class="table table-bordered table-responsive">
 			<thead>
-				<tr>
+				<tr class="active">
                     <th rowspan="2">#</th>
 					<th rowspan="2">Facilty Name</th>
 					<th rowspan="2">District</th>
@@ -75,3 +82,4 @@
     
  
 </div>
+<?php $this->load->view("facilities_details_footer_view.php"); ?>
