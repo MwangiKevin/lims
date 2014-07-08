@@ -89,7 +89,7 @@
 
 			<ul class="submenu">
 				<li class="">
-					<a href="<?php echo base_url().'admin/users' ?>">
+					<a href="<?php echo base_url().'admin/users/users_details' ?>">
 						<i class="menu-icon fa fa-caret-right"></i>
 						Users Details
 					</a>
@@ -98,7 +98,7 @@
 				</li>
 
 				<li class="">
-					<a href="<?php echo base_url().'admin/users' ?>">
+					<a href="<?php echo base_url().'admin/users/users_registration' ?>">
 						<i class="menu-icon fa fa-caret-right"></i>
 						Users Registration
 					</a>

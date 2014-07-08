@@ -24,5 +24,26 @@ class admin_model extends MY_Model {
 		return $insert;
     }
 
+    public function user_details(){
+        $sql = "SELECT
+                                  `user_id`,
+                                  `username`,
+                                  `name`,
+                                  `user_group_id`,
+                                  `user_group`,
+                                  `phone`,
+                                  `email`,
+                                  `status`
+                            FROM `v_user_details`";
+        return $user_details = R::getAll($sql);
+    }
+    
+    public function user_groups(){
+        $sql = "SELECT 
+                        `id`,
+                        `name`
+                FROM `user_group`";
         
+        return $user_group = R::getAll($sql);
+    }
 }

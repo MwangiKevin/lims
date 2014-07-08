@@ -17,8 +17,7 @@ $sql["v_facility_details"]  					= 	"SELECT
 															`fac`.`code` 			AS `facility_code`,
 															`fac`.`name` 			AS `facility_name`,
 															`fac`.`email` 			AS `facility_email`,
-															`fac`.`mail_address` 	AS `facility_mail_address`,
-															`fac`.`phone` 		    AS `facility_telephone`,
+															`fac`.`mail_address` 	AS `facility_mail_address`,															
 															`fac`.`telephone` 		AS `facility_telephone`,
 															`fac`.`telephone2` 		AS `facility_telephone2`,
 															`fac`.`district_id`, 
@@ -39,6 +38,7 @@ $sql["v_facility_details"]  					= 	"SELECT
 													";
 //`fac`.`code` 			AS `facility_code`,
 //`fac`.`mail_address` 	AS `facility_mail_address`,
+//`fac`.`phone` 		    AS `facility_telephone`,
 //`fac`.`telephone` 		AS `facility_telephone`,
 //`fac`.`telephone2` 		AS `facility_telephone2`,
 //`fac`.`contact_person_phone` 		AS `facility_contact_person_phone`,
@@ -99,5 +99,21 @@ $sql["v_Requisition_details"] 						=	"SELECT
 // 													";
 
 
+
+$sql["v_user_details"] 				 = 				"SELECT 
+															`usr`.`id` 				AS `user_id`,
+															`usr`.`username`,
+															`usr`.`name`,
+															`usr`.`user_group_id`,
+															`usr_gr`.`name` 		AS `user_group`,
+															`usr`.`phone`,
+															`usr`.`email`,
+															`usr`.`status`
+															
+														FROM `user` `usr` 
+															LEFT JOIN `user_group` `usr_gr`
+															ON `usr`.`user_group_id` = `usr_gr`.`id`
+															
+													";
 
 $config["views_sql"] =$sql;
