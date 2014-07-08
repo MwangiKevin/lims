@@ -1,22 +1,3 @@
-<style>
-/* some elements used in demo only */
-.spinner-preview {
-	width: 100px;
-	height: 100px;
-	text-align: center;
-	margin-top: 60px;
-}
-
-.dropdown-preview {
-	margin: 0 5px;
-	display: inline-block;
-}
-.dropdown-preview  > .dropdown-menu {
-	display: block;
-	position: static;
-	margin-bottom: 5px;
-}
-</style>
 <h4 class="lighter">
 	<i class="ace-icon fa fa-hand-o-right icon-animated-hand-pointer blue"></i>
 	<a href="#" data-toggle="modal" class="pink"> Fill The Form and Click Submit </a>
@@ -41,16 +22,12 @@
 								<li>
 									<div class="widget-header widget-header-flat" style="margin-bottom: 10px;">
 										<div class="widget-title smaller">
-											<strong><center><h5> Info </h5></center></strong>
+											<strong><center><h5> Worksheet Info </h5></center></strong>
 										</div>
 									</div> 
 								</li>
 								<li>
-									<label style="width: 60%; display: inline-block;">Worksheet:</label>					
-									<label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br>
-								</li>
-								<li>
-									<label style="width: 60%; display: inline-block;">Template No:</label>					
+									<label style="width: 60%; display: inline-block;">CDC Worksheet No.:</label>					
 									<label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br>
 								</li>
 								<li>
@@ -61,12 +38,28 @@
 									<label style="width: 60%; display: inline-block;">Created By:</label>					
 									<label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br>
 								</li>
+								<li>
+									<label style="width: 60%; display: inline-block;">Reviewed By:</label>					
+									<label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br>
+								</li>
+								<li>
+									<label style="width: 60%; display: inline-block;">Date Run:</label>					
+									<label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br>
+								</li>
+								<li>
+									<label style="width: 60%; display: inline-block;">Reviewed By:</label>					
+									<label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br>
+								</li>
+								<li>
+									<label style="width: 60%; display: inline-block;">Date Reviewed:</label>					
+									<label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br>
+								</li>
 							</ul> 
 						</div>
-
-						<div class="profile-info-value"> 
-							<ul style="list-style-type: none;">
-								<li>
+						
+						<div class="profile-info-value">
+							 <ul style="list-style-type: none;">
+							 	<li>
 									<div class="widget-header widget-header-flat" style="margin-bottom: 10px;">
 										<div class="widget-title smaller">
 											<strong><center><h5> Extraction Reagents </h5></center></strong>
@@ -74,19 +67,25 @@
 									</div> 
 								</li>
 								<li>
-									<label style="width: 60%; display: inline-block;">Template No:</label>					
+									<label style="width: 60%; display: inline-block;">Control Lot No.:</label>					
 									<label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br>
 								</li>
 								<li>
-									<label style="width: 60%; display: inline-block;">Date Created:</label>					
+									<label style="width: 60%; display: inline-block;">Control Expiry Date:</label>					
 									<label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br>
 								</li>
 								<li>
-									<label style="width: 60%; display: inline-block;">Created By:</label>					
+									<label style="width: 60%; display: inline-block;">Calibrator Lot No.:</label>					
 									<label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br>
 								</li>
-							</ul> 
+								<li>
+									<label style="width: 60%; display: inline-block;">Calibrator Expiry Date:</label>					
+									<label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br>
+								</li>
+							 </ul>
 						</div>
+						
+						
 						<div class="profile-info-value"> 
 							<ul style="list-style-type: none;">
 								<li>
@@ -97,18 +96,33 @@
 									</div> 
 								</li>
 								<li>
-									<label style="width: 60%; display: inline-block;">Control:</label>					
+									<label style="width: 60%; display: inline-block;">Amplification Kit No.:</label>					
 									<label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br>
 								</li>
 								<li>
-									<label style="width: 60%; display: inline-block;">Calibrator:</label>					
+									<label style="width: 60%; display: inline-block;">Amplification Expiry Date:</label>					
 									<label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br>
 								</li>
 								<li>
-									<label style="width: 60%; display: inline-block;">Amplification Kit:</label>					
+									<label style="width: 60%; display: inline-block;">Bulk Lysis Lot No.:</label>					
+									<label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br>
+								</li>
+								<li>
+									<label style="width: 60%; display: inline-block;">Bulk Lysis Expiry Date:</label>					
+									<label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br>
+								</li>
+								<li>
+									<label style="width: 60%; display: inline-block;">Sample Prep Lot No.:</label>					
 									<label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br>
 								</li>
 							</ul>  
+							
+							<div class="wizard-actions">
+								<button class="btn btn-sm btn-primary add"  >
+									<i class="ace-icon fa fa-plus"></i>
+									Add Sample
+								</button>
+							</div>
 						</div>
 					</div><!--profile-info-row-->
 				</div><!--profile-user-info profile-user-info-striped-->
@@ -117,111 +131,39 @@
 
 		<div class="widget-header widget-header-flat" style="margin-bottom: 10px;">
 			<div class="widget-title smaller">
-				<strong><h4>Abbort EID Worksheet for DATE</h4></strong>
+				<strong><h4>Abbort EID Worksheet for <?php echo( date("d/m/y",time())) ?> (96)</h4></strong>
 			</div>
 		</div><!--widget-header widget-header-flat-->
 
 		<div class="row"><!--second row-->
 			<center>
-				<div class="dropdown dropdown-preview">
-					<ul class="dropdown-menu">					
-						<li>
-							<h6>Sample Code</h6>
-						</li>
-						<li>
-							Lab-Code
-						</li>
-						<li class="divider"></li>
-						<li>
-							<h6>Location of the bar-code</h6>
-						</li>
-					</ul>
-				</div>
-				<div class="dropdown dropdown-preview">
-					<ul class="dropdown-menu">					
-						<li>
-							<h6>Sample Code</h6>
-						</li>
-						<li>
-							Lab-Code
-						</li>
-						<li class="divider"></li>
-						<li>
-							<h6>Location of the bar-code</h6>
-						</li>
-					</ul>
-				</div>
-				<div class="dropdown dropdown-preview">
-					<ul class="dropdown-menu">					
-						<li>
-							<h6>Sample Code</h6>
-						</li>
-						<li>
-							Lab-Code
-						</li>
-						<li class="divider"></li>
-						<li>
-							<h6>Location of the bar-code</h6>
-						</li>
-					</ul>
-				</div>
-				<div class="dropdown dropdown-preview">
-					<ul class="dropdown-menu">					
-						<li>
-							<h6>Sample Code</h6>
-						</li>
-						<li>
-							Lab-Code
-						</li>
-						<li class="divider"></li>
-						<li>
-							<h6>Location of the bar-code</h6>
-						</li>
-					</ul>
-				</div>
-				<div class="dropdown dropdown-preview">
-					<ul class="dropdown-menu">					
-						<li>
-							<h6>Sample Code</h6>
-						</li>
-						<li>
-							Lab-Code
-						</li>
-						<li class="divider"></li>
-						<li>
-							<h6>Location of the bar-code</h6>
-						</li>
-					</ul>
-				</div>
-				<div class="dropdown dropdown-preview">
-					<ul class="dropdown-menu">					
-						<li>
-							<h6>Sample Code</h6>
-						</li>
-						<li>
-							Lab-Code
-						</li>
-						<li class="divider"></li>
-						<li>
-							<h6>Location of the bar-code</h6>
-						</li>
-					</ul>
-				</div>
+				<?php
+					foreach ($result as $res) {
+						$DBS_No = $res["no_of_dbs_spots"];
+						$id = $res["id"];
+						//echo("ID ->" .$id. " "." No ->".$DBS_No."   ");
+						echo("<div class='dropdown dropdown-preview'>
+								<ul class='dropdown-menu'>
+									<li>
+										<h6>Sample Code ".$id." </h6>
+									</li> 
+									<li>
+										Lab-Code (DBS NO ".$DBS_No.")
+									</li>
+									<li class='divider'></li>
+									<li>
+										<h6>Location of the bar-code</h6>
+									</li>
+								</ul>
+							</div>");
+					}
+				?>
 			</center>
-		</div><!--second row-->
-			<!-- <div class="row" >
-				<div class="col-md-1">column 1</div>
-				<div class="col-md-1">column 2</div>
-				<div class="col-md-1">column 3</div>
-				<div class="col-md-1">column 4</div>
-				<div class="col-md-1">column 5</div>
-				<div class="col-md-1">column 6</div>
-			</div> -->
+		</div>
+		<div class="row" style="text-align: center;">
+			<input type="button" value="Save & Print"/>
 			
-			<div class="row" style="text-align: center;">
-				<input type="button" value="Save & Print"/>
-				
-			</div>
+		</div>
 
 
 		</div><!-- /.main-container -->
@@ -237,25 +179,6 @@
 	</div>
 
 
-	<script type="text/javascript">
-	window.jQuery || document.write("<script src='assets/js/jquery.min.js'>"+"<"+"/script>");
-	</script>
-
-
-	<script type="text/javascript">
-	if('ontouchstart' in document.documentElement) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
-	</script>
-
-	<script type="text/javascript">
-	jQuery(function($) {
-		$(document).on('click', '.toolbar a[data-target]', function(e) {
-			e.preventDefault();
-			var target = $(this).data('target');
-				$('.widget-box.visible').removeClass('visible');//hide others
-				$(target).addClass('visible');//show target
-			});
-	});
-
-	</script>
+<?php $this->load->view("worksheet_footer")?>
 
 </body>

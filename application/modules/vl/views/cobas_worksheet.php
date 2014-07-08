@@ -29,7 +29,20 @@
 	<div class="main-container">
 		<div class="widget-header widget-header-flat" style="margin-bottom: 10px;">
 			<div class="widget-title smaller">
-				<strong><h2>Create Worksheet (COBAS) Viral Load</h2></strong>
+				<strong>
+					<h2>
+						Create Worksheet (COBAS) Viral Load
+						<label style="display: inline-block">
+							<input class="ace" type="radio" name="form-field-radio">
+							<span class="lbl"> DBS</span>
+						</label>
+						&nbsp;
+						<label style="display: inline-block">
+							<input class="ace" type="radio" name="form-field-radio">
+							<span class="lbl"> Plasma/EDTA</span>
+						</label>
+					</h2>
+				</strong>
 			</div>
 		</div><!--widget-header widget-header-flat-->
 		
@@ -37,23 +50,51 @@
 			
 			<div id="col-sm-7 infobox-container" style="margin-top: 1%;">
 				<div class="profile-user-info profile-user-info-striped">
-					<div class="profile-info-row">
+							<div class="profile-info-row">
 						
 						<div class="profile-info-value"> 
 							<ul style="list-style-type: none;">
 								<li>
 									<div class="widget-header widget-header-flat" style="margin-bottom: 10px;">
 										<div class="widget-title smaller">
-											<strong><center><h5> Sample Details </h5></center></strong>
+											<strong><center><h5> Worksheet Details </h5></center></strong>
 										</div>
 									</div> 
 								</li>
 								<li>
-									<label style="width: 60%; display: inline-block;">Date Cut:</label>					
+									<label style="width: 60%; display: inline-block;">CDC Worksheet No.:</label>					
 									<label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br>
 								</li>
 								<li>
-									<label style="width: 60%; display: inline-block;">Date Received:</label>					
+									<label style="width: 60%; display: inline-block;">Created By:</label>					
+									<label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br>
+								</li>
+								<li>
+									<label style="width: 60%; display: inline-block;">Date Created:</label>					
+									<label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br>
+								</li>
+								<li>
+									<label style="width: 60%; display: inline-block;">Updated By:</label>					
+									<label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br>
+								</li>
+								<li>
+									<label style="width: 60%; display: inline-block;">Approved By:</label>					
+									<label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br>
+								</li>
+								<li>
+									<label style="width: 60%; display: inline-block;">Reviewed By:</label>					
+									<label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br>
+								</li>
+								<li>
+									<label style="width: 60%; display: inline-block;">Date Reviewed:</label>					
+									<label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br>
+								</li>
+								<li>
+									<label style="width: 60%; display: inline-block;">Reviewed By(2):</label>					
+									<label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br>
+								</li>
+								<li>
+									<label style="width: 60%; display: inline-block;">Date Reviewed(2):</label>					
 									<label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br>
 								</li>
 							</ul> 
@@ -96,34 +137,35 @@
 								<li>
 									<div class="widget-header widget-header-flat" style="margin-bottom: 10px;">
 										<div class="widget-title smaller">
-											<strong><center><h5> Worksheet Details </h5></center></strong>
+											<strong><center><h5> Sample Details </h5></center></strong>
 										</div>
 									</div> 
 								</li>
 								<li>
-									<label style="width: 60%; display: inline-block;">Worksheet/Template No.:</label>					
+									<label style="width: 60%; display: inline-block;">Date Cut:</label>					
 									<label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br>
 								</li>
 								<li>
-									<label style="width: 60%; display: inline-block;">Approved By:</label>					
+									<label style="width: 60%; display: inline-block;">Date Received:</label>					
 									<label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br>
 								</li>
 								<li>
-									<label style="width: 60%; display: inline-block;">Created By:</label>					
+									<label style="width: 60%; display: inline-block;">Sample Prep Lot No.:</label>					
 									<label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br>
-								</li>
+								</li>	
 								<li>
-									<label style="width: 60%; display: inline-block;">Reviewed By:</label>					
+									<label style="width: 60%; display: inline-block;">Sample Prep Expiry Date:</label>					
 									<label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br>
-								</li>
-								<li>
-									<label style="width: 60%; display: inline-block;">Date Created:</label>					
-									<label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br>
-								</li>
-								
+								</li>	
 							</ul>  
+							<div class="wizard-actions">
+								<button class="btn btn-sm btn-primary add"  >
+									<i class="ace-icon fa fa-plus"></i>
+									Add Sample
+								</button>
+							</div>
 						</div>
-					</div><!--profile-info-row-->
+					</div><!--profile-info-row--><!--profile-info-row-->
 				</div><!--profile-user-info profile-user-info-striped-->
 			</div><!--col-sm-7 infobox-container-->
 		</div><!-- first row-->
@@ -240,25 +282,6 @@
 	</div>
 
 
-	<script type="text/javascript">
-	window.jQuery || document.write("<script src='assets/js/jquery.min.js'>"+"<"+"/script>");
-	</script>
-
-
-	<script type="text/javascript">
-	if('ontouchstart' in document.documentElement) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
-	</script>
-
-	<script type="text/javascript">
-	jQuery(function($) {
-		$(document).on('click', '.toolbar a[data-target]', function(e) {
-			e.preventDefault();
-			var target = $(this).data('target');
-				$('.widget-box.visible').removeClass('visible');//hide others
-				$(target).addClass('visible');//show target
-			});
-	});
-
-	</script>
+<?php $this->load->view("abbot_worksheet_footer.php"); ?>
 
 </body>

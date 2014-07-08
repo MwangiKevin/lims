@@ -49,15 +49,15 @@ class vl_requisition extends MY_Controller {
 		$this -> template($this->view_data);
 	}
 
-	// public function samples(){		
-// 
-		// $this->view_data['content_view'] 	= 	"eid/samples_view";
-		// $this->view_data['title'] 			= 	"EID | Samples";	
-		// $this->view_data['menu_select']		= 	array(1,1);
-// 
-		// $this -> template($this->view_data);
-	// }
-// 
+	public function samples(){		
+
+		$this->view_data['content_view'] 	= 	"vl/samples_view";
+		$this->view_data['title'] 			= 	"Viral Load | Samples";	
+		$this->view_data['menu_select']		= 	array(1,1);
+
+		$this -> template($this->view_data);
+	}
+
 	// public function facility_consumption(){	
 // 
 		// $this->view_data['content_view'] 	= 	"eid/fac_consumption_view";
