@@ -76,11 +76,11 @@ class worksheet extends MY_Controller {
 	public function history(){	
 
 		$this->view_data['content_view'] 		= "vl/worksheet_history";
-		$this->view_data['title'] 				= "EID | Worksheet | ABBOT";		
+		$this->view_data['title'] 				= "VL | Worksheet";		
 		$this->view_data['menu_select']			= 	array(2,2);
 		$this->view_data['breadcrumbs'][2]		=	array(
 													"title" 	=>	"Worksheet History",
-													"link"		=>	base_url()."eid/worksheet/history",
+													"link"		=>	base_url()."vl/worksheet/history",
 													"class"		=>	"active"
 													);
 		

@@ -109,7 +109,7 @@
 					}
 				?>
 				<li class="<?php echo $selected_class;?>">
-					<a href="<?php echo base_url()?>vl/requisition">
+					<a href="<?php echo base_url()?>vl/vl_requisition/samples">
 						<i class="menu-icon fa fa-caret-right"></i>
 						<i class="fa fa-tint"></i>
 						&nbsp;Samples Entered

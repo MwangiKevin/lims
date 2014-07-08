@@ -27,7 +27,20 @@
 		
 		<div class="widget-header widget-header-flat" style="margin-bottom: 10px;">
 			<div class="widget-title smaller">
-				<strong><h2>Create Worksheet (Abbort) Viral Load</h2></strong>
+				<strong>
+					<h2>
+						Create Worksheet (Abbort) Viral Load
+						<label style="display: inline-block">
+							<input class="ace" type="radio" name="form-field-radio">
+							<span class="lbl"> DBS</span>
+						</label>
+						&nbsp;
+						<label style="display: inline-block">
+							<input class="ace" type="radio" name="form-field-radio">
+							<span class="lbl"> Plasma/EDTA</span>
+						</label>
+					</h2>
+				</strong>
 			</div>
 		</div><!--widget-header widget-header-flat-->
 		<div class="row" style="height:50%; margin-bottom: 0px;"><!-- first row-->
@@ -41,25 +54,24 @@
 								<li>
 									<div class="widget-header widget-header-flat" style="margin-bottom: 10px;">
 										<div class="widget-title smaller">
-											<strong><center><h5> Info </h5></center></strong>
+											<strong><center><h5> Worksheet Info </h5></center></strong>
 										</div>
 									</div> 
 								</li>
 								<li>
-									<label style="width: 60%; display: inline-block;">Worksheet:</label>					
-									<label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br>
-								</li>
-								<li>
-									<label style="width: 60%; display: inline-block;">Template No:</label>					
-									<label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br>
+									<label style="width: 60%; display: inline-block;">Worksheet No.:</label>					
+									<!-- <label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br> -->
+									<input class="form-control input-mask-phone" type="text" id="form-field-mask-2">
 								</li>
 								<li>
 									<label style="width: 60%; display: inline-block;">Date Created:</label>					
-									<label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br>
+									<!-- <label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br> -->
+									<input class="form-control input-mask-phone" type="text" id="form-field-mask-2">
 								</li>
 								<li>
 									<label style="width: 60%; display: inline-block;">Created By:</label>					
-									<label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br>
+									<!-- <label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br> -->
+									<input class="form-control input-mask-phone" type="text" id="form-field-mask-2">
 								</li>
 							</ul> 
 						</div>
@@ -73,7 +85,28 @@
 										</div>
 									</div> 
 								</li>
-								<li>
+								<table style="font-size:90%" id="tests_table" class="table table-bordered table-responsive">
+								<thead>
+									<tr class="active">
+										<th></th>
+										<th rowspan="2">Sample Prep</th>
+										<th rowspan="2">Bulk Lysis Buffer</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Lot No.</td>
+										<td><input class="form-control input-mask-phone" type="text" id="form-field-mask-2"></td>
+										<td><input class="form-control input-mask-phone" type="text" id="form-field-mask-2"></td>
+									</tr>
+									<tr>
+										<td>Expiry Dates</td>
+										<td><input class="form-control input-mask-phone" type="text" id="form-field-mask-2"></td>
+										<td><input class="form-control input-mask-phone" type="text" id="form-field-mask-2"></td>
+									</tr>
+								</tbody>
+								</table>
+								<!-- <li>
 									<label style="width: 60%; display: inline-block;">Template No:</label>					
 									<label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br>
 								</li>
@@ -84,7 +117,8 @@
 								<li>
 									<label style="width: 60%; display: inline-block;">Created By:</label>					
 									<label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br>
-								</li>
+								</li> -->
+								
 							</ul> 
 						</div>
 						<div class="profile-info-value"> 
@@ -96,7 +130,28 @@
 										</div>
 									</div> 
 								</li>
-								<li>
+								<table style="font-size:90%" id="tests_table" class="table table-bordered table-responsive">
+								<thead>
+									<tr class="active">
+										<th rowspan="2">Date Created</th>
+										<th rowspan="2">Created By</th>
+										<th rowspan="2">Machine</th>
+									</tr>
+								</thead>
+								<tbody
+									<tr>
+										<td><input class="form-control input-mask-phone" type="text" id="form-field-mask-2"></td>
+										<td><input class="form-control input-mask-phone" type="text" id="form-field-mask-2"></td>
+										<td><input class="form-control input-mask-phone" type="text" id="form-field-mask-2"></td>
+									</tr>
+									<tr>
+										<td><input class="form-control input-mask-phone" type="text" id="form-field-mask-2"></td>
+										<td><input class="form-control input-mask-phone" type="text" id="form-field-mask-2"></td>
+										<td><input class="form-control input-mask-phone" type="text" id="form-field-mask-2"></td>
+									</tr>
+								</tbody>
+								</table>
+								<!-- <li>
 									<label style="width: 60%; display: inline-block;">Control:</label>					
 									<label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br>
 								</li>
@@ -107,7 +162,7 @@
 								<li>
 									<label style="width: 60%; display: inline-block;">Amplification Kit:</label>					
 									<label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br>
-								</li>
+								</li> -->
 							</ul>  
 						</div>
 					</div><!--profile-info-row-->
@@ -237,25 +292,6 @@
 	</div>
 
 
-	<script type="text/javascript">
-	window.jQuery || document.write("<script src='assets/js/jquery.min.js'>"+"<"+"/script>");
-	</script>
-
-
-	<script type="text/javascript">
-	if('ontouchstart' in document.documentElement) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
-	</script>
-
-	<script type="text/javascript">
-	jQuery(function($) {
-		$(document).on('click', '.toolbar a[data-target]', function(e) {
-			e.preventDefault();
-			var target = $(this).data('target');
-				$('.widget-box.visible').removeClass('visible');//hide others
-				$(target).addClass('visible');//show target
-			});
-	});
-
-	</script>
-
+	
+<?php $this->load->view("abbot_worksheet_footer"); ?>
 </body>

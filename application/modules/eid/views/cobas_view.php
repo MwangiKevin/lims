@@ -1,24 +1,3 @@
-
-<style>
-/* some elements used in demo only */
-.spinner-preview {
-	width: 100px;
-	height: 100px;
-	text-align: center;
-	margin-top: 60px;
-}
-
-.dropdown-preview {
-	margin: 0 5px;
-	display: inline-block;
-}
-.dropdown-preview  > .dropdown-menu {
-	display: block;
-	position: static;
-	margin-bottom: 5px;
-}
-</style>
-
 <h4 class="lighter">
 	<i class="ace-icon fa fa-hand-o-right icon-animated-hand-pointer blue"></i>
 	<a href="#" data-toggle="modal" class="pink"> Fill The Form and Click Submit </a>
@@ -37,112 +16,264 @@
 			
 			<div id="col-sm-7 infobox-container" style="margin-top: 1%;">
 				<div class="profile-user-info profile-user-info-striped">
-					<div class="profile-info-row">
+				<div id="profile-info-row">
+					<table id="tests_table" class="table table-bordered table-responsive striped">
+							<thead>
+								<tr class="active">
+									<th style ="width: 25%;">Sample</th>
+									<th style ="width: 35%;">WorkSheet Info</th>
+									<th style ="width: 25%;">Kit Details</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="" id = "1" class ="">
+									<td>						
+										<div class="input-group my-input-group nb">
+											<span class="input-group-addon my-input-group-caption">
+												Date <br/>Cut
+											</span>
+											<!-- Why an array?-->
+											<input name = "date_cut[]"  id="date_cut" class="form-control datepicker" type="text" style="width:100%;" required data-date-format="dd-mm-yyyy" />
+											<span class="input-group-addon my-input-group-icon">
+												<i class="ace-icon fa fa-calendar"></i>
+											</span>
+										</div>	
+
+										<div class="input-group my-input-group nb">
+											<span class="input-group-addon my-input-group-caption">
+												Date<br/>Received:
+											</span>
+											<input name="date_received[]" id="date_received" class="form-control datepicker" type="text" style="width:100%;" required data-date-format="dd-mm-yyyy" />
+											<span class="input-group-addon my-input-group-icon">
+												<i class="ace-icon fa fa-calendar"></i>
+											</span>
+										</div>
+										
+										<div class="input-group my-input-group nb" style="width:100%">
+											<span class="input-group-addon my-input-group-caption" >
+												Sample <br/> Prep Lot No.:
+											</span>
+											<input name="sample_prep_no[]" id="sample_prep_no" class="form-control date-picker" type="text" style="width:100%;" required data-date-format="dd-mm-yyyy" />
+										</div>	
+															
+										<div class="input-group my-input-group nb">
+											<span class="input-group-addon my-input-group-caption">
+												Sample Prep <br/> Expiry Date
+											</span>
+											<input name="sample_prep_expiry_date[]" id="sample_prep_ex[piry_date" class="form-control datepicker" type="text" style="width:100%; 	" required data-date-format="dd-mm-yyyy" />
+											<span class="input-group-addon my-input-group-icon">
+												<i class="ace-icon fa fa-calendar"></i>
+											</span>
+										</div>
+									</td>
+									<td>
+										<div class = "row">
+											<div class = "col-xs-6 ">
+												<div class="input-group my-input-group nb">
+													<span class="input-group-addon my-input-group-caption">
+														CDC <br/> Worksheet <br/>No.:
+													</span>
+													<input name="template_no[]" id="template_no" class="form-control date-picker" type="text" style="width:100%;	" required data-date-format="dd-mm-yyyy" />
+												</div>
+												
+												<div class="input-group my-input-group nb">
+													<span class="input-group-addon my-input-group-caption">
+														Created By.:
+													</span>
+													<input name="created_by[]" id="created_by" class="form-control date-picker" type="text" style="width:100%;	" required data-date-format="dd-mm-yyyy" />
+												</div>
+
+												<div class="input-group my-input-group nb">
+													<span class="input-group-addon my-input-group-caption">
+														Date Created:
+													</span>
+													<input name="date_created[]" id="date_created" class="form-control datepicker"  type="text">
+													<span class="input-group-addon my-input-group-icon">
+														<i class="ace-icon fa fa-calendar"></i>
+													</span>
+												</div>
+												<!-- <div class="input-group my-input-group nb">
+													<span class="input-group-addon my-input-group-caption">
+														age </br> (months)
+													</span>
+													<input name="infant_age[]" id="infant_age" class="form-control"  type="text">
+												</div> -->
+												<div class="input-group my-input-group nb" style="width:100%">
+													<span class="input-group-addon my-input-group-caption">
+														Updated By:
+													</span>
+													<input name="updated_by[]" id="updated_by" class="form-control date-picker" type="text" style="width:100%;	" required data-date-format="dd-mm-yyyy" /> 
+												</div>
+
+												<div class="input-group my-input-group nb" style="width:100%">
+													<span class="input-group-addon my-input-group-caption">
+														Approved <br/> By:
+													</span>
+													 <input name="approved_by[]" id="approved_by" class="form-control date-picker" type="text" style="width:100%;	" required data-date-format="dd-mm-yyyy" />
+												</div>
+											</div>	
+																					
+											<div class = "col-xs-6 " style="padding-left:0px;">												
+												<div class="input-group my-input-group nb" style="width:100%">
+													<span class="input-group-addon my-input-group-caption">
+														Reviewed <br/> By
+													</span>
+													<input name="reviewed_by[]" id="reviewed_by" class="form-control date-picker" type="text" style="width:100%;	" required data-date-format="dd-mm-yyyy" />
+												</div>
+												
+												<div class="input-group my-input-group nb" style="width:100%">
+													<span class="input-group-addon my-input-group-caption">
+														Date <br /> Reviewed
+													</span>
+													<input name="date_reviewed[]" id="date_reviewed" class="form-control datepicker"  type="text">
+													<span class="input-group-addon my-input-group-icon">
+														<i class="ace-icon fa fa-calendar"></i>
+													</span> 
+												</div>
+												
+											</div>
+										</div>
+									</td>
+									
+									<td>
+										<div class="input-group my-input-group nb" style="width:100%">
+											<span class="input-group-addon my-input-group-caption">
+												Lot No.:
+											</span>
+											<input name="lot_no[]" id="lot_no" class="form-control date-picker" type="text" style="width:100%;	" required data-date-format="dd-mm-yyyy" />
+										</div>
+
+										<div class="input-group my-input-group nb" style="width:100%">
+											<span class="input-group-addon my-input-group-caption">
+												HIQCAP No.:
+											</span>
+											<input name="hiqcap[]" id="hiqcap" class="form-control date-picker" type="text" style="width:100%;	" required data-date-format="dd-mm-yyyy" />
+										</div>
+
+										<div class="input-group my-input-group nb" style="width:100%">
+											<span class="input-group-addon my-input-group-caption">
+												Rack No.:
+											</span>
+											<input name="rack_no[]" id="rack_no" class="form-control date-picker" type="text" style="width:100%;	" required data-date-format="dd-mm-yyyy" />
+										</div>
+										
+										<div class="input-group my-input-group nb" style="width:100%">
+											<span class="input-group-addon my-input-group-caption">
+												Spek Kit No.:
+											</span>
+											<input name="spek_kit_no[]" id="spek_kit_no" class="form-control date-picker" type="text" style="width:100%;	" required data-date-format="dd-mm-yyyy" />
+										</div>
+										
+										<div class="input-group my-input-group nb" style="width:100%">
+											<span class="input-group-addon my-input-group-caption">
+												Kit <br /> Expiry <br/>  Date:
+											</span>
+											<input name="kit_expiry[]" id="kit_expiry" class="form-control datepicker"  type="text">
+													<span class="input-group-addon my-input-group-icon">
+														<i class="ace-icon fa fa-calendar"></i>
+													</span> 
+										</div>
+										<div class="wizard-actions">
+											<button class="btn btn-sm btn-primary add"  >
+												<i class="ace-icon fa fa-plus"></i>
+												Add Sample
+											</button>
+										</div>
+<!-- 
+										<div class="input-group my-input-group nb" style="width:100%">
+											<span class="input-group-addon my-input-group-caption">
+												Entry Point
+											</span>
+											<select name="ent_point[]" id="ent_point" style="width:100%"  required >
+												<option value=""> * </option><option value="1"> OPD</option>
+												<option value="2"> Paediatric  Ward</option>
+												<option value="3"> MCH/PMTCT</option>
+												<option value="4"> CCC/PSC</option>
+												<option value="5"> Materrnity</option>
+												<option value="6"> Other</option>
+												<option value="7"> No Data</option>
+											</select>
+										</div> -->
+										
+									</td>
+									<!-- <td id="test_reason_td">
+									<!-- 	<div class="control-group">
+
+											<div class="checkbox">
+												<label>
+													<input name="hiv_inv[]" id = "hiv_inv" type="checkbox" class="ace">
+													<span class="lbl small"> HIV Status Investigation</span>
+												</label>
+											</div>
+
+											<div class="checkbox">
+												<label>
+													<input name="conf_9_months[]" id="conf_9_months" type="checkbox" class="ace">
+													<span class="lbl small"> Confirmatory PCR @ 9 months </span>
+												</label>
+											</div>
+
+											<div class="checkbox">
+												<label>
+													<input name="conf_test[]" id="conf_test" type="checkbox" class="ace">
+													<span class="lbl small"> Repeat PCR Test</span>
+												</label>
+											</div>
+
+											<div class="checkbox">
+												<label>
+													<input name="ill_infant[]" id="ill_infant" value="1" type="checkbox" class="ace">
+													<span class="lbl small"> Ill Infant</span>
+												</label>
+											</div>
+
+										</div> -->
+									</td> 
+								</tr>
+
+							</tbody>
+						</table>
 						
-						<div class="profile-info-value"> 
-							<ul style="list-style-type: none;">
-								<li>
-									<div class="widget-header widget-header-flat" style="margin-bottom: 10px;">
-										<div class="widget-title smaller">
-											<strong><center><h5> Sample Details </h5></center></strong>
-										</div>
-									</div> 
-								</li>
-								<li>
-									<label style="width: 60%; display: inline-block;">Date Cut:</label>					
-									<label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br>
-								</li>
-								<li>
-									<label style="width: 60%; display: inline-block;">Date Received:</label>					
-									<label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br>
-								</li>
-							</ul> 
-						</div>
-						
-						<div class="profile-info-value"> 
-							<ul style="list-style-type: none;">
-								<li>
-									<div class="widget-header widget-header-flat" style="margin-bottom: 10px;">
-										<div class="widget-title smaller">
-											<strong><center><h5> Kit Details </h5></center></strong>
-										</div>
-									</div> 
-								</li>
-								<li>
-									<label style="width: 60%; display: inline-block;">Lot No.:</label>					
-									<label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br>
-								</li>
-								<li>
-									<label style="width: 60%; display: inline-block;">HQ CAP No.:</label>					
-									<label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br>
-								</li>
-								<li>
-									<label style="width: 60%; display: inline-block;">Rack No.:</label>					
-									<label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br>
-								</li>
-								<li>
-									<label style="width: 60%; display: inline-block;">Spek Kit No:</label>					
-									<label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br>
-								</li>
-								<li>
-									<label style="width: 60%; display: inline-block;">Kit Expiry Date:</label>					
-									<label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br>
-								</li>
-								
-							</ul> 
-						</div>
-						<div class="profile-info-value"> 
-							<ul style="list-style-type: none;">
-								<li>
-									<div class="widget-header widget-header-flat" style="margin-bottom: 10px;">
-										<div class="widget-title smaller">
-											<strong><center><h5> Worksheet Details </h5></center></strong>
-										</div>
-									</div> 
-								</li>
-								<li>
-									<label style="width: 60%; display: inline-block;">Worksheet/Template No.:</label>					
-									<label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br>
-								</li>
-								<li>
-									<label style="width: 60%; display: inline-block;">Approved By:</label>					
-									<label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br>
-								</li>
-								<li>
-									<label style="width: 60%; display: inline-block;">Created By:</label>					
-									<label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br>
-								</li>
-								<li>
-									<label style="width: 60%; display: inline-block;">Reviewed By:</label>					
-									<label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br>
-								</li>
-								<li>
-									<label style="width: 60%; display: inline-block;">Date Created:</label>					
-									<label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br>
-								</li>
-								
-							</ul>  
-						</div>
-					</div><!--profile-info-row-->
+				</div>
 				</div><!--profile-user-info profile-user-info-striped-->
 			</div><!--col-sm-7 infobox-container-->
 		</div><!-- first row-->
 		
 		<div class="widget-header widget-header-flat" style="margin-bottom: 10px;">
 			<div class="widget-title smaller">
-				<strong><h4>COBAS EID Worksheet </h4></strong>
+				<strong><h4>COBAS EID Worksheet for <?php echo( date("d/m/y",time())) ?> (24)</h4></strong>
 			</div>
 		</div><!--widget-header widget-header-flat-->
 		
-		<div class="row" >
+		<div class="row" style="padding-left: 10%; padding-right: 10%">
 			<center>
+				<?php
+				foreach ($result as $res) {
+					$DBS_No = $res["dbsNo"];
+					$id = $res["id"];
+					echo('<div class="dropdown dropdown-preview">
+						<ul class="dropdown-menu">					
+							<li>
+								<h6>Sample Code'.$id.'</h6>
+							</li>
+							<li>
+								Lab-Code (DBS No.:'.$DBS_No.')
+							</li>
+							<li class="divider"></li>
+							<li>
+								<h6>Location of the bar-code</h6>
+							</li>
+						</ul>
+					</div>');
+				}
+					?>
 				<div class="dropdown dropdown-preview">
 					<ul class="dropdown-menu">					
 						<li>
-							<h6>Sample Code</h6>
+							<h6 style="color: 	#FC1501" >Negative Control</h6>
 						</li>
 						<li>
-							Lab-Code
+							Result Goes Here
 						</li>
 						<li class="divider"></li>
 						<li>
@@ -153,10 +284,10 @@
 				<div class="dropdown dropdown-preview">
 					<ul class="dropdown-menu">					
 						<li>
-							<h6>Sample Code</h6>
+							<h6 style="color: #78AB46" >Positive Control</h6>
 						</li>
 						<li>
-							Lab-Code
+							Result Goes Here
 						</li>
 						<li class="divider"></li>
 						<li>
@@ -164,68 +295,20 @@
 						</li>
 					</ul>
 				</div>
-				<div class="dropdown dropdown-preview">
-					<ul class="dropdown-menu">					
-						<li>
-							<h6>Sample Code</h6>
-						</li>
-						<li>
-							Lab-Code
-						</li>
-						<li class="divider"></li>
-						<li>
-							<h6>Location of the bar-code</h6>
-						</li>
-					</ul>
-				</div>
-				<div class="dropdown dropdown-preview">
-					<ul class="dropdown-menu">					
-						<li>
-							<h6>Sample Code</h6>
-						</li>
-						<li>
-							Lab-Code
-						</li>
-						<li class="divider"></li>
-						<li>
-							<h6>Location of the bar-code</h6>
-						</li>
-					</ul>
-				</div>
-				<div class="dropdown dropdown-preview">
-					<ul class="dropdown-menu">					
-						<li>
-							<h6>Sample Code</h6>
-						</li>
-						<li>
-							Lab-Code
-						</li>
-						<li class="divider"></li>
-						<li>
-							<h6>Location of the bar-code</h6>
-						</li>
-					</ul>
-				</div>
-				<div class="dropdown dropdown-preview">
-					<ul class="dropdown-menu">					
-						<li>
-							<h6>Sample Code</h6>
-						</li>
-						<li>
-							Lab-Code
-						</li>
-						<li class="divider"></li>
-						<li>
-							<h6>Location of the bar-code</h6>
-						</li>
-					</ul>
-				</div>
+				<ul style="list-style:  none;">
+					<li>
+						<label style="width: auto; display: inline-block;">Positive Control interpretation:</label>					
+						<textarea name="positive_interpretation" id="positive_interpretation" class="form-control" style="height: 50px;width: 100%;" type="text"></textarea>
+					</li>
+					<li>
+						<label style="width: auto; display: inline-block;">Positive Control interpretation:</label>					
+						<textarea name="positive_interpretation" id="positive_interpretation" class="form-control" style="height: 50px;width: 100%;" type="text"></textarea>
+					</li>
+				</ul>				
 			</center>
 		</div>
-		
 		<div class="row" style="text-align: center;">
 			<input type="button" value="Save & Print"/>
-			
 		</div>
 	</div><!-- /.main-container -->
 
@@ -239,26 +322,6 @@
 		</div>
 	</div>
 
-
-	<script type="text/javascript">
-	window.jQuery || document.write("<script src='assets/js/jquery.min.js'>"+"<"+"/script>");
-	</script>
-
-
-	<script type="text/javascript">
-	if('ontouchstart' in document.documentElement) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
-	</script>
-
-	<script type="text/javascript">
-	jQuery(function($) {
-		$(document).on('click', '.toolbar a[data-target]', function(e) {
-			e.preventDefault();
-			var target = $(this).data('target');
-				$('.widget-box.visible').removeClass('visible');//hide others
-				$(target).addClass('visible');//show target
-			});
-	});
-
-	</script>
+<?php $this->load->view("worksheet_footer");?>
 
 </body>
