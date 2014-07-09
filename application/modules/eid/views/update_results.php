@@ -31,13 +31,14 @@
 
 	</div>
 	<div class="row my-infobox">
-		<form action="<?php echo base_url("eid/results/upload_file");?>" class="dropzone" id="dropzone">
+		<form action="<?php echo base_url("eid/results/upload_file");?>" class="dropzone" id="dz" method="post">
 			<div class="fallback">
 				<input name="file" type="file" multiple="">
 			</div>
+				<!-- <input name="submit" type="submit" > -->
 		</form>
 	</div>
 
 	<script>
-			new Dropzone("#dropzone", { /* options */ });
+			//new Dropzone(".dz", { /* options */ });
 	</script>

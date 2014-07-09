@@ -100,4 +100,7 @@ class results extends MY_Controller {
 		$this->load->view("update_results_oscar");
 		
 	}
+	public function upload_file(){
+		echo "<pre>ghjkl;";
+	}
 }

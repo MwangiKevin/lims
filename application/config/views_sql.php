@@ -78,22 +78,6 @@ $sql["v_Requisition_details"] 						=	"SELECT
 														
 													";
 
-// $sql["v_sample_details"] 						=	"SELECT 
-// 															`sa`.`id` 				AS 	`sample_id`,
-// 															`sa`.`date_collected`	AS 	`date_collected`,
-// 															`sa`.`date_dispatched`	AS 	`date_dispatched`,
-// 															`sa`.`sample_type`		AS 	`sample_type`,
-// 															`sa`.``					AS 	``,
-// 															`sa`.``					AS 	``,
-// 															`sa`.``					AS 	``,
-// 															`sa`.``					AS 	``,
-// 															`sa`.``					AS 	``,
-// 															`sa`.``					AS 	``,
-// 															`sa`.``					AS 	``,
-
-
-// 													";
-
 
 
 $config["views_sql"] =$sql;
