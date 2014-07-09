@@ -234,6 +234,8 @@
 						<div class="table-header">
 							Samples info
 						</div>
+						
+						
 						<table id="tests_table" class="table table-bordered table-responsive striped">
 							<thead>
 								<tr class="active">
@@ -518,6 +520,8 @@
 
 							</tbody>
 						</table>
+						
+						
 					</div>	
 					<!-- <div  class="row my-infobox" style="padding:8px"> -->
 					<!-- </div> -->

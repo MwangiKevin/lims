@@ -25,19 +25,28 @@
 	</div>
 	<div class="main-container">
 		<div class="main-content">
+			<br/>
+			<br/>
+			<br/>
 			<div class="row">
-				<div class="col-sm-10 col-sm-offset-1">
-					<div class="login-container"  style = "float:left; margin-top:5%;">
-						<h1 >
-							<i class="ace-icon fa fa-leaf green"></i>
-							<span class="blue" style="font-size:50px;">EID</span>
-							<span style="font-size:50px;">/</span>
-							<span class="red"  style="font-size:50px;">VL</span>
-							<span class="grey" id="id-text2" style="font-size:50px;">LIMS</span>
-						</h1>
-						Logo/crest goes here
-					</div>
-					<div class="login-container"  style = "float:right; margin-top:5%;">						
+				<div class="col-sm-6 col-sm-offset-1">
+					<center>
+						<div class="login-container"  style = " width:100%">
+							<h1 >
+								<i class="ace-icon fa fa-leaf green"></i>
+								<span class="blue" style="font-size:60px;">EID</span>
+								<span style="font-size:60px;">/</span>
+								<span class="red"  style="font-size:60px;">VL</span>
+								<span class="grey" id="id-text2" style="font-size:60px;">LIMS</span>
+							</h1>
+						</div>
+						<h2 class="blue"> (Early Infant Diagnosis)</h2>
+						<h2 class="red"> (Viral Load) </h2>
+					</center>
+					<img src="<?php echo base_url("img/tz.png");?>" height="140" width="100%" alt="NACP">
+				</div>
+				<div class="col-sm-3 ">
+					<div class="login-container"  style = "">						
 
 						<div class="space-6"></div>
 
@@ -52,16 +61,16 @@
 
 										<div class="space-6"></div>
 										<?php 
-											if($login_fail){
-										?>
-										<div class="alert alert-danger" fade in>											
-											Login Unsuccessfull!
-											<button class="close" data-dismiss="alert">
-												<i class="ace-icon fa fa-times"></i>
-											</button>
-										</div>
-										<?php
-											}
+										if($login_fail){
+											?>
+											<div class="alert alert-danger" fade in>											
+												Login Unsuccessfull!
+												<button class="close" data-dismiss="alert">
+													<i class="ace-icon fa fa-times"></i>
+												</button>
+											</div>
+											<?php
+										}
 										?>
 										<?php echo form_open('login/process_credentials');?>
 										<fieldset>
@@ -75,6 +84,16 @@
 											<label class="block clearfix">
 												<span class="block input-icon input-icon-right">
 													<input type="password" class="form-control" name="password" placeholder="Password">
+													<i class="ace-icon fa fa-lock"></i>
+												</span>
+											</label>
+
+											<label class="block clearfix">
+												<span class="block input-icon input-icon-right">
+													<select name="program" >
+														<option value="eid">Early Infant Diagnosis</option>
+														<option value="vl">Viral load</option>
+													</select>
 													<i class="ace-icon fa fa-lock"></i>
 												</span>
 											</label>

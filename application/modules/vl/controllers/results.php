@@ -10,7 +10,7 @@ class results extends MY_Controller {
 
 		$this->view_data['content_view'] 	= 	"vl/update_results";
 		$this->view_data['sidebar'] 		= 	"vl_sidebar";
-		$this->view_data['title'] 			= 	"Viral Load | Results";
+		$this->view_data['title'] 			= 	"Viral Load | Update Results";
 		$this->view_data['filter']			=	false;
 		
 		
@@ -45,7 +45,9 @@ class results extends MY_Controller {
 	}	
 
 	public function update(){
-		
+		$this->view_data['content_view'] 	= 	"vl/update_results";
+		$this->view_data['sidebar'] 		= 	"vl_sidebar";
+		$this->view_data['title'] 			= 	"Viral Load | Update Results";
 		$this -> template($this->view_data);
 	}
 

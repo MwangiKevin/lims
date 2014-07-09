@@ -12,7 +12,8 @@
 class  MY_Controller  extends  MX_Controller {
 
 	protected $view_data = array();
-	protected $em;
+	protected $em;	
+	public $program;
 
 	function __construct() {
 		parent::__construct();
@@ -187,7 +188,7 @@ class  MY_Controller  extends  MX_Controller {
 		}elseif ($user_type==1) {
 			redirect("admin");
 		}elseif ($user_type==2) {
-			redirect("eid");
+			redirect($this->program);
 		}
 	}
 
