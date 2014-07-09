@@ -26,111 +26,18 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr >
-					<td>44</td>
-					<td>44</td>
-					<td>44</td>
-					<td>44</td>
-					<td>44</td>
-					<td>44</td>
-					<td>44</td>
-					<td>44</td>
-					<td>44</td>
-					<td>44</td>
-					<td>44</td>
-					<td>44</td>
-					<td>44</td>
-					<td>44</td>
-					<td class="">
-						<div class="action-buttons">
-							<a class="blue" href="#">
-								<i class="ace-icon fa fa-search-plus bigger-130"></i>
-							</a>
-
-							<a class="green" href="#">
-								<i class="ace-icon fa fa-pencil bigger-130"></i>
-							</a>
-
-							<a class="red" href="#">
-								<i class="ace-icon fa fa-trash-o bigger-130"></i>
-							</a>
-
-							<a class="green" href="#">
-								<i class="ace-icon fa fa-print bigger-130"></i>
-							</a>
-						</div>
-					</td>
-				</tr>
-				<tr >
-					<td>44</td>
-					<td>44</td>
-					<td>44</td>
-					<td>44</td>
-					<td>44</td>
-					<td>44</td>
-					<td>44</td>
-					<td>44</td>
-					<td>44</td>
-					<td>44</td>
-					<td>44</td>
-					<td>44</td>
-					<td>44</td>
-					<td>44</td>
-					<td class="">
-						<div class="action-buttons">
-							<a class="blue" href="#">
-								<i class="ace-icon fa fa-search-plus bigger-130"></i>
-							</a>
-
-							<a class="green" href="#">
-								<i class="ace-icon fa fa-pencil bigger-130"></i>
-							</a>
-
-							<a class="red" href="#">
-								<i class="ace-icon fa fa-trash-o bigger-130"></i>
-							</a>
-
-							<a class="green" href="#">
-								<i class="ace-icon fa fa-print bigger-130"></i>
-							</a>
-						</div>
-					</td>
-				</tr>
-				<tr >
-					<td>44sa</td>
-					<td>44sa</td>
-					<td>44sa</td>
-					<td>44sa</td>
-					<td>44sa</td>
-					<td>44sa</td>
-					<td>44sa</td>
-					<td>44sa</td>
-					<td>44sa</td>
-					<td>44sa</td>
-					<td>44sa</td>
-					<td>44sa</td>
-					<td>44sa</td>
-					<td>44sa</td>
-					<td class="">
-						<div class="action-buttons">
-							<a class="blue" href="#">
-								<i class="ace-icon fa fa-search-plus bigger-130"></i>
-							</a>
-
-							<a class="green" href="#">
-								<i class="ace-icon fa fa-pencil bigger-130"></i>
-							</a>
-
-							<a class="red" href="#">
-								<i class="ace-icon fa fa-trash-o bigger-130"></i>
-							</a>
-
-							<a class="green" href="#">
-								<i class="ace-icon fa fa-print bigger-130"></i>
-							</a>
-						</div>
-					</td>
-				</tr>
 			</tbody>
 		</table>
+
 	</div>
+	<div class="row my-infobox">
+		<form action="<?php echo base_url("eid/results/upload_file");?>" class="dropzone" id="dropzone">
+			<div class="fallback">
+				<input name="file" type="file" multiple="">
+			</div>
+		</form>
+	</div>
+
+	<script>
+			new Dropzone("#dropzone", { /* options */ });
+	</script>

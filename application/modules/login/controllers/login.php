@@ -26,8 +26,9 @@ class Login extends MY_Controller {
 	*/
 	public function process_credentials() {
 
-		$username = $this -> input -> post("username", TRUE);
-		$password = $this -> input -> post("password", TRUE);
+		$username 		= $this -> input -> post("username", TRUE);
+		$password 		= $this -> input -> post("password", TRUE);
+		$this->program 	= $this -> input -> post("program", TRUE);
 
 		$this	->	view_data['login_fail'] 	=	!$this->authenticate_user($username, $password);
 

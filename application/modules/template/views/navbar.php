@@ -25,7 +25,7 @@
 		<div class="navbar-buttons navbar-header pull-right" role="navigation">
 
 			<ul class="nav ace-nav">
-				<li class="grey">
+				<!-- <li class="grey">
 					<a data-toggle="dropdown" class="dropdown-toggle" href="#">
 						<i class="ace-icon fa fa-tasks"></i>
 						<span class="badge badge-grey">0</span>
@@ -59,9 +59,9 @@
 							</a>
 						</li>
 					</ul>
-				</li>
+				</li> -->
 
-				<li class="purple">
+				<li class="green">
 					<a data-toggle="dropdown" class="dropdown-toggle" href="#">
 						<i class="ace-icon fa fa-bell icon-animated-bell"></i>
 						<span class="badge badge-important">0</span>
@@ -94,7 +94,7 @@
 					</ul>
 				</li>
 
-				<li class="green">
+				<!-- <li class="green">
 					<a data-toggle="dropdown" class="dropdown-toggle" href="#">
 						<i class="ace-icon fa fa-envelope icon-animated-vertical"></i>
 						<span class="badge badge-success">0</span>
@@ -119,7 +119,7 @@
 							</a>
 						</li>
 					</ul>
-				</li>
+				</li> -->
 
 				<li class="">
 					<a data-toggle="dropdown" href="#" class="dropdown-toggle">
@@ -159,7 +159,7 @@
 						<li class="divider"></li>
 
 						<li>
-							<a href="<?php echo base_url("eid/logout");?>">
+							<a href="<?php echo base_url("login/logout");?>">
 								<i class="ace-icon fa fa-power-off"></i>
 								Logout
 							</a>

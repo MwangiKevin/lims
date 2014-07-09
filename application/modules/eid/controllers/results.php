@@ -17,7 +17,7 @@ class results extends MY_Controller {
 		$this->view_data['b_color']			=	"no-skin";
 		$this->view_data['topleft_title']	=	"EID";
 		
-		$this->view_data 					=	array_merge($this->view_data,$this->load_libraries(array()));		
+		$this->view_data 					=	array_merge($this->view_data,$this->load_libraries(array("dropzone")));		
 		$this->view_data['menu_select']		= 	array(3,0);
 		$this->view_data['breadcrumbs'] 	=	array(
 														0 	=>	array(
