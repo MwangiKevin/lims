@@ -1,4 +1,4 @@
-<div>
+
 	
    
         <h4 class="lighter">
@@ -43,7 +43,7 @@
                     
 					<td>******</td>	
 					<td>******</td>						
-					<td><span class="glyphicon glyphicon-minus-sign"></span></td>
+					<td><center><a class="blue" href="#editdetailsdiv"><i class="ace-icon fa fa-pencil bigger-130"></i></a></center></td>
                     <td><span class="glyphicon glyphicon-ok-sign"></span></td>
                 </tr>
 
@@ -78,6 +78,93 @@
 
     </div>
     
- 
+    <div class="modal fade" id="editdetailsdiv">
+	<div class="modal-dialog" style="width:60%;margin-bottom:2px;">
+		<div class="modal-content" >
+			<div class="modal-header">
+	    		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	    		<h5 class="modal-title">Edit Facility Details</h5>
+	  		</div>
+			<div class="modal-body" style="padding-bottom:0px;">	
+				<?php echo form_open('admin/facilities/edit_fac');?>
+
+					<input required id="editfacilityid" type="hidden" name="editfacilityid" class="textfield form-control" readonly />
+
+					<div class="input-group" style="width: 100%;padding:4px;">
+						<table id="data-table-edit">
+							<thead>
+								<tr>
+									<th rowspan = "2">#</th>
+									<th rowspan = "2">Facility Name</th>
+									<th rowspan = "2">District</th>
+									<th rowspan = "2">Region</th>
+									<th rowspan = "2">Partner</th>
+									<th rowspan = "2"># equipment</th>
+									<th rowspan = "2"># Users</th>
+									<th colspan="2"><center>Actions</center></th>
+								</tr>
+								<tr>
+									<th>Rollout</th>
+									<th>Edit Details</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr id="edit_table_row"><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+							</tbody>
+						</table>
+		            </div>	
+					<div class="input-group" style="width: 100%;padding:4px;">
+						<span class="input-group-addon" style="width: 40%;">Facility name:</span>
+						<input required id="editfacname" name="facname" class="textfield form-control" />	
+		            </div>					
+					<div id="equipmentdiv" class="input-group" style="width: 100%;padding:4px;">
+						<span class="input-group-addon" style="width: 20%;">District:</span>
+						<input required id="editdis" name = "dis" class="textfield form-control"  readonly />
+						<span class="input-group-addon" style="width: 20%;">Region:</span>
+						<input required id="editreg" name = "reg" class="textfield form-control"  readonly />
+		            </div>	          
+					<div class="input-group" style="width: 100%;padding:4px;">
+						<span class="input-group-addon" style="width: 40%;">Partner:</span>
+						<select  required id="editpar" name="par" class="textfield form-control" >
+		                   	<option value="">*Select a Partner*</option> 
+		                   	<?php
+		                   		foreach($partners as $par){
+		                   	?>   
+		                   	<option value= "<?php echo $par["id"] ?>" ><?php echo $par["name"] ?></option>
+		                   	<?php
+		                   		}
+		                   	?>                					
+		                </select>
+					</div>	
+					<div class="input-group" style="width: 100%;padding:4px;">
+						<span class="input-group-addon" style="width: 40%;"> email:</span>
+						<input id="editemail" name="email" class="textfield form-control" />	
+		            </div>
+					<div class="input-group" style="width: 100%;padding:4px;">
+						<span class="input-group-addon" style="width: 40%;">phone:</span>
+						<input id="editphone" name="phone" class="textfield form-control" />	
+		            </div>
+					<div class="input-group" style="width: 100%;padding:4px;">
+						<span class="input-group-addon" style="width: 40%;"> Rollout Status :</span>
+						<span class="input-group-addon" style="width: 30%;"><input type="radio" name="editstatus" value="1">  Rolledout  <span style="font-size: 1.4em;color: #3e8f3e;" class="glyphicon glyphicon-ok-sign"></span></input></span>
+						<span class="input-group-addon" style="width: 30%;"><input type="radio" name="editstatus" value="2">  Not Rolledout  <span style="font-size: 1.4em;color: #eb9316;" class="glyphicon glyphicon-question-sign"></span></input></span>
+	                </div>				
+				
+					</div>
+					<div class="modal-footer" style="height:11px;padding-top:11px;">								
+						<div class="" style="padding:7px;">
+							<button name="save" type="submit" class="btn btn-primary btn-mini"><i class="glyphicon glyphicon-save"></i>Save</button>
+							<button name="discard" type="button"  onclick="hide_edit()" class="btn btn-default btn-minii"><i class="glyphicon glyphicon-remove"></i>Discard</button>
+						</div>
+		      		</div> 
+		      	</form>
+
+			<div class="modal-footer" style="height:11px;padding-top:11px;">
+      			<?php echo $this->config->item("copyrights");?>
+      		</div> 
+		</div>
+	</div>
 </div>
+ 
+
 <?php $this->load->view("facilities_details_footer_view.php"); ?>

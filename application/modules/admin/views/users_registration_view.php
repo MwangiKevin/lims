@@ -25,7 +25,7 @@
 									</div>         
 									<div class="input-group" style="width: 100%;padding:4px;">
 										<span class="input-group-addon" style="width: 40%;">Username :</span>
-										<input required name="usr" id="usr" class="textfield form-control" type="text" />
+										<input required name="username" id="username" class="textfield form-control" type="text" />
 									</div>
 									<div class="input-group" style="width: 100%;padding:4px;">
 										<span class="input-group-addon" style="width: 40%;">Email :</span>
@@ -41,15 +41,15 @@
 								<div class="mycontainer" id="full">	
 									<div class="input-group" style="width: 100%;padding:4px;">
 										<span class="input-group-addon" style="width: 40%;">User Type:</span>
-										<select required name="usr_grp" id="usr_grp" class="textfield form-control" >
+										<select required name="user_group" id="user_group" class="textfield form-control" >
 						                   	<option value="">*Select a user Group*</option>  
 						                   	<?php
 						                   		foreach ($user_groups as $group) {
-						                   			if($group["id"]!=1 && $group["id"]!=4 && $group["id"]!=5 && $group["id"]!=7){
+						                   			//if($group["id"]!=1 && $group["id"]!=4 && $group["id"]!=5 && $group["id"]!=7){
 						                  	?>     
 											<option value="<?php echo $group["id"];?>"><?php echo $group["name"];?></option>
 											<?php
-													}
+													//}
 						                   		}
 						                  	?>
 						                </select>
@@ -122,7 +122,7 @@
 
     <h4 class="lighter">
 		<i class="ace-icon fa fa-hand-o-right icon-animated-hand-pointer blue"></i>
-		<a href="#tabs1-add" data-toggle="modal" class="blue"> User Types </a>
+		<a href="#tabs1-add" data-toggle="modal" class="pink"> User Types </a>
 	</h4>
 	<div class="hr hr-18 hr-sinlge dotted"></div>
         
@@ -141,11 +141,14 @@
 						</div>						
 					</form>
 				</div>
-				<div class="mycontainer" style="float:right;">
+    
+    
+				<div class="mycontainer row my-infobox" style="float:right;">
 					      <div class="table-header">
                                 Users Details
                           </div>
-                          <table style="font-size:90%" id="tests_table" class="table table-bordered table-responsive">
+                    
+                          <table id="tests_table" class="table table-bordered table-responsive">
                               <thead>
                                   <tr class="active">
                                       <th rowspan="2">#</th>
