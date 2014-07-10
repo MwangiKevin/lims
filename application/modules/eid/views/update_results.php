@@ -35,10 +35,21 @@
 			<div class="fallback">
 				<input name="file" type="file" multiple="">
 			</div>
-				<!-- <input name="submit" type="submit" > -->
+			<!-- <input name="submit" type="submit" > -->
 		</form>
 	</div>
 
 	<script>
-			//new Dropzone(".dz", { /* options */ });
-	</script>
+
+			Dropzone.options.dz = {
+  			paramName: "file", 
+  			maxFilesize: 10, 
+  			accept: function(file, done) {
+  			 	if ((file.name.substring((file.name.length-4),file.name.length) != ".txt")&&(file.name.substring((file.name.length-4),file.name.length) != ".csv")) {
+  			 		done("Wrong File Type");
+  			 	}
+  			 	else { done(); }
+  			}
+			};
+
+</script>
