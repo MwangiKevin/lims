@@ -15,7 +15,7 @@
 
 			<div id="col-sm-7 infobox-container" style="margin-top: 1%;">
 				<div class="profile-user-info profile-user-info-striped">
-					<div class="profile-info-row">
+					<!-- <div class="profile-info-row">
 
 						<div class="profile-info-value"> 
 							<ul style="list-style-type: none;">
@@ -124,7 +124,150 @@
 								</button>
 							</div>
 						</div>
-					</div><!--profile-info-row-->
+					</div><!--profile-info-row--> 
+					
+					<div class="row" style="height:50%; margin-bottom: 0px;">
+						<div id="col-sm-7 infobox-container" style="margin-top: 1%;">
+							<div class="profile-user-info profile-user-info-striped">
+								<div id="profile-info-row">
+									<table id="tests_table" class="table table-bordered table-responsive striped">
+										<thead>
+											<tr class="active">
+												<th style ="width: 25%;">Worksheet Info</th>
+												<th style ="width: 35%;">Exraction Reagents</th>
+												<th style ="width: 25%;">Amplification Reagents </th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr class="" id = "1" class ="">
+												<td>
+													<div class="input-group my-input-group nb" style="width:100%">
+														<span class="input-group-addon my-input-group-caption" >
+															CDC Worksheet No.:
+														</span>
+														<input name="sample_prep_no[]" id="sample_prep_no" class="form-control date-picker" type="text" style="width:100%;" required data-date-format="dd-mm-yyyy" />
+													</div>	
+												
+													<div class="input-group my-input-group nb">
+														<span class="input-group-addon my-input-group-caption">
+															Date<br/>Created:
+														</span>
+														<input name="date_received[]" id="date_received" class="form-control datepicker" type="text" style="width:100%;" required data-date-format="dd-mm-yyyy" />
+														<span class="input-group-addon my-input-group-icon">
+															<i class="ace-icon fa fa-calendar"></i>
+														</span>
+													</div>
+													<div class="input-group my-input-group nb" style="width:100%">
+														<span class="input-group-addon my-input-group-caption" >
+															Created by:
+														</span>
+														<input name="sample_prep_no[]" id="sample_prep_no" class="form-control date-picker" type="text" style="width:100%;" required data-date-format="dd-mm-yyyy" />
+													</div>
+													<div class="input-group my-input-group nb" style="width:100%">
+														<span class="input-group-addon my-input-group-caption" >
+															Reviewed by:
+														</span>
+														<input name="sample_prep_no[]" id="sample_prep_no" class="form-control date-picker" type="text" style="width:100%;" required data-date-format="dd-mm-yyyy" />
+													</div>
+													<div class="input-group my-input-group nb">
+														<span class="input-group-addon my-input-group-caption">
+															Date<br/>Reviewed:
+														</span>
+														<input name="date_received[]" id="date_received" class="form-control datepicker" type="text" style="width:100%;" required data-date-format="dd-mm-yyyy" />
+														<span class="input-group-addon my-input-group-icon">
+															<i class="ace-icon fa fa-calendar"></i>
+														</span>
+													</div>
+													<div class="input-group my-input-group nb">
+														<span class="input-group-addon my-input-group-caption">
+															Date<br/>Run:
+														</span>
+														<input name="date_received[]" id="date_received" class="form-control datepicker" type="text" style="width:100%;" required data-date-format="dd-mm-yyyy" />
+														<span class="input-group-addon my-input-group-icon">
+															<i class="ace-icon fa fa-calendar"></i>
+														</span>
+													</div>
+												</td>
+												
+												<td>
+													<div class="input-group my-input-group nb" style="width:100%">
+														<span class="input-group-addon my-input-group-caption" >
+															Control Lot No.:
+														</span>
+														<input name="sample_prep_no[]" id="sample_prep_no" class="form-control date-picker" type="text" style="width:100%;" required data-date-format="dd-mm-yyyy" />
+													</div>
+													<div class="input-group my-input-group nb">
+														<span class="input-group-addon my-input-group-caption">
+															Control Expiry <br/> Date:
+														</span>
+														<input name="date_received[]" id="date_received" class="form-control datepicker" type="text" style="width:100%;" required data-date-format="dd-mm-yyyy" />
+														<span class="input-group-addon my-input-group-icon">
+															<i class="ace-icon fa fa-calendar"></i>
+														</span>
+													</div>
+													<div class="input-group my-input-group nb" style="width:100%">
+														<span class="input-group-addon my-input-group-caption" >
+															Calibrator Lot No.:
+														</span>
+														<input name="sample_prep_no[]" id="sample_prep_no" class="form-control date-picker" type="text" style="width:100%;" required data-date-format="dd-mm-yyyy" />
+													</div>
+													<div class="input-group my-input-group nb">
+														<span class="input-group-addon my-input-group-caption">
+															Calibrator Expiry <br/> Date:
+														</span>
+														<input name="date_received[]" id="date_received" class="form-control datepicker" type="text" style="width:100%;" required data-date-format="dd-mm-yyyy" />
+														<span class="input-group-addon my-input-group-icon">
+															<i class="ace-icon fa fa-calendar"></i>
+														</span>
+													</div>												
+												</td>
+												
+												<td>
+													<div class="input-group my-input-group nb" style="width:100%">
+														<span class="input-group-addon my-input-group-caption" >
+															Amplification Kit No.:
+														</span>
+														<input name="sample_prep_no[]" id="sample_prep_no" class="form-control date-picker" type="text" style="width:100%;" required data-date-format="dd-mm-yyyy" />
+													</div>
+													<div class="input-group my-input-group nb">
+														<span class="input-group-addon my-input-group-caption">
+															Amplification Expiry <br/> Date:
+														</span>
+														<input name="date_received[]" id="date_received" class="form-control datepicker" type="text" style="width:100%;" required data-date-format="dd-mm-yyyy" />
+														<span class="input-group-addon my-input-group-icon">
+															<i class="ace-icon fa fa-calendar"></i>
+														</span>
+													</div>
+													<div class="input-group my-input-group nb" style="width:100%">
+														<span class="input-group-addon my-input-group-caption" >
+															Bulk Lysis Lot No.:
+														</span>
+														<input name="sample_prep_no[]" id="sample_prep_no" class="form-control date-picker" type="text" style="width:100%;" required data-date-format="dd-mm-yyyy" />
+													</div>
+													<div class="input-group my-input-group nb">
+														<span class="input-group-addon my-input-group-caption">
+															Bulk Lysis Expiry <br/> Date:
+														</span>
+														<input name="date_received[]" id="date_received" class="form-control datepicker" type="text" style="width:100%;" required data-date-format="dd-mm-yyyy" />
+														<span class="input-group-addon my-input-group-icon">
+															<i class="ace-icon fa fa-calendar"></i>
+														</span>
+													</div>
+													<div class="input-group my-input-group nb" style="width:100%">
+														<span class="input-group-addon my-input-group-caption" >
+															Sample Prep Lot No.:
+														</span>
+														<input name="sample_prep_no[]" id="sample_prep_no" class="form-control date-picker" type="text" style="width:100%;" required data-date-format="dd-mm-yyyy" />
+													</div>
+												</td>
+											</tr>											
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+					
 				</div><!--profile-user-info profile-user-info-striped-->
 			</div><!--col-sm-7 infobox-container-->
 		</div><!-- first row-->
@@ -139,8 +282,8 @@
 			<center>
 				<?php
 					foreach ($result as $res) {
-						$DBS_No = $res["no_of_dbs_spots"];
-						$id = $res["id"];
+						$tests_No = $res["test_run_no"];
+						$id = $res["sample_id"];
 						//echo("ID ->" .$id. " "." No ->".$DBS_No."   ");
 						echo("<div class='dropdown dropdown-preview'>
 								<ul class='dropdown-menu'>
@@ -148,7 +291,7 @@
 										<h6>Sample Code ".$id." </h6>
 									</li> 
 									<li>
-										Lab-Code (DBS NO ".$DBS_No.")
+										Lab-Code (DBS NO ".$tests_No.")
 									</li>
 									<li class='divider'></li>
 									<li>
@@ -161,8 +304,9 @@
 			</center>
 		</div>
 		<div class="row" style="text-align: center;">
-			<input type="button" value="Save & Print"/>
-			
+			<a href="<?php echo $save_and_print_abbott ?>">
+				<input type="button" value="Save & Print"/>
+			</a>
 		</div>
 
 

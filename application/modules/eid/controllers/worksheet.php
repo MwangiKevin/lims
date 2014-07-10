@@ -49,14 +49,14 @@ class worksheet extends MY_Controller {
 		$this->view_data['content_view'] 	= "eid/cobas_view";		
 		$this->view_data['title'] 			= "EID | Worksheet | COBAS";
 		$this->view_data['menu_select']		= 	array(2,0);
-		$this->view_data['result'] = $this->worksheets_model->cobas_samples();
+		$this->view_data['result'] = $this->worksheets_model->cobas_samples(1);
 
 		$this->view_data['breadcrumbs'][2]		=	array(
 											"title" 	=>	"COBAS Worksheet",
 											"link"		=>	base_url()."eid/worksheet/cobas",
 											"class"		=>	"active"
 											);
-		$this->view_data['result'] = $this->worksheets_model->cobas_samples();											
+		$this->view_data['save_and_print_cobas'] = base_url()."eid/worksheet/cobas_print_worksheet";
 		// foreach($result	 as $res1){
 			// $DBSNo = $res1['dbsNo'];
 			// echo('No of blood spots '.$DBSNo);
@@ -70,10 +70,11 @@ class worksheet extends MY_Controller {
 		$this->view_data['title'] 				= "EID | Worksheet | ABBOT";		
 		$this->view_data['menu_select']			= 	array(2,1);
 		$this->view_data['result'] = $this->worksheets_model->abbott_samples(1);
+		$this->view_data['save_and_print_abbott'] = base_url()."eid/worksheet/abbott_print_worksheet";
 		//$result = $this->worksheets_model->abbott_samples(1);
 
 		// print_r("Result = " .$result);
-		// die;
+		//die;
 		
 		$this->view_data['breadcrumbs'][2]		=	array(
 													"title" 	=>	"ABOTT Worksheet",
@@ -97,7 +98,13 @@ class worksheet extends MY_Controller {
 		$this->template($this->view_data);
 	}
 	
-	public function print_worksheet($id=null){
-
+	public function cobas_print_worksheet(){
+		$this->view_data['result'] = $this->worksheets_model->cobas_samples(1);			
+		$this->load->view("cobas_rack_view",$this->view_data);
 	}
+	public function abbott_print_worksheet(){
+		$this->view_data['result'] = $this->worksheets_model->abbott_samples(1);
+		$this->load->view("abbott_rack_view",$this->view_data);
+	}
+	
 }
