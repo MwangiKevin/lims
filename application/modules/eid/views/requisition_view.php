@@ -64,7 +64,7 @@
 								<span class="input-group-addon my-input-group-caption">
 									Date Received
 								</span>
-								<input required name="" id="" class="form-control datepicker" value="<?php echo Date("d-m-Y");?>" type="text">
+								<input required name="date_received" id="" class="form-control datepicker" value="<?php echo Date("d-m-Y");?>" type="text">
 								<span class="input-group-addon my-input-group-icon" >
 									<i class="ace-icon fa fa-calendar"></i>
 								</span>
@@ -234,6 +234,8 @@
 						<div class="table-header">
 							Samples info
 						</div>
+						
+						
 						<table id="tests_table" class="table table-bordered table-responsive striped">
 							<thead>
 								<tr class="active">
@@ -295,7 +297,7 @@
 													<span class="input-group-addon my-input-group-caption">
 														patient Id
 													</span>
-													<input name="patient_id[]" id="patient_id" class="form-control date-picker" type="text" style="width:100%;	" required data-date-format="dd-mm-yyyy" />
+													<input name="patient_code[]" id="patient_code" class="form-control date-picker" type="text" style="width:100%;	" required data-date-format="dd-mm-yyyy" />
 												</div>
 
 												<div class="input-group my-input-group nb">
@@ -319,8 +321,8 @@
 													</span>
 													<Select name="infant_gender[]" id="infant_gender[]" style="width:100%"  required >
 														<option value="">*</option>
-														<option value="1">M</option>
-														<option value="2">F</option>
+														<option value="M">M</option>
+														<option value="F">F</option>
 													</Select> 
 												</div>
 
@@ -342,10 +344,21 @@
 														Infant <br/>Feeding
 													</span>
 													<select name="infant_feeding[]" id="infant_feeding[]" style="width:100%" required="">
-														<option value="">*</option>
+													<!-- 	<option value="">*</option>
 														<option value="1">BF -Exclusive Breast Feeding </option>
 														<option value="2">RF -Exclusive Replacement Feeding </option>
-														<option value="3">MF -Mixed Feeding</option>
+														<option value="3">MF -Mixed Feeding</option> -->
+
+														<option value=""> * </option>
+														<?php 
+														foreach ($infant_feeding as $key => $value) {
+															?>
+															<option value="<?php echo $value["id"]?>"><?php echo $value["name"]."-".$value["desc"];?></option>
+															<?php 
+														}
+														?>
+														<option value="-1"> Unknown</option>
+														<option value="-2"> Other</option>
 													</select> 
 												</div>
 												<div class="input-group my-input-group nb" style="width:100%">
@@ -358,7 +371,7 @@
 														foreach ($prophilaxes as $key => $value) {
 															if( (int) $value["infantProphilaxis"] == 1){
 																?>
-																<option value="<?php echo $value["id"]?>"><?php echo $value["name"]?></option>
+																<option value="<?php echo $value["id"]?>"><?php echo $value["name"];?></option>
 																<?php 
 															}
 														}
@@ -378,7 +391,7 @@
 													<span class="input-group-addon my-input-group-caption">														
 														Caregiver<br>Phone No
 													</span>
-													<input name="infant_age[]" id="infant_age[]" class="form-control" style="width: 100%;" type="text">
+													<input name="caregiver_phone[]" id="caregiver_phone[]" class="form-control" style="width: 100%;" type="text">
 												</div>
 											</div>
 										</div>
@@ -507,21 +520,19 @@
 
 							</tbody>
 						</table>
+						
+						
 					</div>	
-					<div  class="row my-infobox" style="padding:8px">
-						<button class="btn btn-sm btn-primary add" style="float:right" >
-							<i class="ace-icon fa fa-plus"></i>
-							Add Sample
-						</button>
-					</div>
+					<!-- <div  class="row my-infobox" style="padding:8px"> -->
+					<!-- </div> -->
 					<div class="row my-infobox " style="padding:8px">		
 						<div class="col-xs-12 my-no-margin-padding" >
 							<div class=" ">
 								<div class="input-group my-input-group   ">
-									<span class="input-group-addon my-input-group-caption" style="height: 87px;">
+									<span class="input-group-addon my-input-group-caption" style="height: 50px;">
 										Lab Comments
 									</span>
-									<textarea name="lab_comments" id="lab_comments" class="form-control" style="height: 87px;width: 490%;" type="text"></textarea>
+									<textarea name="lab_comments" id="lab_comments" class="form-control" style="height: 50px;width: 490%;" type="text"></textarea>
 								</div>
 							</div>
 						</div>
@@ -529,7 +540,11 @@
 				</div>
 				<hr>
 				<div class="wizard-actions">
-					<button type="submit" class="btn btn-success btn-next " data-last="Finish">
+					<button class="btn btn-sm btn-primary add"  >
+						<i class="ace-icon fa fa-plus"></i>
+						Add Sample
+					</button>
+					<button type="submit" class="btn btn-success btn-next btn-sm" >
 						Submit
 						<i class="ace-icon fa fa-arrow-right icon-on-right"></i>
 					</button>

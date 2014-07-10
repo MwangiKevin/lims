@@ -37,7 +37,7 @@
 		<![endif]-->
 	</head>
 
-	<body class="no-skin">
+	<body class= <?php echo $b_color ?> >
 		
 		<?php      	
 		$this->load->view('navbar');

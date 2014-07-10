@@ -24,6 +24,13 @@ class Patient
     /**
      * @var integer
      *
+     * @ORM\Column(name="facility_id", type="integer", nullable=false)
+     */
+    private $facilityId;
+
+    /**
+     * @var integer
+     *
      * @ORM\Column(name="code", type="integer", nullable=false)
      */
     private $code;
@@ -52,13 +59,6 @@ class Patient
     /**
      * @var integer
      *
-     * @ORM\Column(name="prophylaxis_id", type="integer", nullable=false)
-     */
-    private $prophylaxisId;
-
-    /**
-     * @var integer
-     *
      * @ORM\Column(name="synced", type="integer", nullable=false)
      */
     private $synced;
@@ -72,6 +72,29 @@ class Patient
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set facilityId
+     *
+     * @param integer $facilityId
+     * @return Patient
+     */
+    public function setFacilityId($facilityId)
+    {
+        $this->facilityId = $facilityId;
+    
+        return $this;
+    }
+
+    /**
+     * Get facilityId
+     *
+     * @return integer 
+     */
+    public function getFacilityId()
+    {
+        return $this->facilityId;
     }
 
     /**
@@ -164,29 +187,6 @@ class Patient
     public function getGender()
     {
         return $this->gender;
-    }
-
-    /**
-     * Set prophylaxisId
-     *
-     * @param integer $prophylaxisId
-     * @return Patient
-     */
-    public function setProphylaxisId($prophylaxisId)
-    {
-        $this->prophylaxisId = $prophylaxisId;
-    
-        return $this;
-    }
-
-    /**
-     * Get prophylaxisId
-     *
-     * @return integer 
-     */
-    public function getProphylaxisId()
-    {
-        return $this->prophylaxisId;
     }
 
     /**

@@ -17,8 +17,7 @@ $sql["v_facility_details"]  					= 	"SELECT
 															`fac`.`code` 			AS `facility_code`,
 															`fac`.`name` 			AS `facility_name`,
 															`fac`.`email` 			AS `facility_email`,
-															`fac`.`mail_address` 	AS `facility_mail_address`,
-															
+															`fac`.`mail_address` 	AS `facility_mail_address`,	
 															`fac`.`telephone` 		AS `facility_telephone`,
 															`fac`.`telephone2` 		AS `facility_telephone2`,
 															`fac`.`district_id`, 
@@ -43,6 +42,84 @@ $sql["v_facility_details"]  					= 	"SELECT
 //`fac`.`telephone` 		AS `facility_telephone`,
 //`fac`.`telephone2` 		AS `facility_telephone2`,
 //`fac`.`contact_person_phone` 		AS `facility_contact_person_phone`,
+
+$sql["v_Requisition_details"] 						=	"SELECT 
+																`req`.`id` 			 	AS 	`requisition_number`,
+																`req`.`date_received` ,	
+																Date(`req`.`timestamp`)	AS `date_entered`,	
+																`req`.`facility_id` ,	
+																`req`.`program_id`,
+																`req`.`comments`,
+																`req`.`lab_comments`,
+																`req`.`flag` 			AS 	`req_flag`,
+																`req`.`synced` 			AS 	`req_synced`,
+																`req`.`timestamp` 		AS 	`requisition_timestamp`,
+																`fac`.`name`            AS 	`facility_name`,
+																COUNT(`sa`.`id`) 															AS 	`total`,
+																SUM(CASE WHEN `sa`.`acceptance_status`= 'R'    THEN 1 ELSE 0 END) 			AS 	`rejected`,
+																SUM(CASE WHEN `tr`.`result` > 0    THEN 1 ELSE 0 END) 						AS 	`with_results`,
+																`req`.`entered_by` 		AS `user_id`,
+																`usr`.`name` 			AS `entered_by`
+															FROM `test_requisition` `req`
+
+															LEFT JOIN `facility` `fac`
+															ON `req`.`facility_id` = `fac`.`id`
+
+															LEFT JOIN `sample` `sa`
+															ON `req`.`id` = `sa`.`requisition_id`
+
+																LEFT JOIN `sample_test_run` `tr`
+																ON `sa`.`id`=`tr`.`sample_id`
+
+															LEFT JOIN `user` `usr`
+															ON `req`.`entered_by` = `usr`.`id`
+
+															GROUP BY `requisition_number`
+															ORDER BY `date_received` DESC
+
+															LIMIT 500
+													";
+$sql["v_sample_details"]	=	"SELECT 
+									`sample`.`id`,
+									`sample`.`patient_id`,
+									`sample`.`requisition_id`,
+									`sample`.`date_collected`,
+									`sample`.`date_dispatched`,
+									`sample`.`program`,
+									`sample`.`sample_type`,
+									`sample`.`clinician_name`,
+									`sample`.`no_of_dbs_spots`,
+									`sample`.`infant_feeding`,
+									`sample`.`prohilaxis`,
+									`sample`.`prophilaxis_weeks`,
+									`sample`.`acceptance_status`,
+									`test`.`worksheet_id`,
+									`test`.`sample_id`,
+									`test`.`test_run_no`,
+									`test`.`result`,
+									`test`.`date_released`
+							FROM sample 
+							INNER JOIN `sample_test_run` AS `test` 
+							ON `test`.`sample_id` = `sample`.`id`
+							LIMIT 500";													
+
+// $sql["v_sample_details"] 						=	"SELECT 
+// 															`sa`.`id` 				AS 	`sample_id`,
+// 															`sa`.`date_collected`	AS 	`date_collected`,
+// 															`sa`.`date_dispatched`	AS 	`date_dispatched`,
+// 															`sa`.`sample_type`		AS 	`sample_type`,
+// 															`sa`.``					AS 	``,
+// 															`sa`.``					AS 	``,
+// 															`sa`.``					AS 	``,
+// 															`sa`.``					AS 	``,
+// 															`sa`.``					AS 	``,
+// 															`sa`.``					AS 	``,
+// 															`sa`.``					AS 	``,
+
+
+// 													";
+
+
 
 $sql["v_user_details"] 				 = 				"SELECT 
 															`usr`.`id` 				AS `user_id`,

@@ -22,9 +22,9 @@ class Userlog
     private $id;
 
     /**
-     * @var string
+     * @var boolean
      *
-     * @ORM\Column(name="user", type="string", nullable=true)
+     * @ORM\Column(name="user", type="boolean", nullable=true)
      */
     private $user;
 
@@ -77,7 +77,7 @@ class Userlog
     /**
      * Set user
      *
-     * @param string $user
+     * @param boolean $user
      * @return Userlog
      */
     public function setUser($user)
@@ -90,7 +90,7 @@ class Userlog
     /**
      * Get user
      *
-     * @return string 
+     * @return boolean 
      */
     public function getUser()
     {

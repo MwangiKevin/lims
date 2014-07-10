@@ -36,6 +36,7 @@ class json extends MY_Controller {
 	public function write_all_json(){
 		$this->write_facilities();
 		$this->write_test_reasons();
+		$this->write_infant_feeding();
 	}
 
 
@@ -62,6 +63,31 @@ class json extends MY_Controller {
 		file_put_contents($p, $facilities);
 
 		echo "Facilities Written <br/> ";
+	}
+
+	/**
+	* @job = writes facilities info
+	*/
+	public function write_infant_feeding(){
+
+		$fdng_assoc	=	$this->json_model->infant_feeding();
+		$fdng_array  =	array();
+
+		foreach ($fdng_assoc as $key => $value) {
+			$fdng_array[$key] = array(
+										"id" 	=> $value["id"],
+										"name" 	=> $value["name"],
+										"value" => $value["id"],
+										"text" 	=> $value["name"]."-".$value["desc"]
+								);
+		}
+		$infant_feeding = 	json_encode($fdng_array);
+
+		$p 	=	$this->path."infant_feeding.json";
+
+		file_put_contents($p, $infant_feeding);
+
+		echo "Infant Feeding Written <br/> ";
 	}
 	/**
 	* @job = writes test reason info

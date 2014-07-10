@@ -11,7 +11,11 @@ class users extends MY_Controller {
 		$this->view_data['sidebar'] 		= 	"admin_sidebar";
 		$this->view_data['title'] 			= 	"EID | Users";
 		$this->view_data['filter']			=	false;
-		//$this->view_data 					=	array_merge($this->view_data,$this->load_libraries(array()));
+
+
+		$this->view_data['b_color']			=	"skin-1";
+		$this->view_data['topleft_title']	=	"Admin";
+
 		$this->view_data 					=	array_merge($this->view_data,$this->load_libraries(array('dataTables','style-bootstap')));		
 		$this->view_data['menu_select']		= 	array(2);
 		$this->view_data['breadcrumbs'] 	=	array(

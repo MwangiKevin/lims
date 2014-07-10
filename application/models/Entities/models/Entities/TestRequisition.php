@@ -22,13 +22,6 @@ class TestRequisition
     private $id;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="req_no", type="string", length=50, nullable=false)
-     */
-    private $reqNo;
-
-    /**
      * @var integer
      *
      * @ORM\Column(name="facility_id", type="integer", nullable=false)
@@ -84,6 +77,13 @@ class TestRequisition
      */
     private $synced;
 
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="timestamp", type="datetime", nullable=false)
+     */
+    private $timestamp;
+
 
     /**
      * Get id
@@ -93,29 +93,6 @@ class TestRequisition
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set reqNo
-     *
-     * @param string $reqNo
-     * @return TestRequisition
-     */
-    public function setReqNo($reqNo)
-    {
-        $this->reqNo = $reqNo;
-    
-        return $this;
-    }
-
-    /**
-     * Get reqNo
-     *
-     * @return string 
-     */
-    public function getReqNo()
-    {
-        return $this->reqNo;
     }
 
     /**
@@ -300,5 +277,28 @@ class TestRequisition
     public function getSynced()
     {
         return $this->synced;
+    }
+
+    /**
+     * Set timestamp
+     *
+     * @param \DateTime $timestamp
+     * @return TestRequisition
+     */
+    public function setTimestamp($timestamp)
+    {
+        $this->timestamp = $timestamp;
+    
+        return $this;
+    }
+
+    /**
+     * Get timestamp
+     *
+     * @return \DateTime 
+     */
+    public function getTimestamp()
+    {
+        return $this->timestamp;
     }
 }

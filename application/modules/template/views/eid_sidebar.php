@@ -127,7 +127,7 @@
 						$selected_class = "hsub";
 					}
 				?>
-				<li class="<?php echo $selected_class;?>">
+				<!--<li class="<?php echo $selected_class;?>">
 					<a href="<?php echo base_url()?>eid/requisition/facility_consumption">
 						<i class="menu-icon fa fa-caret-right"></i>
 						<i class="fa fa-calendar"></i>
@@ -135,7 +135,7 @@
 					</a>
 
 					<b class="arrow"></b>
-				</li>				
+				</li>-->				
 			</ul>
 		</li>
 
