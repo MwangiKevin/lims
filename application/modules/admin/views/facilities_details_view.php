@@ -20,8 +20,8 @@
 					<th rowspan="2">District</th>
                     <th rowspan="2">Region</th>
                    
-                    <th rowspan="2"># Equipment</th>
-                    <th rowspan="2"># Users</th>
+                    <th rowspan="2">Facility Email</th>
+                    <th rowspan="2">Facility Telephone</th>
 					<th colspan="2">Actions</th>
 				</tr>
 				<tr>
@@ -41,8 +41,8 @@
                     <td><?php echo $facility['district_name'];?></td>
                     <td><?php echo $facility['region_name'];?></td>
                     
-					<td>******</td>	
-					<td>******</td>						
+					<td><?php echo $facility['facility_email'];?></td>	
+					<td><?php echo $facility['facility_telephone'];?></td>						
 					<td><center><a class="blue" href="#editdetailsdiv"><i class="ace-icon fa fa-pencil bigger-130"></i></a></center></td>
                     <td><span class="glyphicon glyphicon-ok-sign"></span></td>
                 </tr>

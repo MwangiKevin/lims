@@ -36,6 +36,8 @@ class facilities extends MY_Controller {
 	public function facilities_details(){		
 		$result = R::getAll("SELECT `facility_id`,
                                    `facility_name`,
+                                   `facility_email`,
+                                   `facility_telephone`,
                                    `district_id`,
                                    `district_name`,
                                    `district_status`,
