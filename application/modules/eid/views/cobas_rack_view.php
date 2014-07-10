@@ -5,31 +5,37 @@
 </center>
 <hr/>
 <?php
+	$i = 0;
 	foreach ($result as $res) {
+		$i++;
+		if($i <= 22){
 		$test_No = $res["test_run_no"];
 		$id = $res["sample_id"];
-		echo('
+		?>
 		<center>
 		<div class="dropdown dropdown-preview" style="padding-left:5%; height:auto">
 			<ul class="dropdown-menu" style="list-style: none; float:left;">					
 				<li>
-					<h6>Sample Code: '.$id.'</h6>
+					<h6>Sample Code: <?php echo $id ?></h6>
 				</li>
 				<li>
-					Lab-Code (DBS No.: '.$test_No.')
+					Lab-Code (DBS No.: <?php echo $test_No ?>)
 				</li>
 				<li class="divider"></li>
-				<li id = barcode>
+				<li id = barcode<?php echo $id ?>>
 					<h6>Location of the bar-code</h6>
 				</li>
 			</ul>
 		</div>
-		</center>');
+		</center>
+		
+		<script type="text/javascript"> 
+				document.getElementById("barcode<?php echo $id ?>").innerHTML = DrawHTMLBarcode_Code39("<?php echo $id ?>",1,"yes","in", 0,2,.5,2,"bottom","center", "","black","white");
+			</script>		
+		<?php
+		}
 	}
 ?>
-			<!-- <script type="text/javascript"> 
-				document.getElementById("barcode").innerHTML = DrawHTMLBarcode_Code39("<?php $id ?>",1,"yes","in", 0,3,1,3,"bottom","center", "","black","white");
-			</script> -->
 			<div class="dropdown dropdown-preview" style="padding-left:5%; height:auto">
 					<ul class="dropdown-menu" style="list-style: none; float:left;">					
 						<li>

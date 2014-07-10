@@ -1,7 +1,10 @@
 <script type="text/javascript" src= "http://127.0.0.1/lims/assets/js/barcode_js/connectcode-javascript-code39.js"></script>
 <center style="margin-top: 5%;">
-<h1> ABBOTT Rack EID</h1>
-<h3>Date: <?php echo( date("d/m/y",time())) ?></h3>
+	<div id = "title" style="background-image:'http://127.0.0.1/lims/img/tz.png' ">
+		<!-- <img src="<?php echo base_url("img/tz.png");?>" height="140" width="100%" alt="NACP">	 -->
+		<h1> ABBOTT Rack EID</h1>
+		<h3>Date: <?php echo( date("d/m/y",time())) ?></h3>
+	</div>
 </center>
 <hr/>
 <?php
@@ -11,29 +14,33 @@ $i = 0;
 		if($i <= 46){
 			$tests_No = $res["test_run_no"];
 			$id = $res["sample_id"];
+	?>
 	
-			echo("<div class='dropdown dropdown-preview' style='padding-left:5%; height:auto' >
-					<ul class='dropdown-menu' style='list-style: none; float:left;'>
-						<li>
-							<h6>Sample Code ".$id." </h6>
-						</li> 
-						<li>
-							Lab-Code (DBS NO ".$tests_No.")
-						</li>
-						<li class='divider'></li>
-						<li id = barcode>
-							<h6>Location of the bar-code</h6>
-						</li>
-					</ul>
-				</div>");
+	<div class='dropdown dropdown-preview' style='padding-left:5%; height:auto' >
+		<ul class='dropdown-menu' style='list-style: none; float:left;'>
+			<li>
+				<h6>Sample Code <?php echo $id ?> </h6>
+			</li> 
+			<li>
+				Lab-Code (DBS NO <?php echo $tests_No ?>)
+			</li>
+			<li class='divider'></li>
+			<li id = barcode<?php echo $id ?>>
+				<h6>Location of the bar-code</h6>
+			</li>
+		</ul>
+	</div>
+	
+	<script type="text/javascript"> 
+		document.getElementById("barcode<?php echo $id ?>").innerHTML = DrawHTMLBarcode_Code39("<?php echo $id ?>",1, "yes" , "in", 0,2,.5,2,"bottom","center", "","black","white");
+	</script>
+<?php
 		}else{
 			echo("Ready to run test");
 		}
 	}
 ?>
-			<script type="text/javascript"> 
-				document.getElementById("barcode").innerHTML = DrawHTMLBarcode_Code39("<?php $id ?>",1,"yes","in", 0,2,.5,2,"bottom","center", "","black","white");
-			</script>
+
 <div class="dropdown dropdown-preview" style="padding-left:5%; height:auto">
 	<ul class="dropdown-menu" style="list-style: none; float:left;">					
 		<li>

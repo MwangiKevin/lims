@@ -273,16 +273,6 @@
 						</li>
 					</ul>
 				</div>
-				<ul style="list-style:  none;">
-					<li>
-						<label style="width: auto; display: inline-block;">Positive Control interpretation:</label>					
-						<textarea name="positive_interpretation" id="positive_interpretation" class="form-control" style="height: 50px;width: 100%;" type="text"></textarea>
-					</li>
-					<li>
-						<label style="width: auto; display: inline-block;">Negative Control interpretation:</label>					
-						<textarea name="positive_interpretation" id="positive_interpretation" class="form-control" style="height: 50px;width: 100%;" type="text"></textarea>
-					</li>
-				</ul>				
 			</center>
 		</div>
 		<div class="row" style="text-align: center;">
