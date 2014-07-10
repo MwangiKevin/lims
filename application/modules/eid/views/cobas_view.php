@@ -172,29 +172,7 @@
 													<span class="input-group-addon my-input-group-icon">
 														<i class="ace-icon fa fa-calendar"></i>
 													</span> 
-										</div>
-										<div class="wizard-actions">
-											<button class="btn btn-sm btn-primary add"  >
-												<i class="ace-icon fa fa-plus"></i>
-												Add Sample
-											</button>
-										</div>
-<!-- 
-										<div class="input-group my-input-group nb" style="width:100%">
-											<span class="input-group-addon my-input-group-caption">
-												Entry Point
-											</span>
-											<select name="ent_point[]" id="ent_point" style="width:100%"  required >
-												<option value=""> * </option><option value="1"> OPD</option>
-												<option value="2"> Paediatric  Ward</option>
-												<option value="3"> MCH/PMTCT</option>
-												<option value="4"> CCC/PSC</option>
-												<option value="5"> Materrnity</option>
-												<option value="6"> Other</option>
-												<option value="7"> No Data</option>
-											</select>
-										</div> -->
-										
+										</div>									
 									</td>
 									<!-- <td id="test_reason_td">
 									<!-- 	<div class="control-group">
@@ -249,15 +227,15 @@
 			<center>
 				<?php
 				foreach ($result as $res) {
-					$DBS_No = $res["dbsNo"];
-					$id = $res["id"];
+					$test_No = $res["test_run_no"];
+					$id = $res["sample_id"];
 					echo('<div class="dropdown dropdown-preview">
 						<ul class="dropdown-menu">					
 							<li>
-								<h6>Sample Code'.$id.'</h6>
+								<h6>Sample Code: '.$id.'</h6>
 							</li>
 							<li>
-								Lab-Code (DBS No.:'.$DBS_No.')
+								Lab-Code (DBS No.: '.$test_No.')
 							</li>
 							<li class="divider"></li>
 							<li>
@@ -301,14 +279,16 @@
 						<textarea name="positive_interpretation" id="positive_interpretation" class="form-control" style="height: 50px;width: 100%;" type="text"></textarea>
 					</li>
 					<li>
-						<label style="width: auto; display: inline-block;">Positive Control interpretation:</label>					
+						<label style="width: auto; display: inline-block;">Negative Control interpretation:</label>					
 						<textarea name="positive_interpretation" id="positive_interpretation" class="form-control" style="height: 50px;width: 100%;" type="text"></textarea>
 					</li>
 				</ul>				
 			</center>
 		</div>
 		<div class="row" style="text-align: center;">
-			<input type="button" value="Save & Print"/>
+			<a href="<?php echo $save_and_print_cobas ?>">
+				<input type="button" value="Save & Print"/>
+			</a>
 		</div>
 	</div><!-- /.main-container -->
 
