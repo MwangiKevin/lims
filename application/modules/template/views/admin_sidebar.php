@@ -36,16 +36,16 @@
 
 	<ul class="nav nav-list" style="top: 0px;">
 
-		<li class="active">
-		<!--projects-->
-                <a href="<?php echo base_url('admin/admin/dashboard');?>">
+		<li class="hsub " id="side_dashboard">
+			<!--projects-->
+			<a href="<?php echo base_url('admin/admin/dashboard');?>">
 				<i class="menu-icon fa fa-folder fa-tint"></i>
 				<span class="menu-text"> Dashboard </span>
 			</a>
 		</li>
 
 
-		<li class="hsub">
+		<li class="hsub" id="side_facilities">
 			<a href="#" class="dropdown-toggle">
 				<i class="menu-icon fa fa-desktop"></i>
 				<span class="menu-text"> Facilities </span>
@@ -55,9 +55,9 @@
 
 			<b class="arrow"></b>
 
-			<ul class="submenu nav-hide" style="display: none;">
-				<li class="hsub">
-                    <a href="<?php echo base_url('admin/facilities/facilities_details') ?>" class="dropdown-toggle">
+			<ul class="submenu nav-hide" style="">
+				<li class="hsub" id="side_fac_details">
+					<a href="<?php echo base_url('admin/facilities/facilities_details') ?>" >
 						<i class="menu-icon fa fa-caret-right"></i>
 						Facility Details
 					</a>
@@ -65,7 +65,7 @@
 					<b class="arrow"></b>
 				</li>
 
-				<li class="">
+				<li class="hsub" id="side_fac_registration">
 					<a href="<?php echo base_url().'admin/facilities/facilities_registration' ?>">
 						<i class="menu-icon fa fa-caret-right"></i>
 						Facility Registration
@@ -77,9 +77,9 @@
 			</ul>
 		</li>
 
-		<li class="hsub">
+		<li id="side_users" class="hsub">
 			<a href="#" class="dropdown-toggle">
-				<i class="menu-icon fa fa-list"></i>
+				<i class="menu-icon fa fa-users "></i>
 				<span class="menu-text"> Users </span>
 
 				<b class="arrow fa fa-angle-down"></b>
@@ -88,8 +88,8 @@
 			<b class="arrow"></b>
 
 			<ul class="submenu">
-				<li class="">
-					<a href="<?php echo base_url().'admin/users' ?>">
+				<li class="hsub" id="side_user_details">
+					<a href="<?php echo base_url().'admin/users/users_details' ?>">
 						<i class="menu-icon fa fa-caret-right"></i>
 						Users Details
 					</a>
@@ -97,8 +97,8 @@
 					<b class="arrow"></b>
 				</li>
 
-				<li class="">
-					<a href="<?php echo base_url().'admin/users' ?>">
+				<li class="" id="side_user_registration">
+					<a href="<?php echo base_url().'admin/users/users_registration' ?>">
 						<i class="menu-icon fa fa-caret-right"></i>
 						Users Registration
 					</a>
@@ -108,7 +108,7 @@
 			</ul>
 		</li>
 
-		<li class="hsub">
+		<li id="side_reports" class="hsub">
 			<a href="#" class="dropdown-toggle">
 				<i class="menu-icon fa fa-pencil-square-o"></i>
 				<span class="menu-text"> Reports </span>
@@ -119,84 +119,36 @@
 			<b class="arrow"></b>
 
 		</li>
-                
-        <!--plots-->
-		<li id="side_facilities" class="hsub">
-			<a href="#" class="dropdown_toggle">
-				<i class="menu-icon fa fa-folder-open-o fa-tint"></i>
-				<span class="menu-text"> Facilities </span>
-                <b class="arrow fa fa-angle-down"></b>
-			</a>
-            			<ul class="submenu nav-hide" style="display: none;">
-				<li class="hsub">
-                    <a href="<?php echo base_url('admin/facilities/dashboard') ?>" class="dropdown-toggle">
-						<i class="menu-icon fa fa-caret-right"></i>
-						Facility Details
-					</a>
 
-					<b class="arrow"></b>
-				</li>
 
-				<li class="">
-					<a href="<?php echo base_url().'admin/facilities/facilities_registration' ?>">
-						<i class="menu-icon fa fa-caret-right"></i>
-						Facility Registration
-					</a>
 
-					<b class="arrow"></b>
-				</li>
-
-				<li class="">
-					<a href="elements.html">
-						<i class="menu-icon fa fa-caret-right"></i>
-						Elements
-					</a>
-
-					<b class="arrow"></b>
-				</li>
-				
-			</ul>
-		</li>
-		<!--clients-->
-		<li id="side_users" class="hsub">
-			<a href="<?php echo base_url('admin/users');?>">
-				<i class="menu-icon fa fa-users fa-tint"></i>
-				<span class="menu-text"> Users </span>
-			</a>
-		</li>
-		<!--accounts-->
-		<li id="side_reports" class="hsub">
-			<a href="<?php echo base_url('admin/reports');?>">
-				<i class="menu-icon fa fa-credit-card"></i>
-				<span class="menu-text"> Reports </span>
-			</a>
-		</li>
 
 	</ul><!-- /.nav-list -->
 
 	<script type="text/javascript">
-	    try{ace.settings.check('sidebar' , 'collapsed')}catch(e){}
+	try{ace.settings.check('sidebar' , 'collapsed')}catch(e){}
 
-	    try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
+	try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
 
-		$(function(){
-		  var menu_select='<?php echo  $menu_select; ?>';
-		  var submenu_select='<?php echo  $submenu_select; ?>';
+	$(function(){
+		var menu_select='<?php echo  $menu_select; ?>';
+		var submenu_select='<?php echo  $submenu_select; ?>';
 		  //select menu
 		  if(menu_select !=''){
-            $("#"+menu_select).removeClass("hsub");
-            $("#"+menu_select).addClass("active");
-            $("#"+menu_select).addClass("open");
-          }
+		  	$("#"+menu_select).removeClass("hsub");
+		  	$("#"+menu_select).addClass("active");
+		  	if(submenu_select !=''){
+		  		$("#"+menu_select).addClass("open");		  	}
+		  }
 
           //select submenu
-		  if(submenu_select !=''){
-            $("#"+submenu_select).removeClass("hsub");
-            $("#"+submenu_select).addClass("active");      
+          if(submenu_select !=''){
+          	$("#"+submenu_select).removeClass("hsub");
+          	$("#"+submenu_select).addClass("active");      
 
           }
 
-		});
+      });
 	</script>
 
 

@@ -6,6 +6,7 @@ $config['copyrights']				=	"&copy ".date('Y')." NACP. All Rights Reserved";
 
 
 $config["login_timeout_max"]		=	30;		//minutes
+$config["default_password"]         =   123456;
 
 /*Tables*/
 $config['user_table'] = 'users';

@@ -17,7 +17,7 @@ $sql["v_facility_details"]  					= 	"SELECT
 															`fac`.`code` 			AS `facility_code`,
 															`fac`.`name` 			AS `facility_name`,
 															`fac`.`email` 			AS `facility_email`,
-															`fac`.`mail_address` 	AS `facility_mail_address`,
+															`fac`.`mail_address` 	AS `facility_mail_address`,	
 															`fac`.`telephone` 		AS `facility_telephone`,
 															`fac`.`telephone2` 		AS `facility_telephone2`,
 															`fac`.`district_id`, 
@@ -38,6 +38,7 @@ $sql["v_facility_details"]  					= 	"SELECT
 													";
 //`fac`.`code` 			AS `facility_code`,
 //`fac`.`mail_address` 	AS `facility_mail_address`,
+//`fac`.`phone` 		    AS `facility_telephone`,
 //`fac`.`telephone` 		AS `facility_telephone`,
 //`fac`.`telephone2` 		AS `facility_telephone2`,
 //`fac`.`contact_person_phone` 		AS `facility_contact_person_phone`,
@@ -92,14 +93,15 @@ $sql["v_sample_details"]	=	"SELECT
 									`sample`.`prohilaxis`,
 									`sample`.`prophilaxis_weeks`,
 									`sample`.`acceptance_status`,
-									`test`.`worksheet_id`,
 									`test`.`sample_id`,
 									`test`.`test_run_no`,
 									`test`.`result`,
-									`test`.`date_released`
+									`test`.`date_released`,
+									COUNT(`test`.`id`) AS `num`
 							FROM sample 
-							INNER JOIN `sample_test_run` AS `test` 
+							LEFT JOIN `sample_test_run` AS `test` 
 							ON `test`.`sample_id` = `sample`.`id`
+							GROUP BY `sample`.`id`
 							LIMIT 500";													
 
 // $sql["v_sample_details"] 						=	"SELECT 
@@ -119,5 +121,21 @@ $sql["v_sample_details"]	=	"SELECT
 // 													";
 
 
+
+$sql["v_user_details"] 				 = 				"SELECT 
+															`usr`.`id` 				AS `user_id`,
+															`usr`.`username`,
+															`usr`.`name`,
+															`usr`.`user_group_id`,
+															`usr_gr`.`name` 		AS `user_group`,
+															`usr`.`phone`,
+															`usr`.`email`,
+															`usr`.`status`
+															
+														FROM `user` `usr` 
+															LEFT JOIN `user_group` `usr_gr`
+															ON `usr`.`user_group_id` = `usr_gr`.`id`
+															
+													";
 
 $config["views_sql"] =$sql;
