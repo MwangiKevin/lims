@@ -16,6 +16,9 @@ class reports extends MY_Controller {
 		$this->view_data['b_color']			=	"skin-1";
 		$this->view_data['topleft_title']	=	"Admin";
 
+		$this->view_data['menu_select']		= 	"side_reports";
+		$this->view_data['submenu_select']	= 	"";
+
 		$this->view_data 					=	array_merge($this->view_data,$this->load_libraries(array('dataTables','style-bootstap')));		
 		$this->view_data['menu_select']		= 	array(0);
 		$this->view_data['breadcrumbs'] 	=	array(

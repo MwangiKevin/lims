@@ -16,8 +16,10 @@ class users extends MY_Controller {
 		$this->view_data['b_color']			=	"skin-1";
 		$this->view_data['topleft_title']	=	"Admin";
 
+		$this->view_data['menu_select']		= 	"side_users";
+		$this->view_data['submenu_select']	= 	"side_user_details";
+
 		$this->view_data 					=	array_merge($this->view_data,$this->load_libraries(array('dataTables','style-bootstap')));		
-		$this->view_data['menu_select']		= 	array(2);
 		$this->view_data['breadcrumbs'] 	=	array(
 														0 	=>	array(
 																	"title" 	=>	"Home",
@@ -50,6 +52,8 @@ class users extends MY_Controller {
     }
     
     public function users_registration(){
+
+		$this->view_data['submenu_select']	= 	"side_user_registration";
        $this->view_data['user_groups']      =   $this->admin_model->user_groups();
        $this->view_data['content_view'] 	= 	"admin/users_registration_view";
        $this->template($this->view_data); 
