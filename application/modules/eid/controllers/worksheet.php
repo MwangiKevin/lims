@@ -94,7 +94,10 @@ class worksheet extends MY_Controller {
 													"link"		=>	base_url()."eid/worksheet/history",
 													"class"		=>	"active"
 													);
-		
+		$this->view_data['history'] = $this->worksheets_model->history();
+		// $result = $this->worksheets_model->history();
+		// print_r("Result ".$result);
+		// die;										
 		$this->template($this->view_data);
 	}
 	

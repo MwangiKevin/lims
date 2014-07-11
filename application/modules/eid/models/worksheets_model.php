@@ -21,5 +21,14 @@ class worksheets_model extends MY_Model {
 		$result = R::getAll($sql);
 		return $result;
 	}
+	
+	public function history(){
+		$sql = "SELECT  ws.`date_reviewed`,  ws.`date_updated`, ws.`date_run`, ws.`status`, ws.`flag`, ws.`created_by`, ws.`date_created`, vsd.result
+FROM worksheet AS ws
+LEFT JOIN v_sample_details AS vsd
+ON vsd.requisition_id = ws.cdc_worksheet_no	";
+			$result = R::getAll($sql);
+			return $result;
+	}
 }
 	

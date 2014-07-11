@@ -33,112 +33,57 @@
 				</tr>
 			</thead>
 			<tbody>
-				<?php ?>
-				<tr >
-					<td>44</td>
-					<td>44</td>
-					<td>44</td>
-					<td>44</td>
-					<td>44</td>
-					<td>44</td>
-					<td>44</td>
-					<td>44</td>
-					<td>44</td>
-					<td>44</td>
-					<td>44</td>
-					<td>44</td>
-					<td>44</td>
-					<td>44</td>
-					<td class="">
-						<div class="action-buttons">
-							<a class="blue" href="#">
-								<i class="ace-icon fa fa-search-plus bigger-130"></i>
-							</a>
-
-							<a class="green" href="#">
-								<i class="ace-icon fa fa-pencil bigger-130"></i>
-							</a>
-
-							<a class="red" href="#">
-								<i class="ace-icon fa fa-trash-o bigger-130"></i>
-							</a>
-
-							<a class="green" href="#">
-								<i class="ace-icon fa fa-print bigger-130"></i>
-							</a>
-						</div>
-					</td>
-				</tr>
-				<tr >
-					<td>44</td>
-					<td>44</td>
-					<td>44</td>
-					<td>44</td>
-					<td>44</td>
-					<td>44</td>
-					<td>44</td>
-					<td>44</td>
-					<td>44</td>
-					<td>44</td>
-					<td>44</td>
-					<td>44</td>
-					<td>44</td>
-					<td>44</td>
-					<td class="">
-						<div class="action-buttons">
-							<a class="blue" href="#">
-								<i class="ace-icon fa fa-search-plus bigger-130"></i>
-							</a>
-
-							<a class="green" href="#">
-								<i class="ace-icon fa fa-pencil bigger-130"></i>
-							</a>
-
-							<a class="red" href="#">
-								<i class="ace-icon fa fa-trash-o bigger-130"></i>
-							</a>
-
-							<a class="green" href="#">
-								<i class="ace-icon fa fa-print bigger-130"></i>
-							</a>
-						</div>
-					</td>
-				</tr>
-				<tr >
-					<td>44sa</td>
-					<td>44sa</td>
-					<td>44sa</td>
-					<td>44sa</td>
-					<td>44sa</td>
-					<td>44sa</td>
-					<td>44sa</td>
-					<td>44sa</td>
-					<td>44sa</td>
-					<td>44sa</td>
-					<td>44sa</td>
-					<td>44sa</td>
-					<td>44sa</td>
-					<td>44sa</td>
-					<td class="">
-						<div class="action-buttons">
-							<a class="blue" href="#">
-								<i class="ace-icon fa fa-search-plus bigger-130"></i>
-							</a>
-
-							<a class="green" href="#">
-								<i class="ace-icon fa fa-pencil bigger-130"></i>
-							</a>
-
-							<a class="red" href="#">
-								<i class="ace-icon fa fa-trash-o bigger-130"></i>
-							</a>
-
-							<a class="green" href="#">
-								<i class="ace-icon fa fa-print bigger-130"></i>
-							</a>
-						</div>
-					</td>
-				</tr>
+				<?php
+					$i = 0;
+					foreach($history AS $res){
+						$i++;
+						$date_created = $res['date_created'];
+						$created_by = $res['created_by'];
+						$flag = $res['flag'];
+						$status = $res['status'];
+						$date_run = $res['date_run'];
+						$date_update = $res['date_updated'];
+						$date_reviewed = $res['date_reviewed'];
+						?>
+						<tr>
+							<td><?php echo $i ?></td>
+							<td><?php echo $date_created ?></td>
+							<td><?php echo $created_by ?></td>
+							<td><?php echo $flag ?></td>
+							<td><?php echo $status?></td>
+							<td>44</td>
+							<td>44</td>
+							<td>44</td>
+							<td>44</td>
+							<td>44</td>
+							<td>44</td>
+							<td><?php echo $date_run?></td>
+							<td><?php echo $date_update?></td>
+							<td><?php echo $date_reviewed?></td>	
+							<td class="">
+								<div class="action-buttons">
+									<a class="blue" href="#">
+										<i class="ace-icon fa fa-search-plus bigger-130"></i>
+									</a>
+		
+									<a class="green" href="#">
+										<i class="ace-icon fa fa-pencil bigger-130"></i>
+									</a>
+		
+									<a class="red" href="#">
+										<i class="ace-icon fa fa-trash-o bigger-130"></i>
+									</a>
+		
+									<a class="green" href="#">
+										<i class="ace-icon fa fa-print bigger-130"></i>
+									</a>
+								</div>
+							</td>					
+						</tr>
+						
+						<?php
+					}
+				?>
 			</tbody>
 		</table>
 	</div>
