@@ -17,7 +17,7 @@ $sql["v_facility_details"]  					= 	"SELECT
 															`fac`.`code` 			AS `facility_code`,
 															`fac`.`name` 			AS `facility_name`,
 															`fac`.`email` 			AS `facility_email`,
-															`fac`.`mail_address` 	AS `facility_mail_address`,															
+															`fac`.`mail_address` 	AS `facility_mail_address`,		
 															`fac`.`telephone` 		AS `facility_telephone`,
 															`fac`.`telephone2` 		AS `facility_telephone2`,
 															`fac`.`district_id`, 
@@ -78,9 +78,30 @@ $sql["v_Requisition_details"] 						=	"SELECT
 															ORDER BY `date_received` DESC
 
 															LIMIT 500
-
-														
 													";
+$sql["v_sample_details"]	=	"SELECT 
+									`sample`.`id`,
+									`sample`.`patient_id`,
+									`sample`.`requisition_id`,
+									`sample`.`date_collected`,
+									`sample`.`date_dispatched`,
+									`sample`.`program`,
+									`sample`.`sample_type`,
+									`sample`.`clinician_name`,
+									`sample`.`no_of_dbs_spots`,
+									`sample`.`infant_feeding`,
+									`sample`.`prohilaxis`,
+									`sample`.`prophilaxis_weeks`,
+									`sample`.`acceptance_status`,
+									`test`.`worksheet_id`,
+									`test`.`sample_id`,
+									`test`.`test_run_no`,
+									`test`.`result`,
+									`test`.`date_released`
+							FROM sample 
+							INNER JOIN `sample_test_run` AS `test` 
+							ON `test`.`sample_id` = `sample`.`id`
+							LIMIT 500";													
 
 
 
