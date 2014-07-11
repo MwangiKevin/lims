@@ -30,6 +30,7 @@ class facilities extends MY_Controller {
 																	"class"		=>	"active"
 																	)
 												);
+		$this->view_data['menu_select']		= 	"side_facilities";
 	}
 
 	public function index(){
@@ -50,10 +51,15 @@ class facilities extends MY_Controller {
         //print_r($result); die();
         $this->view_data['result']          =   $result;
         $this->view_data['content_view'] 	= 	"admin/facilities_details_view";
+		$this->view_data['submenu_select']	= 	"side_fac_details";
 		$this -> template($this->view_data);
 	}
 
     public function facilities_registration(){	
+
+
+		$this->view_data['submenu_select']	= 	"side_fac_registration";
+
     	$result = R::getAll("SELECT `facility_id`,
                                    `facility_name`,
                                    `district_id`,
