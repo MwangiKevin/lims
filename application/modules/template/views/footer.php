@@ -33,7 +33,7 @@ $('.datepicker').datepicker({
   	format: 'dd-mm-yyyy',
   	autoclose: true,
   	showOn: "button",
-    buttonImage: "AppData/Images/calendar.gif",
+    //buttonImage: "AppData/Images/calendar.gif",
     buttonImageOnly: true,
     showWeek: true,
     firstDay: 1,

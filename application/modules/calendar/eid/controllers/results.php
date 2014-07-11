@@ -4,15 +4,10 @@ if (!defined('BASEPATH'))
 
 class results extends MY_Controller {
 
-	public $results_array = array();
-
 	public function __construct(){
 
 		parent::__construct();
 		$this->login_reroute(array(2));
-
-
-		$this->load->module("upload/upload");
 
 		$this->view_data['content_view'] 	= 	"eid/update_results";
 		$this->view_data['sidebar'] 		= 	"eid_sidebar";
@@ -103,33 +98,6 @@ class results extends MY_Controller {
 	public function update_results()
 	{
 		$this->load->view("update_results_oscar");
-		
-	}
-
-	public function upload_file(){
-		print_r($_FILES);
-
-		// $this->login_reroute(array(2)); 
-
-
-		// if($_FILES['file']){
-		// 	if(substr($_FILES['file']['name'], -3) == "txt"){
-		// 		$results_array 	= 	$this->uploads->read_slk($_FILES['file']['tmp_name'],false);
-		// 	}elseif(substr($_FILES['file']['name'], -3) == "csv"){
-		// 		$results_array	=	$this->uploads->read_csv($_FILES['file']['tmp_name'],false);
-		// 	}else{
-		// 	}
-		// }else{
-		// 	redirect("poc/upload");
-		// }
-
-		// $this -> template($this->data);		
-	}
-	private function read_abbott(){
-		
-	}
-
-	private function read_cobas(){
 		
 	}
 }
