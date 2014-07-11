@@ -1,6 +1,3 @@
-
-	
-   
         <h4 class="lighter">
            <i class="ace-icon fa fa-hand-o-right icon-animated-hand-pointer blue"></i>
            <a href="#" data-toggle="modal" class="pink">View Facility Details </a>

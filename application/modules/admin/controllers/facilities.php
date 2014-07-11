@@ -117,11 +117,11 @@ class facilities extends MY_Controller {
         
 		if ($this->form_validation->run() == FALSE) 
 		{
-			echo "The form validation process was failed!!!";
+			
             $this->index();
 		} else 
 		{
-			echo "The form validation was very successfull";
+			
             $this->load->model('admin_model');
 
 			$insert = $this->admin_model->register_facilities();
