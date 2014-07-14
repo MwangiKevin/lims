@@ -35,7 +35,6 @@
 			<div class="fallback">
 				<input name="file" type="file" multiple="">
 			</div>
-			<!-- <input name="submit" type="submit" > -->
 		</form>
 	</div>
 
@@ -45,7 +44,7 @@
   			paramName: "file", 
   			maxFilesize: 10, 
   			accept: function(file, done) {
-  			 	if ((file.name.substring((file.name.length-4),file.name.length) != ".txt")&&(file.name.substring((file.name.length-4),file.name.length) != ".csv")) {
+  			 	if ((file.name.substring((file.name.length-4),file.name.length) != ".txt")&&(file.name.substring((file.name.length-4),file.name.length) != ".csv")&&(file.name.substring((file.name.length-4),file.name.length) != ".TXT")&&(file.name.substring((file.name.length-4),file.name.length) != ".CSV")) {
   			 		done("Wrong File Type");
   			 	}
   			 	else { done(); }
