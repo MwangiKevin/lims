@@ -133,5 +133,15 @@ class facilities extends MY_Controller {
 		}
 		
 	}
+
+	public function edit_facility()
+	{
+		$id = (int)$this->input->post('editfacilityid');
+		$facility = $this->input->post("facname");
+		$district = $this->input->post("dis");
+		$region = $this->input->post("reg");
+		
+		echo "Edit Facility";
+	}
         
 }
