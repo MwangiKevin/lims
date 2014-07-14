@@ -66,7 +66,6 @@
 							<th>#</th>
 							<th>District Name</th>					
 							<th>Region</th>
-							<th>Partner</th>
 						</tr>						
 					</thead>
 					<tbody>
@@ -79,7 +78,6 @@
 							<td><?php echo $i;?></td>
 							<td><?php echo $dis['district_name'];?></td>
 							<td><?php echo $dis['region_name'];?></td>
-							<td>*******</td>
 						</tr>
 						<?php
 							$i++;
@@ -95,7 +93,7 @@
 						<tr>
 							<th>#</th>				
 							<th>Region Name</th>
-							<th>Fusion ID</th>
+							
 						</tr>						
 					</thead>
 					<tbody>
@@ -106,7 +104,7 @@
 						<tr>
 							<td><?php echo $i;?></td>
 							<td><?php echo $reg['region_name'];?></td>
-							<td><?php echo $reg['fusion_id'];?></td>
+							
 						</tr>
 						<?php
 							$i++;

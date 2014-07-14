@@ -36,7 +36,7 @@ $("#usr_grp").change(function(){
 
 });
 
-function edit_user(id,username,usertype,name,email,phone,editstatus){
+function edit_user(id,username,name,phone,email,usertype,editstatus){
 
 	var str = "#tr_"+id;
 
@@ -76,6 +76,47 @@ function edit_user(id,username,usertype,name,email,phone,editstatus){
 	
 	$("#editdetailsdiv").modal("show");
 
+}
+
+function reset_password () {
+	
+	var str = "#tr_"+id;
+
+	var row = $(str).html();
+
+	$("#edit_table_row").html(row);
+
+	$("#edituserid").val(id);
+	$("#editusername").val(username);
+	$("#editusertype").val(usertype);
+	$("#editname").val(name);
+	$("#editemail").val(email);
+	$("#editphone").val(phone);
+
+	$('input[name=editstatus][value=1]').prop('checked', false);
+	$('input[name=editstatus][value=2]').prop('checked', false);
+	$('input[name=editstatus][value=3]').prop('checked', false);
+	$('input[name=editstatus][value=4]').prop('checked', false);
+	$('input[name=editstatus][value=5]').prop('checked', false);
+
+	if(editstatus==4 || editstatus==5){
+
+		$('input[name=editstatus][value=1]').prop('disabled', true);
+		$('input[name=editstatus][value=2]').prop('disabled', true);
+		$('input[name=editstatus][value=5]').prop('disabled', true);
+
+	}else{
+
+		$('input[name=editstatus][value=1]').prop('disabled', false);
+		$('input[name=editstatus][value=2]').prop('disabled', false);
+		$('input[name=editstatus][value=5]').prop('disabled', false);
+
+	}
+
+	$('input[name=editstatus][value='+editstatus+']').prop('checked', true);
+
+	
+	$("#resetpassworddiv").modal("show");
 }
 
 function hide_edit(){

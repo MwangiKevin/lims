@@ -41,6 +41,8 @@ class facilities extends MY_Controller {
 	public function facilities_details(){		
 		$result = R::getAll("SELECT `facility_id`,
                                    `facility_name`,
+                                   `facility_email`,
+                                   `facility_telephone`,
                                    `district_id`,
                                    `district_name`,
                                    `district_status`,
@@ -115,11 +117,11 @@ class facilities extends MY_Controller {
         
 		if ($this->form_validation->run() == FALSE) 
 		{
-			echo "The form validation process was failed!!!";
+			
             $this->index();
 		} else 
 		{
-			echo "The form validation was very successfull";
+			
             $this->load->model('admin_model');
 
 			$insert = $this->admin_model->register_facilities();
@@ -130,6 +132,16 @@ class facilities extends MY_Controller {
 			}
 		}
 		
+	}
+
+	public function edit_facility()
+	{
+		$id = (int)$this->input->post('editfacilityid');
+		$facility = $this->input->post("facname");
+		$district = $this->input->post("dis");
+		$region = $this->input->post("reg");
+		
+		echo "Edit Facility";
 	}
         
 }
