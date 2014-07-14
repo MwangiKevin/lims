@@ -152,13 +152,12 @@
 														<span class="input-group-addon my-input-group-caption">
 															Date<br/>Created:
 														</span>
-														
-														<input name = "date_received[]"  id="date_received" class="form-control datepicker" type="text" style="width:100%; 	" required data-date-format="dd-mm-yyyy" />
+														<input name="date_received[]" id="date_received" class="form-control datepicker" type="text" style="width:100%;" required data-date-format="dd-mm-yyyy" />
 														<span class="input-group-addon my-input-group-icon">
 															<i class="ace-icon fa fa-calendar"></i>
 														</span>
-
 													</div>
+													
 													<div class="input-group my-input-group nb" style="width:100%">
 														<span class="input-group-addon my-input-group-caption" >
 															Created by:
@@ -282,33 +281,34 @@
 
 		<div class="row"><!--second row-->
 			<center>
-					<?php
+				<?php
 					foreach ($result as $res) {
 						$tests_No = $res["runs"];
 						$id = $res["sample_id"];
 						//echo("ID ->" .$id. " "." No ->".$DBS_No."   ");
-						?>
-						<div class='dropdown dropdown-preview'>
+						echo("<div class='dropdown dropdown-preview'>
 								<ul class='dropdown-menu'>
 									<li>
-										<h6>Sample Code <?php echo $id ?> </h6>
+										<h6>Sample Code ".$id." </h6>
 									</li> 
-									<!--// <li>
-										//Lab-Code (DBS NO <?php echo $tests_No ?>)
-									//</li> -->
+									<li>
+										Tests Done: ".$tests_No."
+									</li>
 									<li class='divider'></li>
 									<li>
 										<h6>Location of the bar-code</h6>
 									</li>
 								</ul>
-							</div>
-							<?php
+							</div>");
 					}
 				?>
-								<div class="dropdown dropdown-preview">
+				<div class="dropdown dropdown-preview">
 					<ul class="dropdown-menu">					
 						<li>
 							<h6 style="color: 	#FC1501" >Negative Control</h6>
+						</li>
+						<li>
+							Result Goes Here
 						</li>
 						<li class="divider"></li>
 						<li>
@@ -320,6 +320,9 @@
 					<ul class="dropdown-menu">					
 						<li>
 							<h6 style="color: #78AB46" >Positive Control</h6>
+						</li>
+						<li>
+							Result Goes Here
 						</li>
 						<li class="divider"></li>
 						<li>
