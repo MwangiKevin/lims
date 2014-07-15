@@ -39,7 +39,7 @@
 		<li class="hsub " id="side_dashboard">
 			<!--projects-->
 			<a href="<?php echo base_url('admin/admin/dashboard');?>">
-				<i class="menu-icon fa fa-folder fa-tint"></i>
+				<i class="menu-icon fa fa-dashboard fa-tint"></i>
 				<span class="menu-text"> Dashboard </span>
 			</a>
 		</li>

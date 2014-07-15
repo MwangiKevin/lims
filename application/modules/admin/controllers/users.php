@@ -109,4 +109,41 @@ class users extends MY_Controller {
     	echo "Thank you for the services you have been desperately trying to get!!!:-)";
     }
 
+    public function reset_password()
+    {
+
+    	$id = (int)$this->input->post('resetuserid');
+    	$oldpassword = $this->my_hash($this->input->post('oldpassword'));
+    	//echo $oldpassword;die();
+    	$newpassword = $this->input->post('newpassword');
+    	$confirmnewpassword = $this->input->post('cofirmnewpassword');
+    	$oldpass = R::getAll("SELECT 
+					    			`password`
+					    	FROM `user`
+					    	WHERE id = '$id'"
+					);
+
+    	if ($newpassword == $confirmnewpassword) {
+    		if ($oldpassword == $oldpass[0]['password']) {
+    			$newpassword = $this->my_hash($newpassword);
+    			//echo $newpassword; die();
+    			$update_facility = R::getAll("UPDATE `user`
+										SET 
+											`password`='$newpassword'
+										WHERE 
+											`id`='$id'"
+									);
+    			$this->index();
+    		} else {
+    			echo "<html><head><title>Incorrect Password</title></head><body><script type='text/javascript'>alert('The old password entered is incorrect');</script></body></html>";
+    			$this->index();
+    		}
+    		
+    	} else {
+    		echo "<html><head><title>Incorrect Password</title></head><body><script type='text/javascript'>alert('The passwords entered do not coincide');</script></body></html>";
+    		$this->index();
+    	}
+    	
+    	}
+
 }

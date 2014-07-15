@@ -41,6 +41,7 @@ class facilities extends MY_Controller {
 	public function facilities_details(){		
 		$result = R::getAll("SELECT `facility_id`,
                                    `facility_name`,
+                                   `facility_code`,
                                    `facility_email`,
                                    `facility_telephone`,
                                    `district_id`,
@@ -63,6 +64,7 @@ class facilities extends MY_Controller {
 		$this->view_data['submenu_select']	= 	"side_fac_registration";
 
     	$result = R::getAll("SELECT `facility_id`,
+    								`facility_code`,
                                    `facility_name`,
                                    `district_id`,
                                    `district_name`,
@@ -137,11 +139,26 @@ class facilities extends MY_Controller {
 	public function edit_facility()
 	{
 		$id = (int)$this->input->post('editfacilityid');
+		$code = $this->input->post('code');
 		$facility = $this->input->post("facname");
-		$district = $this->input->post("dis");
-		$region = $this->input->post("reg");
-		
-		echo "Edit Facility";
+		// $district = $this->input->post("dis");
+		// $region = $this->input->post("reg");
+		$email = $this->input->post('email');
+		$phone = $this->input->post('phone');
+
+
+		$update_facility = R::getAll("UPDATE `facility`
+										SET 
+											`name`='$facility',
+											`code`='$code',
+											`email`='$email',
+											`telephone`='$phone'
+											
+										WHERE 
+											`id`='$id'"
+		);
+
+		$this->index();
 	}
         
 }
