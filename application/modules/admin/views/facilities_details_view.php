@@ -106,6 +106,7 @@
 								<tr>
 									<th rowspan="2">#</th>
 									<th rowspan="2">Facilty Name</th>
+									<th rowspan="2">Facilty Code</th>
 									<th rowspan="2">District</th>
 				                    <th rowspan="2">Region</th>
 				                    <th rowspan="2">Facility Email</th>
@@ -118,6 +119,7 @@
 							</thead>
 							<tbody>
 								<tr id="edit_table_row">
+									<td></td>
 									<td></td>
 									<td></td>
 									<td></td>

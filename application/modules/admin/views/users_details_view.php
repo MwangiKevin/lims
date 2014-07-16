@@ -46,18 +46,18 @@
 						$color = "";
 						$class = "";
 
-						if($user['status']==4){								
-							$color = "#2d6ca2";
-							$class = "glyphicon glyphicon-minus-sign";								
+						if($user['status']==2){								
+							$color = "#F23518";
+							$class = "ace-icon fa fa-ok-sign fa-tint";								
 						}elseif($user['status']==1){							
 							$color = "#3e8f3e";
-							$class = "glyphicon glyphicon-ok-sign";								
+							$class = "ace-icon fa fa-ok-sign fa-tint";								
 						}elseif($user['status']==3){									
 							$color = "#c12e2a";
-							$class = "glyphicon glyphicon-remove-sign";							
+							$class = "ace-icon fa fa-pencil";							
 						}else{							
 							$color = "#eb9316";
-							$class = "glyphicon glyphicon-question-sign";														
+							$class = "ace-icon fa fa-ok-sign fa-tin";														
 						}
 					?>
                     <td>
@@ -70,7 +70,7 @@
                     </td>
                     
 					<td><center><a class="green" title="Reset '<?php echo $user['username'];?>' Password" href="javascript:void(null);" style="border-radius:1px;" onclick="reset_password(<?php echo $user['user_id'];?>,'<?php echo $user["username"] ?>','<?php echo $user["name"] ?>','<?php echo $user["phone"] ?>','<?php echo $user["email"] ?>','<?php echo $user["user_group"] ?>','<?php echo $user["status"] ?>')"><i class="ace-icon fa fa-pencil bigger-130"></i></a></center></td>	
-					<td><center><a class="red" href=""><i class="ace-icon fa fa-trash-o bigger-130"></i></a></center></td>
+					<td><center><a class="red" href="<?php echo base_url('admin/users/remove_user/'.$user['user_id']);?>"><i class="ace-icon fa fa-trash-o bigger-130"></i></a></center></td>
                     <td><center><a class="blue" title =" Edit <?php echo $user['username'];?> Details" href="javascript:void(null);" style="border-radius:1px;" onclick="edit_user(<?php echo $user['user_id'];?>,'<?php echo $user["username"] ?>','<?php echo $user["name"] ?>','<?php echo $user["phone"] ?>','<?php echo $user["email"] ?>','<?php echo $user["user_group"] ?>','<?php echo $user["status"] ?>')"><i class="ace-icon fa fa-pencil bigger-130"></i></a></center></td>
                 </tr>
 				
