@@ -33,7 +33,7 @@ class admin extends MY_Controller {
 	}
 
 	public function index(){
-
+		
 		$this->dashboard();
 	}
 
