@@ -87,7 +87,7 @@ class worksheet extends MY_Controller {
 	public function history(){	
 
 		$this->view_data['content_view'] 		= "eid/worksheet_history_view";
-		$this->view_data['title'] 				= "EID | Worksheet | ABBOT";		
+		$this->view_data['title'] 				= "EID | Worksheet";		
 		$this->view_data['menu_select']			= 	array(2,2);
 		$this->view_data['breadcrumbs'][2]		=	array(
 													"title" 	=>	"Worksheet History",
@@ -102,11 +102,16 @@ class worksheet extends MY_Controller {
 	}
 	
 	public function cobas_print_worksheet(){
-		$this->view_data['result'] = $this->worksheets_model->cobas_samples(1);			
+		$this->view_data['result'] = $this->worksheets_model->cobas_samples(1);
+		$this->view_data['worksheet_details'] = $this->worksheets_model->cobas_rack(); 
+		
+					
 		$this->load->view("cobas_rack_view",$this->view_data);
 	}
 	public function abbott_print_worksheet(){
 		$this->view_data['result'] = $this->worksheets_model->abbott_samples(1);
+		//$this->view_data['worksheet_details'] = $this->worksheet_model->abbott_rack();
+		
 		$this->load->view("abbott_rack_view",$this->view_data);
 	}
 	

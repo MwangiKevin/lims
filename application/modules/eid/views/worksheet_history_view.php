@@ -1,10 +1,19 @@
+<script>
+	// $(function(){
+			// $("#btn-show-modal").click(function(e){
+				// e.preventDefault();
+				// $("#dialog-example").modal("show");
+			// });
+		// });
+</script>
+	
 <div >
 	<h4 class="lighter">
 		<i class="ace-icon fa fa-hand-o-right icon-animated-hand-pointer blue"></i>
 		<a href="#" data-toggle="modal" class="pink"> View Worksheets Created </a>
 	</h4>
 	<div class="hr hr-18 hr-double dotted"></div>
-	
+
 	<div class="row my-infobox">
 		<div class="table-header">
 			Worksheet info
@@ -12,7 +21,7 @@
 		<table style="font-size:90%" id="tests_table" class="table table-bordered table-responsive">
 			<thead>
 				<tr class="active">
-					<th rowspan="2">#</th>
+					<th rowspan="2">Sample ID</th>
 					<th rowspan="2">Date Created</th>
 					<th rowspan="2">Created By</th>
 					<th rowspan="2">Machine</th>
@@ -41,26 +50,82 @@
 						$created_by = $res['created_by'];
 						$flag = $res['flag'];
 						$status = $res['status'];
+						
+						$result = $res['result'];
+						
 						$date_run = $res['date_run'];
 						$date_update = $res['date_updated'];
 						$date_reviewed = $res['date_reviewed'];
 						?>
-						<tr>
-							<td><?php echo $i ?></td>
-							<td><?php echo $date_created ?></td>
-							<td><?php echo $created_by ?></td>
-							<td><?php echo $flag ?></td>
-							<td><?php echo $status?></td>
-							<td>44</td>
-							<td>44</td>
-							<td>44</td>
-							<td>44</td>
-							<td>44</td>
-							<td>44</td>
-							<td><?php echo $date_run?></td>
-							<td><?php echo $date_update?></td>
-							<td><?php echo $date_reviewed?></td>	
-							<td class="">
+						<script>
+							var clickedrow;
+							function rowclicked(id){
+								clickedrow = id;
+							}	
+						</script>
+						<tr onclick="rowclicked(<?php echo $i  ?>)">
+							<td id="id<?php echo $i  ?>"><?php echo $i ?></td>
+							<td id="date_created<?php echo $i?>"><?php echo $date_created ?></td>
+							<td id="created_by<?php echo $i?>"><?php echo $created_by ?></td>
+							<td id="flag<?php echo $i?>"><?php echo $flag ?></td>
+							<td id="status<?php echo $i?>"><?php echo $status?></td>
+							<?php
+								if($result == 0){
+									//positive
+							?>
+								<td id="positive_result">positive</td>
+								<td> - </td>
+								<td> - </td>
+								<td> - </td>
+								<td> - </td>
+								<td> - </td>
+							<?php
+								}else if($result == 1){
+									//negative
+							?>
+								<td id="negative_result">negative</td>
+								<td> - </td>
+								<td> - </td>
+								<td> - </td>
+								<td> - </td>
+								<td> - </td>
+							<?php
+								}else if($result == 2){
+									//failed
+							?>
+								<td id="Failed_result">Failed</td>
+									<td> - </td>
+									<td> - </td>
+									<td> - </td>
+									<td> - </td>
+									<td> - </td>
+							<?php
+								}else if($result == 3){
+									//redraw
+							?>
+								<td id="redraw_result">redraw</td>
+									<td> - </td>
+									<td> - </td>
+									<td> - </td>
+									<td> - </td>
+									<td> - </td>
+							<?php
+								}else{
+									//no result
+							?>
+								<td id="redraw_result">No result</td>
+									<td> - </td>
+									<td> - </td>
+									<td> - </td>
+									<td> - </td>
+									<td> - </td>
+							<?php	
+								}
+							 ?>
+							<td id="date_run<?php echo $i?>"><?php echo $date_run?></td>
+							<td id="date_updated<?php echo $i?>">2014-07-01<?php echo $date_update?></td>
+							<td id="date_reviewed<?php echo $i?>"><?php echo $date_reviewed?></td>	
+							<td>
 								<div class="action-buttons">
 									<a class="blue" href="#">
 										<i class="ace-icon fa fa-search-plus bigger-130"></i>
@@ -89,5 +154,251 @@
 	</div>
 </div>
 
+<div class="modal" id="blue_dialog">	
+	<div class="modal-header" id="modal_head">
+		<center><h1>Sample View</h1></center>
+	</div>
 
-<?php $this->load->view("worksheet_history_footer_view");?>
+	<div class="modal-body" id="modal_dialog_view" >
+		<center>
+		<div id="column1">
+			<div class="input-group my-input-group nb" style="width:50%">
+				<span class="input-group-addon my-input-group-caption" >
+					Sample ID:
+				</span>
+				<input name="sample_prep_no[]" id="sample_ID_zoom" class="form-control date-picker" type="text" style="width:100%;"/>
+			</div>
+			<div class="input-group my-input-group nb" style="width:50%">
+				<span class="input-group-addon my-input-group-caption" >
+					Date Created:
+				</span>
+				<input name="sample_prep_no[]" id="date_created_zoom" class="form-control date-picker" type="text" style="width:100%;"/>
+			</div>
+			
+			<div class="input-group my-input-group nb" style="width:50%">
+				<span class="input-group-addon my-input-group-caption" >
+					Created By:
+				</span>
+				<input name="sample_prep_no[]" id="created_by_zoom" class="form-control date-picker" type="text" style="width:100%;"/>
+			</div>
+			
+			<div class="input-group my-input-group nb" style="width:50%">
+				<span class="input-group-addon my-input-group-caption" >
+					Machine:
+				</span>
+				<input name="sample_prep_no[]" id="machine_zoom" class="form-control date-picker" type="text" style="width:100%;"/>
+			</div>
+			<div class="input-group my-input-group nb" style="width:50%">
+				<span class="input-group-addon my-input-group-caption" >
+					Satus:
+				</span>
+				<input name="sample_prep_no[]" id="status_zoom" class="form-control date-picker" type="text" style="width:100%;" />
+			</div>
+		</div>
+		
+			<div id="column1">
+			<div class="input-group my-input-group nb" style="width:50%">
+				<span class="input-group-addon my-input-group-caption" >
+					Date Run:
+				</span>
+				<input name="sample_prep_no[]" id="date_run_zoom" class="form-control date-picker" type="text" style="width:100%;"/>
+			</div>
+			<div class="input-group my-input-group nb" style="width:50%">
+				<span class="input-group-addon my-input-group-caption" >
+					Date Updated:
+				</span>
+				<input name="sample_prep_no[]" id="date_updated_zoom" class="form-control date-picker" type="text" style="width:100%;"/>
+			</div>
+			<div class="input-group my-input-group nb" style="width:50%">
+				<span class="input-group-addon my-input-group-caption" >
+					Date Reviewed:
+				</span>
+				<input name="sample_prep_no[]" id="date_reviewed_zoom" class="form-control date-picker" type="text" style="width:100%;"/>
+			</div>
+		</div>
+		<button class="btn btn-white btn-default btn-round" id="close_dialogv">
+			<i class="ace-icon fa fa-times red2"></i>
+			Cancel
+		</button>
+		</center>
+	</div>
+</div>
+
+
+<!-- edit dialog-->
+<div class="modal" id="green_dialog">	
+	<div class="modal-header" id="modal_head">
+		<center><h1>Edit Sample </h1></center>
+	</div>
+
+	<div class="modal-body" id="modal_dialog_view" >
+		<center>
+		<div id="column1">
+			<div class="input-group my-input-group nb" style="width:50%">
+				<span class="input-group-addon my-input-group-caption" >
+					Sample ID:
+				</span>
+				<input name="sample_prep_no[]" id="sample_ID_zoom" class="form-control date-picker" type="text" style="width:100%;"/>
+			</div>
+			<div class="input-group my-input-group nb" style="width:50%">
+				<span class="input-group-addon my-input-group-caption" >
+					Date Created:
+				</span>
+				<input name="sample_prep_no[]" id="date_created_zoom" class="form-control date-picker" type="text" style="width:100%;"/>
+			</div>
+			
+			<div class="input-group my-input-group nb" style="width:50%">
+				<span class="input-group-addon my-input-group-caption" >
+					Created By:
+				</span>
+				<input name="sample_prep_no[]" id="created_by_zoom" class="form-control date-picker" type="text" style="width:100%;"/>
+			</div>
+			
+			<div class="input-group my-input-group nb" style="width:50%">
+				<span class="input-group-addon my-input-group-caption" >
+					Machine:
+				</span>
+				<input name="sample_prep_no[]" id="machine_zoom" class="form-control date-picker" type="text" style="width:100%;"/>
+			</div>
+			<div class="input-group my-input-group nb" style="width:50%">
+				<span class="input-group-addon my-input-group-caption" >
+					Satus:
+				</span>
+				<input name="sample_prep_no[]" id="status_zoom" class="form-control date-picker" type="text" style="width:100%;" />
+			</div>
+		</div>
+		
+			<div id="column1">
+			<div class="input-group my-input-group nb" style="width:50%">
+				<span class="input-group-addon my-input-group-caption" >
+					Date Run:
+				</span>
+				<input name="sample_prep_no[]" id="date_run_zoom" class="form-control date-picker" type="text" style="width:100%;"/>
+			</div>
+			<div class="input-group my-input-group nb" style="width:50%">
+				<span class="input-group-addon my-input-group-caption" >
+					Date Updated:
+				</span>
+				<input name="sample_prep_no[]" id="date_updated_zoom" class="form-control date-picker" type="text" style="width:100%;"/>
+			</div>
+			<div class="input-group my-input-group nb" style="width:50%">
+				<span class="input-group-addon my-input-group-caption" >
+					Date Reviewed:
+				</span>
+				<input name="sample_prep_no[]" id="date_reviewed_zoom" class="form-control date-picker" type="text" style="width:100%;"/>
+			</div>
+		</div>
+		<button class="btn btn-white btn-default btn-round" id="close_dialoge">
+				<i class="ace-icon fa fa-times red2"></i>
+				Cancel
+		</button>
+		<button class="btn btn-white btn-info btn-bold">
+			<i class="ace-icon fa fa-floppy-o bigger-120 blue"></i>
+			Edit
+		</button>
+		</center>
+	</div>
+</div>
+<!-- edit dialog -->
+
+<!-- delete dialog-->
+<div class="modal" id="red_dialog">	
+	<div class="modal-header" id="modal_head">
+		<center><h1>Delete Sample </h1></center>
+	</div>
+		
+	<div class="modal-body" id="modal_dialog_view" >
+		<table style="font-size:90%" id="tests_table" class="table table-bordered table-responsive">
+			<thead>
+				<tr class="active">
+					<th rowspan="2">Sample ID</th>
+					<th rowspan="2">Date Created</th>
+					<th rowspan="2">Created By</th>
+					<th rowspan="2">Machine</th>
+					<th rowspan="2">Status</th>
+					<th rowspan="1" colspan = "6" ><center>Samples Aggregates</center></th>				
+					<th rowspan="2">Date Run</th>
+					<th rowspan="2">Date Updated</th>
+					<th rowspan="2">Date Reviewed</th>
+				</tr>
+				<tr class="active">
+					<th rowspan="1">POS</th>
+					<th rowspan="1">NEG</th>
+					<th rowspan="1">Failed</th>
+					<th rowspan="1">Redraw</th>
+					<th rowspan="1">No Result</th>
+					<th rowspan="1">Total</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td id="sample_id_zoom">1</td>
+					<td id="date_created_zoom">1</td>
+					<td id="created_by_zoom">1</td>
+					<td id="machine_zoom">1</td>
+					<td id="status_zoom">1</td>
+					
+					<td id="pos_zoom">1</td>
+					<td id="neg_zoom">1</td>
+					<td id="failed_zoom">1</td>
+					<td id="redraw_zoom">1</td>
+					<td id="no_result_zoom">1</td>
+					<td id="total_zoom">1</td>
+					
+					<td id="date_run_zoom">1</td>
+					<td id="date_updated_zoom">1</td>
+					<td id="date_reviewed_zoom">1</td>
+				</tr>
+				
+			</tbody>
+		</table>
+		
+		<div id="zoom_controls">
+			<button class="btn btn-white btn-warning btn-bold">
+				<i class="ace-icon fa fa-trash-o bigger-120 orange"></i>
+				Delete
+			</button>
+			<button class="btn btn-white btn-default btn-round" id="close_dialogd">
+				<i class="ace-icon fa fa-times red2"></i>
+				Cancel
+			</button>
+		</div>
+	</div>
+</div>
+<!-- delete dialog-->
+
+<style>
+#modal_head{
+	color: #fff;
+}
+#column1{
+	float:left;
+	width:50%;
+}	
+#modal_dialog_view{
+	background-color: #fff;
+	height:30%;	
+	border-radius: 1em;
+	width:70%; 	
+	margin:auto;
+	text-align:center;
+}
+
+#dialog-example{
+	margin:auto;
+}
+#btn_close{
+	position:fixed;
+	right:22%;
+	bottom:60%;
+	border-radius: 1em;
+}
+#column1 label{
+	display:inline-block;
+	width:30%;
+	border:solid;
+}
+</style>
+
+
+<?php $this->load->view("worksheet_history_footer_view");?>		
