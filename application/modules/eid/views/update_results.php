@@ -31,7 +31,7 @@
 
 	</div>
 	<div class="row my-infobox">
-		<form action="<?php echo base_url("eid/results/upload_file");?>" class="dropzone" id="dropzone">
+		<form action="<?php echo base_url("eid/results/upload_file");?>" class="dropzone" id="dz" method="post">
 			<div class="fallback">
 				<input name="file" type="file" multiple="">
 			</div>
@@ -39,5 +39,16 @@
 	</div>
 
 	<script>
-			new Dropzone("#dropzone", { /* options */ });
-	</script>
+
+			Dropzone.options.dz = {
+  			paramName: "file", 
+  			maxFilesize: 10, 
+  			accept: function(file, done) {
+  			 	if ((file.name.substring((file.name.length-4),file.name.length) != ".txt")&&(file.name.substring((file.name.length-4),file.name.length) != ".csv")&&(file.name.substring((file.name.length-4),file.name.length) != ".TXT")&&(file.name.substring((file.name.length-4),file.name.length) != ".CSV")) {
+  			 		done("Wrong File Type");
+  			 	}
+  			 	else { done(); }
+  			}
+			};
+
+</script>

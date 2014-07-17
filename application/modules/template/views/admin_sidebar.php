@@ -113,8 +113,7 @@
 				<i class="menu-icon fa fa-pencil-square-o"></i>
 				<span class="menu-text"> Reports </span>
 
-				<b class="arrow fa fa-angle-down"></b>
-			</a>
+            </a>
 
 			<b class="arrow"></b>
 

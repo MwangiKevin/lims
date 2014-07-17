@@ -104,4 +104,9 @@ class users extends MY_Controller {
         redirect("admin/users/users_registration");
     }
 
+    public function edit_user()
+    {
+    	echo "Thank you for the services you have been desperately trying to get!!!:-)";
+    }
+
 }

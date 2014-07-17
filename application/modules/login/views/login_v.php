@@ -13,7 +13,7 @@
 	<link rel='stylesheet' href='<?php echo base_url();?>assets/sass_assets/stylesheets/styles.css' type='text/css'></link>
 
 	<?php      	
-	$this->load->view('utils/dynamicLoads');
+		$this->load->view('utils/dynamicLoads');
 	?>
 
 	<!-- text fonts -->

@@ -1,6 +1,3 @@
-
-	
-   
         <h4 class="lighter">
            <i class="ace-icon fa fa-hand-o-right icon-animated-hand-pointer blue"></i>
            <a href="#" data-toggle="modal" class="pink">View Facility Details </a>
@@ -19,14 +16,12 @@
 					<th rowspan="2">Facilty Name</th>
 					<th rowspan="2">District</th>
                     <th rowspan="2">Region</th>
-                   
-                    <th rowspan="2"># Equipment</th>
-                    <th rowspan="2"># Users</th>
+                    <th rowspan="2">Facility Email</th>
+                    <th rowspan="2">Facility Telephone</th>
 					<th colspan="2">Actions</th>
 				</tr>
 				<tr>
-					<th>Edit</th>
-					<th>RollOut</th>
+					<th colspan="2">Edit</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -41,10 +36,14 @@
                     <td><?php echo $facility['district_name'];?></td>
                     <td><?php echo $facility['region_name'];?></td>
                     
-					<td>******</td>	
-					<td>******</td>						
-					<td><center><a class="blue" href="#editdetailsdiv"><i class="ace-icon fa fa-pencil bigger-130"></i></a></center></td>
-                    <td><span class="glyphicon glyphicon-ok-sign"></span></td>
+					<td><?php echo $facility['facility_email'];?></td>	
+					<td><?php echo $facility['facility_telephone'];?></td>						
+					<td>
+						<center>
+							<a class="blue" title =" Edit Facility (<?php echo $facility['facility_name'];?>)" href="javascript:void(nul);" style="border-radius:1px;" onclick="edit_facility(<?php echo $facility['facility_id'];?>,'<?php echo $facility['facility_name'];?>','<?php echo $facility['district_name'];?>','<?php echo $facility['region_name'];?>','<?php echo $facility['facility_email'];?>','<?php echo $facility['facility_telephone'];?>')"><i class="ace-icon fa fa-pencil bigger-130"></i></a>
+						</center>
+					</td>
+                    
                 </tr>
 
 					<?php/* 
@@ -86,30 +85,36 @@
 	    		<h5 class="modal-title">Edit Facility Details</h5>
 	  		</div>
 			<div class="modal-body" style="padding-bottom:0px;">	
-				<?php echo form_open('admin/facilities/edit_fac');?>
+				<?php echo form_open('admin/facilities/edit_facility');?>
 
 					<input required id="editfacilityid" type="hidden" name="editfacilityid" class="textfield form-control" readonly />
 
 					<div class="input-group" style="width: 100%;padding:4px;">
-						<table id="data-table-edit">
+						<table style="font-size:90%" id="tests_table" class="table table-bordered table-responsive">
 							<thead>
 								<tr>
-									<th rowspan = "2">#</th>
-									<th rowspan = "2">Facility Name</th>
-									<th rowspan = "2">District</th>
-									<th rowspan = "2">Region</th>
-									<th rowspan = "2">Partner</th>
-									<th rowspan = "2"># equipment</th>
-									<th rowspan = "2"># Users</th>
-									<th colspan="2"><center>Actions</center></th>
+									<th rowspan="2">#</th>
+									<th rowspan="2">Facilty Name</th>
+									<th rowspan="2">District</th>
+				                    <th rowspan="2">Region</th>
+				                    <th rowspan="2">Facility Email</th>
+				                    <th rowspan="2">Facility Telephone</th>
+									<th colspan="2">Actions</th>
 								</tr>
 								<tr>
-									<th>Rollout</th>
-									<th>Edit Details</th>
+									<th colspan="2">Edit</th>
 								</tr>
 							</thead>
 							<tbody>
-								<tr id="edit_table_row"><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+								<tr id="edit_table_row">
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
 							</tbody>
 						</table>
 		            </div>	
@@ -123,19 +128,7 @@
 						<span class="input-group-addon" style="width: 20%;">Region:</span>
 						<input required id="editreg" name = "reg" class="textfield form-control"  readonly />
 		            </div>	          
-					<div class="input-group" style="width: 100%;padding:4px;">
-						<span class="input-group-addon" style="width: 40%;">Partner:</span>
-						<select  required id="editpar" name="par" class="textfield form-control" >
-		                   	<option value="">*Select a Partner*</option> 
-		                   	<?php
-		                   		foreach($partners as $par){
-		                   	?>   
-		                   	<option value= "<?php echo $par["id"] ?>" ><?php echo $par["name"] ?></option>
-		                   	<?php
-		                   		}
-		                   	?>                					
-		                </select>
-					</div>	
+					
 					<div class="input-group" style="width: 100%;padding:4px;">
 						<span class="input-group-addon" style="width: 40%;"> email:</span>
 						<input id="editemail" name="email" class="textfield form-control" />	
@@ -144,13 +137,7 @@
 						<span class="input-group-addon" style="width: 40%;">phone:</span>
 						<input id="editphone" name="phone" class="textfield form-control" />	
 		            </div>
-					<div class="input-group" style="width: 100%;padding:4px;">
-						<span class="input-group-addon" style="width: 40%;"> Rollout Status :</span>
-						<span class="input-group-addon" style="width: 30%;"><input type="radio" name="editstatus" value="1">  Rolledout  <span style="font-size: 1.4em;color: #3e8f3e;" class="glyphicon glyphicon-ok-sign"></span></input></span>
-						<span class="input-group-addon" style="width: 30%;"><input type="radio" name="editstatus" value="2">  Not Rolledout  <span style="font-size: 1.4em;color: #eb9316;" class="glyphicon glyphicon-question-sign"></span></input></span>
-	                </div>				
-				
-					</div>
+					
 					<div class="modal-footer" style="height:11px;padding-top:11px;">								
 						<div class="" style="padding:7px;">
 							<button name="save" type="submit" class="btn btn-primary btn-mini"><i class="glyphicon glyphicon-save"></i>Save</button>
