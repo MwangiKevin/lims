@@ -106,7 +106,20 @@ class users extends MY_Controller {
 
     public function edit_user()
     {
-    	echo "Thank you for the services you have been desperately trying to get!!!:-)";
+    	$id = (int)$this->input->post('edituserid');
+    	$name = $this->input->post('name');
+    	$email = $this->input->post('email');
+    	$phone = $this->input->post('phone');
+
+    	$update_user = R::getAll("UPDATE `user`
+    								SET 
+    									`name` = '$name',
+    									`phone` = '$phone',
+    									`email` = '$email'
+    								WHERE
+    									`id` = '$id'"
+    							);
+    	$this->index();
     }
 
     public function reset_password()
@@ -144,6 +157,18 @@ class users extends MY_Controller {
     		$this->index();
     	}
     	
-    	}
+    }
+
+    public function remove_user($id)
+    {
+
+    	$remove = R::getAll("UPDATE `user` 
+							SET 
+								`status`='2'
+							WHERE 
+								`id`='$id'
+						");
+    	$this->index();
+    }
 
 }
