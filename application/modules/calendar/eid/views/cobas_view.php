@@ -1,4 +1,4 @@
-z<h4 class="lighter">
+<h4 class="lighter">
 	<i class="ace-icon fa fa-hand-o-right icon-animated-hand-pointer blue"></i>
 	<a href="#" data-toggle="modal" class="pink"> Fill The Form and Click Submit </a>
 </h4>
@@ -92,6 +92,12 @@ z<h4 class="lighter">
 														<i class="ace-icon fa fa-calendar"></i>
 													</span>
 												</div>
+												<!-- <div class="input-group my-input-group nb">
+													<span class="input-group-addon my-input-group-caption">
+														age </br> (months)
+													</span>
+													<input name="infant_age[]" id="infant_age" class="form-control"  type="text">
+												</div> -->
 												<div class="input-group my-input-group nb" style="width:100%">
 													<span class="input-group-addon my-input-group-caption">
 														Updated By:
@@ -168,7 +174,38 @@ z<h4 class="lighter">
 													</span> 
 										</div>									
 									</td>
-								
+									<!-- <td id="test_reason_td">
+									<!-- 	<div class="control-group">
+
+											<div class="checkbox">
+												<label>
+													<input name="hiv_inv[]" id = "hiv_inv" type="checkbox" class="ace">
+													<span class="lbl small"> HIV Status Investigation</span>
+												</label>
+											</div>
+
+											<div class="checkbox">
+												<label>
+													<input name="conf_9_months[]" id="conf_9_months" type="checkbox" class="ace">
+													<span class="lbl small"> Confirmatory PCR @ 9 months </span>
+												</label>
+											</div>
+
+											<div class="checkbox">
+												<label>
+													<input name="conf_test[]" id="conf_test" type="checkbox" class="ace">
+													<span class="lbl small"> Repeat PCR Test</span>
+												</label>
+											</div>
+
+											<div class="checkbox">
+												<label>
+													<input name="ill_infant[]" id="ill_infant" value="1" type="checkbox" class="ace">
+													<span class="lbl small"> Ill Infant</span>
+												</label>
+											</div>
+
+										</div> -->
 									</td> 
 								</tr>
 
@@ -198,7 +235,7 @@ z<h4 class="lighter">
 								<h6>Sample Code: '.$id.'</h6>
 							</li>
 							<li>
-								Tests-Done: '.$test_No.'
+								Lab-Code (DBS No.: '.$test_No.')
 							</li>
 							<li class="divider"></li>
 							<li>

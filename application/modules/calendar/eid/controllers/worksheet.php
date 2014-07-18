@@ -19,7 +19,7 @@ class worksheet extends MY_Controller {
 		$this->view_data['topleft_title']	=	"EID";
 		$this->load->model("worksheets_model");
 		
-		$this->view_data 					=	array_merge($this->view_data,$this->load_libraries(array("style-date-time")));		
+		$this->view_data 					=	array_merge($this->view_data,$this->load_libraries(array()));		
 		$this->view_data['menu_select']		= 	array(2,0);
 		$this->view_data['breadcrumbs'] 	=	array(
 														0 	=>	array(
@@ -94,10 +94,7 @@ class worksheet extends MY_Controller {
 													"link"		=>	base_url()."eid/worksheet/history",
 													"class"		=>	"active"
 													);
-		$this->view_data['history'] = $this->worksheets_model->history();
-		// $result = $this->worksheets_model->history();
-		// print_r("Result ".$result);
-		// die;										
+		
 		$this->template($this->view_data);
 	}
 	
