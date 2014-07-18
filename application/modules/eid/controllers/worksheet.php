@@ -102,6 +102,33 @@ class worksheet extends MY_Controller {
 	}
 	
 	public function cobas_print_worksheet(){
+		$this->view_data['date_cut'] = $_POST['date_cut'];
+		
+		// print_r($_POST['date_cut']);
+		// die;
+// 		
+		$this->view_data['date_received'] = $_POST['date_received'];
+		$this->view_data['sample_prep_no'] = $_POST['sample_prep_no'];
+		$this->view_data['sample_prep_expiry_date'] = $_POST['sample_prep_expiry_date'];
+		$this->view_data['template_no'] = $_POST['template_no'];
+		$this->view_data['created_by'] = $_POST['created_by'];
+		$this->view_data['date_created'] = $_POST['date_created'];
+		$this->view_data['updated_by'] = $_POST['updated_by'];
+		$this->view_data['approved_by'] = $_POST['approved_by'];
+		$this->view_data['reviewed_by'] = $_POST['reviewed_by']; 
+		
+		$this->view_data['date_reviewed'] = $_POST['date_reviewed'];
+		$this->view_data['lot_no'] = $_POST['lot_no'];
+		$this->view_data['hiqcap'] = $_POST['hiqcap'];
+		$this->view_data['rack_no'] = $_POST['rack_no'];
+		$this->view_data['spek_kit_no'] = $_POST['spek_kit_no'];
+		$this->view_data['kit_expiry'] = $_POST['kit_expiry'];
+		
+		// $id = $_POST['date_cut'];
+		// print_r($_POST['date_cut']);
+		// print_r($id);
+		// die;
+
 		$this->view_data['result'] = $this->worksheets_model->cobas_samples(1);
 		$this->view_data['worksheet_details'] = $this->worksheets_model->cobas_rack(); 
 		

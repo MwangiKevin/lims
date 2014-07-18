@@ -26,6 +26,7 @@ z<h4 class="lighter">
 								</tr>
 							</thead>
 							<tbody>
+								<form method="POST" action="<?php echo base_url().'eid/worksheet/cobas_print_worksheet'  ?>" >
 								<tr class="" id = "1" class ="">
 									<td>						
 										<div class="input-group my-input-group nb">
@@ -60,7 +61,7 @@ z<h4 class="lighter">
 											<span class="input-group-addon my-input-group-caption">
 												Sample Prep <br/> Expiry Date
 											</span>
-											<input name="sample_prep_expiry_date[]" id="sample_prep_ex[piry_date" class="form-control datepicker" type="text" style="width:100%; 	" required data-date-format="dd-mm-yyyy" />
+											<input name="sample_prep_expiry_date[]" id="sample_prep_expiry_date" class="form-control datepicker" type="text" style="width:100%; 	" required data-date-format="dd-mm-yyyy" />
 											<span class="input-group-addon my-input-group-icon">
 												<i class="ace-icon fa fa-calendar"></i>
 											</span>
@@ -171,7 +172,6 @@ z<h4 class="lighter">
 								
 									</td> 
 								</tr>
-
 							</tbody>
 						</table>
 						
@@ -240,11 +240,11 @@ z<h4 class="lighter">
 		</div>
 		<div class="row" style="text-align: center;">
 			<a href="<?php echo $save_and_print_cobas ?>">
-				<input type="button" value="Save & Print"/>
+				<input type="submit" value="Save & Print"/>
 			</a>
 		</div>
 	</div><!-- /.main-container -->
-
+</form>
 	<div class="footer">
 		<div class="footer-inner" style="position :fixed;background:#fff;">
 			<div class="footer-content" style = "height: 35px;">

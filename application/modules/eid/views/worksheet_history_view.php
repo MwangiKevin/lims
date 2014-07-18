@@ -127,7 +127,7 @@
 							<td id="date_reviewed<?php echo $i?>"><?php echo $date_reviewed?></td>	
 							<td>
 								<div class="action-buttons">
-									<a class="blue" href="#">
+									<a class="blue" href="#" data-toggle:"modal">
 										<i class="ace-icon fa fa-search-plus bigger-130"></i>
 									</a>
 		
@@ -139,7 +139,7 @@
 										<i class="ace-icon fa fa-trash-o bigger-130"></i>
 									</a>
 		
-									<a class="green" href="#">
+									<a class="green" href="#" id="print_sample">
 										<i class="ace-icon fa fa-print bigger-130"></i>
 									</a>
 								</div>
@@ -154,141 +154,154 @@
 	</div>
 </div>
 
-<div class="modal" id="blue_dialog">	
-	<div class="modal-header" id="modal_head">
-		<center><h1>Sample View</h1></center>
-	</div>
-
-	<div class="modal-body" id="modal_dialog_view" >
-		<center>
-		<div id="column1">
-			<div class="input-group my-input-group nb" style="width:50%">
-				<span class="input-group-addon my-input-group-caption" >
-					Sample ID:
-				</span>
-				<input name="sample_prep_no[]" id="sample_ID_zoom" class="form-control date-picker" type="text" style="width:100%;"/>
-			</div>
-			<div class="input-group my-input-group nb" style="width:50%">
-				<span class="input-group-addon my-input-group-caption" >
-					Date Created:
-				</span>
-				<input name="sample_prep_no[]" id="date_created_zoom" class="form-control date-picker" type="text" style="width:100%;"/>
-			</div>
-			
-			<div class="input-group my-input-group nb" style="width:50%">
-				<span class="input-group-addon my-input-group-caption" >
-					Created By:
-				</span>
-				<input name="sample_prep_no[]" id="created_by_zoom" class="form-control date-picker" type="text" style="width:100%;"/>
-			</div>
-			
-			<div class="input-group my-input-group nb" style="width:50%">
-				<span class="input-group-addon my-input-group-caption" >
-					Machine:
-				</span>
-				<input name="sample_prep_no[]" id="machine_zoom" class="form-control date-picker" type="text" style="width:100%;"/>
-			</div>
-			<div class="input-group my-input-group nb" style="width:50%">
-				<span class="input-group-addon my-input-group-caption" >
-					Satus:
-				</span>
-				<input name="sample_prep_no[]" id="status_zoom" class="form-control date-picker" type="text" style="width:100%;" />
-			</div>
+<div class="modal fade" id="blue_dialog"  >	
+	<div class="modal-content">
+		<div class="modal-header">
+				<center><h1 style="color:#000;">Sample View</h1></center>
 		</div>
 		
-			<div id="column1">
-			<div class="input-group my-input-group nb" style="width:50%">
-				<span class="input-group-addon my-input-group-caption" >
-					Date Run:
-				</span>
-				<input name="sample_prep_no[]" id="date_run_zoom" class="form-control date-picker" type="text" style="width:100%;"/>
+		<div class="modal-body">
+			
+		<center>
+			<div id="column1"> 
+				<div class="input-group my-input-group nb" style="width:50%">
+					<span class="input-group-addon my-input-group-caption" >
+						Sample ID:
+					</span>
+					<input name="sample_prep_no[]" id="sample_ID_zoom" class="form-control date-picker" type="text" style="width:100%;"/>
+				</div>
+				<div class="input-group my-input-group nb" style="width:50%">
+					<span class="input-group-addon my-input-group-caption" >
+						Date Created:
+					</span>
+					<input name="sample_prep_no[]" id="date_created_zoom" class="form-control date-picker" type="text" style="width:100%;"/>
+				</div>
+				
+				<div class="input-group my-input-group nb" style="width:50%">
+					<span class="input-group-addon my-input-group-caption" >
+						Created By:
+					</span>
+					<input name="sample_prep_no[]" id="created_by_zoom" class="form-control date-picker" type="text" style="width:100%;"/>
+				</div>
+				
+				<div class="input-group my-input-group nb" style="width:50%">
+					<span class="input-group-addon my-input-group-caption" >
+						Machine:
+					</span>
+					<input name="sample_prep_no[]" id="machine_zoom" class="form-control date-picker" type="text" style="width:100%;"/>
+				</div>
+			</div> 
+			
+			 <div id="column1">
+			 	<div class="input-group my-input-group nb" style="width:50%">
+					<span class="input-group-addon my-input-group-caption" >
+						Satus:
+					</span>
+					<input name="sample_prep_no[]" id="status_zoom" class="form-control date-picker" type="text" style="width:100%;" />
+				</div>
+				<div class="input-group my-input-group nb" style="width:50%">
+					<span class="input-group-addon my-input-group-caption" >
+						Date Run:
+					</span>
+					<input name="sample_prep_no[]" id="date_run_zoom" class="form-control date-picker" type="text" style="width:100%;"/>
+				</div>
+				<div class="input-group my-input-group nb" style="width:50%">
+					<span class="input-group-addon my-input-group-caption" >
+						Date Updated:
+					</span>
+					<input name="sample_prep_no[]" id="date_updated_zoom" class="form-control date-picker" type="text" style="width:100%;"/>
+				</div>
+				<div class="input-group my-input-group nb" style="width:50%">
+					<span class="input-group-addon my-input-group-caption" >
+						Date Reviewed:
+					</span>
+					<input name="sample_prep_no[]" id="date_reviewed_zoom" class="form-control date-picker" type="text" style="width:100%;"/>
+				</div>
 			</div>
-			<div class="input-group my-input-group nb" style="width:50%">
-				<span class="input-group-addon my-input-group-caption" >
-					Date Updated:
-				</span>
-				<input name="sample_prep_no[]" id="date_updated_zoom" class="form-control date-picker" type="text" style="width:100%;"/>
-			</div>
-			<div class="input-group my-input-group nb" style="width:50%">
-				<span class="input-group-addon my-input-group-caption" >
-					Date Reviewed:
-				</span>
-				<input name="sample_prep_no[]" id="date_reviewed_zoom" class="form-control date-picker" type="text" style="width:100%;"/>
-			</div>
+			</center>
 		</div>
-		<button class="btn btn-white btn-default btn-round" id="close_dialogv">
-			<i class="ace-icon fa fa-times red2"></i>
-			Cancel
-		</button>
-		</center>
+		<div class="modal-footer" style="clear:both;">
+			<center>
+				<button class="btn btn-white btn-default btn-round" id="close_dialogv">
+					<i class="ace-icon fa fa-times red2"></i>
+					Cancel
+				</button>
+			</center>
+		</div>
 	</div>
 </div>
 
 
 <!-- edit dialog-->
-<div class="modal" id="green_dialog">	
-	<div class="modal-header" id="modal_head">
-		<center><h1>Edit Sample </h1></center>
-	</div>
 
-	<div class="modal-body" id="modal_dialog_view" >
-		<center>
+<div class="modal fade" id="green_dialog"  >	
+	<div class="modal-content">
+		<div class="modal-header">
+				<center><h1 style="color:#000;">Edit Sample</h1></center>
+		</div>
+		
+		<div class="modal-body">
+			<center>
 		<div id="column1">
 			<div class="input-group my-input-group nb" style="width:50%">
 				<span class="input-group-addon my-input-group-caption" >
 					Sample ID:
 				</span>
-				<input name="sample_prep_no[]" id="sample_ID_zoom" class="form-control date-picker" type="text" style="width:100%;"/>
+				<input name="sample_prep_no[]" id="sample_ID_zoome" class="form-control date-picker" type="text" style="width:100%;"/>
 			</div>
 			<div class="input-group my-input-group nb" style="width:50%">
 				<span class="input-group-addon my-input-group-caption" >
 					Date Created:
 				</span>
-				<input name="sample_prep_no[]" id="date_created_zoom" class="form-control date-picker" type="text" style="width:100%;"/>
+				<input name="sample_prep_no[]" id="date_created_zoome" class="form-control date-picker" type="text" style="width:100%;"/>
 			</div>
 			
 			<div class="input-group my-input-group nb" style="width:50%">
 				<span class="input-group-addon my-input-group-caption" >
 					Created By:
 				</span>
-				<input name="sample_prep_no[]" id="created_by_zoom" class="form-control date-picker" type="text" style="width:100%;"/>
+				<input name="sample_prep_no[]" id="created_by_zoome" class="form-control date-picker" type="text" style="width:100%;"/>
 			</div>
 			
 			<div class="input-group my-input-group nb" style="width:50%">
 				<span class="input-group-addon my-input-group-caption" >
 					Machine:
 				</span>
-				<input name="sample_prep_no[]" id="machine_zoom" class="form-control date-picker" type="text" style="width:100%;"/>
+				<input name="sample_prep_no[]" id="machine_zoome" class="form-control date-picker" type="text" style="width:100%;"/>
 			</div>
+		</div> 
+		
+		<div id="column1">
 			<div class="input-group my-input-group nb" style="width:50%">
 				<span class="input-group-addon my-input-group-caption" >
 					Satus:
 				</span>
-				<input name="sample_prep_no[]" id="status_zoom" class="form-control date-picker" type="text" style="width:100%;" />
+				<input name="sample_prep_no[]" id="status_zoome" class="form-control date-picker" type="text" style="width:100%;" />
 			</div>
-		</div>
-		
-			<div id="column1">
 			<div class="input-group my-input-group nb" style="width:50%">
 				<span class="input-group-addon my-input-group-caption" >
 					Date Run:
 				</span>
-				<input name="sample_prep_no[]" id="date_run_zoom" class="form-control date-picker" type="text" style="width:100%;"/>
+				<input name="sample_prep_no[]" id="date_run_zoome" class="form-control date-picker" type="text" style="width:100%;"/>
 			</div>
 			<div class="input-group my-input-group nb" style="width:50%">
 				<span class="input-group-addon my-input-group-caption" >
 					Date Updated:
 				</span>
-				<input name="sample_prep_no[]" id="date_updated_zoom" class="form-control date-picker" type="text" style="width:100%;"/>
+				<input name="sample_prep_no[]" id="date_updated_zoome" class="form-control date-picker" type="text" style="width:100%;"/>
 			</div>
 			<div class="input-group my-input-group nb" style="width:50%">
 				<span class="input-group-addon my-input-group-caption" >
 					Date Reviewed:
 				</span>
-				<input name="sample_prep_no[]" id="date_reviewed_zoom" class="form-control date-picker" type="text" style="width:100%;"/>
+				<input name="sample_prep_no[]" id="date_reviewed_zoome" class="form-control date-picker" type="text" style="width:100%;"/>
 			</div>
 		</div>
-		<button class="btn btn-white btn-default btn-round" id="close_dialoge">
+		</center>
+		</div>
+		<div class="modal-footer" style="clear:both;">
+			<center>
+				<button class="btn btn-white btn-default btn-round" id="close_dialoge">
 				<i class="ace-icon fa fa-times red2"></i>
 				Cancel
 		</button>
@@ -296,19 +309,21 @@
 			<i class="ace-icon fa fa-floppy-o bigger-120 blue"></i>
 			Edit
 		</button>
-		</center>
+			</center>
+		</div>
 	</div>
 </div>
 <!-- edit dialog -->
 
 <!-- delete dialog-->
-<div class="modal" id="red_dialog">	
-	<div class="modal-header" id="modal_head">
-		<center><h1>Delete Sample </h1></center>
-	</div>
+<div class="modal fade" id="red_dialog"  >	
+	<div class="modal-content">
+		<div class="modal-header">
+				<center><h1 style="color:#000;">Delete Sample</h1></center>
+		</div>
 		
-	<div class="modal-body" id="modal_dialog_view" >
-		<table style="font-size:90%" id="tests_table" class="table table-bordered table-responsive">
+		<div class="modal-body">
+			<table style="font-size:90%" id="tests_table" class="table table-bordered table-responsive">
 			<thead>
 				<tr class="active">
 					<th rowspan="2">Sample ID</th>
@@ -332,40 +347,115 @@
 			</thead>
 			<tbody>
 				<tr>
-					<td id="sample_id_zoom">1</td>
-					<td id="date_created_zoom">1</td>
-					<td id="created_by_zoom">1</td>
-					<td id="machine_zoom">1</td>
-					<td id="status_zoom">1</td>
+					<td id="sample_id_zoomd"></td>
+					<td id="date_created_zoomd"></td>
+					<td id="created_by_zoomd"></td>
+					<td id="machine_zoomd"></td>
+					<td id="status_zoomd"></td>
 					
-					<td id="pos_zoom">1</td>
-					<td id="neg_zoom">1</td>
-					<td id="failed_zoom">1</td>
-					<td id="redraw_zoom">1</td>
-					<td id="no_result_zoom">1</td>
-					<td id="total_zoom">1</td>
+					<td id="pos_zoomd"></td>
+					<td id="neg_zoomd"></td>
+					<td id="failed_zoomd"></td>
+					<td id="redraw_zoomd"></td>
+					<td id="no_result_zoomd"></td>
+					<td id="total_zoomd"></td>
 					
-					<td id="date_run_zoom">1</td>
-					<td id="date_updated_zoom">1</td>
-					<td id="date_reviewed_zoom">1</td>
+					<td id="date_run_zoomd"></td>
+					<td id="date_updated_zoomd"></td>
+					<td id="date_reviewed_zoomd"></td>
 				</tr>
 				
 			</tbody>
 		</table>
+		</div>
 		
-		<div id="zoom_controls">
-			<button class="btn btn-white btn-warning btn-bold">
-				<i class="ace-icon fa fa-trash-o bigger-120 orange"></i>
-				Delete
-			</button>
-			<button class="btn btn-white btn-default btn-round" id="close_dialogd">
-				<i class="ace-icon fa fa-times red2"></i>
-				Cancel
-			</button>
+		<div class="modal-footer">
+			<center>
+				<button class="btn btn-white btn-warning btn-bold">
+					<i class="ace-icon fa fa-trash-o bigger-120 orange"></i>
+					Delete
+				</button>
+				<button class="btn btn-white btn-default btn-round" id="close_dialogd">
+					<i class="ace-icon fa fa-times red2"></i>
+					Cancel
+				</button>
+			</center>
 		</div>
 	</div>
 </div>
 <!-- delete dialog-->
+
+<!--print dialog-->
+<div class="modal fade" id="print_dialog"  >	
+	<div class="modal-content">
+		<div class="modal-header">
+				<center><h1 style="color:#000;">Print Sample</h1></center>
+		</div>
+		
+		<div class="modal-body">
+			<table style="font-size:90%" id="tests_table" class="table table-bordered table-responsive">
+			<thead>
+				<tr class="active">
+					<th rowspan="2">Sample ID</th>
+					<th rowspan="2">Date Created</th>
+					<th rowspan="2">Created By</th>
+					<th rowspan="2">Machine</th>
+					<th rowspan="2">Status</th>
+					<th rowspan="1" colspan = "6" ><center>Samples Aggregates</center></th>				
+					<th rowspan="2">Date Run</th>
+					<th rowspan="2">Date Updated</th>
+					<th rowspan="2">Date Reviewed</th>
+				</tr>
+				<tr class="active">
+					<th rowspan="1">POS</th>
+					<th rowspan="1">NEG</th>
+					<th rowspan="1">Failed</th>
+					<th rowspan="1">Redraw</th>
+					<th rowspan="1">No Result</th>
+					<th rowspan="1">Total</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td id="sample_id_zoomp"></td>
+					<td id="date_created_zoomp"></td>
+					<td id="created_by_zoomp"></td>
+					<td id="machine_zoomp"></td>
+					<td id="status_zoomp"></td>
+					
+					<td id="pos_zoomp"></td>
+					<td id="neg_zoomp"></td>
+					<td id="failed_zoomp"></td>
+					<td id="redraw_zoomp"></td>
+					<td id="no_result_zoomp"></td>
+					<td id="total_zoomp"></td>
+					
+					<td id="date_run_zoomp"></td>
+					<td id="date_updated_zoomp"></td>
+					<td id="date_reviewed_zoomp"></td>
+				</tr>
+				
+			</tbody>
+		</table>
+		</div>
+		
+		<div class="modal-footer">
+			<center>
+				<button class="btn btn-white btn-warning btn-bold">
+					<li>
+						<i class="ace-icon glyphicon glyphicon-print"></i>
+						Print
+					</li>
+				</button>
+				<button class="btn btn-white btn-default btn-round" id="close_dialogp">
+					<i class="ace-icon fa fa-times red2"></i>
+					Cancel
+				</button>
+			</center>
+		</div>
+	</div>
+</div>
+<!--Print dialog -->
 
 <style>
 #modal_head{
@@ -375,29 +465,7 @@
 	float:left;
 	width:50%;
 }	
-#modal_dialog_view{
-	background-color: #fff;
-	height:30%;	
-	border-radius: 1em;
-	width:70%; 	
-	margin:auto;
-	text-align:center;
-}
 
-#dialog-example{
-	margin:auto;
-}
-#btn_close{
-	position:fixed;
-	right:22%;
-	bottom:60%;
-	border-radius: 1em;
-}
-#column1 label{
-	display:inline-block;
-	width:30%;
-	border:solid;
-}
 </style>
 
 
