@@ -13,7 +13,7 @@
     </div>
 
     <div class="widget-body">
-        <div class="widget-body-inner" style="display: block;overflow-y:auto;height:250px;">
+        <div class="widget-body-inner my-widget-md" style="">
             <div class="widget-main no-padding">
                 <table class="table table-bordered table-striped">
 

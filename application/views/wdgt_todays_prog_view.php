@@ -6,10 +6,10 @@
         </h5>
     </div>
 
-    <div class="widget-body">
+    <div class="widget-body my-widget-sm">
         <div class="widget-main">
 
-            <div id ="dat" class ="" style="height:270px;">
+            <div id ="dat" class ="" style="height:240px;">
 
             </div>
             <div class="hr hr8 hr-double"></div>

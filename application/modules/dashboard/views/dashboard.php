@@ -35,3 +35,14 @@
         </div>
     </div>
 </div>
+
+
+
+<div class ="my-infobox">
+    <div class ="row">
+
+        <div class="col-sm-4">            
+            <?php $this->load->view("wdgt_tasks_view");?>
+        </div>
+    </div>
+</div>
