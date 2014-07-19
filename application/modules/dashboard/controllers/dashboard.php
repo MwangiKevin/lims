@@ -8,7 +8,7 @@ class dashboard extends MY_Controller {
 
 		parent::__construct();
 
-		$this->view_data['content_view'] 	= 	"dashboard/dashboard_view";
+		$this->view_data['content_view'] 	= 	"dashboard/dashboard";
 		$this->view_data['sidebar'] 		= 	"admin_sidebar";
 		$this->view_data['title'] 			= 	"Dashboard";
 		$this->view_data['filter']			=	false;

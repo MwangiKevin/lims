@@ -202,7 +202,8 @@
 							</tbody>
 						</table>
 					</div><!-- /.widget-main -->
-				</div></div><!-- /.widget-body -->
+				</div>
+			</div><!-- /.widget-body -->
 			</div><!-- /.widget-box -->
 		</div>
 		<div class="col-sm-4">

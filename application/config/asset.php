@@ -166,6 +166,8 @@ $config['plugin_js_files']	=	array(
 $config['plugin_css_files']	=	array(									
 									array('title'	=> 'dataTables-bootstrap'		,	'file'	=>	'data-tables-bootstrap-3/css/dataTables.bootstrap.css'),
 									array('title'	=> 'dropzone-basic'				,	'file'	=>	'dropzone/css/basic.css'),
-									array('title'	=> 'dropzone'					,	'file'	=>	'dropzone/css/dropzone.css')
+									array('title'	=> 'dropzone'					,	'file'	=>	'dropzone/css/dropzone.css'),
+									array('title'   => 'fa'                        	,   'file'    =>    'font-awesome/css/font-awesome.css')
+
 								);
 /* End of file asset.php */
