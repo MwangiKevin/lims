@@ -23,12 +23,40 @@ class worksheets_model extends MY_Model {
 	}
 	
 	public function history(){
-		$sql = "SELECT  ws.`date_reviewed`,  ws.`date_updated`, ws.`date_run`, ws.`status`, ws.`flag`, ws.`created_by`, ws.`date_created`, vsd.result
-FROM worksheet AS ws
-LEFT JOIN v_sample_details AS vsd
-ON vsd.requisition_id = ws.cdc_worksheet_no	";
+		$sql = "SELECT  ws.`date_reviewed`,  ws.`date_updated`, ws.`date_run`, ws.`status`, ws.`flag`, ws.`created_by`, ws.`date_created`, vsd.result, vsd.sample_id
+				FROM worksheet AS ws
+				LEFT JOIN v_sample_details AS vsd
+				ON vsd.requisition_id = ws.cdc_worksheet_no	";
+		$result = R::getAll($sql);
+		return $result;
+	}
+	
+	public function cobas_rack(){
+		$sql = "SELECT
+					`cw`.`id`,
+					`cw`.`cdc_worksheet_no`,
+					`cw`.`lot_no`,
+					`cw`.`HIQCAPNo`,
+					`cw`.`rack_no`,
+					`cw`.`kit_expiry_date`,
+					`cw`.`Spek_kit_no`,
+					`w`.`cdc_worksheet_no`,
+					`w`.`date_created`,
+					`w`.`date_cut`,
+					`w`.`date_run`,
+					`w`.`reviewed_by`,
+					`w`.`date_reviewed`,
+					`w`.`created_by`
+				FROM cobas_worksheet AS cw
+				LEFT JOIN worksheet AS w
+				ON `w`.`cdc_worksheet_no` = `cw`.`cdc_worksheet_no`";
 			$result = R::getAll($sql);
-			return $result;
+			return $result;		
+			
+	}
+	
+	public function abbott_rack(){
+		
 	}
 }
 	
