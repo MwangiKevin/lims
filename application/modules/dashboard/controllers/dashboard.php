@@ -22,7 +22,7 @@ class dashboard extends MY_Controller {
 		$this->view_data['breadcrumbs'] 	=	array(
 														0 	=>	array(
 																	"title" 	=>	"Home",
-																	"link"		=>	base_url()."admin/",
+																	"link"		=>	base_url()."admin",
 																	"class"		=>	""
 																	),
 														1 	=>	array(

@@ -6,7 +6,7 @@
         </h5>
     </div>
 
-    <div class="widget-body my-widget-sm">
+    <div class="widget-body my-widget-md">
         <div class="widget-main">
 
             <div id ="dat" class ="" style="height:240px;">
