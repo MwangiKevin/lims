@@ -167,4 +167,13 @@ $sql["v_testing_trend_vl"]				=			"SELECT
 														ORDER BY `date_released` DESC
 													";
 
+$sql["v_tat"]							= 			"SELECT 
+															*
+														FROM `test_requisition` `req`
+														LEFT JOIN `sample` `sa`
+														ON `sa`.`requisition_id`=`req`.`id`
+
+														
+													";						
+
 $config["views_sql"] =$sql;
