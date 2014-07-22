@@ -42,5 +42,4 @@ class admin extends MY_Controller {
 		$this -> template($this->view_data);
 	}
 
-
 }

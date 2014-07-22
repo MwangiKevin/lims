@@ -122,4 +122,49 @@ $sql["v_user_details"] 				 = 				"SELECT
 															
 													";
 
+$sql["v_testing_trend"]					=			"SELECT 
+															YEAR(`tr`.`date_released`) 	AS `year`,
+															MONTH(`tr`.`date_released`) 	AS `month`,
+															CONCAT(YEAR(`tr`.`date_released`),'-',MONTH(`tr`.`date_released`)) AS `yearmonth`,
+															SUM(CASE WHEN `tr`.`result`= 'P'    THEN 1 ELSE 0 END) AS `positive`,
+															SUM(CASE WHEN `tr`.`result`= 'N'    THEN 1 ELSE 0 END) AS `negative`,
+															SUM(CASE WHEN `tr`.`result`= 'F'    THEN 1 ELSE 0 END) AS `failed`
+														FROM `sample_test_run` `tr`
+														LEFT JOIN `sample` `s`
+														ON `tr`.`sample_id` = `s`.`id`
+														GROUP BY `yearmonth`
+														ORDER BY `date_released` DESC
+													";
+
+$sql["v_testing_trend_eid"]				=			"SELECT 
+															YEAR(`tr`.`date_released`) 	AS `year`,
+															MONTH(`tr`.`date_released`) 	AS `month`,
+															CONCAT(YEAR(`tr`.`date_released`),'-',MONTH(`tr`.`date_released`)) AS `yearmonth`,
+															SUM(CASE WHEN `tr`.`result`= 'P'    THEN 1 ELSE 0 END) AS `positive`,
+															SUM(CASE WHEN `tr`.`result`= 'N'    THEN 1 ELSE 0 END) AS `negative`,
+															SUM(CASE WHEN `tr`.`result`= 'F'    THEN 1 ELSE 0 END) AS `failed`
+														FROM `sample_test_run` `tr`
+														LEFT JOIN `sample` `s`
+														ON `tr`.`sample_id` = `s`.`id`
+														WHERE `s`.`program`='1' 
+														GROUP BY `yearmonth`
+														ORDER BY `date_released` DESC
+													";
+
+
+$sql["v_testing_trend_vl"]				=			"SELECT 
+															YEAR(`tr`.`date_released`) 	AS `year`,
+															MONTH(`tr`.`date_released`) 	AS `month`,
+															CONCAT(YEAR(`tr`.`date_released`),'-',MONTH(`tr`.`date_released`)) AS `yearmonth`,
+															SUM(CASE WHEN `tr`.`result`= 'P'    THEN 1 ELSE 0 END) AS `positive`,
+															SUM(CASE WHEN `tr`.`result`= 'N'    THEN 1 ELSE 0 END) AS `negative`,
+															SUM(CASE WHEN `tr`.`result`= 'F'    THEN 1 ELSE 0 END) AS `failed`
+														FROM `sample_test_run` `tr`
+														LEFT JOIN `sample` `s`
+														ON `tr`.`sample_id` = `s`.`id`
+														WHERE `s`.`program`='2' 
+														GROUP BY `yearmonth`
+														ORDER BY `date_released` DESC
+													";
+
 $config["views_sql"] =$sql;

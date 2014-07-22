@@ -29,10 +29,10 @@ $(function () {
             type: 'column'
         },
         title: {
-            text: 'Stacked column chart'
+            text: ''
         },
         xAxis: {
-            categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
+            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct','Nov','Dec']
         },
         yAxis: {
             min: 0,
@@ -77,16 +77,7 @@ $(function () {
                 }
             }
         },
-        series: [{
-            name: 'John',
-            data: [5, 3, 4, 7, 2]
-        }, {
-            name: 'Jane',
-            data: [2, 2, 3, 2, 1]
-        }, {
-            name: 'Joe',
-            data: [3, 4, 4, 2, 5]
-        }]
+        series: <?php echo $testing_trends?>
     });
 });
 
