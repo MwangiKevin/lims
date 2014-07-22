@@ -12,120 +12,8 @@
 			</div>
 		</div><!--widget-header widget-header-flat-->
 		<div class="row" style="height:50%; margin-bottom: 0px;"><!-- first row-->
-
 			<div id="col-sm-7 infobox-container" style="margin-top: 1%;">
-				<div class="profile-user-info profile-user-info-striped">
-					<!-- <div class="profile-info-row">
-
-						<div class="profile-info-value"> 
-							<ul style="list-style-type: none;">
-								<li>
-									<div class="widget-header widget-header-flat" style="margin-bottom: 10px;">
-										<div class="widget-title smaller">
-											<strong><center><h5> Worksheet Info </h5></center></strong>
-										</div>
-									</div> 
-								</li>
-								<li>
-									<label style="width: 60%; display: inline-block;">CDC Worksheet No.:</label>					
-									<label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br>
-								</li>
-								<li>
-									<label style="width: 60%; display: inline-block;">Date Created:</label>					
-									<label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br>
-								</li>
-								<li>
-									<label style="width: 60%; display: inline-block;">Created By:</label>					
-									<label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br>
-								</li>
-								<li>
-									<label style="width: 60%; display: inline-block;">Reviewed By:</label>					
-									<label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br>
-								</li>
-								<li>
-									<label style="width: 60%; display: inline-block;">Date Run:</label>					
-									<label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br>
-								</li>
-								<li>
-									<label style="width: 60%; display: inline-block;">Reviewed By:</label>					
-									<label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br>
-								</li>
-								<li>
-									<label style="width: 60%; display: inline-block;">Date Reviewed:</label>					
-									<label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br>
-								</li>
-							</ul> 
-						</div>
-						
-						<div class="profile-info-value">
-							 <ul style="list-style-type: none;">
-							 	<li>
-									<div class="widget-header widget-header-flat" style="margin-bottom: 10px;">
-										<div class="widget-title smaller">
-											<strong><center><h5> Extraction Reagents </h5></center></strong>
-										</div>
-									</div> 
-								</li>
-								<li>
-									<label style="width: 60%; display: inline-block;">Control Lot No.:</label>					
-									<label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br>
-								</li>
-								<li>
-									<label style="width: 60%; display: inline-block;">Control Expiry Date:</label>					
-									<label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br>
-								</li>
-								<li>
-									<label style="width: 60%; display: inline-block;">Calibrator Lot No.:</label>					
-									<label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br>
-								</li>
-								<li>
-									<label style="width: 60%; display: inline-block;">Calibrator Expiry Date:</label>					
-									<label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br>
-								</li>
-							 </ul>
-						</div>
-						
-						
-						<div class="profile-info-value"> 
-							<ul style="list-style-type: none;">
-								<li>
-									<div class="widget-header widget-header-flat" style="margin-bottom: 10px;">
-										<div class="widget-title smaller">
-											<strong><center><h5> Amplification Reagents </h5></center></strong>
-										</div>
-									</div> 
-								</li>
-								<li>
-									<label style="width: 60%; display: inline-block;">Amplification Kit No.:</label>					
-									<label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br>
-								</li>
-								<li>
-									<label style="width: 60%; display: inline-block;">Amplification Expiry Date:</label>					
-									<label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br>
-								</li>
-								<li>
-									<label style="width: 60%; display: inline-block;">Bulk Lysis Lot No.:</label>					
-									<label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br>
-								</li>
-								<li>
-									<label style="width: 60%; display: inline-block;">Bulk Lysis Expiry Date:</label>					
-									<label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br>
-								</li>
-								<li>
-									<label style="width: 60%; display: inline-block;">Sample Prep Lot No.:</label>					
-									<label style="position: absolute;" ><input type="text" style="margin-left:10%; width:40%; height: 25px;"/></label></br>
-								</li>
-							</ul>  
-							
-							<div class="wizard-actions">
-								<button class="btn btn-sm btn-primary add"  >
-									<i class="ace-icon fa fa-plus"></i>
-									Add Sample
-								</button>
-							</div>
-						</div>
-					</div><!--profile-info-row--> 
-					
+				<div class="profile-user-info profile-user-info-striped">			
 					<div class="row" style="height:50%; margin-bottom: 0px;">
 						<div id="col-sm-7 infobox-container" style="margin-top: 1%;">
 							<div class="profile-user-info profile-user-info-striped">
@@ -145,7 +33,7 @@
 														<span class="input-group-addon my-input-group-caption" >
 															CDC Worksheet No.:
 														</span>
-														<input name="sample_prep_no[]" id="sample_prep_no" class="form-control date-picker" type="text" style="width:100%;" required data-date-format="dd-mm-yyyy" />
+														<input name="sample_prep_no[]" id="sample_prep_no" class="form-control date-picker" type="text" style="width:100%;"/>
 													</div>	
 												
 													<div class="input-group my-input-group nb">
@@ -162,7 +50,7 @@
 														<span class="input-group-addon my-input-group-caption" >
 															Created by:
 														</span>
-														<input name="sample_prep_no[]" id="sample_prep_no" class="form-control date-picker" type="text" style="width:100%;" required data-date-format="dd-mm-yyyy" />
+														<input name="sample_prep_no[]" id="sample_prep_no" class="form-control date-picker" type="text" style="width:100%;" />
 													</div>
 													<div class="input-group my-input-group nb" style="width:100%">
 														<span class="input-group-addon my-input-group-caption" >

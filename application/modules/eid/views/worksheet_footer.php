@@ -16,13 +16,9 @@
 				$(target).addClass('visible');//show target
 			});
 	});
-
 	</script>
-	
-	
-	
-	
 	<style>
+	
 /* some elements used in demo only */
 .spinner-preview {
 	width: 100px;
