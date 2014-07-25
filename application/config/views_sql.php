@@ -93,15 +93,24 @@ $sql["v_sample_details"]	=	"SELECT
 									`sample`.`prohilaxis`,
 									`sample`.`prophilaxis_weeks`,
 									`sample`.`acceptance_status`,
+									
 									`test`.`sample_id`,
 									`test`.`test_run_no`,
 									`test`.`result`,
 									`test`.`date_released`,
-									COUNT(`test`.`id`) AS `num`
+									COUNT(`test`.`id`) AS `num`,
+									
+									`ws`.`worksheet_id`,
+									
+									`w`.`status`
 							FROM sample 
-							LEFT JOIN `sample_test_run` AS `test` 
+							LEFT JOIN `sample_test_run` AS `test`
 							ON `test`.`sample_id` = `sample`.`id`
-							GROUP BY `sample`.`id`
+								LEFT JOIN `worksheets_and_samples`AS `ws`
+								ON `ws`.`sample_id` = `sample`.`id`
+									LEFT JOIN `worksheet` AS `w`
+									ON `w`.`id` = `ws`.`worksheet_id`
+							GROUP BY `sample`.`id`						
 							LIMIT 500";													
 
 

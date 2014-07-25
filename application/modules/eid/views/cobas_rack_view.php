@@ -16,68 +16,75 @@
 
 <center style="margin-top: 2%;">
 <h1> COBAS Rack EID</h1>
-<!-- <?php 
+<?php 
 	foreach($worksheet_details AS $wd){
-		$worksheet_no = $wd['cdc_worksheet_no'];
-		$date_created = $wd['date_created'];
-		$created_by = $wd['created_by'];
-		$spek_kit_no =$wd['Spek_kit_no'];
-		$lot_no = $wd['lot_no'];
-		$hiqcap_no = $wd['HIQCAPNo'];
 		$rack_no = $wd['rack_no'];
-		$kit_exp = $wd['kit_expiry_date'];
-		$date_cut = $wd['date_cut'];
+		$worksheet_id = $wd['worksheet_id'];
+		$sample_prep_no = $wd['sample_prep_lot_no'];
+		$sample_prep_expiry = $wd['sample_prep_expiry-date'];
 		$date_run = $wd['date_run'];
+		$created_by = $wd['created_by'];
+		$date_created = $wd['date_created'];
+		$updated_by = $wd['updated_by'];
+		$lot_no = $wd['lot_no'];
+		$HIQCAPNo = $wd['HIQCAPNo'];
+		$Spek_kit_no = $wd['Spek_kit_no'];
+		$kit_expiry_date = $wd['kit_expiry_date'];
+		$reviewed_by = $wd['reviewed_by'];
+		$date_cut = $wd['date_cut'];
 		$reviewed_by = $wd['reviewed_by'];
 		$date_reviewed = $wd['date_reviewed'];
-?> -->
+?>
 	<div id="column1">
 		<label>Worksheet Number:</label>
-		<input type="text" id="worksheet_no" value="<?php print_r ($template_no) ?>">
+		<input type="text" id="worksheet_no" value="<?php echo $worksheet_id ?>">
 		<label>Rack No</label>
-		<input type="text" id="rack_no" value="<?php print_r ($rack_no) ?>"/>
+		<input type="text" id="rack_no" value="<?php echo $rack_no ?>"/>
 		<label> Sample Prep No. </label>
-		<input type="text" id="sample_prep_no" value= "<?php print_r ($sample_prep_no) ?>" >
+		<input type="text" id="sample_prep_no" value= "<?php echo $sample_prep_no ?>" >
 		<label>Sample Prep Expiry Date</label>
-		<input type="text" id="sample_prep_expiry_date" value= "<?php print_r ($sample_prep_expiry_date) ?>" >
+		<input type="text" id="sample_prep_expiry_date" value= "<?php echo $sample_prep_expiry ?>" >
 		<label> Date Printed:</label>
 		<input type="text" value="<?php echo( date("d/m/y",time())) ?>"/>
 		<label>Date Run</label>
-		<input type="text" id="date_run" value="<?php print_r ($date_run) ?>"/>
+		<input type="text" id="date_run" value="<?php echo $date_run ?>"/>
+		<label> Review 2 By:</label>
+		<input type="text" id="review_2" value="<?php  ?>"/>
 	</div>
 	
 	<div id="column1">
+		<label> Review 2 Date:</label>
+		<input type="text" id="review_2_date" value="<?php  ?>"/>
 		<label>Created By</label>
-		<input type="text" id="created_by" value= "<?php print_r ($created_by) ?>" >
+		<input type="text" id="created_by" value= "<?php echo $created_by ?>" >
 		<label>Date Created</label>
-		<input type="text" id="date_created" value= "<?php print_r ($date_created) ?>" >
+		<input type="text" id="date_created" value= "<?php echo $date_created ?>" >
 		<label>Updated By</label>
-		<input type="text" id="updated_by" value= "<?php print_r ($updated_by) ?>" >
-		
+		<input type="text" id="updated_by" value= "<?php echo $updated_by ?>" >
 		<label>Lot No:</label>
-		<input type="text" id="lot_no" value="<?php print_r ($lot_no) ?>"/>
+		<input type="text" id="lot_no" value="<?php echo $lot_no ?>"/>
 		<label>HIQCAP Kit No.:</label>
-		<input type="text" id="HIQCAP_no" value="<?php  print_r ($hiqcap) ?>"/>
+		<input type="text" id="HIQCAP_no" value="<?php echo $HIQCAPNo  ?>"/>
 		<label> Spek Kit No.</label>
-		<input type="text" id="spek_kit_no" value="<?php print_r ($spek_kit_no) ?>"/>
-		<label>Kit Expiry</label>
-		<input type="text" id="kit_expiry" value="<?php print_r ($kit_expiry) ?>"/>
+		<input type="text" id="spek_kit_no" value="<?php echo $Spek_kit_no ?>"/>
+		
 	</div>
 	
 	<div id="column1">
+		<label>Kit Expiry</label>
+		<input type="text" id="kit_expiry" value="<?php echo $kit_expiry_date ?>"/>
 		<label>Approved By</label>
-		<input type="text" id="approved_by" value= "<?php print_r ($approved_by) ?>" >
+		<input type="text" id="approved_by" value= "<?php  ?>" >
 		<label>Reviewed By</label>
-		<input type="text" id="reviewed_by" value= "<?php print_r ($reviewed_by) ?>" >
-		
+		<input type="text" id="reviewed_by" value= "<?php echo $reviewed_by ?>" >
 		<label>Date Cut</label>
-		<input type="text" id="date_cut" value= "<?php print_r ($date_cut) ?>" > 
+		<input type="text" id="date_cut" value= "<?php echo $date_cut ?>" > 
 		<label>Date Received</label>
-		<input type="text" id="date_received" value="<?php print_r ($date_received) ?>"/>
+		<input type="text" id="date_received" value="<?php  ?>"/>
 		<label>Reviewed By:</label>
-		<input type="text" id="reviewed_by" value="<?php print_r ($reviewed_by)?>"/>
+		<input type="text" id="reviewed_by" value="<?php echo $reviewed_by ?>"/>
 		<label>Date Reviewed:</label>
-		<input type="text" id="date_reviewed" value="<?php print_r ($date_reviewed) ?>"/>
+		<input type="text" id="date_reviewed" value="<?php echo $date_reviewed ?>"/>
 	</div>
 <?php
 }
@@ -99,7 +106,7 @@
 					<h6>Sample Code: <?php echo $id ?></h6>
 				</li>
 				<li>
-					Lab-Code (DBS No.: <?php echo $test_No ?>)
+					Lab-Code (No of tests.: <?php echo $test_No ?>)
 				</li>
 				<li class="divider"></li>
 				<li id = barcode<?php echo $id ?>>
