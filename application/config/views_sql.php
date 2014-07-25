@@ -170,8 +170,13 @@ $sql["v_testing_trend_vl"]				=			"SELECT
 $sql["v_tat"]							= 			"SELECT 
 															*
 														FROM `test_requisition` `req`
-														LEFT JOIN `sample` `sa`
+
+														INNER JOIN `sample` `sa`
 														ON `sa`.`requisition_id`=`req`.`id`
+
+															INNER JOIN `sample_test_run` `tr`
+															ON `tr`.`sample_id`= `sa`.`id`
+															AND (`tr`.`result`='P' OR `tr`.`result`='N')
 
 														
 													";						
