@@ -37,12 +37,13 @@ class worksheets_model extends MY_Model {
 						`ws`.`flag`,
 						`ws`.`created_by`,
 						`ws`.`date_created`,
+						`ws`.`id`,
 						`vsd`.`result`,
 						`vsd`.`sample_id`
 				FROM worksheet AS ws
 				LEFT JOIN v_sample_details AS vsd
-				ON vsd.worksheet_id = ws.id	
-				GROUP BY sample_id";
+				ON `vsd`.`worksheet_id` = `ws`.`id`	
+				GROUP BY `ws`.`id`";
 				
 		$result = R::getAll($sql);
 		return $result;
@@ -107,6 +108,7 @@ class worksheets_model extends MY_Model {
 		return $result;
 	}	
 	
+	//gets last id within worksheet table
 	public function last(){
 		$sql = "SELECT id FROM worksheet ORDER BY id DESC LIMIT 1;";
 		$result = R::getALL($sql);
@@ -117,6 +119,51 @@ class worksheets_model extends MY_Model {
 		}
 		return $result;	
 	}
+	
+	public function delete_worksheet($id){
+		$sql = "DELETE FROM worksheet WHERE id = ".$id." ";
+		$this->db->query($sql);
+		echo "sucess";
+	}
+	
+	
+	public function edit_worksheet($id){
+		$date_created = $_POST['date_created_zoome'];
+		$created_by = $_POST['created_by_zoome'];
+				
+		$date_run = $_POST['date_run_zoome'];
+		$date_updated = $_POST['date_updated_zoome'];
+		$date_reviewed = $_POST['date_reviewed_zoome'];
+		
+		$sql = "UPDATE worksheet SET date_created = ".$date_created.",created_by = ".$created_by.",date_run=".$date_run.", date_reviewed = ".$date_reviewed." WHERE id = ".$id." ";
+		$this->db->query($sql);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
