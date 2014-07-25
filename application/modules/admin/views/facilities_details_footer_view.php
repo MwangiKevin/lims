@@ -35,7 +35,7 @@ $( document ).ready(function() {
 
 }
 
-function edit_district (id,district,region) {
+function edit_district(id,district,region) {
 	var str = "#tr_"+id;
 
 	var row = $(str).html();

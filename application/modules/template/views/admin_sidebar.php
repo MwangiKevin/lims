@@ -119,6 +119,37 @@
 
 		</li>
 
+		<li id="side_email" class="hsub">
+			<a href="#" class="dropdown-toggle">
+				<i class="menu-icon fa fa-users "></i>
+				<span class="menu-text"> Mail </span>
+
+				<b class="arrow fa fa-angle-down"></b>
+			</a>
+
+			<b class="arrow"></b>
+
+			<ul class="submenu">
+				<li class="hsub" id="side_email_details">
+					<a href="<?php echo base_url().'alerts/email/admin_mail' ?>">
+						<i class="menu-icon fa fa-caret-right"></i>
+						Email
+					</a>
+
+					<b class="arrow"></b>
+				</li>
+
+				<li class="" id="side_user_registration">
+					<a href="<?php echo base_url().'admin/users/users_registration' ?>">
+						<i class="menu-icon fa fa-caret-right"></i>
+						SMS
+					</a>
+
+					<b class="arrow"></b>
+				</li>
+			</ul>
+		</li>
+
 
 
 
