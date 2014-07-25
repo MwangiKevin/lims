@@ -27,20 +27,37 @@
 											</tr>
 										</thead>
 										<tbody>
+											<form method="POST" action="<?php echo base_url().'eid/worksheet/abbott_print_worksheet'  ?>" >
 											<tr class="" id = "1" class ="">
 												<td>
 													<div class="input-group my-input-group nb" style="width:100%">
 														<span class="input-group-addon my-input-group-caption" >
+															Worksheet No.:
+														</span>
+														<input name="worksheet_no" id="worksheet_no" type="text" value="<?php echo $worksheet_id[0]['id'] + 1; ?>" style="width:100%;"/>
+													</div>	
+													<div class="input-group my-input-group nb" style="width:100%">
+														<span class="input-group-addon my-input-group-caption" >
 															CDC Worksheet No.:
 														</span>
-														<input name="sample_prep_no[]" id="sample_prep_no" class="form-control date-picker" type="text" style="width:100%;"/>
+														<input name="cdc_worksheet_no" id="cdc_worksheet_no" type="text" style="width:100%;"/>
+													</div>
+														
+													<div class="input-group my-input-group nb">
+														<span class="input-group-addon my-input-group-caption">
+															Date<br/>Cut:
+														</span>
+														<input name="date_cut" id="date_cut" class="form-control datepicker" type="text" style="width:100%;" required data-date-format="Y-m-d" />
+														<span class="input-group-addon my-input-group-icon">
+															<i class="ace-icon fa fa-calendar"></i>
+														</span>
 													</div>	
-												
+													
 													<div class="input-group my-input-group nb">
 														<span class="input-group-addon my-input-group-caption">
 															Date<br/>Created:
 														</span>
-														<input name="date_received[]" id="date_received" class="form-control datepicker" type="text" style="width:100%;" required data-date-format="dd-mm-yyyy" />
+														<input name="date_created" id="date_created" class="form-control datepicker" type="text" style="width:100%;" required data-date-format="Y-m-d" />
 														<span class="input-group-addon my-input-group-icon">
 															<i class="ace-icon fa fa-calendar"></i>
 														</span>
@@ -50,19 +67,19 @@
 														<span class="input-group-addon my-input-group-caption" >
 															Created by:
 														</span>
-														<input name="sample_prep_no[]" id="sample_prep_no" class="form-control date-picker" type="text" style="width:100%;" />
+														<input name="created_by" id="created_by" type="text" style="width:100%;" />
 													</div>
 													<div class="input-group my-input-group nb" style="width:100%">
 														<span class="input-group-addon my-input-group-caption" >
 															Reviewed by:
 														</span>
-														<input name="sample_prep_no[]" id="sample_prep_no" class="form-control date-picker" type="text" style="width:100%;" required data-date-format="dd-mm-yyyy" />
+														<input name="reviewed_by" id="reviewed_by" type="text" style="width:100%;" required data-date-format="Y-m-d" />
 													</div>
 													<div class="input-group my-input-group nb">
 														<span class="input-group-addon my-input-group-caption">
 															Date<br/>Reviewed:
 														</span>
-														<input name="date_received[]" id="date_received" class="form-control datepicker" type="text" style="width:100%;" required data-date-format="dd-mm-yyyy" />
+														<input name="date_reviewed" id="date_reviewed" class="form-control datepicker" type="text" style="width:100%;" required data-date-format="dd-mm-yyyy" />
 														<span class="input-group-addon my-input-group-icon">
 															<i class="ace-icon fa fa-calendar"></i>
 														</span>
@@ -71,7 +88,7 @@
 														<span class="input-group-addon my-input-group-caption">
 															Date<br/>Run:
 														</span>
-														<input name="date_received[]" id="date_received" class="form-control datepicker" type="text" style="width:100%;" required data-date-format="dd-mm-yyyy" />
+														<input name="date_run" id="date_run" class="form-control datepicker" type="text" style="width:100%;" required data-date-format="dd-mm-yyyy" />
 														<span class="input-group-addon my-input-group-icon">
 															<i class="ace-icon fa fa-calendar"></i>
 														</span>
@@ -81,30 +98,42 @@
 												<td>
 													<div class="input-group my-input-group nb" style="width:100%">
 														<span class="input-group-addon my-input-group-caption" >
+															Control:
+														</span>
+														<input name="control" id="control" type="text" style="width:100%;" />
+													</div>
+													<div class="input-group my-input-group nb" style="width:100%">
+														<span class="input-group-addon my-input-group-caption" >
 															Control Lot No.:
 														</span>
-														<input name="sample_prep_no[]" id="sample_prep_no" class="form-control date-picker" type="text" style="width:100%;" required data-date-format="dd-mm-yyyy" />
+														<input name="control_lot_no" id="control_lot_no" type="text" style="width:100%;" />
 													</div>
 													<div class="input-group my-input-group nb">
 														<span class="input-group-addon my-input-group-caption">
 															Control Expiry <br/> Date:
 														</span>
-														<input name="date_received[]" id="date_received" class="form-control datepicker" type="text" style="width:100%;" required data-date-format="dd-mm-yyyy" />
+														<input name="control_expiry_date" id="control_expiry_date" class="form-control datepicker" type="text" style="width:100%;" required data-date-format="Y-m-d" />
 														<span class="input-group-addon my-input-group-icon">
 															<i class="ace-icon fa fa-calendar"></i>
 														</span>
 													</div>
 													<div class="input-group my-input-group nb" style="width:100%">
 														<span class="input-group-addon my-input-group-caption" >
+															Calibrator:
+														</span>
+														<input name="calibrator" id="calibrator" type="text" style="width:100%;" />
+													</div>
+													<div class="input-group my-input-group nb" style="width:100%">
+														<span class="input-group-addon my-input-group-caption" >
 															Calibrator Lot No.:
 														</span>
-														<input name="sample_prep_no[]" id="sample_prep_no" class="form-control date-picker" type="text" style="width:100%;" required data-date-format="dd-mm-yyyy" />
+														<input name="calibrator_lot_no" id="calibrator_lot_no"  type="text" style="width:100%;"/>
 													</div>
 													<div class="input-group my-input-group nb">
 														<span class="input-group-addon my-input-group-caption">
 															Calibrator Expiry <br/> Date:
 														</span>
-														<input name="date_received[]" id="date_received" class="form-control datepicker" type="text" style="width:100%;" required data-date-format="dd-mm-yyyy" />
+														<input name="calibrator_expiry_date" id="calibrator_expiry_date" class="form-control datepicker" type="text" style="width:100%;" required data-date-format="dd-mm-yyyy" />
 														<span class="input-group-addon my-input-group-icon">
 															<i class="ace-icon fa fa-calendar"></i>
 														</span>
@@ -116,13 +145,13 @@
 														<span class="input-group-addon my-input-group-caption" >
 															Amplification Kit No.:
 														</span>
-														<input name="sample_prep_no[]" id="sample_prep_no" class="form-control date-picker" type="text" style="width:100%;" required data-date-format="dd-mm-yyyy" />
+														<input name="amplification_kit_no" id="amplification_kit_no" type="text" style="width:100%;"/>
 													</div>
 													<div class="input-group my-input-group nb">
 														<span class="input-group-addon my-input-group-caption">
 															Amplification Expiry <br/> Date:
 														</span>
-														<input name="date_received[]" id="date_received" class="form-control datepicker" type="text" style="width:100%;" required data-date-format="dd-mm-yyyy" />
+														<input name="amplification_expiry_date" id="amplification_expiry_date" class="form-control datepicker" type="text" style="width:100%;" required data-date-format="Y-m-d" />
 														<span class="input-group-addon my-input-group-icon">
 															<i class="ace-icon fa fa-calendar"></i>
 														</span>
@@ -131,13 +160,13 @@
 														<span class="input-group-addon my-input-group-caption" >
 															Bulk Lysis Lot No.:
 														</span>
-														<input name="sample_prep_no[]" id="sample_prep_no" class="form-control date-picker" type="text" style="width:100%;" required data-date-format="dd-mm-yyyy" />
+														<input name="bulk_lysis_lot_no" id="bulk_lysis_lot_no" type="text" style="width:100%;" />
 													</div>
 													<div class="input-group my-input-group nb">
 														<span class="input-group-addon my-input-group-caption">
 															Bulk Lysis Expiry <br/> Date:
 														</span>
-														<input name="date_received[]" id="date_received" class="form-control datepicker" type="text" style="width:100%;" required data-date-format="dd-mm-yyyy" />
+														<input name="bulk_lysis_expiry" id="bulk_lysis_expiry" class="form-control datepicker" type="text" style="width:100%;" required data-date-format="Y-m-d" />
 														<span class="input-group-addon my-input-group-icon">
 															<i class="ace-icon fa fa-calendar"></i>
 														</span>
@@ -146,7 +175,16 @@
 														<span class="input-group-addon my-input-group-caption" >
 															Sample Prep Lot No.:
 														</span>
-														<input name="sample_prep_no[]" id="sample_prep_no" class="form-control date-picker" type="text" style="width:100%;" required data-date-format="dd-mm-yyyy" />
+														<input name="sample_prep_lot_no" id="sample_prep_lot_no" type="text" style="width:100%;"/>
+													</div>
+													<div class="input-group my-input-group nb">
+														<span class="input-group-addon my-input-group-caption">
+															Sample Prep Expiry <br/> Date:
+														</span>
+														<input name="sample_prep_expiry" id="sample_prep_expiry" class="form-control datepicker" type="text" style="width:100%;" required data-date-format="Y-m-d" />
+														<span class="input-group-addon my-input-group-icon">
+															<i class="ace-icon fa fa-calendar"></i>
+														</span>
 													</div>
 												</td>
 											</tr>											
@@ -170,9 +208,11 @@
 		<div class="row"><!--second row-->
 			<center>
 				<?php
+					$i = 0;
 					foreach ($result as $res) {
+						$i++;	
 						$tests_No = $res["runs"];
-						$id = $res["sample_id"];
+						$id = $res["id"];
 						//echo("ID ->" .$id. " "." No ->".$DBS_No."   ");
 						echo("<div class='dropdown dropdown-preview'>
 								<ul class='dropdown-menu'>
@@ -221,13 +261,23 @@
 			</center>
 		</div>
 		<div class="row" style="text-align: center;">
-			<a href="<?php echo $save_and_print_abbott ?>">
-				<input type="button" value="Save & Print"/>
+			<a href="">
+				<?php 
+					if($i < 46){
+				?>
+					<!-- <input type="button" value="Save & Print" disabled="disabled/> -->
+					<input type="submit" value="Save & Print"/>
+				<?php
+					}else{
+				?>
+					<input type="submit" value="Save & Print"/>
+				<?php
+					}
+				?>
 			</a>
 		</div>
-
-
-		</div><!-- /.main-container -->
+	</div><!-- /.main-container -->
+	</form>
 
 		<div class="footer">
 			<div class="footer-inner" style="position :fixed;background:#fff;">

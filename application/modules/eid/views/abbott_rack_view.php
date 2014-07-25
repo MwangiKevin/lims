@@ -20,52 +20,60 @@
 		<!-- <img src="<?php echo base_url("img/tz.png");?>" height="140" width="100%" alt="NACP">	 -->
 		<h1> ABBOTT Rack EID</h1>
 	</div>
-	<!-- <?php 
+	<?php 
 		foreach($worksheet_details AS $wd){
-			$worksheet_no;
-			$calibrator;
-			$calibrator_lot_no;
-			$calibrator_expiry_date;
-			$amplification_kit_lot_no;
-			$amplification_expiry_date;
-			
-		}	
-	?> -->
+			$worksheet_no = $wd['worksheet_id'];
+			$calibrator = $wd['calibrator'];
+			$calibrator_lot_no = $wd['calibrator_lot_no'];
+			$calibrator_expiry_date = $wd['calibrator_expiry_date'];
+			$amplification_kit_lot_no = $wd['amplification_kit_lot_no'];
+			$amplification_expiry_date = $wd['amplification_expiry_date'];
+			$control = $wd['control'];
+			$control_lot_no = $wd['control_lot_no'];
+			$control_expiry_date = $wd['control_expiry_date'];
+			$bulk_lysis_lot_no = $wd['bulk_lysis_lot_no'];
+			$bulk_lysis_expiry_date = $wd['bulk_lysis_expiry_date'];
+			$sample_prep_lot_no = $wd['sample_prep_lot_no'];
+			$sample_prep_expiry_date = $wd['sample_prep_expiry_date'];
+	?>
 <div id="column1">
 	<label>Date Printed:</label>
-	<input type="text" id="worksheet_no" value="<?php echo( date("d - m - Y",time())) ?>"/>
+	<input type="text" id="worksheet_no" value="<?php echo( date("d - m - Y",time())); ?>"/>
 	<label>Worksheet Number:</label>
-	<input type="text" id="worksheet_no"/>
+	<input type="text" id="worksheet_no" value="<?php echo $worksheet_no; ?>"/>
 	<label>Calibrator</label>
-	<input type="text" id="calibrator"/>
+	<input type="text" id="calibrator" value="<?php echo $calibrator; ?>"/>
 	<label>Calibrator Lot No</label>
-	<input type="text" id="calibrator"/>
+	<input type="text" id="calibrator" value="<?php echo $calibrator_lot_no; ?>"/>
 	<label>Calibrator Expiry Date</label>
-	<input type="text" id="calibrator_lot_no"/>
+	<input type="text" id="calibrator_lot_no" value="<?php echo $calibrator_expiry_date ?>"/>
 </div>
 <div id="column1">
 	<label>Amplification Kit Lot No</label>
-	<input type="text" id="amplification_kit_lot_no"/>
+	<input type="text" id="amplification_kit_lot_no" value="<?php echo $amplification_kit_lot_no; ?>"/>
 	<label>Amplification Expiry Date</label>
-	<input type="text" id="amplification_expiry_date"/>
+	<input type="text" id="amplification_expiry_date" value="<?php echo $amplification_expiry_date; ?>"/>
 	<label>Control</label>
-	<input type="text" id="control"/>
+	<input type="text" id="control" value="<?php echo $control;?>"/>
 	<label>Control Lot No.</label>
-	<input type="text" id="control_lot_no"/>
+	<input type="text" id="control_lot_no" value="<?php echo $control_lot_no; ?>"/>
 </div>
 
 <div id="column1">
 	<label>Control Expiry Date</label>
-	<input type="text" id="control_expiry_date"/>
+	<input type="text" id="control_expiry_date" value="<?php echo $control_expiry_date; ?>"/>
 	<label>Bulk Lysis Lot No.</label>
-	<input type="text" id="bulk_lysis_lot_no"/>
+	<input type="text" id="bulk_lysis_lot_no" value="<?php echo $bulk_lysis_lot_no; ?>"/>
 	<label>Bulk Lysis Expiry Date</label>
-	<input type="text" id="bulk_lysis_expiry_date"/>
+	<input type="text" id="bulk_lysis_expiry_date" value="<?php echo $bulk_lysis_expiry_date; ?>"/>
 	<label>Sample Prep Lot No</label>
-	<input type="text" id="sample_prep_lot_no"/>
+	<input type="text" id="sample_prep_lot_no" value="<?php echo $sample_prep_lot_no;?>"/>
 	<label>Sample Prep Expiry Date</label>
-	<input type="text" id="sample_prep_expiry-date"/>
+	<input type="text" id="sample_prep_expiry-date" value="<?php echo $sample_prep_expiry_date; ?>"/>
 </div>
+<?php
+}
+?>
 </center>
 <hr/ style="clear:both;">
 <?php
