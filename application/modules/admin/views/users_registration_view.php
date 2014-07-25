@@ -107,7 +107,7 @@
 						                </select>
 					                </div>						
 									<div class="right" style="padding:7px;">
-										<button name="viewData" type="submit" onclick="viewData()" class="btn btn-primary btn-minii"><i class="glyphicon glyphicon-save"></i>Save</button>
+										<button name="viewData" type="submit" onclick="viewData()" class="btn btn-primary btn-minii"><i class="ace-icon fa fa-thumbs"></i>Save</button>
 										<button name="reset" type="reset"  class="btn btn-default btn-minii"><i class="glyphicon glyphicon-remove"></i>Discard</button>
 									</div>						
 								</div>
@@ -122,7 +122,7 @@
 
     <h4 class="lighter">
 		<i class="ace-icon fa fa-hand-o-right icon-animated-hand-pointer blue"></i>
-		<a href="#tabs1-add" data-toggle="modal" class="pink"> User Types </a>
+		<a href="#tabs1-add" data-toggle="modal" class="pink"> Add User Types </a>
 	</h4>
 	<div class="hr hr-18 hr-sinlge dotted"></div>
         
