@@ -42,9 +42,7 @@ public function admin_mail()
 		$tim = date('Y-m-d');
 
 		$this->mail_model->sent_mail($id, $recepient, $subject, $message, $tim);
-		echo "Ndio kufika";
-		die();
-
+		
 		$config = array(
 			'protocol' => 'smtp',
 			'smtp_host' => 'ssl://smtp.googlemail.com',
@@ -57,9 +55,9 @@ public function admin_mail()
 		$this->email->set_newline("\r\n");
 
 		$this->email->from('cd4lims.tz@gmail.com', 'CD4');
-		$this->email->to();
-		$this->email->subject();
-		$this->email->message();
+		$this->email->to('$recepient');
+		$this->email->subject('$subject');
+		$this->email->message('$message');
 
 		$this->admin_mail();
 	}
