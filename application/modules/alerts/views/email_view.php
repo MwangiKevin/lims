@@ -5,10 +5,10 @@
 <div class="hr hr-18 hr-double dotted"></div>
 
 <div class="row my-infobox" id="email">	
-<a href=""> to be removed</a>
+<a href="javascript:void(null);" onclick="write_mail()"> to be removed</a>
 	<div style="border-radius: 10px; padding: 7px; float: right">
 
-		<a href="#writemail">
+		<a href="javascript:void(null);" onclick="write_mail()">
 			<button name="write_mail" class="btn btn-primary btn-minii"><span class="menu-text" style="color:#FFF;"><i class="menu-icon fa fa-pencil-square-o"></i>Write Mail</span></button>
 		</a>	
 	</div><!--End of write_mail-->
@@ -94,25 +94,23 @@
 					    <i class="ace-icon fa fa-hand-o-right icon-animated-hand-pointer green"></i>
 					    <a href="#" data-toggle="modal" class="green"> Write email </a>
 					</h4>
-				    <div class="hr hr-18 hr-single dotted"></div>
-					<input required id="editdistrictid" type="hidden" name="editdistrictid" class="textfield form-control" readonly />
-
-
+				    
 					<div class="hr hr-18 hr-single dotted"></div>
 
 					<div class="input-group" style="width: 100%;padding:4px;">
 						<span class="input-group-addon" style="width: 40%;">To:</span>
-						<input required id="districtname" name="district" class="textfield form-control" />	
+						<input required id="recepients" name="recepients" class="textfield form-control" />	
 					</div>	
 
 					<div class="input-group" style="width: 100%;padding:4px;">
 						<span class="input-group-addon" style="width: 40%;">Subject:</span>
-						<input required id="districtname" name="district" class="textfield form-control" />	
+						<input required id="subject" name="subject" class="textfield form-control" />	
 					</div>	
 						            					
-					<div id="equipmentdiv" class="input-group" style="width: 100%;padding:4px;">
+					<div id="messagediv" class="input-group" style="width: 100%;padding:4px;">
 						<span class="input-group-addon" style="width: 20%;">Message:</span>
-						<input required id="region" name = "region" class="textfield form-control"  readonly />
+						<textarea required id="message" name="message" cols="50" rows="5" class="textfield form-control"></textarea>
+						<!--<input required id="message" name = "message" class="textfield form-control"  readonly />-->
 					</div>	          
 															
 					<div class="modal-footer" style="height:11px;padding-top:11px;">								
@@ -130,3 +128,4 @@
 		</div>
 	</div>
 </div>
+<?php $this->load->view("email_view_footer.php"); ?>

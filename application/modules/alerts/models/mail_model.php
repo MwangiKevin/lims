@@ -5,10 +5,15 @@ if (!defined('BASEPATH'))
 /**
 * 
 */
-class mail extends MY_Model
+class mail_model extends MY_Model
 {
 	
 	function __construct()
+	{
+		
+	}
+
+	public function sent_mail($id, $recepient, $subject, $message, $tim)
 	{
 		
 	}

@@ -7,7 +7,7 @@ public function __construct()
 {
 	$this->view_data['content_view'] 	= 	"alerts/email_view";
 	$this->view_data['menu_select']		= 	"side_email";
-	$this->load->model('mail');
+	$this->load->model('mail_model');
 }
 
 public function admin_mail()
@@ -32,9 +32,19 @@ public function admin_mail()
 												);
 	$this -> template($this->view_data);
 }
-	function send_email()
+	function send_email()  
 	{
+		
+		$id = $this->session->userdata("id");
+		$recepient = $this->input->post("recepients");
+		$subject   = $this->input->post("subject");
+		$message   = $this->input->post("message");
+		$tim = date('Y-m-d');
+
+		$this->mail_model->sent_mail($id, $recepient, $subject, $message, $tim);
+		echo "Ndio kufika";
 		die();
+
 		$config = array(
 			'protocol' => 'smtp',
 			'smtp_host' => 'ssl://smtp.googlemail.com',
@@ -50,5 +60,7 @@ public function admin_mail()
 		$this->email->to();
 		$this->email->subject();
 		$this->email->message();
+
+		$this->admin_mail();
 	}
 }
