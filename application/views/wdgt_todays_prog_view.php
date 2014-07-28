@@ -26,16 +26,19 @@ $(function () {
             type: 'bar'
         },
         title: {
-            text: 'Stacked bar chart'
+            text: ''
         },
         xAxis: {
-            categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
+            categories: ['Samples', 'Tests', 'Repeats', 'failed', 'Successful']
         },
         yAxis: {
             min: 0,
             title: {
-                text: 'Total fruit consumption'
+                text: ''
             }
+        },            
+        credits:{
+            enabled:false
         },
         legend: {
             reversed: true
@@ -46,14 +49,13 @@ $(function () {
             }
         },
         series: [{
-            name: 'John',
-            data: [5, 3, 4, 7, 2]
-        }, {
-            name: 'Jane',
+            name: 'viral load',
+            color:"#d43f3a",
             data: [2, 2, 3, 2, 1]
-        }, {
-            name: 'Joe',
-            data: [3, 4, 4, 2, 5]
+        },{
+            name: 'eid',
+            color:"#6fb3e0",
+            data: [5, 3, 4, 7, 2]
         }]
     });
 });

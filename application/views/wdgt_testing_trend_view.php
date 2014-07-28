@@ -46,6 +46,9 @@ $(function () {
                     color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
                 }
             }
+        },           
+        credits:{
+            enabled:false
         },
         legend: {
             align: 'right',

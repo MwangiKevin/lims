@@ -27,10 +27,10 @@ $(function () {
             type: 'column'
         },
         title: {
-            text: 'Stacked column chart'
+            text: ''
         },
         xAxis: {
-            categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
+            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct','Nov','Dec']
         },
         yAxis: {
             min: 0,
@@ -44,13 +44,17 @@ $(function () {
                     color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
                 }
             }
+        },           
+        credits:{
+            enabled:false
         },
         legend: {
-            align: 'right',
-            x: -70,
-            verticalAlign: 'top',
-            y: 20,
-            floating: true,
+            align: 'center',
+            x: 0,
+            verticalAlign: 'bottom',
+            y: 0,
+            height:40,
+            floating: false,
             backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
             borderColor: '#CCC',
             borderWidth: 1,
@@ -76,13 +80,24 @@ $(function () {
             }
         },
         series: [{
-            name: 'John',
+            name: 'Collection at facility - lab receipt',
+            stack:'c',
+            color:"#6fb3e0",
             data: [5, 3, 4, 7, 2]
         }, {
-            name: 'Jane',
+            name: 'Receipt at lab - processing',
+            stack:'b',
+            color:"#d43f3a",
             data: [2, 2, 3, 2, 1]
         }, {
-            name: 'Joe',
+            name: 'Processing - dispatch',
+            stack:'b',
+            color:"#ffb752",
+            data: [3, 4, 4, 2, 5]
+        }, {
+            name: 'Collection at facility - dispatch',
+            stack:'a',
+            color:"#87b87f",
             data: [3, 4, 4, 2, 5]
         }]
     });
