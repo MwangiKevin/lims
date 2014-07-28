@@ -21,6 +21,11 @@
 <script>
 
 $(function () {
+
+    //initialize
+    var vl_today    = [0, 0, 0, 0, 0];
+    var eid_today   = [0, 0, 0, 0, 0];
+
     $('#dat').highcharts({
         chart: {
             type: 'bar'
@@ -51,11 +56,11 @@ $(function () {
         series: [{
             name: 'viral load',
             color:"#d43f3a",
-            data: [2, 2, 3, 2, 1]
+            data: vl_today
         },{
             name: 'eid',
             color:"#6fb3e0",
-            data: [5, 3, 4, 7, 2]
+            data: eid_today
         }]
     });
 });

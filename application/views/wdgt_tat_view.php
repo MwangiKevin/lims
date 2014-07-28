@@ -22,6 +22,15 @@
 <script>
 
 $(function () {
+
+
+    //initialize
+    var col_rec     = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+    var rec_proc    = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+    var proc_disp   = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+    var coll_disp   = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+
     $('#tat').highcharts({
         chart: {
             type: 'column'
@@ -38,7 +47,7 @@ $(function () {
                 text: 'Total fruit consumption'
             },
             stackLabels: {
-                enabled: true,
+                enabled: false,
                 style: {
                     fontWeight: 'bold',
                     color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
@@ -71,7 +80,7 @@ $(function () {
             column: {
                 stacking: 'normal',
                 dataLabels: {
-                    enabled: true,
+                    enabled: false,
                     color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white',
                     style: {
                         textShadow: '0 0 3px black, 0 0 3px black'
@@ -83,22 +92,22 @@ $(function () {
             name: 'Collection at facility - lab receipt',
             stack:'c',
             color:"#6fb3e0",
-            data: [5, 3, 4, 7, 2]
+            data: col_rec
         }, {
             name: 'Receipt at lab - processing',
             stack:'b',
             color:"#d43f3a",
-            data: [2, 2, 3, 2, 1]
+            data: rec_proc
         }, {
             name: 'Processing - dispatch',
             stack:'b',
             color:"#ffb752",
-            data: [3, 4, 4, 2, 5]
+            data: proc_disp
         }, {
             name: 'Collection at facility - dispatch',
             stack:'a',
             color:"#87b87f",
-            data: [3, 4, 4, 2, 5]
+            data: coll_disp
         }]
     });
 });
