@@ -9,7 +9,7 @@
 	<div style="border-radius: 10px; padding: 7px; float: right">
 
 		<a href="javascript:void(null);" onclick="write_mail()">
-			<button name="write_mail" class="btn btn-primary btn-minii"><span class="menu-text" style="color:#FFF;"><i class="menu-icon fa fa-pencil-square-o"></i>Write Mail</span></button>
+			<button name="write_mail" class="btn btn-primary btn-minii"><span class="menu-text" style="color:#FFF;"><i class="menu-icon fa fa-pencil-square-o"></i>Compose Mail</span></button>
 		</a>	
 	</div><!--End of write_mail-->
 
@@ -115,7 +115,7 @@
 															
 					<div class="modal-footer" style="height:11px;padding-top:11px;">								
 						<div class="" style="padding:7px;">
-							<button name="save" type="submit" class="btn btn-primary btn-mini"><i class="glyphicon glyphicon-save"></i>Save</button>
+							<button name="save" type="submit" class="btn btn-primary btn-mini"><i class="glyphicon glyphicon-save"></i>Send</button>
 							<button name="discard" type="button"  onclick="hide_edit()" class="btn btn-default btn-minii"><i class="glyphicon glyphicon-remove"></i>Discard</button>
 						</div>
 					</div> 
