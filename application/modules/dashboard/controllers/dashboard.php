@@ -36,12 +36,12 @@ class dashboard extends MY_Controller {
 
 	public function index(){
 
-		$this->view_data["testing_trends"] = json_encode($this->dashboard_model->testing_trends());
-
 		$this -> template($this->view_data);
 	}
 
 	public function load_dashboard($program, $data=array()){
+
+		$this -> template($data);
 	}
 
 

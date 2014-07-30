@@ -9,7 +9,7 @@ class eid extends MY_Controller {
 		parent::__construct();
 		$this->login_reroute(array(2));
 
-		$this->view_data['content_view'] 	= 	"eid/dashboard_view";
+		$this->view_data['content_view'] 	= 	"dashboard/dashboard";
 		$this->view_data['sidebar'] 		= 	"eid_sidebar";
 		$this->view_data['title'] 			= 	"EID | Dashboard";
 
@@ -21,7 +21,7 @@ class eid extends MY_Controller {
 		$this->view_data['topleft_title']					=	"EID";
 		
 		
-		$this->view_data 					=	array_merge($this->view_data,$this->load_libraries(array('dataTables','style-bootstap')));		
+		$this->view_data 					=	array_merge($this->view_data,$this->load_libraries(array('dataTables','style-bootstap','highcharts')));		
 		$this->view_data['menu_select']		= 	array(0);
 		$this->view_data['breadcrumbs'] 	=	array(
 														0 	=>	array(
@@ -44,7 +44,9 @@ class eid extends MY_Controller {
 
 	public function dashboard(){		
 		
-		$this -> template($this->view_data);
+		//$this -> template($this->view_data);
+		$this->load->module("dashboard");
+		$this->dashboard->load_dashboard(1,$this->view_data);
 	}
 
 

@@ -40,7 +40,7 @@ $(function () {
             yAxis: {
                 min: 0,
                 title: {
-                    text: 'Total fruit consumption'
+                    text: '# tests'
                 },
                 stackLabels: {
                     enabled: false,

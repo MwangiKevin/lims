@@ -50,16 +50,23 @@ class dashboard_model extends MY_Model {
 
 		$year= $this->thisyear;
 		$month= $this->thismonth;
+		$data = array();
 
 		for($i=0;$i<$month;$i++){
-			$months_init[$i] = 0;
+			$months_init[$i] = rand(1,100000000);
+			//$months_init[$i] = 0;
 		}
 
+		//initialize
 		$col_rec  = $rec_proc  = $proc_disp  = 	$coll_disp  = 	$months_init;
 
-		//echo json_encode($months_init);
 
-		
+		$data['col_rec']		=	$col_rec;
+		$data['rec_proc']		=	$rec_proc;
+		$data['proc_disp']		=	$proc_disp;
+		$data['coll_disp']		=	$coll_disp;
+
+		return $data;		
 		
 	}
 
@@ -78,6 +85,10 @@ class dashboard_model extends MY_Model {
 	private function tat_coll_disp(){
 
 		
+	}
+
+	public function todays_summary(){
+
 	}
 
 }
