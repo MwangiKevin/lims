@@ -16,6 +16,8 @@ class chart extends MY_Controller {
 	}
 
 	public function tat(){
-		
+		$this->dashboard_model->tat();
+
 	}
+
 }

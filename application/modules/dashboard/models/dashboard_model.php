@@ -46,5 +46,38 @@ class dashboard_model extends MY_Model {
 	}
 
 
+	public function tat(){
+
+		$year= $this->thisyear;
+		$month= $this->thismonth;
+
+		for($i=0;$i<$month;$i++){
+			$months_init[$i] = 0;
+		}
+
+		$col_rec  = $rec_proc  = $proc_disp  = 	$coll_disp  = 	$months_init;
+
+		//echo json_encode($months_init);
+
+		
+		
+	}
+
+	private function tat_col_rec(){
+		
+		
+	}
+	private function tat_rec_proc(){
+
+		
+	}
+	private function tat_proc_disp(){
+
+		
+	}
+	private function tat_coll_disp(){
+
+		
+	}
 
 }

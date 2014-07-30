@@ -2,11 +2,13 @@
 class MY_Model extends CI_Model{
 	protected $em;
 	protected $thisyear;
+	protected $thismonth;
 
 	public function __construct(){
 		parent::__construct();
 		$this->em = $this->doctrine->em;
-		$this->thisyear = (int) Date("Y");
+		$this->thisyear 	= (int) Date("Y");
+		$this->thismonth 	= (int) Date("m");
 	}
 
 
