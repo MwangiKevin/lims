@@ -36,7 +36,7 @@ class dashboard extends MY_Controller {
 
 	public function index(){
 
-		$this -> template($this->view_data);
+		$this -> load_dashboard(0,$this->view_data);
 	}
 
 	public function load_dashboard($program, $data=array()){

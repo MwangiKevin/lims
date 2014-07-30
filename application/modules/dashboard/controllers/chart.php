@@ -20,4 +20,9 @@ class chart extends MY_Controller {
 
 	}
 
+	public function todays_progress(){
+		
+		echo  json_encode($this->dashboard_model->todays_progress());
+	}
+
 }

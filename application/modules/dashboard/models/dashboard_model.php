@@ -87,8 +87,20 @@ class dashboard_model extends MY_Model {
 		
 	}
 
-	public function todays_summary(){
+	public function todays_progress(){
 
+		//sql for eid
+
+		$vl_today = array(100,40,0,0,0);
+
+		//sql for vl
+
+		$eid_today = array(500,0,60,0,90);
+
+		$data["vl_today"] 		=	$vl_today;
+		$data["eid_today"] 		=	$eid_today;
+
+		return $data;
 	}
 
 }

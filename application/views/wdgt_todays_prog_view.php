@@ -9,7 +9,7 @@
     <div class="widget-body my-widget-md">
         <div class="widget-main">
 
-            <div id ="dat" class ="" style="height:240px;">
+            <div id ="dat" class ="" style="height:220px;">
 
             </div>
             <div class="hr hr8 hr-double"></div>
@@ -26,42 +26,50 @@ $(function () {
     var vl_today    = [0, 0, 0, 0, 0];
     var eid_today   = [0, 0, 0, 0, 0];
 
-    $('#dat').highcharts({
-        chart: {
-            type: 'bar'
-        },
-        title: {
-            text: ''
-        },
-        xAxis: {
-            categories: ['Samples', 'Tests', 'Repeats', 'failed', 'Successful']
-        },
-        yAxis: {
-            min: 0,
+    $.getJSON("<?php echo base_url('dashboard/chart/todays_progress');?>", function(data) {
+
+
+        vl_today    = data.vl_today;
+        eid_today   = data.eid_today;
+
+        $('#dat').highcharts({
+            chart: {
+                type: 'bar',
+                //height: '220'
+            },
             title: {
                 text: ''
-            }
-        },            
-        credits:{
-            enabled:false
-        },
-        legend: {
-            reversed: true
-        },
-        plotOptions: {
-            series: {
-                stacking: 'normal'
-            }
-        },
-        series: [{
-            name: 'viral load',
-            color:"#d43f3a",
-            data: vl_today
-        },{
-            name: 'eid',
-            color:"#6fb3e0",
-            data: eid_today
-        }]
+            },
+            xAxis: {
+                categories: ['Samples', 'Tests', 'Repeats', 'failed', 'Successful']
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: ''
+                }
+            },            
+            credits:{
+                enabled:false
+            },
+            legend: {
+                reversed: true
+            },
+            plotOptions: {
+                series: {
+                    stacking: 'normal'
+                }
+            },
+            series: [{
+                name: 'viral load',
+                color:"#d43f3a",
+                data: vl_today
+            },{
+                name: 'eid',
+                color:"#6fb3e0",
+                data: eid_today
+            }]
+        });
     });
 });
 
