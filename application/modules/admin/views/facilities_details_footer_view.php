@@ -35,8 +35,23 @@ $( document ).ready(function() {
 
 }
 
+function edit_district(id,district,region) {
+	var str = "#tr_"+id;
+
+	var row = $(str).html();
+
+	$("#edit_table_row").html(row);
+
+	$("#editdistrictid").val(id);
+	$("#districtname").val(district);
+	$("#region").val(region);
+
+}
+
+
 function hide_edit(){
 	$("#editdetailsdiv").modal("hide");
+	$("#editdistrict").modal("hide");
 }
 
 
