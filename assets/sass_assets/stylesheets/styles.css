@@ -51108,3 +51108,30 @@ html {
 .nb select {
   height: 34px;
 }
+
+/* line 117, ../sass/styles.scss */
+.my-widget {
+  display: block;
+  overflow-y: auto !important;
+}
+
+/* line 123, ../sass/styles.scss */
+.my-widget-sm {
+  display: block;
+  overflow-y: auto;
+  height: 200px !important;
+}
+
+/* line 128, ../sass/styles.scss */
+.my-widget-md {
+  display: block;
+  overflow-y: auto;
+  height: 270px !important;
+}
+
+/* line 133, ../sass/styles.scss */
+.my-widget-lg {
+  display: block;
+  overflow-y: auto;
+  height: 350px !important;
+}
