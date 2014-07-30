@@ -18,7 +18,7 @@
 			<a href="<?php echo base_url();?>" class="navbar-brand">
 				<small>
 					<i class="fa fa-leaf"></i>
-					<?php echo $topleft_title; ?> LIMS
+					<?php echo $topleft_title; ?> LIMS (DEMO)
 				</small>
 			</a>
 		</div>

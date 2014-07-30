@@ -37,7 +37,7 @@
 								<span class="blue" style="font-size:60px;">EID</span>
 								<span style="font-size:60px;">/</span>
 								<span class="red"  style="font-size:60px;">VL</span>
-								<span class="grey" id="id-text2" style="font-size:60px;">LIMS</span>
+								<span class="grey" id="id-text2" style="font-size:60px;">LIMS (DEMO)</span>
 							</h1>
 						</div>
 						<h2 class="blue"> (Early Infant Diagnosis)</h2>
