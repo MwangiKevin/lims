@@ -30,6 +30,8 @@ public function admin_mail()
 																	"class"		=>	"active"
 																	)
 												);
+	$this->view_data['sent_emails']    =    $this->mail_model->sent_mail();
+	
 	$this -> template($this->view_data);
 }
 	function send_email()  
@@ -41,7 +43,7 @@ public function admin_mail()
 		$message   = $this->input->post("message");
 		$tim = date('Y-m-d');
 
-		$this->mail_model->sent_mail($id, $recepient, $subject, $message, $tim);
+		$this->mail_model->send_mail($id, $recepient, $subject, $message, $tim);
 		
 		$config = array(
 			'protocol' => 'smtp',
@@ -55,10 +57,19 @@ public function admin_mail()
 		$this->email->set_newline("\r\n");
 
 		$this->email->from('cd4lims.tz@gmail.com', 'CD4');
-		$this->email->to('$recepient');
-		$this->email->subject('$subject');
-		$this->email->message('$message');
+		$this->email->to($recepient);
+		$this->email->subject($subject);
+		$this->email->message($message);
 
-		$this->admin_mail();
+		if($this->email->send())
+			{
+				$this->admin_mail();
+			} else 
+			{
+				show_error($this->email->print_debugger());
+			}
+		
 	}
+
+
 }
