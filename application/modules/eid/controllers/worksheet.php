@@ -291,5 +291,50 @@ class worksheet extends MY_Controller {
 		
 		$this->load->view("abbott_rack_view",$this->view_data);
 	}
+
+	public function edit_worksheet(){
+		$worksheet_id = $_POST['worksheet_id_zoome'];
+		$this->worksheets_model->edit_worksheet($worksheet_id);
+	}
+	
+	public function delete_worksheet(){
+		echo($_POST['worksheet_id_zoomd']);
+		die;
+		$worksheet_id = $_POST['worksheet_id_zoomd'];
+		$this->worksheets_model->delete_worksheet($worksheet_id);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }

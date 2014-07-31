@@ -23,7 +23,7 @@ $( document ).ready(function() {
 	});	
 	
 	function getvalues(){
-		$id = $("#id"+clickedrow).html();		
+		$worksheet_id = $("#worksheet_id"+clickedrow).html();		
 		$date_created = $("#date_created1").html();
 		$created_by = $("#created_by"+clickedrow).html();
 		$machine = $("#flag"+clickedrow).html();
@@ -38,11 +38,11 @@ $( document ).ready(function() {
 		//alert("Clicked = "+ clickedrow);
 		var id = document.getElementById("id"+clickedrow).innerHTML;
 		
-
 		$(".blue").click(function(){
 			$("#blue_dialog").modal("show");
 			getvalues();
-		
+			
+			$("#worksheet_id_zoom").val($worksheet_id);
 			$("#date_created_zoom").val($date_created);
 			$("#created_by_zoom").val($created_by);
 			$("#machine_zoom").val($machine);
@@ -50,13 +50,14 @@ $( document ).ready(function() {
 			$("#date_run_zoom").val($date_run);
 			$("#date_updated_zoom").val($date_updated);
 			$("#date_reviewed_zoom").val($date_reviewed);
-			console.log("works");
+			//console.log("works");
 		});
 		
 		$(".green").click(function(){	
 			$("#green_dialog").modal("show");	
 			getvalues();
 			
+			$("#worksheet_id_zoome").val($worksheet_id);
 			$("#date_created_zoome").val($date_created);		
 			$("#created_by_zoome").val($created_by);
 			$("#machine_zoome").val($machine);
@@ -70,6 +71,7 @@ $( document ).ready(function() {
 			$("#red_dialog").modal("show");		
 			getvalues();
 			
+			$("#worksheet_id_zoomd").html($worksheet_id);
 			$("#date_created_zoomd").html($date_created);		
 			$("#created_by_zoomd").html($created_by);
 			$("#machine_zoomd").html($machine);
@@ -84,6 +86,7 @@ $( document ).ready(function() {
 			$("#print_dialog").modal("show");
 			getvalues();
 			
+			$("#worksheet_id_zoomp").html($worksheet_id);
 			$("#date_created_zoomp").html($date_created);		
 			$("#created_by_zoomp").html($created_by);
 			$("#machine_zoomp").html($machine);

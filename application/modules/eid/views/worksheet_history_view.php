@@ -21,7 +21,8 @@
 		<table style="font-size:90%" id="tests_table" class="table table-bordered table-responsive">
 			<thead>
 				<tr class="active">
-					<th rowspan="2">Sample ID</th>
+					<th rowspan="2"></th>
+					<th rowspan="2">Worksheet ID</th>
 					<th rowspan="2">Date Created</th>
 					<th rowspan="2">Created By</th>
 					<th rowspan="2">Machine</th>
@@ -50,7 +51,7 @@
 						$created_by = $res['created_by'];
 						$flag = $res['flag'];
 						$status = $res['status'];
-						
+						$worksheet_id= $res['id'];
 						$result = $res['result'];
 						
 						$date_run = $res['date_run'];
@@ -65,6 +66,7 @@
 						</script>
 						<tr onclick="rowclicked(<?php echo $i  ?>)">
 							<td id="id<?php echo $i  ?>"><?php echo $i ?></td>
+							<td id="worksheet_id<?php echo $i?>"><?php echo $worksheet_id  ?></td>
 							<td id="date_created<?php echo $i?>"><?php echo $date_created ?></td>
 							<td id="created_by<?php echo $i?>"><?php echo $created_by ?></td>
 							<td id="flag<?php echo $i?>"><?php echo $flag ?></td>
@@ -166,29 +168,29 @@
 			<div id="column1"> 
 				<div class="input-group my-input-group nb" style="width:50%">
 					<span class="input-group-addon my-input-group-caption" >
-						Sample ID:
+						Worksheet ID:
 					</span>
-					<input name="sample_prep_no[]" id="sample_ID_zoom" class="form-control date-picker" type="text" style="width:100%;"/>
+					<input name="worksheet_id_zoom" id="worksheet_id_zoom" class="form-control date-picker" type="text" style="width:100%;"/>
 				</div>
 				<div class="input-group my-input-group nb" style="width:50%">
 					<span class="input-group-addon my-input-group-caption" >
 						Date Created:
 					</span>
-					<input name="sample_prep_no[]" id="date_created_zoom" class="form-control date-picker" type="text" style="width:100%;"/>
+					<input name="date_created_zoom" id="date_created_zoom" class="form-control date-picker" type="text" style="width:100%;"/>
 				</div>
 				
 				<div class="input-group my-input-group nb" style="width:50%">
 					<span class="input-group-addon my-input-group-caption" >
 						Created By:
 					</span>
-					<input name="sample_prep_no[]" id="created_by_zoom" class="form-control date-picker" type="text" style="width:100%;"/>
+					<input name="created_by_zoom" id="created_by_zoom" class="form-control date-picker" type="text" style="width:100%;"/>
 				</div>
 				
 				<div class="input-group my-input-group nb" style="width:50%">
 					<span class="input-group-addon my-input-group-caption" >
 						Machine:
 					</span>
-					<input name="sample_prep_no[]" id="machine_zoom" class="form-control date-picker" type="text" style="width:100%;"/>
+					<input name="machine_zoom" id="machine_zoom" class="form-control date-picker" type="text" style="width:100%;"/>
 				</div>
 			</div> 
 			
@@ -197,28 +199,28 @@
 					<span class="input-group-addon my-input-group-caption" >
 						Satus:
 					</span>
-					<input name="sample_prep_no[]" id="status_zoom" class="form-control date-picker" type="text" style="width:100%;" />
+					<input name="status_zoom" id="status_zoom" class="form-control date-picker" type="text" style="width:100%;" />
 				</div>
 				<div class="input-group my-input-group nb" style="width:50%">
 					<span class="input-group-addon my-input-group-caption" >
 						Date Run:
 					</span>
-					<input name="sample_prep_no[]" id="date_run_zoom" class="form-control date-picker" type="text" style="width:100%;"/>
+					<input name="date_run_zoom" id="date_run_zoom" class="form-control date-picker" type="text" style="width:100%;"/>
 				</div>
 				<div class="input-group my-input-group nb" style="width:50%">
 					<span class="input-group-addon my-input-group-caption" >
 						Date Updated:
 					</span>
-					<input name="sample_prep_no[]" id="date_updated_zoom" class="form-control date-picker" type="text" style="width:100%;"/>
+					<input name="date_updated_zoom" id="date_updated_zoom" class="form-control date-picker" type="text" style="width:100%;"/>
 				</div>
 				<div class="input-group my-input-group nb" style="width:50%">
 					<span class="input-group-addon my-input-group-caption" >
 						Date Reviewed:
 					</span>
-					<input name="sample_prep_no[]" id="date_reviewed_zoom" class="form-control date-picker" type="text" style="width:100%;"/>
+					<input name="date_reviewed_zoom" id="date_reviewed_zoom" class="form-control date-picker" type="text" style="width:100%;"/>
 				</div>
 			</div>
-			</center>
+		</center>
 		</div>
 		<div class="modal-footer" style="clear:both;">
 			<center>
@@ -233,7 +235,6 @@
 
 
 <!-- edit dialog-->
-
 <div class="modal fade" id="green_dialog"  >	
 	<div class="modal-content">
 		<div class="modal-header">
@@ -242,32 +243,34 @@
 		
 		<div class="modal-body">
 			<center>
+				<form method="POST" action="<?php echo base_url()?>eid/worksheet/edit_worksheet">
+					
 		<div id="column1">
 			<div class="input-group my-input-group nb" style="width:50%">
 				<span class="input-group-addon my-input-group-caption" >
-					Sample ID:
+					Worksheet ID:
 				</span>
-				<input name="sample_prep_no[]" id="sample_ID_zoome" class="form-control date-picker" type="text" style="width:100%;"/>
+				<input name="worksheet_id_zoome" id="worksheet_id_zoome" class="form-control date-picker" type="text" style="width:100%;"/>
 			</div>
 			<div class="input-group my-input-group nb" style="width:50%">
 				<span class="input-group-addon my-input-group-caption" >
 					Date Created:
 				</span>
-				<input name="sample_prep_no[]" id="date_created_zoome" class="form-control date-picker" type="text" style="width:100%;"/>
+				<input name="date_created_zoome" id="date_created_zoome" class="form-control date-picker" type="text" style="width:100%;"/>
 			</div>
 			
 			<div class="input-group my-input-group nb" style="width:50%">
 				<span class="input-group-addon my-input-group-caption" >
 					Created By:
 				</span>
-				<input name="sample_prep_no[]" id="created_by_zoome" class="form-control date-picker" type="text" style="width:100%;"/>
+				<input name="created_by_zoome" id="created_by_zoome" class="form-control date-picker" type="text" style="width:100%;"/>
 			</div>
 			
 			<div class="input-group my-input-group nb" style="width:50%">
 				<span class="input-group-addon my-input-group-caption" >
 					Machine:
 				</span>
-				<input name="sample_prep_no[]" id="machine_zoome" class="form-control date-picker" type="text" style="width:100%;"/>
+				<input name="machine_zoome" id="machine_zoome" class="form-control date-picker" type="text" style="width:100%;"/>
 			</div>
 		</div> 
 		
@@ -276,25 +279,25 @@
 				<span class="input-group-addon my-input-group-caption" >
 					Satus:
 				</span>
-				<input name="sample_prep_no[]" id="status_zoome" class="form-control date-picker" type="text" style="width:100%;" />
+				<input name="status_zoome" id="status_zoome" class="form-control date-picker" type="text" style="width:100%;" />
 			</div>
 			<div class="input-group my-input-group nb" style="width:50%">
 				<span class="input-group-addon my-input-group-caption" >
 					Date Run:
 				</span>
-				<input name="sample_prep_no[]" id="date_run_zoome" class="form-control date-picker" type="text" style="width:100%;"/>
+				<input name="date_run_zoome" id="date_run_zoome" class="form-control date-picker" type="text" style="width:100%;"/>
 			</div>
 			<div class="input-group my-input-group nb" style="width:50%">
 				<span class="input-group-addon my-input-group-caption" >
 					Date Updated:
 				</span>
-				<input name="sample_prep_no[]" id="date_updated_zoome" class="form-control date-picker" type="text" style="width:100%;"/>
+				<input name="date_updated_zoome" id="date_updated_zoome" class="form-control date-picker" type="text" style="width:100%;"/>
 			</div>
 			<div class="input-group my-input-group nb" style="width:50%">
 				<span class="input-group-addon my-input-group-caption" >
 					Date Reviewed:
 				</span>
-				<input name="sample_prep_no[]" id="date_reviewed_zoome" class="form-control date-picker" type="text" style="width:100%;"/>
+				<input name="date_reviewed_zoome" id="date_reviewed_zoome" class="form-control date-picker" type="text" style="width:100%;"/>
 			</div>
 		</div>
 		</center>
@@ -302,14 +305,14 @@
 		<div class="modal-footer" style="clear:both;">
 			<center>
 				<button class="btn btn-white btn-default btn-round" id="close_dialoge">
-				<i class="ace-icon fa fa-times red2"></i>
-				Cancel
-		</button>
-		<button class="btn btn-white btn-info btn-bold">
-			<i class="ace-icon fa fa-floppy-o bigger-120 blue"></i>
-			Edit
-		</button>
+					<i class="ace-icon fa fa-times red2"></i>
+					Cancel
+				</button>			
+				<span>
+					<input type="submit" class="btn btn-white btn-info btn-bold" value="Edit" />
+				</span>
 			</center>
+			</form>
 		</div>
 	</div>
 </div>
@@ -325,8 +328,9 @@
 		<div class="modal-body">
 			<table style="font-size:90%" id="tests_table" class="table table-bordered table-responsive">
 			<thead>
+				<form method="post" action="<?php echo base_url()?>eid/worksheet/delete_worksheet">
 				<tr class="active">
-					<th rowspan="2">Sample ID</th>
+					<th rowspan="2">Worksheet ID</th>
 					<th rowspan="2">Date Created</th>
 					<th rowspan="2">Created By</th>
 					<th rowspan="2">Machine</th>
@@ -347,7 +351,7 @@
 			</thead>
 			<tbody>
 				<tr>
-					<td id="sample_id_zoomd"></td>
+					<td id="worksheet_id_zoomd"></td>
 					<td id="date_created_zoomd"></td>
 					<td id="created_by_zoomd"></td>
 					<td id="machine_zoomd"></td>
@@ -370,17 +374,16 @@
 		</div>
 		
 		<div class="modal-footer">
-			<center>
-				<button class="btn btn-white btn-warning btn-bold">
-					<i class="ace-icon fa fa-trash-o bigger-120 orange"></i>
-					Delete
-				</button>
+			<center>		
+				<!-- <i class="ace-icon fa fa-trash-o bigger-120 orange"></i> -->
+				<input type="submit" class="btn btn-white btn-warning btn-bold" value="Delete"/>
 				<button class="btn btn-white btn-default btn-round" id="close_dialogd">
 					<i class="ace-icon fa fa-times red2"></i>
 					Cancel
 				</button>
 			</center>
 		</div>
+		</form>
 	</div>
 </div>
 <!-- delete dialog-->
@@ -396,7 +399,7 @@
 			<table style="font-size:90%" id="tests_table" class="table table-bordered table-responsive">
 			<thead>
 				<tr class="active">
-					<th rowspan="2">Sample ID</th>
+					<th rowspan="2">Worksheet ID</th>
 					<th rowspan="2">Date Created</th>
 					<th rowspan="2">Created By</th>
 					<th rowspan="2">Machine</th>
@@ -417,7 +420,7 @@
 			</thead>
 			<tbody>
 				<tr>
-					<td id="sample_id_zoomp"></td>
+					<td id="worksheet_id_zoomp"></td>
 					<td id="date_created_zoomp"></td>
 					<td id="created_by_zoomp"></td>
 					<td id="machine_zoomp"></td>
@@ -443,7 +446,7 @@
 			<center>
 				<button class="btn btn-white btn-warning btn-bold">
 					<li>
-						<i class="ace-icon glyphicon glyphicon-print"></i>
+						<!-- <i class="ace-icon glyphicon glyphicon-print"></i> -->
 						Print
 					</li>
 				</button>
