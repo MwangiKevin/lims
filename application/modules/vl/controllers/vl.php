@@ -5,8 +5,7 @@ if (!defined('BASEPATH'))
 class vl extends MY_Controller {
 
 	public function __construct(){
-		$this->view_data['content_view'] 	= "vl/home_page_view";
-		//$this->view_data['sidebar'] 		= "eid_sidebar";
+		$this->view_data['content_view'] 	= "dashboard/dashboard";
 		$this->view_data['title'] 			= "Dashboard";
 		$this->view_data['filter']			=	false;
 		
@@ -14,18 +13,12 @@ class vl extends MY_Controller {
 		$this->view_data['b_color']			=	"skin-2";
 		$this->view_data['topleft_title']	=	"Viral Load";
 		
-		$this->view_data 					=	array_merge($this->view_data,$this->load_libraries(array('dataTables','style-bootstap')));
-	}
-	
-	
-	public function index(){
-		$this->login_reroute(array(2));
+		$this->view_data 					=	array_merge($this->view_data,$this->load_libraries(array('dataTables','style-bootstap','highcharts')));
+		
 
-		$this->view_data['content_view'] 	= 	"vl/home_page_view";
 		$this->view_data['sidebar'] 		= 	"vl_sidebar";
 		$this->view_data['title'] 			= 	"Viral Load | Dashboard";
-		$this->view_data['filter']			=	false;
-		$this->view_data 					=	array_merge($this->view_data,$this->load_libraries(array()));		
+		$this->view_data['filter']			=	false;	
 		$this->view_data['menu_select']		= 	array(0);
 		$this->view_data['breadcrumbs'] 	=	array(
 														0 	=>	array(
@@ -39,11 +32,18 @@ class vl extends MY_Controller {
 																	"class"		=>	"active"
 																	)
 												);
+	}
+	
+	
+	public function index(){
+		$this->login_reroute(array(2));
+
 		$this->dashboard();
 	}
 	public function dashboard(){		
 		
-		$this -> template($this->view_data);
+		$this->load->module("dashboard");
+		$this->dashboard->load_dashboard(2,$this->view_data);
 	}	
 }
 ?>

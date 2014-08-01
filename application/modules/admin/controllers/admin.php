@@ -33,7 +33,7 @@ class admin extends MY_Controller {
 	}
 
 	public function index(){
-
+		
 		$this->dashboard();
 	}
 
@@ -41,6 +41,5 @@ class admin extends MY_Controller {
 		
 		$this -> template($this->view_data);
 	}
-
 
 }
