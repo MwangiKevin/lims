@@ -30,7 +30,7 @@ $(function () {
     var proc_disp   = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
     var coll_disp   = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
-    $.getJSON("<?php echo base_url('dashboard/chart/tat');?>", function(data) {
+    $.getJSON("<?php echo base_url('dashboard/chart/tat').'/'.$program;?>", function(data) {
 
         col_rec = data.col_rec;
         rec_proc=data.rec_proc;

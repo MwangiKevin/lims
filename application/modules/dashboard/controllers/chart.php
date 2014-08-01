@@ -15,8 +15,8 @@ class chart extends MY_Controller {
 		echo json_encode($this->dashboard_model->testing_trends());
 	}
 
-	public function tat(){
-		echo  json_encode($this->dashboard_model->tat());
+	public function tat($program = 0){
+		echo  json_encode($this->dashboard_model->tat($program));
 
 	}
 

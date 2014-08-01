@@ -46,22 +46,17 @@ class dashboard_model extends MY_Model {
 	}
 
 
-	public function tat(){
+	public function tat($program){
 
 		$year= $this->thisyear;
 		$month= $this->thismonth;
 		$data = array();
 
-		for($i=0;$i<$month;$i++){
-			$months_init[$i] = rand(1,100000000);
-			//$months_init[$i] = 0;
-		}
-
 		//initialize
-		$col_rec  = $rec_proc  = $proc_disp  = 	$coll_disp  = 	$months_init;
+		$col_rec  = $rec_proc  = $proc_disp  = 	$coll_disp  = 	$this->months_init_array();
 
 
-		$data['col_rec']		=	$col_rec;
+		$data['col_rec']		=	$this->tat_col_rec($program);
 		$data['rec_proc']		=	$rec_proc;
 		$data['proc_disp']		=	$proc_disp;
 		$data['coll_disp']		=	$coll_disp;
@@ -70,9 +65,24 @@ class dashboard_model extends MY_Model {
 		
 	}
 
-	private function tat_col_rec(){
-		
-		
+	private function tat_col_rec($program){
+		$col_rec = $this->months_init_array();
+
+		$program_delimiter = $this->program_delimiter($program);
+
+		$sql = "SELECT 
+							MONTH(`sa`.`date_collected`) AS `month`,
+							AVG(DATEDIFF(`sa`.`timestamp`,`sa`.`date_collected`)) AS `avg_datediff`
+						FROM `sample` `sa`
+						WHERE YEAR(`sa`.`date_collected`) = '$this->thisyear'
+						$program_delimiter 
+						GROUP BY `month`
+				";
+		$res = R::getAll($sql);
+		foreach ($res as $key => $value) {
+			$col_rec[((int)$value['month'])-1]= (double)$value['avg_datediff'];
+		}
+		return $col_rec;
 	}
 	private function tat_rec_proc(){
 

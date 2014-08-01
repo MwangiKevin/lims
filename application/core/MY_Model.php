@@ -123,4 +123,22 @@ class MY_Model extends CI_Model{
 		$ym=$yearmonth;
 		return date('Y,M',strtotime($ym.'-'.$d));
 	}
+	public function months_init_array(){
+		$months_init = array();
+		for($i=0;$i<12;$i++){
+			$months_init[$i] = 0;
+		}
+
+		return $months_init;
+	}
+	public function program_delimiter($program){
+		$program_delimiter = "";
+
+		if((int)$program==1){			
+			$program_delimiter = " AND `program`= '1' ";
+		}elseif((int)$program==2){			
+			$program_delimiter = " AND `program`= '2' ";
+		}
+		return $program_delimiter ;
+	}
 }
