@@ -57,7 +57,7 @@ class dashboard_model extends MY_Model {
 
 
 		$data['col_rec']		=	$this->tat_col_rec($program);
-		$data['rec_proc']		=	$rec_proc;
+		$data['rec_proc']		=	$this->tat_rec_proc($program);
 		$data['proc_disp']		=	$proc_disp;
 		$data['coll_disp']		=	$coll_disp;
 
@@ -84,8 +84,28 @@ class dashboard_model extends MY_Model {
 		}
 		return $col_rec;
 	}
-	private function tat_rec_proc(){
+	private function tat_rec_proc($program){
 
+		$rec_proc = $this->months_init_array();
+
+		$program_delimiter = $this->program_delimiter($program);
+
+		$sql = "SELECT 
+							MONTH(`sa`.`timestamp`) AS `month`,
+							AVG(DATEDIFF(`sa`.`timestamp`,`str`.`date_released`)) AS `avg_datediff`
+						FROM `sample` `sa`
+						INNER JOIN `sample_test_run` `str`
+						ON `str`.`sample_id`=`sa`.`id` 
+						AND (`str`.`result`='P' OR `str`.`result`='N')
+						WHERE YEAR(`sa`.`date_collected`) = '$this->thisyear'
+						$program_delimiter 
+						GROUP BY `month`
+				";
+		$res = R::getAll($sql);
+		foreach ($res as $key => $value) {
+			$rec_proc[((int)$value['month'])-1]= (double)$value['avg_datediff'];
+		}
+		return $rec_proc;
 		
 	}
 	private function tat_proc_disp(){

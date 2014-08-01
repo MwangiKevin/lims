@@ -79,7 +79,7 @@ $(function () {
                 formatter: function() {
                     return '<b>'+ this.x +'</b><br/>'+
                     this.series.name +': '+ this.y +'<br/>'+
-                    'Total: '+ this.point.stackTotal;
+                    'Average time (days): '+ this.point.stackTotal;
                 }
             },
             plotOptions: {
