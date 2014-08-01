@@ -42,15 +42,41 @@
 				<table style="font-size:90%" id="tests_table" class="table table-bordered table-responsive">
 					<thead>
 						<tr>
-							<th>Out box</th>
-							<th>******</th>
+							<th colspan="5"><center>Out box</center></th>
+						</tr>
+						<tr>
+							<th>#</th>
+							<th colspan="2">Subject</th>
+							<th>Sender</th>
+							<th>Date</th>
 						</tr>
 					</thead>
 					<tbody>
+				
+					<?php if ($sent_emails != NULL) 
+						{
+							$i=1;
+							foreach ($sent_emails as $sent) {
+					?>
 						<tr>
-							<td>******</td>
-							<td>******</td>
-						</tr>
+							<a href="">
+								<td><?php echo $i;?></td>
+								<td colspan="2"><?php echo $sent["subject"];?></td>
+								<td><?php echo $sent["sender_id"];?></td>
+								<td><?php echo $sent["sent_date"];?></td>
+							</a>
+						</tr>		
+					<?php	
+						$i++; }
+						}else 
+						{
+					?>	
+						<tr>
+							<td colspan="5"><center>You have not sent any email.</center></td>
+						</tr>	
+					<?php }
+					?>
+						
 					</tbody>
 				</table>
 			</div><!--End of sent-->
@@ -67,6 +93,7 @@
 						<tr>
 							<td>******</td>
 							<td>******</td>
+
 						</tr>
 					</tbody>
 				</table>
