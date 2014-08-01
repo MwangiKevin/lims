@@ -8,6 +8,8 @@ $config['copyrights']				=	"&copy ".date('Y')." NACP. All Rights Reserved";
 $config["login_timeout_max"]		=	30;		//minutes
 $config["default_password"]         =   123456;
 
+$config['starting_year']			=	2011;
+
 /*Tables*/
 $config['user_table'] = 'users';
 $config['access_level_table'] = "access_level";

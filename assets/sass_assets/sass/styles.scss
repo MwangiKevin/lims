@@ -114,4 +114,25 @@ html{
 	}
 }
 
+.my-widget{
+    display: block;
+    overflow-y:auto !important;
+}
+
+
+.my-widget-sm{
+    display: block;
+    overflow-y:auto;
+    height:200px !important;
+}
+.my-widget-md{
+    display: block;
+    overflow-y:auto;
+    height:270px !important;
+}
+.my-widget-lg{
+    display: block;
+    overflow-y:auto;
+    height:350px !important;
+}
 

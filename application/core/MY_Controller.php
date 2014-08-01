@@ -16,6 +16,7 @@ class  MY_Controller  extends  MX_Controller {
 	public $program;
 
 	function __construct() {
+		
 		parent::__construct();
 		date_default_timezone_set('Africa/Nairobi');
 		$this->view_data	=  	array_merge($this->view_data,$this->load_libraries(array()));
@@ -58,7 +59,7 @@ class  MY_Controller  extends  MX_Controller {
 
 	public function load_libraries($arr){
 
-		array_unshift($arr,"jquery","bootstrap","calendar_css_only","dataTables",'style','dataTables-bootstrap','main');
+		array_unshift($arr,"jquery","bootstrap","calendar_css_only","dataTables",'style','dataTables-bootstrap','main','fa');
 
 		$libs['js_files']				=	array();		
 		$libs['css_files']				=	array();			

@@ -143,9 +143,9 @@
 		<script src="<?php echo base_url();?>assets/sass_assets/sass/theme/js/jquery.ui.touch-punch.min.js"></script>
 		<script src="<?php echo base_url();?>assets/sass_assets/sass/theme/js/jquery.easypiechart.min.js"></script>
 		<script src="<?php echo base_url();?>assets/sass_assets/sass/theme/js/jquery.sparkline.min.js"></script>
-		<script src="<?php echo base_url();?>assets/sass_assets/sass/theme/js/flot/jquery.flot.min.js"></script>
+		<!--<script src="<?php echo base_url();?>assets/sass_assets/sass/theme/js/flot/jquery.flot.min.js"></script>
 		<script src="<?php echo base_url();?>assets/sass_assets/sass/theme/js/flot/jquery.flot.pie.min.js"></script>
-		<script src="<?php echo base_url();?>assets/sass_assets/sass/theme/js/flot/jquery.flot.resize.min.js"></script>
+		<script src="<?php echo base_url();?>assets/sass_assets/sass/theme/js/flot/jquery.flot.resize.min.js"></script>-->
 
 		<!-- ace scripts -->
 		<script src="<?php echo base_url();?>assets/sass_assets/sass/theme/js/ace-elements.min.js"></script>
