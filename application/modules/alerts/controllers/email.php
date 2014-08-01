@@ -71,5 +71,10 @@ public function admin_mail()
 		
 	}
 
+	public function LoadMailConfig()
+	{
+		
+	}
+
 
 }

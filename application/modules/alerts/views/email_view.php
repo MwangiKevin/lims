@@ -16,8 +16,8 @@
 	<div class="tabbable span12" style="margin-top:5px;" id="tabs">
 		<ul class="nav nav-tabs">
 			<li id ="tabInbox" class="active"><a href="#tabs1-Inbox" data-toggle="tab">Inbox</a></li>
-			<li id ="tabSent"><a href="#tabs1-Sent" data-toggle="tab">Sent</a></li>
-			<li id ="tabDraft"><a href="#tabs1-Drafts" data-toggle="tab">Draft</a></li>
+			<li id ="tabSent"><a href="#tabs1-Sent" data-toggle="tab">Sent Mail</a></li>
+			
 		</ul>
 
 		<div class="tab-content">
@@ -42,13 +42,18 @@
 				<table style="font-size:90%" id="tests_table" class="table table-bordered table-responsive">
 					<thead>
 						<tr>
-							<th colspan="5"><center>Out box</center></th>
+							<th colspan="7"><center>Out box</center></th>
 						</tr>
 						<tr>
-							<th>#</th>
-							<th colspan="2">Subject</th>
-							<th>Sender</th>
-							<th>Date</th>
+							<th rowspan="2">#</th>
+							<th rowspan="2">Recipient</th>
+							<th colspan="2" rowspan="2">Subject</th>
+							<th rowspan="2">Date</th>
+							<th colspan="2"><center>Actoins</center></th>
+						</tr>
+						<tr>
+							<th>Read</th>
+							<th>Delete</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -59,12 +64,12 @@
 							foreach ($sent_emails as $sent) {
 					?>
 						<tr>
-							<a href="">
 								<td><?php echo $i;?></td>
+								<td><?php echo $sent["recipients"];?></td>
 								<td colspan="2"><?php echo $sent["subject"];?></td>
-								<td><?php echo $sent["sender_id"];?></td>
 								<td><?php echo $sent["sent_date"];?></td>
-							</a>
+								<td><a href="#readingDiv">*********</a></td>
+								<td>*********</td>
 						</tr>		
 					<?php	
 						$i++; }
@@ -80,24 +85,6 @@
 					</tbody>
 				</table>
 			</div><!--End of sent-->
-
-			<div class="tab-pane" id="tabs1-Drafts">
-				<table style="font-size:90%" id="tests_table" class="table table-bordered table-responsive">
-					<thead>
-						<tr>
-							<th>Draft Box</th>
-							<th>******</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>******</td>
-							<td>******</td>
-
-						</tr>
-					</tbody>
-				</table>
-			</div><!--End of draft-->
 
 		</div><!--End of tab-content-->
 
