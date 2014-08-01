@@ -52,8 +52,8 @@
 							<th colspan="2"><center>Actoins</center></th>
 						</tr>
 						<tr>
-							<th>Read</th>
-							<th>Delete</th>
+							<th><center>Read</center></th>
+							<th><center>Delete</center></th>
 						</tr>
 					</thead>
 					<tbody>
@@ -68,8 +68,8 @@
 								<td><?php echo $sent["recipients"];?></td>
 								<td colspan="2"><?php echo $sent["subject"];?></td>
 								<td><?php echo $sent["sent_date"];?></td>
-								<td><a href="#readingDiv">*********</a></td>
-								<td>*********</td>
+								<td><center><a href="#readingDiv">*********</a></center></td>
+								<td><center><a class="red" title =" " style="border-radius:1px;" ><i class="ace-icon fa fa-trash-o bigger-130"></i></a></center></td>
 						</tr>		
 					<?php	
 						$i++; }
@@ -129,8 +129,8 @@
 															
 					<div class="modal-footer" style="height:11px;padding-top:11px;">								
 						<div class="" style="padding:7px;">
-							<button name="save" type="submit" class="btn btn-primary btn-mini"><i class="glyphicon glyphicon-save"></i>Send</button>
-							<button name="discard" type="button"  onclick="hide_edit()" class="btn btn-default btn-minii"><i class="glyphicon glyphicon-remove"></i>Discard</button>
+							<button name="save" type="submit" class="btn btn-primary btn-mini">Send<i class="ace-icon fa fa-arrow-right icon-on-right"></i></button>
+							<button name="discard" type="button"  onclick="hide_edit()" class="btn btn-default btn-minii"><i class="ace-icon fa fa-trash-o bigger-120"></i>Discard</button>
 						</div>
 					</div> 
 				</form>

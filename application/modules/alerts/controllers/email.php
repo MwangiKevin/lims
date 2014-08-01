@@ -6,7 +6,7 @@ class email extends MY_Controller {
 public function __construct()
 {
 	$this->view_data['content_view'] 	= 	"alerts/email_view";
-	$this->view_data['menu_select']		= 	"side_email";
+	$this->view_data['menu_select']		= 	"side_mail";
 	$this->load->model('mail_model');
 }
 
@@ -17,6 +17,7 @@ public function admin_mail()
 	$this->view_data['title'] 			= 	"EID | Mailing";
 	$this->view_data['b_color']			=	"skin-1";
 	$this->view_data['topleft_title']	=	"Admin";
+	$this->view_data['submenu_select']	= 	"side_email_details";
 	$this->view_data 					=	array_merge($this->view_data,$this->load_libraries(array('dataTables','style-bootstap')));		
 	$this->view_data['breadcrumbs'] 	=	array(
 														0 	=>	array(
