@@ -68,7 +68,7 @@
 								<td><?php echo $sent["recipients"];?></td>
 								<td colspan="2"><?php echo $sent["subject"];?></td>
 								<td><?php echo $sent["sent_date"];?></td>
-								<td><center><a href="#readingDiv">*********</a></center></td>
+								<td><center><a href="#readingDiv"><i class="menu-icon fa fa-pencil-square-o"></i></a></center></td>
 								<td><center><a class="red" title =" " style="border-radius:1px;" ><i class="ace-icon fa fa-trash-o bigger-130"></i></a></center></td>
 						</tr>		
 					<?php	
@@ -98,17 +98,80 @@
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 				<h4 class="modal-title">
-					<i class="ace-icon fa fa-hand-o-right icon-animated-hand-pointer blue"></i>
-				    <a href="#" data-toggle="modal" class="pink">Send Email </a>
+					<div class="widget-header widget-header-blue widget-header-flat">
+						<h4 class="widget-title lighter">Send Email</h4>				
+					</div>
 				</h4>
 			</div><!--End of modal-header-->
 			<div class="modal-body" style="padding-bottom:0px;">	
 				<?php echo form_open('alerts/email/send_email');?>
+				<div class="widget-box">
 					<h4 class="lighter">
 					    <i class="ace-icon fa fa-hand-o-right icon-animated-hand-pointer green"></i>
 					    <a href="#" data-toggle="modal" class="green"> Write email </a>
 					</h4>
 				    
+					<div class="hr hr-18 hr-single dotted"></div>
+					<div class="widget-body">
+						<div class="widget-main">
+							<div class="row my-infobox">
+								<div class="input-group" style="width: 100%;padding:4px;">
+									<span class="input-group-addon" style="width: 40%;">To:</span>
+									<input required id="recepients" name="recepients" class="textfield form-control" />	
+								</div>	
+
+								<div class="input-group" style="width: 100%;padding:4px;">
+									<span class="input-group-addon" style="width: 40%;">Subject:</span>
+									<input required id="subject" name="subject" class="textfield form-control" />	
+								</div>	
+									            					
+								<div id="messagediv" class="input-group" style="width: 100%;padding:4px;">
+									<span class="input-group-addon" style="width: 20%;">Message:</span>
+									<textarea required id="message" name="message" cols="50" rows="5" class="textfield form-control"></textarea>
+									<!--<input required id="message" name = "message" class="textfield form-control"  readonly />-->
+								</div>	          
+																		
+								<div class="modal-footer" style="height:11px;padding-top:11px;">	
+									<div class="wizard-actions" style="float:right;">
+										<button type="submit" class="btn btn-success btn-next btn-sm" name="save" >
+											Send Email
+											<i class="ace-icon fa fa-arrow-right icon-on-right"></i>
+										</button>
+										<button name="discard" type="button"  onclick="hide_edit()" class="btn btn-xs btn-danger bigger-120">
+											<i class="ace-icon fa fa-trash-o bigger-120"></i>
+											Discard
+										</button>
+									</div>							
+									
+								</div> 
+							</div><!--End of my-infobox-->	
+						</div><!--End of widget-main-->	
+					</div><!--End of widget-body-->		
+				</div><!--End of widget-box-->
+				</form>
+
+				<div class="modal-footer" style="height:4px;padding-top:11px;">
+					<?php echo $this->config->item("copyrights");?>
+				</div> 
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="readingDiv">
+	<div class="modal-dialog" style="width:60%;margin-bottom:2px;">
+		<div class="modal-content" >
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title">
+					<div class="widget-header widget-header-blue widget-header-flat">
+						<h4 class="widget-title lighter">View Sent Email</h4>				
+					</div>
+				</h4>
+			</div><!--End of modal-header-->
+			<div class="modal-body" style="padding-bottom:0px;">	
+				<?php echo form_open('alerts/email/send_email');?>
+									    
 					<div class="hr hr-18 hr-single dotted"></div>
 
 					<div class="input-group" style="width: 100%;padding:4px;">
