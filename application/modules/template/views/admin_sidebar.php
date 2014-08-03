@@ -119,7 +119,7 @@
 
 		</li>
 
-		<li id="side_email" class="hsub">
+		<li id="side_mail" class="hsub">
 			<a href="#" class="dropdown-toggle">
 				<i class="menu-icon fa fa-users "></i>
 				<span class="menu-text"> Mail </span>
@@ -139,8 +139,8 @@
 					<b class="arrow"></b>
 				</li>
 
-				<li class="" id="side_user_registration">
-					<a href="<?php echo base_url().'admin/users/users_registration' ?>">
+				<li class="" id="side_sms">
+					<a href="<?php echo base_url().'alerts/sms/load_sms' ?>">
 						<i class="menu-icon fa fa-caret-right"></i>
 						SMS
 					</a>
