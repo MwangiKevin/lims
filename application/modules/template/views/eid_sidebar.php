@@ -308,9 +308,33 @@
 				</li>				
 			</ul>
 		</li>
-
+		
+		
 		<?php
 			if(isset($menu_select[0]) && $menu_select[0]==4){
+				$selected_class = "active ";
+				$display 		=	"";
+			}else{
+				$selected_class = "hsub";
+				$display 		=	"display: none;";
+			}
+		?>		
+		
+		<li class="<?php echo $selected_class;?>">
+			<a href="<?php echo base_url()?>eid/reports">
+				<i class="menu-icon fa fa-list-alt"></i>
+				<span class="menu-text"> Reports </span>
+			</a>
+
+			<b class="arrow"></b>
+		</li>
+		
+		
+		
+		
+
+		<?php
+			if(isset($menu_select[0]) && $menu_select[0]==5){
 				$selected_class = "active open ";
 				$display 		=	"";
 			}else{
@@ -333,7 +357,7 @@
 			<ul class="submenu nav-hide" style="<?php echo $display;?>">
 
 				<?php
-					if(isset($menu_select[0]) && $menu_select[0]==4 && isset($menu_select[1]) && $menu_select[1]==0){
+					if(isset($menu_select[0]) && $menu_select[0]==5 && isset($menu_select[1]) && $menu_select[1]==0){
 						$selected_class = "active";
 
 					}else{
@@ -352,7 +376,7 @@
 				</li>
 
 				<?php
-					if(isset($menu_select[0]) && $menu_select[0]==4 && isset($menu_select[1]) && $menu_select[1]==1){
+					if(isset($menu_select[0]) && $menu_select[0]==5 && isset($menu_select[1]) && $menu_select[1]==1){
 						$selected_class = "active";
 
 					}else{
@@ -374,7 +398,7 @@
 
 
 		<?php
-			if(isset($menu_select[0]) && $menu_select[0]==5){
+			if(isset($menu_select[0]) && $menu_select[0]==6){
 				$selected_class = "active open ";
 				$display 		=	"";
 			}else{
@@ -396,7 +420,7 @@
 			<ul class="submenu nav-hide" style="<?php echo $display;?>">
 
 				<?php
-					if(isset($menu_select[0]) && $menu_select[0]==5 && isset($menu_select[1]) && $menu_select[1]==0){
+					if(isset($menu_select[0]) && $menu_select[0]==6 && isset($menu_select[1]) && $menu_select[1]==0){
 						$selected_class = "active";
 
 					}else{
@@ -415,7 +439,7 @@
 				</li>
 
 				<?php
-					if(isset($menu_select[0]) && $menu_select[0]==5 && isset($menu_select[1]) && $menu_select[1]==1){
+					if(isset($menu_select[0]) && $menu_select[0]==6 && isset($menu_select[1]) && $menu_select[1]==1){
 						$selected_class = "active";
 
 					}else{
@@ -434,7 +458,7 @@
 				</li>
 
 				<?php
-					if(isset($menu_select[0]) && $menu_select[0]==5 && isset($menu_select[1]) && $menu_select[1]==2){
+					if(isset($menu_select[0]) && $menu_select[0]==6 && isset($menu_select[1]) && $menu_select[1]==2){
 						$selected_class = "active";
 
 					}else{
@@ -453,7 +477,7 @@
 				</li>
 
 				<?php
-					if(isset($menu_select[0]) && $menu_select[0]==5 && isset($menu_select[1]) && $menu_select[1]==3){
+					if(isset($menu_select[0]) && $menu_select[0]==6 && isset($menu_select[1]) && $menu_select[1]==3){
 						$selected_class = "active";
 
 					}else{
