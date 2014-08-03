@@ -109,9 +109,9 @@ $config['js_theme_files']		=	array(
 										array('title'	=> 'style-date-time'		,	'file'	=>	'sass/theme/js/date-time/bootstrap-datetimepicker.min.js'),
 										array('title'	=> 'style-date-time'		,	'file'	=>	'sass/theme/js/date-time/bootstrap-timepicker.min.js'),
 										array('title'	=> 'style-date-time'		,	'file'	=>	'sass/theme/js/date-time/daterangepicker.min.js'),
-										array('title'	=> 'style'					,	'file'	=>	'sass/theme/js/flot/jquery.flot.min.js'),
-										array('title'	=> 'style'					,	'file'	=>	'sass/theme/js/flot/jquery.flot.pie.min.js'),
-										array('title'	=> 'style'					,	'file'	=>	'sass/theme/js/flot/jquery.flot.resize.min.js'),
+										array('title'	=> 'style-flot'					,	'file'	=>	'sass/theme/js/flot/jquery.flot.min.js'),
+										array('title'	=> 'style-flot'					,	'file'	=>	'sass/theme/js/flot/jquery.flot.pie.min.js'),
+										array('title'	=> 'style-flot'					,	'file'	=>	'sass/theme/js/flot/jquery.flot.resize.min.js'),
 										array('title'	=> 'style'					,	'file'	=>	'sass/theme/js/fuelux/fuelux.spinner.min.js'),
 										array('title'	=> 'style'					,	'file'	=>	'sass/theme/js/fuelux/fuelux.tree.min.js'),
 										array('title'	=> 'style'					,	'file'	=>	'sass/theme/js/fuelux/fuelux.wizard.min.js'),
@@ -166,6 +166,8 @@ $config['plugin_js_files']	=	array(
 $config['plugin_css_files']	=	array(									
 									array('title'	=> 'dataTables-bootstrap'		,	'file'	=>	'data-tables-bootstrap-3/css/dataTables.bootstrap.css'),
 									array('title'	=> 'dropzone-basic'				,	'file'	=>	'dropzone/css/basic.css'),
-									array('title'	=> 'dropzone'					,	'file'	=>	'dropzone/css/dropzone.css')
+									array('title'	=> 'dropzone'					,	'file'	=>	'dropzone/css/dropzone.css'),
+									array('title'   => 'fa'                        	,   'file'    =>    'font-awesome/css/font-awesome.css')
+
 								);
 /* End of file asset.php */

@@ -66,6 +66,7 @@
 							<th>#</th>
 							<th>District Name</th>					
 							<th>Region</th>
+							<th>Edit</th>
 						</tr>						
 					</thead>
 					<tbody>
@@ -78,13 +79,16 @@
 							<td><?php echo $i;?></td>
 							<td><?php echo $dis['district_name'];?></td>
 							<td><?php echo $dis['region_name'];?></td>
+							<td><a  class="blue" title="Edit <?php echo $dis['district_name'] ?> District" href="javascript:void(null);" onclick="edit_district(<?php echo $dis['district_id'] ?>,'<?php echo $dis['district_name'] ?>','<?php echo $dis['region_name'];?>')"><center><i class="ace-icon fa fa-pencil bigger-130"></i></center></a></td>
 						</tr>
 						<?php
 							$i++;
 							}
 						?>
 					</tbody>
-				</table>		
+				</table>
+
+				   
 			</div>
 			<!-- Region -->
 			<div class="tab-pane" id="tabs1-Region" style="width: 60%;padding:4px;" >	
@@ -144,4 +148,80 @@
 		</div>
 	</div>
     </div>
+
+    <div class="modal fade" id="editdistrict">
+					<div class="modal-dialog" style="width:60%;margin-bottom:2px;">
+						<div class="modal-content" >
+							<div class="modal-header">
+					    		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					    		<h4 class="modal-title">
+					    			<i class="ace-icon fa fa-hand-o-right icon-animated-hand-pointer blue"></i>
+						            <a href="#" data-toggle="modal" class="pink">Edit Distrcit Details Page </a>
+					    		</h4>
+					  		</div>
+							<div class="modal-body" style="padding-bottom:0px;">	
+								<?php echo form_open('admin/facilities/edit_district');?>
+								 <h4 class="lighter">
+							           <i class="ace-icon fa fa-hand-o-right icon-animated-hand-pointer green"></i>
+							           <a href="#" data-toggle="modal" class="green"> District Details </a>
+							     </h4>
+
+							      <div class="hr hr-18 hr-single dotted"></div>
+
+									<input required id="editdistrictid" type="hidden" name="editdistrictid" class="textfield form-control" readonly />
+
+									<div class="input-group" style="width: 100%;padding:4px;">
+										<table style="font-size:90%" id="tests_table" class="table table-bordered table-responsive">
+											<thead>
+												<tr>
+													<th >#</th>
+													<th >District Name</th>
+													<th >Region</th>
+								               	</tr>
+											</thead>
+											<tbody>
+												<tr id="edit_table_row">
+													<td></td>
+													<td></td>
+													<td></td>
+												</tr>
+											</tbody>
+										</table>
+						            </div>	
+
+						               <div class="hr hr-18 hr-double dotted"></div>
+
+						            <h4 class="lighter">
+							           <i class="ace-icon fa fa-hand-o-right icon-animated-hand-pointer green"></i>
+							           <a href="#" data-toggle="modal" class="green">Edit District Details </a>
+							        </h4>
+
+							        <div class="hr hr-18 hr-single dotted"></div>
+
+									<div class="input-group" style="width: 100%;padding:4px;">
+										<span class="input-group-addon" style="width: 40%;">District name:</span>
+										<input required id="districtname" name="district" class="textfield form-control" />	
+						            </div>	
+						            					
+									<div id="equipmentdiv" class="input-group" style="width: 100%;padding:4px;">
+										<span class="input-group-addon" style="width: 20%;">Region:</span>
+										<input required id="region" name = "region" class="textfield form-control"  readonly />
+										
+						            </div>	          
+														
+									<div class="modal-footer" style="height:11px;padding-top:11px;">								
+										<div class="" style="padding:7px;">
+											<button name="save" type="submit" class="btn btn-primary btn-mini"><i class="glyphicon glyphicon-save"></i>Save</button>
+											<button name="discard" type="button"  onclick="hide_edit()" class="btn btn-default btn-minii"><i class="glyphicon glyphicon-remove"></i>Discard</button>
+										</div>
+						      		</div> 
+						      	</form>
+
+							<div class="modal-footer" style="height:4px;padding-top:11px;">
+				      			<?php echo $this->config->item("copyrights");?>
+				      		</div> 
+						</div>
+					</div>
+				</div>
+				</div>
 <?php $this->load->view("facilities_details_footer_view");?>

@@ -160,5 +160,10 @@ class facilities extends MY_Controller {
 
 		$this->index();
 	}
+
+	public function edit_district()
+	{
+		echo "*********";
+	}
         
 }
