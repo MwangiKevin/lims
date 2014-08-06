@@ -40,7 +40,8 @@ class mail_model extends MY_Model
 								`sender_id`,
 								`sent_date`,
 								`send_status`
-							FROM `mailerlog`
+							FROM `mailerlog` 
+								
 							WHERE `sender_id` = '$id'";
 							
 		return $sent = R::getAll($sql);
