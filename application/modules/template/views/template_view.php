@@ -125,7 +125,7 @@
 						</div><!-- /.ace-settings-box -->
 					</div><!-- /.ace-settings-container -->
 					<?php 
-					$this->load->view($content_view);
+						$this->load->view($content_view);
 					?>
 				</div><!-- /.page-content-container -->
 			</div><!-- /.main-content -->
