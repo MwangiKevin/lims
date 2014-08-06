@@ -111,26 +111,26 @@ class dashboard_model extends MY_Model {
 	private function tat_proc_disp($program){
 		
 
-		// $proc_disp = $this->months_init_array();
+		$proc_disp = $this->months_init_array();
 
-		// $program_delimiter = $this->program_delimiter($program);
+		$program_delimiter = $this->program_delimiter($program);
 
-		// $sql = "SELECT 
-		// 					MONTH(`sa`.`timestamp`) AS `month`,
-		// 					AVG(DATEDIFF(`sa`.`timestamp`,`str`.`date_released`)) AS `avg_datediff`
-		// 				FROM `sample` `sa`
-		// 				INNER JOIN `sample_test_run` `str`
-		// 				ON `str`.`sample_id`=`sa`.`id` 
-		// 				AND (`str`.`result`='P' OR `str`.`result`='N')
-		// 				WHERE YEAR(`sa`.`date_collected`) = '$this->thisyear'
-		// 				$program_delimiter 
-		// 				GROUP BY `month`
-		// 		";
-		// $res = R::getAll($sql);
-		// foreach ($res as $key => $value) {
-		// 	$proc_disp[((int)$value['month'])-1]= (double)$value['avg_datediff'];
-		// }
-		// return $proc_disp;
+		$sql = "SELECT 
+							MONTH(`sa`.`timestamp`) AS `month`,
+							AVG(DATEDIFF(`sa`.`timestamp`,`str`.`date_released`)) AS `avg_datediff`
+						FROM `sample` `sa`
+						INNER JOIN `sample_test_run` `str`
+						ON `str`.`sample_id`=`sa`.`id` 
+						AND (`str`.`result`='P' OR `str`.`result`='N')
+						WHERE YEAR(`sa`.`date_collected`) = '$this->thisyear'
+						$program_delimiter 
+						GROUP BY `month`
+				";
+		$res = R::getAll($sql);
+		foreach ($res as $key => $value) {
+			$proc_disp[((int)$value['month'])-1]= (double)$value['avg_datediff'];
+		}
+		return $proc_disp;
 		
 	}
 	private function tat_coll_disp(){
@@ -138,15 +138,29 @@ class dashboard_model extends MY_Model {
 		
 	}
 
-	public function todays_progress(){
+	public function summary($type){
 
 		//sql for eid
 
-		$vl_today = array(100,40,0,0,0);
+		$vl_today = array(
+							array('y' => 0, 'color'=>"#aaa"),
+							array('y' => 0, 'color'=>"#3a87ad"),
+							array('y' => 0, 'color'=>"#f0ad4e"),
+							array('y' => 0, 'color'=>"#d15b47"),
+							array('y' => 0, 'color'=>"#5cb85c")
+						);
 
 		//sql for vl
 
-		$eid_today = array(500,0,60,0,90);
+		$eid_today = array(
+							array('y' => 0, 'color'=>"#ddd"),
+							array('y' => 0, 'color'=>"#3a87ff"),
+							array('y' => 0, 'color'=>"#ff9406"),
+							array('y' => 0, 'color'=>"#ff5b47"),
+							array('y' => 0, 'color'=>"#5cff5c")
+						);
+
+		
 
 		$data["vl_today"] 		=	$vl_today;
 		$data["eid_today"] 		=	$eid_today;
