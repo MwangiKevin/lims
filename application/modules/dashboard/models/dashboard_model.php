@@ -108,8 +108,29 @@ class dashboard_model extends MY_Model {
 		return $rec_proc;
 		
 	}
-	private function tat_proc_disp(){
+	private function tat_proc_disp($program){
+		
 
+		// $proc_disp = $this->months_init_array();
+
+		// $program_delimiter = $this->program_delimiter($program);
+
+		// $sql = "SELECT 
+		// 					MONTH(`sa`.`timestamp`) AS `month`,
+		// 					AVG(DATEDIFF(`sa`.`timestamp`,`str`.`date_released`)) AS `avg_datediff`
+		// 				FROM `sample` `sa`
+		// 				INNER JOIN `sample_test_run` `str`
+		// 				ON `str`.`sample_id`=`sa`.`id` 
+		// 				AND (`str`.`result`='P' OR `str`.`result`='N')
+		// 				WHERE YEAR(`sa`.`date_collected`) = '$this->thisyear'
+		// 				$program_delimiter 
+		// 				GROUP BY `month`
+		// 		";
+		// $res = R::getAll($sql);
+		// foreach ($res as $key => $value) {
+		// 	$proc_disp[((int)$value['month'])-1]= (double)$value['avg_datediff'];
+		// }
+		// return $proc_disp;
 		
 	}
 	private function tat_coll_disp(){
