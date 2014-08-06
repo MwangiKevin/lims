@@ -56,6 +56,16 @@
                             </td>
                         </tr>
                        
+                        <tr>
+                            <td>
+                                <span class="label label-info ">No of SMS printers served by lab</span>
+                            </td>
+
+                            <td>
+
+                                <b class="green">0</b>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </div><!-- /.widget-main -->
