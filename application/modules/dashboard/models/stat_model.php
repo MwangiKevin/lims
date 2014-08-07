@@ -31,4 +31,17 @@ class stat_model extends MY_Model {
 
 	}
 
+	public function batches($program=0){
+
+		$data = array(
+					// array(
+					// 		'perc'=>50,
+					// 		'Desc'=>"Chandindi"
+					// 	)
+					);
+		//stub
+		return $data;
+
+	}
+
 }

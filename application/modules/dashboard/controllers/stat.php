@@ -19,4 +19,9 @@ class stat extends MY_Controller {
 		echo json_encode($this->stat_model->facility($program));
 	}
 
+	public function batches($program=0){
+		$data['batches'] = $this->stat_model->batches($program=0);
+		$this->load->view("wdgt_batches_view",$data);
+	}
+
 }

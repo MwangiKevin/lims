@@ -41,16 +41,22 @@
 <div class ="my-infobox">
     <div class ="row">
 
-        <div class="col-sm-4">            
-            <?php $this->load->view("wdgt_tasks_view");?>
+        <div id= "wdgt_batches" class="col-sm-4">               
         </div>
 
         <div class="col-sm-4">            
             <?php $this->load->view("wdgt_fac_info_view");?>
         </div>
 
-        <div class="col-sm-4">            
-            <?php $this->load->view("wdgt_batches_view");?>
+        <div  class="col-sm-4">    
+            <?php $this->load->view("wdgt_tasks_view");?>     
         </div>
     </div>
 </div>
+
+
+<script>
+$(function () {
+        $("#wdgt_batches").load("<?php echo base_url('dashboard/stat/batches').'/'.$program;?>");
+});
+</script>
