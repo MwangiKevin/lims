@@ -48,5 +48,9 @@
         <div class="col-sm-4">            
             <?php $this->load->view("wdgt_fac_info_view");?>
         </div>
+
+        <div class="col-sm-4">            
+            <?php $this->load->view("wdgt_batches_view");?>
+        </div>
     </div>
 </div>
