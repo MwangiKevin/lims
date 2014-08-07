@@ -10,6 +10,11 @@ public function __construct()
 	$this->load->model('mail_model');
 }
 
+public function index()
+{
+	$this->admin_mail();
+}
+
 public function admin_mail()
 {
 	$this->login_reroute(array(1));
@@ -50,14 +55,14 @@ public function admin_mail()
 			'protocol' => 'smtp',
 			'smtp_host' => 'ssl://smtp.googlemail.com',
 			'smtp_port' => 465,
-			'smtp_user' => 'cd4lims.tz@gmail.com',
-			'smtp_pass' => 'cd4lims.tz2014',
+			'smtp_user' => 'lims.eidvl@gmail.com',
+			'smtp_pass' => 'eidvl.tz2014',
 			);
 
 		$this->load->library('email', $config);
 		$this->email->set_newline("\r\n");
 
-		$this->email->from('cd4lims.tz@gmail.com', 'CD4');
+		$this->email->from('lims.eidvl@gmail.com', 'EID/LIMS');
 		$this->email->to($recepient);
 		$this->email->subject($subject);
 		$this->email->message($message);
@@ -70,6 +75,17 @@ public function admin_mail()
 				show_error($this->email->print_debugger());
 			}
 		
+	}
+
+	public function remove_email($id)
+	{
+		$remove = R::getAll("UPDATE `mailerlog` 
+							SET 
+								`send_status`='0'
+							WHERE 
+								`id`='$id'
+						");
+    	$this->index();
 	}
 
 	public function LoadMailConfig()
