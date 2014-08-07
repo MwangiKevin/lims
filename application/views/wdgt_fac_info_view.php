@@ -13,7 +13,7 @@
     </div>
 
     <div class="widget-body">
-        <div class="widget-body-inner my-widget-md" style="">
+        <div class="widget-body-inner my-widget-sm" style="">
             <div class="widget-main no-padding">
                 <table class="table table-bordered table-striped">
 
@@ -55,7 +55,6 @@
                                 <b class="red">0</b>
                             </td>
                         </tr>
-
                        
                     </tbody>
                 </table>

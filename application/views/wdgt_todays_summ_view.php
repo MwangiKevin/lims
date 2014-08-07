@@ -26,7 +26,7 @@ $(function () {
     var vl_today    = [0, 0, 0, 0, 0];
     var eid_today   = [0, 0, 0, 0, 0];
 
-    $.getJSON("<?php echo base_url('dashboard/chart/todays_progress');?>", function(data) {
+    $.getJSON("<?php echo base_url('dashboard/chart/summary/today').'/'.$program;?>", function(data) {
 
 
         vl_today    = data.vl_today;
@@ -53,7 +53,14 @@ $(function () {
                 enabled:false
             },
             legend: {
-                reversed: true
+                enabled: false
+            },
+            tooltip: {
+                formatter: function() {
+                    return '<b>'+ this.x +'</b><br/> '+
+                    this.series.name +': '+ this.y +'<br/>'+
+                    'Total: '+ this.point.stackTotal;
+                }
             },
             plotOptions: {
                 series: {
