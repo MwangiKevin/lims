@@ -9,9 +9,9 @@ class Home extends MY_Controller {
 	}
 
 	public function index() {
-		$data['content_view'] = "home/home_v";
-		$data['title'] = "Dashboard | System Home";
-		$this -> template($data);
+
+		$this->load->module("dashboard");
+		$this->dashboard->index();
 	}
 
 	public function template($data) {

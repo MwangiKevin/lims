@@ -51135,3 +51135,8 @@ html {
   overflow-y: auto;
   height: 350px !important;
 }
+
+/* line 140, ../sass/styles.scss */
+.sidebar-shortcuts-large .btn a {
+  color: #fff;
+}
