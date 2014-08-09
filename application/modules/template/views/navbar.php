@@ -94,7 +94,7 @@
 					</ul>
 				</li>
 
-				<!-- <li class="green">
+				<li class="purple">
 					<a data-toggle="dropdown" class="dropdown-toggle" href="#">
 						<i class="ace-icon fa fa-envelope icon-animated-vertical"></i>
 						<span class="badge badge-success">0</span>
@@ -119,7 +119,7 @@
 							</a>
 						</li>
 					</ul>
-				</li> -->
+				</li>
 
 				<li class="">
 					<a data-toggle="dropdown" href="#" class="dropdown-toggle">

@@ -48,8 +48,8 @@
             <?php $this->load->view("wdgt_fac_info_view");?>
         </div>
 
-        <div  class="col-sm-4">    
-            <?php $this->load->view("wdgt_tasks_view");?>     
+        <div id= "wdgt_msg" class="col-sm-4">    
+            <?php //$this->load->view("wdgt_tasks_view");?>     
         </div>
     </div>
 </div>
@@ -58,5 +58,6 @@
 <script>
 $(function () {
         $("#wdgt_batches").load("<?php echo base_url('dashboard/stat/batches').'/'.$program;?>");
+        $("#wdgt_msg").load("<?php echo base_url('dashboard/stat/messages').'/'.$program;?>");
 });
 </script>
