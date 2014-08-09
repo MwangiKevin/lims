@@ -93,15 +93,24 @@ $sql["v_sample_details"]	=	"SELECT
 									`sample`.`prohilaxis`,
 									`sample`.`prophilaxis_weeks`,
 									`sample`.`acceptance_status`,
+									
 									`test`.`sample_id`,
 									`test`.`test_run_no`,
 									`test`.`result`,
 									`test`.`date_released`,
-									COUNT(`test`.`id`) AS `num`
+									COUNT(`test`.`id`) AS `num`,
+									
+									`ws`.`worksheet_id`,
+									
+									`w`.`status`
 							FROM sample 
-							LEFT JOIN `sample_test_run` AS `test` 
+							LEFT JOIN `sample_test_run` AS `test`
 							ON `test`.`sample_id` = `sample`.`id`
-							GROUP BY `sample`.`id`
+								LEFT JOIN `worksheets_and_samples`AS `ws`
+								ON `ws`.`sample_id` = `sample`.`id`
+									LEFT JOIN `worksheet` AS `w`
+									ON `w`.`id` = `ws`.`worksheet_id`
+							GROUP BY `sample`.`id`						
 							LIMIT 500";													
 
 
@@ -121,5 +130,64 @@ $sql["v_user_details"] 				 = 				"SELECT
 															ON `usr`.`user_group_id` = `usr_gr`.`id`
 															
 													";
+
+$sql["v_testing_trend"]					=			"SELECT 
+															YEAR(`tr`.`date_released`) 	AS `year`,
+															MONTH(`tr`.`date_released`) 	AS `month`,
+															CONCAT(YEAR(`tr`.`date_released`),'-',MONTH(`tr`.`date_released`)) AS `yearmonth`,
+															SUM(CASE WHEN `tr`.`result`= 'P'    THEN 1 ELSE 0 END) AS `positive`,
+															SUM(CASE WHEN `tr`.`result`= 'N'    THEN 1 ELSE 0 END) AS `negative`,
+															SUM(CASE WHEN `tr`.`result`= 'F'    THEN 1 ELSE 0 END) AS `failed`
+														FROM `sample_test_run` `tr`
+														LEFT JOIN `sample` `s`
+														ON `tr`.`sample_id` = `s`.`id`
+														GROUP BY `yearmonth`
+														ORDER BY `date_released` DESC
+													";
+
+$sql["v_testing_trend_eid"]				=			"SELECT 
+															YEAR(`tr`.`date_released`) 	AS `year`,
+															MONTH(`tr`.`date_released`) 	AS `month`,
+															CONCAT(YEAR(`tr`.`date_released`),'-',MONTH(`tr`.`date_released`)) AS `yearmonth`,
+															SUM(CASE WHEN `tr`.`result`= 'P'    THEN 1 ELSE 0 END) AS `positive`,
+															SUM(CASE WHEN `tr`.`result`= 'N'    THEN 1 ELSE 0 END) AS `negative`,
+															SUM(CASE WHEN `tr`.`result`= 'F'    THEN 1 ELSE 0 END) AS `failed`
+														FROM `sample_test_run` `tr`
+														LEFT JOIN `sample` `s`
+														ON `tr`.`sample_id` = `s`.`id`
+														WHERE `s`.`program`='1' 
+														GROUP BY `yearmonth`
+														ORDER BY `date_released` DESC
+													";
+
+
+$sql["v_testing_trend_vl"]				=			"SELECT 
+															YEAR(`tr`.`date_released`) 	AS `year`,
+															MONTH(`tr`.`date_released`) 	AS `month`,
+															CONCAT(YEAR(`tr`.`date_released`),'-',MONTH(`tr`.`date_released`)) AS `yearmonth`,
+															SUM(CASE WHEN `tr`.`result`= 'P'    THEN 1 ELSE 0 END) AS `positive`,
+															SUM(CASE WHEN `tr`.`result`= 'N'    THEN 1 ELSE 0 END) AS `negative`,
+															SUM(CASE WHEN `tr`.`result`= 'F'    THEN 1 ELSE 0 END) AS `failed`
+														FROM `sample_test_run` `tr`
+														LEFT JOIN `sample` `s`
+														ON `tr`.`sample_id` = `s`.`id`
+														WHERE `s`.`program`='2' 
+														GROUP BY `yearmonth`
+														ORDER BY `date_released` DESC
+													";
+
+$sql["v_tat"]							= 			"SELECT 
+															*
+														FROM `test_requisition` `req`
+
+														INNER JOIN `sample` `sa`
+														ON `sa`.`requisition_id`=`req`.`id`
+
+															INNER JOIN `sample_test_run` `tr`
+															ON `tr`.`sample_id`= `sa`.`id`
+															AND (`tr`.`result`='P' OR `tr`.`result`='N')
+
+														
+													";						
 
 $config["views_sql"] =$sql;

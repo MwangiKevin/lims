@@ -4,33 +4,33 @@
 	//try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
 	</script>
 
+
 	<div class="sidebar-shortcuts" id="sidebar-shortcuts">
 		<div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
-			<button class="btn btn-success">
-				<i class="ace-icon fa fa-signal"></i>
-			</button>
 
 			<button class="btn btn-info">
-				<i class="ace-icon fa fa-pencil"></i>
+				<a href="<?php echo base_url("eid");?>"><i class="ace-icon fa fa-flask"></i></a>
+			</button>			
+
+			<button class="btn btn-danger">
+				<a href="<?php echo base_url("vl");?>"><i class="ace-icon fa fa-flask"></i></a>
 			</button>
 
 			<button class="btn btn-warning">
-				<i class="ace-icon fa fa-users"></i>
+				<a href="<?php echo base_url("admin");?>"><i class="ace-icon fa fa-cog"></i></a>
 			</button>
 
-			<button class="btn btn-danger">
-				<i class="ace-icon fa fa-cogs"></i>
+			<button class="btn btn-success">
+				<a href="<?php echo base_url("home");?>" ><i class="ace-icon fa fa-desktop"></i></a>
 			</button>
 		</div>
 
 		<div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
-			<span class="btn btn-success"></span>
 
 			<span class="btn btn-info"></span>
-
-			<span class="btn btn-warning"></span>
-
 			<span class="btn btn-danger"></span>
+			<span class="btn btn-success"></span>
+			<span class="btn btn-warning"></span>
 		</div>
 	</div><!-- /.sidebar-shortcuts -->
 
@@ -117,6 +117,37 @@
 
 			<b class="arrow"></b>
 
+		</li>
+
+		<li id="side_mail" class="hsub">
+			<a href="#" class="dropdown-toggle">
+				<i class="menu-icon fa fa-users "></i>
+				<span class="menu-text"> Mail </span>
+
+				<b class="arrow fa fa-angle-down"></b>
+			</a>
+
+			<b class="arrow"></b>
+
+			<ul class="submenu">
+				<li class="hsub" id="side_email_details">
+					<a href="<?php echo base_url().'alerts/email/admin_mail' ?>">
+						<i class="menu-icon fa fa-caret-right"></i>
+						Email
+					</a>
+
+					<b class="arrow"></b>
+				</li>
+
+				<li class="" id="side_sms">
+					<a href="<?php echo base_url().'alerts/sms/load_sms' ?>">
+						<i class="menu-icon fa fa-caret-right"></i>
+						SMS
+					</a>
+
+					<b class="arrow"></b>
+				</li>
+			</ul>
 		</li>
 
 

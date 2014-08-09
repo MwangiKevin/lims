@@ -1,3 +1,13 @@
 application/cache
 application/logs
 logs
+*.class
+*.pyc
+*.pyo
+*.sublime-workspace
+*.project
+/nbproject/private/
+=======
+application/config/database.php
+pdf
+
