@@ -40,24 +40,63 @@
 
 <div class ="my-infobox">
     <div class ="row">
+        <div class="col-sm-6">
+            <div class="widget-box transparent" id="recent-box">
+                <div class="widget-header">
+                    <h4 class="widget-title lighter smaller">
+                        <i class="ace-icon fa fa-rss orange"></i>RECENT
+                    </h4>
+                    <div class="widget-toolbar no-border">
+                        <ul class="nav nav-tabs" id="recent-tab">
+                            <li class="active">
+                                <a data-toggle="tab" href="#batches-tab">Batches</a>
+                            </li>
 
-        <div id= "wdgt_batches" class="col-sm-4">               
-        </div>
+                            <li>
+                                <a data-toggle="tab" href="#notifications-tab">Notifications</a>
+                            </li>
 
-        <div class="col-sm-4">            
+                            <li>
+                                <a data-toggle="tab" href="#messages-tab">Messages</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="widget-body my-widget-sm">
+                    <div class="widget-main padding-6">
+                        <div class="tab-content padding-8">
+                            <div id="batches-tab" class="tab-pane active">
+                            </div>
+
+                            <div id="notifications-tab" class="tab-pane">
+
+                            </div><!-- /.#member-tab -->
+
+                            <div id="messages-tab" class="tab-pane">
+                                
+                            </div>
+                        </div>
+
+                        <div class="hr hr8"></div>
+                    </div>
+                </div>
+            </div><!-- /.widget-main -->
+        </div><!-- /.widget-body -->
+        <div class="col-sm-6">            
             <?php $this->load->view("wdgt_fac_info_view");?>
         </div>
 
-        <div id= "wdgt_msg" class="col-sm-4">    
-            <?php //$this->load->view("wdgt_tasks_view");?>     
-        </div>
     </div>
 </div>
 
 
 <script>
-$(function () {
-        $("#wdgt_batches").load("<?php echo base_url('dashboard/stat/batches').'/'.$program;?>");
-        $("#wdgt_msg").load("<?php echo base_url('dashboard/stat/messages').'/'.$program;?>");
+$(function () {    
+
+    $("#batches-tab").load("<?php echo base_url('dashboard/stat/batches').'/'.$program;?>");
+    $("#notifications-tab").load("<?php echo base_url('dashboard/stat/notifications').'/'.$program;?>");
+    $("#messages-tab").load("<?php echo base_url('dashboard/stat/messages').'/'.$program;?>");
+
 });
 </script>
