@@ -2,5 +2,4 @@
     <ul class="" style="list-style:none;">        
         <?php $this->load->view("batches_view");?>
     </ul>
-
 </div>

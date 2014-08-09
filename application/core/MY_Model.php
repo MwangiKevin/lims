@@ -141,4 +141,47 @@ class MY_Model extends CI_Model{
 		}
 		return $program_delimiter ;
 	}
+
+
+
+	//all batches/requisitions awaiting receivership,processing,dispach, 
+	public function batches($program=0){
+
+		$data = array(
+					// array(
+					// 		'perc'=>50,
+					// 		'Desc'=>"Chandindi"
+					// 	)
+					);
+		//stub
+		return $data;
+
+	}
+
+	public function notifications($program=0){
+
+		$data = array(
+					// array(
+					// 		'perc'=>50,
+					// 		'Desc'=>"Chandindi"
+					// 	)
+					);
+		//stub
+		return $data;
+
+	}
+	public function messages($program=0){
+
+		$data = array(
+					// array(
+					// 		'perc'=>50,
+					// 		'Desc'=>"Chandindi"
+					// 	)
+					);
+		//stub
+		return $data;
+
+	}
+
+
 }

@@ -34,6 +34,7 @@ class reports extends MY_Controller {
 																	"class"		=>	"active"
 																	)
 												);
+		$this->view_data['program']  = 1;
 	}
 
 	public function index(){
