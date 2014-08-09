@@ -61,8 +61,10 @@ class stat_model extends MY_Model {
 
 		$data = array(
 					// array(
-					// 		'perc'=>50,
-					// 		'Desc'=>"Chandindi"
+					// 		'id'=>50,
+					// 		'sender'=>"Kevin",
+					// 		'message'=>"Hello",
+					// 		'days'=> 10
 					// 	)
 					);
 		//stub
