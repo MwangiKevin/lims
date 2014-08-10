@@ -1,9 +1,9 @@
 <a data-toggle="dropdown" class="dropdown-toggle" href="#">
 	<i class="ace-icon fa fa-tasks"></i>
-	<span class="badge badge-grey"><?php echo sizeof($batches);?></span>
+	<span class="badge badge-success"><?php echo sizeof($batches);?></span>
 </a>
 
-<ul class="dropdown-menu-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close">
+<ul class="dropdown-menu-right dropdown-navbar navbar-pink dropdown-menu dropdown-caret dropdown-close">
 	<li class="dropdown-header">
 		<i class="ace-icon fa fa-check"></i>
 		<?php echo sizeof($batches);?> Batch/es to complete

@@ -1,7 +1,3 @@
-<li class="dropdown-header">
-	<i class="ace-icon fa fa-exclamation-triangle"></i>
-	<?php echo sizeof($notifications);?> Notifications
-</li>
 
 <?php 
 foreach ($notifications as $key => $value) {
@@ -23,10 +19,3 @@ foreach ($notifications as $key => $value) {
 	<?php 
 }
 ?>
-
-<li class="dropdown-footer">
-	<a href="messages">
-		See all messages
-		<i class="ace-icon fa fa-arrow-right"></i>
-	</a>
-</li>

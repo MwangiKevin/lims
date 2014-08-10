@@ -29,7 +29,7 @@
 					
 				</li>
 
-				<li class="green">
+				<li id="nav_itm_notifications" class="green">
 					<a data-toggle="dropdown" class="dropdown-toggle" href="#">
 						<i class="ace-icon fa fa-bell icon-animated-bell"></i>
 						<span class="badge badge-important">0</span>
@@ -62,7 +62,7 @@
 					</ul>
 				</li>
 
-				<li class="purple">
+				<li id="nav_itm_messages" class="purple">
 					<a data-toggle="dropdown" class="dropdown-toggle" href="#">
 						<i class="ace-icon fa fa-envelope icon-animated-vertical"></i>
 						<span class="badge badge-success">0</span>
@@ -142,6 +142,8 @@
 <script>
 $(function () {
         $("#nav_itm_batches").load("<?php echo base_url('template/navbar_item/batches').'/'.$program;?>");
+        $("#nav_itm_notifications").load("<?php echo base_url('template/navbar_item/notifications').'/'.$program;?>");
+        $("#nav_itm_messages").load("<?php echo base_url('template/navbar_item/messages').'/'.$program;?>");
 });
 </script>
 </div>

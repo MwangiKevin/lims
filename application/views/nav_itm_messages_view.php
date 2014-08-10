@@ -1,6 +1,6 @@
 <a data-toggle="dropdown" class="dropdown-toggle" href="#">
 	<i class="ace-icon fa fa-tasks"></i>
-	<span class="badge badge-grey"><?php echo sizeof($messages);?></span>
+	<span class="badge badge-info"><?php echo sizeof($messages);?></span>
 </a>
 
 <ul class="dropdown-menu-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close">
