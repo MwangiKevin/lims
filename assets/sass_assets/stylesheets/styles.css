@@ -51140,3 +51140,8 @@ html {
 .sidebar-shortcuts-large .btn a {
   color: #fff;
 }
+
+/* line 146, ../sass/styles.scss */
+.reports_spaced {
+  padding-right: 4px;
+}
