@@ -1,7 +1,3 @@
-<li class="dropdown-header">
-	<i class="ace-icon fa fa-envelope-o"></i>
-	<?php echo sizeof($messages);?> Messages
-</li>
 
 <?php 
 	foreach ($messages as $key => $value) {
@@ -26,10 +22,3 @@
 <?php 
 	}
 ?>
-
-<li class="dropdown-footer">
-	<a href="messages">
-		See all messages
-		<i class="ace-icon fa fa-arrow-right"></i>
-	</a>
-</li>
