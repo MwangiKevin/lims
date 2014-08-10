@@ -1,5 +1,5 @@
 <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-	<i class="ace-icon fa fa-bell icon-animated-bell"></i>
+	<i class="ace-icon fa fa-bell <?php  if(((int)sizeof($notifications))>0){echo "icon-animated-bell";}?>"></i>
 	<span class="badge badge-important"><?php echo sizeof($notifications);?></span>
 </a>
 
@@ -14,8 +14,8 @@
 
 
 	<li class="dropdown-footer">
-		<a href="messages">
-			See all messages
+		<a href="notifications">
+			See all notifications
 			<i class="ace-icon fa fa-arrow-right"></i>
 		</a>
 	</li>

@@ -1,5 +1,5 @@
 <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-	<i class="ace-icon fa fa-tasks"></i>
+	<i class="ace-icon fa fa-envelope <?php  if(((int)sizeof($messages))>0){echo "icon-animated-vertical";}?>"></i>
 	<span class="badge badge-info"><?php echo sizeof($messages);?></span>
 </a>
 

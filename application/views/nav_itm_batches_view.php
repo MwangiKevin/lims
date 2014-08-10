@@ -1,5 +1,5 @@
 <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-	<i class="ace-icon fa fa-tasks"></i>
+	<i class="ace-icon fa fa-tasks <?php  if(((int)sizeof($batches))>0){echo "icon-animated-hand-pointer";}?>"></i>
 	<span class="badge badge-success"><?php echo sizeof($batches);?></span>
 </a>
 
@@ -12,7 +12,7 @@
 	
 	<li class="dropdown-footer">
 		<a href="<?php echo base_url('eid/requisition/samples');?>">
-			See tasks with details
+			See Batches with details
 			<i class="ace-icon fa fa-arrow-right"></i>
 		</a>
 	</li>
