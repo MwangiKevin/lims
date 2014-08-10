@@ -36,6 +36,7 @@ class results extends MY_Controller {
 																	"class"		=>	"active"
 																	)
 												);
+		$this->view_data['program']  = 2;
 
 	}
 

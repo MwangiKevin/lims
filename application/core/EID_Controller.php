@@ -2,7 +2,7 @@
 if (!defined('BASEPATH'))
 	exit('No direct script access allowed');
 
-class eid extends MY_Controller {
+class EID_Controller extends MY_Controller {
 
 	public function __construct(){
 
@@ -36,17 +36,6 @@ class eid extends MY_Controller {
 																	)
 												);
 		$this->view_data['program']  = 1;
-	}
-
-	public function index(){
-
-		$this->dashboard();
-	}
-
-	public function dashboard(){		
-		
-		$this->load->module("dashboard");
-		$this->dashboard->load_dashboard(1,$this->view_data);
 	}
 
 

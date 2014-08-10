@@ -329,60 +329,60 @@
 			<table style="font-size:90%" id="tests_table" class="table table-bordered table-responsive">
 			<thead>
 				<form method="post" action="<?php echo base_url()?>eid/worksheet/delete_worksheet">
-				<tr class="active">
-					<th rowspan="2">Worksheet ID</th>
-					<th rowspan="2">Date Created</th>
-					<th rowspan="2">Created By</th>
-					<th rowspan="2">Machine</th>
-					<th rowspan="2">Status</th>
-					<th rowspan="1" colspan = "6" ><center>Samples Aggregates</center></th>				
-					<th rowspan="2">Date Run</th>
-					<th rowspan="2">Date Updated</th>
-					<th rowspan="2">Date Reviewed</th>
-				</tr>
-				<tr class="active">
-					<th rowspan="1">POS</th>
-					<th rowspan="1">NEG</th>
-					<th rowspan="1">Failed</th>
-					<th rowspan="1">Redraw</th>
-					<th rowspan="1">No Result</th>
-					<th rowspan="1">Total</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td id="worksheet_id_zoomd"></td>
-					<td id="date_created_zoomd"></td>
-					<td id="created_by_zoomd"></td>
-					<td id="machine_zoomd"></td>
-					<td id="status_zoomd"></td>
+					<tr class="active">
+						<th rowspan="2">Worksheet ID</th>
+						<th rowspan="2">Date Created</th>
+						<th rowspan="2">Created By</th>
+						<th rowspan="2">Machine</th>
+						<th rowspan="2">Status</th>
+						<th rowspan="1" colspan = "6" ><center>Samples Aggregates</center></th>				
+						<th rowspan="2">Date Run</th>
+						<th rowspan="2">Date Updated</th>
+						<th rowspan="2">Date Reviewed</th>
+					</tr>
+					<tr class="active">
+						<th rowspan="1">POS</th>
+						<th rowspan="1">NEG</th>
+						<th rowspan="1">Failed</th>
+						<th rowspan="1">Redraw</th>
+						<th rowspan="1">No Result</th>
+						<th rowspan="1">Total</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td id="worksheet_id_zoomd" name="worksheet_id_zoomd"></td>
+						<td id="date_created_zoomd"></td>
+						<td id="created_by_zoomd"></td>
+						<td id="machine_zoomd"></td>
+						<td id="status_zoomd"></td>
+						
+						<td id="pos_zoomd"></td>
+						<td id="neg_zoomd"></td>
+						<td id="failed_zoomd"></td>
+						<td id="redraw_zoomd"></td>
+						<td id="no_result_zoomd"></td>
+						<td id="total_zoomd"></td>
+						
+						<td id="date_run_zoomd"></td>
+						<td id="date_updated_zoomd"></td>
+						<td id="date_reviewed_zoomd"></td>
+					</tr>
 					
-					<td id="pos_zoomd"></td>
-					<td id="neg_zoomd"></td>
-					<td id="failed_zoomd"></td>
-					<td id="redraw_zoomd"></td>
-					<td id="no_result_zoomd"></td>
-					<td id="total_zoomd"></td>
-					
-					<td id="date_run_zoomd"></td>
-					<td id="date_updated_zoomd"></td>
-					<td id="date_reviewed_zoomd"></td>
-				</tr>
-				
-			</tbody>
-		</table>
-		</div>
-		
-		<div class="modal-footer">
-			<center>		
-				<!-- <i class="ace-icon fa fa-trash-o bigger-120 orange"></i> -->
-				<input type="submit" class="btn btn-white btn-warning btn-bold" value="Delete"/>
-				<button class="btn btn-white btn-default btn-round" id="close_dialogd">
-					<i class="ace-icon fa fa-times red2"></i>
-					Cancel
-				</button>
-			</center>
-		</div>
+				</tbody>
+			</table>
+			</div>
+			
+			<div class="modal-footer">
+				<center>		
+					<!-- <i class="ace-icon fa fa-trash-o bigger-120 orange"></i> -->
+					<input type="submit" class="btn btn-white btn-warning btn-bold" value="Delete"/>
+					<button class="btn btn-white btn-default btn-round" id="close_dialogd">
+						<i class="ace-icon fa fa-times red2"></i>
+						Cancel
+					</button>
+				</center>
+			</div>
 		</form>
 	</div>
 </div>

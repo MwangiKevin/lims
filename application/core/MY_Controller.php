@@ -243,6 +243,14 @@ class  MY_Controller  extends  MX_Controller {
 		return $now = date('Y-m-d h:i:s a');		
 	}
 
+	protected function msg_page($message,$class){
+		$this->view_data['content_view'] = "message_page";
+		$this->view_data['class'] = $class;
+		$this->view_data['message'] = $message;
+
+		$this -> template($this->view_data);
+	}
+
 }
 
 

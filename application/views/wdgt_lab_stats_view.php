@@ -24,7 +24,7 @@
                                 <span class="label label-info ">Cummulative Tests</span>
                             </td>
                             <td>
-                                <b class="green">0</b>
+                                <b id = "st_cumm_test" class="green">0</b>
                             </td>
 
                         </tr>
@@ -35,7 +35,7 @@
                             </td>
 
                             <td>
-                                <b class="green">0</b>
+                                <b id = "st_rec_samp"  class="green">0</b>
                             </td>
                         </tr>
 
@@ -45,7 +45,7 @@
                             </td>
 
                             <td>
-                                <b class="red">0</b>
+                                <b id = "st_rej_samp" class="red">0</b>
                             </td>
                         </tr>
 
@@ -53,7 +53,7 @@
                             <td><span class="label label-danger">Failed Tests</span></td>
 
                             <td>
-                                <b class="red">0</b>
+                                <b id = "st_failed_tst" class="red">0</b>
                             </td>
                         </tr>
 
@@ -64,7 +64,7 @@
 
                             <td>
 
-                                <b class="green">0</b>
+                                <b id = "st_tested_samp"  class="green">0</b>
                             </td>
 
                         </tr>
@@ -75,7 +75,7 @@
 
                             <td>
 
-                                <b class="green">0</b>
+                                <b id = "st_pos" class="green">0</b>
                             </td>
 
                         </tr>
@@ -86,7 +86,7 @@
 
                             <td>
 
-                                <b class="green">0</b>
+                                <b id = "st_neg"  class="green">0</b>
                             </td>
 
                         </tr>
@@ -97,20 +97,8 @@
 
                             <td>
 
-                                <b class="green">0</b>
+                                <b  id = "st_tot" class="green">0</b>
                             </td>
-
-                        </tr>
-                        <tr>
-                            <td>
-                                <span class="label label-info ">No of SMS printers served by lab</span>
-                            </td>
-
-                            <td>
-
-                                <b class="green">0</b>
-                            </td>
-
                         </tr>
                     </tbody>
                 </table>
@@ -118,3 +106,18 @@
         </div>
     </div><!-- /.widget-body -->
 </div><!-- /.widget-box -->
+
+<script>
+$(function () {
+    $.getJSON("<?php echo base_url('dashboard/stat/lab').'/'.$program;?>", function(data) {
+        $("#st_cumm_test").html(data.st_cumm_test);
+        $("#st_rec_samp").html(data.st_rec_samp);
+        $("#st_rej_samp").html(data.st_rej_samp);
+        $("#st_failed_tst").html(data.st_failed_tst);
+        $("#st_tested_samp").html(data.st_tested_samp);
+        $("#st_pos").html(data.st_pos);
+        $("#st_neg").html(data.st_neg);
+        $("#st_tot").html(data.st_tot);
+    });
+});
+</script>

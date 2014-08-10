@@ -30,6 +30,8 @@ class admin extends MY_Controller {
 																	"class"		=>	"active"
 																	)
 												);
+		
+		$this->view_data['program']  = 2;
 	}
 
 	public function index(){

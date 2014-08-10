@@ -34,6 +34,7 @@ class reports extends MY_Controller {
 																	"class"		=>	"active"
 																	)
 												);
+		$this->view_data['program']  = 1;
 	}
 
 	public function index(){
@@ -125,7 +126,9 @@ class reports extends MY_Controller {
 	
 	
 	
-	
+	public function download_report(){
+		$this->load->view("download_report");
+	}
 	
 	
 	

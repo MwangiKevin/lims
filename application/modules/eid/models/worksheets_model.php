@@ -135,7 +135,7 @@ class worksheets_model extends MY_Model {
 		$date_updated = $_POST['date_updated_zoome'];
 		$date_reviewed = $_POST['date_reviewed_zoome'];
 		
-		$sql = "UPDATE worksheet SET date_created = ".$date_created.",created_by = ".$created_by.",date_run=".$date_run.", date_reviewed = ".$date_reviewed." WHERE id = ".$id." ";
+		$sql = "UPDATE worksheet SET date_created = ".$date_created.",created_by = '".$created_by."',date_run=".$date_run.", date_reviewed = ".$date_reviewed." WHERE id = ".$id." ";
 		$this->db->query($sql);
 	}
 	
