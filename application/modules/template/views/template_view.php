@@ -76,11 +76,11 @@
 				<div class="page-content">
 					<div class="ace-settings-container" id="ace-settings-container">
 						<div class="btn btn-app btn-xs btn-warning ace-settings-btn" id="ace-settings-btn">
-							<i class="ace-icon fa fa-cog bigger-150"></i>
+							<i class="ace-icon fa fa-cog bigger-150 rotating "></i>
 						</div>
 						<div class="ace-settings-box clearfix" id="ace-settings-box">
 							<div class="pull-left width-50">
-								<div class="ace-settings-item">
+							<!-- 	<div class="ace-settings-item">
 									<div class="pull-left">
 										<select id="skin-colorpicker" class="hide">
 											<option data-skin="no-skin" value="#438EB9">#438EB9</option>
@@ -90,7 +90,7 @@
 										</select>
 									</div>
 									<span>&nbsp; Choose Skin</span>
-								</div>
+								</div> -->
 
 								<div class="ace-settings-item">
 									<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-navbar" />
@@ -171,7 +171,7 @@
 			$("#sidebar").addClass("sidebar-fixed sidebar-scroll");
 			$("#navbar").addClass("navbar-default navbar-fixed-top");
 			$("#breadcrumbs").addClass("breadcrumbs-fixed");
-			
+
 			$( document ).tooltip();
 		});
 		</script>
