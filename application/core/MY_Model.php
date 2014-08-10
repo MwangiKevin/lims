@@ -148,10 +148,10 @@ class MY_Model extends CI_Model{
 	public function batches($program=0){
 
 		$data = array(
-					// array(
-					// 		'perc'=>50,
-					// 		'Desc'=>"Chandindi"
-					// 	)
+					array(
+							'perc'=>50,
+							'Desc'=>"Chandindi"
+						)
 					);
 		//stub
 		return $data;
@@ -161,10 +161,24 @@ class MY_Model extends CI_Model{
 	public function notifications($program=0){
 
 		$data = array(
-					// array(
-					// 		'perc'=>50,
-					// 		'Desc'=>"Chandindi"
-					// 	)
+					array(
+							'type'=>"error",
+							'btn'=>"pink",
+							'message'=>"2 Chandindi tests failed",
+							'value'	=> 2
+						),
+					array(
+							'type'=>"info",
+							'btn'=>"primary",
+							'message'=>"40 Results awaiting dispach",
+							'value'	=> 40
+						),
+					array(
+							'type'=>"warning",
+							'btn'=>"purple",
+							'message'=>"Performed 6 Repeats today",
+							'value'	=> 6
+						)
 					);
 		//stub
 		return $data;
@@ -173,10 +187,12 @@ class MY_Model extends CI_Model{
 	public function messages($program=0){
 
 		$data = array(
-					// array(
-					// 		'perc'=>50,
-					// 		'Desc'=>"Chandindi"
-					// 	)
+					array(
+							'id'=>50,
+							'sender'=>"Kevin",
+							'message'=>"Hello",
+							'days'=> 10
+						)
 					);
 		//stub
 		return $data;
