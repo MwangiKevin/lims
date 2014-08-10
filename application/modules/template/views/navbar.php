@@ -137,11 +137,12 @@
 			</ul>
 		</div>
 	</div><!-- /.navbar-container -->
-</div>
 
+	
 <script>
 $(function () {
-		//alert("kjfhskj");
         $("#nav_itm_batches").load("<?php echo base_url('template/navbar_item/batches').'/'.$program;?>");
 });
 </script>
+</div>
+
