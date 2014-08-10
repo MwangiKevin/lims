@@ -171,7 +171,8 @@
 			$("#sidebar").addClass("sidebar-fixed sidebar-scroll");
 			$("#navbar").addClass("navbar-default navbar-fixed-top");
 			$("#breadcrumbs").addClass("breadcrumbs-fixed");
-
+			
+			$( document ).tooltip();
 		});
 		</script>
 	</body>
