@@ -49,15 +49,18 @@
                     <div class="widget-toolbar no-border">
                         <ul class="nav nav-tabs" id="recent-tab">
                             <li class="active">
-                                <a data-toggle="tab" href="#batches-tab">Batches</a>
+                                
+                                <a data-toggle="tab" href="#batches-tab"><i class="grey ace-icon fa fa-tasks bigger-110"></i>Batches</a>
                             </li>
 
                             <li>
-                                <a data-toggle="tab" href="#notifications-tab">Notifications</a>
+                                
+                                <a data-toggle="tab" href="#notifications-tab"><i class="green ace-icon fa fa-bell bigger-110"></i>Notifications</a>
                             </li>
 
                             <li>
-                                <a data-toggle="tab" href="#messages-tab">Messages</a>
+                                
+                                <a data-toggle="tab" href="#messages-tab"><i class="blue ace-icon fa fa-envelope bigger-110"></i>Messages</a>
                             </li>
                         </ul>
                     </div>
