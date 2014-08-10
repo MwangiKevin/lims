@@ -12,7 +12,7 @@
 		</strong>
 		<!--Enable on-click dislay modal to select pdf or excel -->		
 		<div id="report_download" style="position: absolute; right: 5%; top: 50%; cursor: pointer;">
-			<a>
+			<a href="<?php echo base_url().'eid/reports/download_report' ?>">
 				<i class="ace-icon fa fa-cloud-download"></i>
 				Download Report
 			</a>
