@@ -25,23 +25,26 @@ class mail_model extends MY_Model
 			'send_status'  =>   1
 			);
 
-		$this->db->insert('mailerlog', $emails);
+		$insert = $this->db->insert('mailerlog', $emails);
+		
 	}
 
 	public function sent_mail()
 	{
 		$id = $this->session->userdata("id");
-		$sent = R::getAll("SELECT 
+		$sql = "SELECT 
 								`id`,
 								`subject`,
 								`message`,
 								`recipients`,
 								`sender_id`,
 								`sent_date`,
-								`sent_status`
-							FROM `mailerlog`
-							WHERE `sender_id` = $id"
-							);
+								`send_status`
+							FROM `mailerlog` 
+								
+							WHERE `sender_id` = '$id'";
+							
+		return $sent = R::getAll($sql);
 	}
 }
 

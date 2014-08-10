@@ -9,7 +9,7 @@ class dashboard extends MY_Controller {
 		parent::__construct();
 
 		$this->view_data['content_view'] 	= 	"dashboard/dashboard";
-		$this->view_data['sidebar'] 		= 	"admin_sidebar";
+		$this->view_data['sidebar'] 		= 	"main_sidebar";
 		$this->view_data['title'] 			= 	"Dashboard";
 		$this->view_data['filter']			=	false;
 
@@ -22,12 +22,12 @@ class dashboard extends MY_Controller {
 		$this->view_data['breadcrumbs'] 	=	array(
 														0 	=>	array(
 																	"title" 	=>	"Home",
-																	"link"		=>	base_url()."admin",
+																	"link"		=>	base_url()."dashboard",
 																	"class"		=>	""
 																	),
 														1 	=>	array(
 																	"title" 	=>	"Dashboard",
-																	"link"		=>	base_url()."admin/dashboard",
+																	"link"		=>	base_url()."dashboard",
 																	"class"		=>	"active"
 																	)
 												);
@@ -36,11 +36,12 @@ class dashboard extends MY_Controller {
 
 	public function index(){
 
-		$this -> template($this->view_data);
+		$this -> load_dashboard(0,$this->view_data);
 	}
 
-	public function load_dashboard($program, $data=array()){
+	public function load_dashboard($program=0, $data=array()){
 
+		$data['program'] 			= 	$program;
 		$this -> template($data);
 	}
 

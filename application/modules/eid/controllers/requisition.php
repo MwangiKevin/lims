@@ -47,6 +47,7 @@ class requisition extends MY_Controller {
 		$this->view_data['prophilaxes'] 	= 	$this->requisition_model->prophilaxes();
 		$this->view_data['infant_feeding'] 	= 	$this->requisition_model->infant_feeding();
 		$this->view_data['facilities'] 		= 	$this->requisition_model->facilities();
+		$this->view_data['program']  = 1;
 
 	}
 

@@ -35,6 +35,7 @@ class eid extends MY_Controller {
 																	"class"		=>	"active"
 																	)
 												);
+		$this->view_data['program']  = 1;
 	}
 
 	public function index(){
@@ -44,7 +45,6 @@ class eid extends MY_Controller {
 
 	public function dashboard(){		
 		
-		//$this -> template($this->view_data);
 		$this->load->module("dashboard");
 		$this->dashboard->load_dashboard(1,$this->view_data);
 	}

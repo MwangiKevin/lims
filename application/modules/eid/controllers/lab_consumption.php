@@ -19,7 +19,7 @@ class lab_consumption extends MY_Controller {
 		$this->view_data['topleft_title']	=	"EID";
 		
 		$this->view_data 					=	array_merge($this->view_data,$this->load_libraries(array()));		
-		$this->view_data['menu_select']		= 	array(0);
+		$this->view_data['menu_select']		= 	array(6);
 		$this->view_data['breadcrumbs'] 	=	array(
 														0 	=>	array(
 																	"title" 	=>	"Home",
@@ -32,6 +32,7 @@ class lab_consumption extends MY_Controller {
 																	"class"		=>	"active"
 																	)
 												);
+		$this->view_data['program']  = 1;
 
 	}
 

@@ -123,4 +123,81 @@ class MY_Model extends CI_Model{
 		$ym=$yearmonth;
 		return date('Y,M',strtotime($ym.'-'.$d));
 	}
+	public function months_init_array(){
+		$months_init = array();
+		for($i=0;$i<12;$i++){
+			$months_init[$i] = 0;
+		}
+
+		return $months_init;
+	}
+	public function program_delimiter($program){
+		$program_delimiter = "";
+
+		if((int)$program==1){			
+			$program_delimiter = " AND `program`= '1' ";
+		}elseif((int)$program==2){			
+			$program_delimiter = " AND `program`= '2' ";
+		}
+		return $program_delimiter ;
+	}
+
+
+
+	//all batches/requisitions awaiting receivership,processing,dispach, 
+	public function batches($program=0){
+
+		$data = array(
+					// array(
+					// 		'perc'=>50,
+					// 		'Desc'=>"Chandindi"
+					// 	)
+					);
+		//stub
+		return $data;
+
+	}
+
+	public function notifications($program=0){
+
+		$data = array(
+					// array(
+					// 		'type'=>"error",
+					// 		'btn'=>"pink",
+					// 		'message'=>"2 Chandindi tests failed",
+					// 		'value'	=> 2
+					// 	),
+					// array(
+					// 		'type'=>"info",
+					// 		'btn'=>"primary",
+					// 		'message'=>"40 Results awaiting dispach",
+					// 		'value'	=> 40
+					// 	),
+					// array(
+					// 		'type'=>"warning",
+					// 		'btn'=>"purple",
+					// 		'message'=>"Performed 6 Repeats today",
+					// 		'value'	=> 6
+					// 	)
+					);
+		//stub
+		return $data;
+
+	}
+	public function messages($program=0){
+
+		$data = array(
+					// array(
+					// 		'id'=>50,
+					// 		'sender'=>"Kevin",
+					// 		'message'=>"Hello",
+					// 		'days'=> 10
+					// 	)
+					);
+		//stub
+		return $data;
+
+	}
+
+
 }

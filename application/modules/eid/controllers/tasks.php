@@ -20,7 +20,7 @@ class tasks extends MY_Controller {
 		
 		
 		$this->view_data 					=	array_merge($this->view_data,$this->load_libraries(array()));		
-		$this->view_data['menu_select']		= 	array(4,0);
+		$this->view_data['menu_select']		= 	array(5,0);
 		$this->view_data['breadcrumbs'] 	=	array(
 														0 	=>	array(
 																	"title" 	=>	"Home",
@@ -33,6 +33,7 @@ class tasks extends MY_Controller {
 																	"class"		=>	"active"
 																	)
 												);
+		$this->view_data['program']  = 1;
 
 	}
 

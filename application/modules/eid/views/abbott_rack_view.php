@@ -17,7 +17,7 @@
 
 <center style="margin-top: 5%;">
 	<div id = "title" style="background-image:'http://127.0.0.1/lims/img/tz.png' ">
-		<!-- <img src="<?php echo base_url("img/tz.png");?>" height="140" width="100%" alt="NACP">	 -->
+		<img src="<?php echo base_url("img/tz.png");?>" height="140" width="70%" alt="NACP">
 		<h1> ABBOTT Rack EID</h1>
 	</div>
 	<?php 

@@ -9,31 +9,30 @@
 
 	<div class="sidebar-shortcuts" id="sidebar-shortcuts">
 		<div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
-			<button class="btn btn-success">
-				<i class="ace-icon fa fa-signal"></i>
-			</button>
 
-			<button class="btn btn-info">
-				<i class="ace-icon fa fa-pencil"></i>
+			<button class="btn btn-info" data-rel="tooltip" placeholder="Tooltip on hover" data-placement="bottom" data-original-title="Hello Tooltip!">
+				<a href="<?php echo base_url("eid");?>"><i class="ace-icon fa fa-flask"></i></a>
+			</button>			
+
+			<button class="btn btn-danger">
+				<a href="<?php echo base_url("vl");?>"><i class="ace-icon fa fa-flask"></i></a>
 			</button>
 
 			<button class="btn btn-warning">
-				<i class="ace-icon fa fa-users"></i>
+				<a href="<?php echo base_url("admin");?>"><i class="ace-icon fa fa-cog"></i></a>
 			</button>
 
-			<button class="btn btn-danger">
-				<i class="ace-icon fa fa-cogs"></i>
+			<button class="btn btn-success">
+				<a href="<?php echo base_url("home");?>" ><i class="ace-icon fa fa-desktop"></i></a>
 			</button>
 		</div>
 
 		<div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
-			<span class="btn btn-success"></span>
 
 			<span class="btn btn-info"></span>
-
-			<span class="btn btn-warning"></span>
-
 			<span class="btn btn-danger"></span>
+			<span class="btn btn-success"></span>
+			<span class="btn btn-warning"></span>
 		</div>
 	</div><!-- /.sidebar-shortcuts -->
 
@@ -308,9 +307,33 @@
 				</li>				
 			</ul>
 		</li>
-
+		
+		
 		<?php
 			if(isset($menu_select[0]) && $menu_select[0]==4){
+				$selected_class = "active ";
+				$display 		=	"";
+			}else{
+				$selected_class = "hsub";
+				$display 		=	"display: none;";
+			}
+		?>		
+		
+		<li class="<?php echo $selected_class;?>">
+			<a href="<?php echo base_url()?>eid/reports">
+				<i class="menu-icon fa fa-list-alt"></i>
+				<span class="menu-text"> Reports </span>
+			</a>
+
+			<b class="arrow"></b>
+		</li>
+		
+		
+		
+		
+
+		<?php
+			if(isset($menu_select[0]) && $menu_select[0]==5){
 				$selected_class = "active open ";
 				$display 		=	"";
 			}else{
@@ -333,7 +356,7 @@
 			<ul class="submenu nav-hide" style="<?php echo $display;?>">
 
 				<?php
-					if(isset($menu_select[0]) && $menu_select[0]==4 && isset($menu_select[1]) && $menu_select[1]==0){
+					if(isset($menu_select[0]) && $menu_select[0]==5 && isset($menu_select[1]) && $menu_select[1]==0){
 						$selected_class = "active";
 
 					}else{
@@ -352,7 +375,7 @@
 				</li>
 
 				<?php
-					if(isset($menu_select[0]) && $menu_select[0]==4 && isset($menu_select[1]) && $menu_select[1]==1){
+					if(isset($menu_select[0]) && $menu_select[0]==5 && isset($menu_select[1]) && $menu_select[1]==1){
 						$selected_class = "active";
 
 					}else{
@@ -374,7 +397,7 @@
 
 
 		<?php
-			if(isset($menu_select[0]) && $menu_select[0]==5){
+			if(isset($menu_select[0]) && $menu_select[0]==6){
 				$selected_class = "active open ";
 				$display 		=	"";
 			}else{
@@ -396,7 +419,7 @@
 			<ul class="submenu nav-hide" style="<?php echo $display;?>">
 
 				<?php
-					if(isset($menu_select[0]) && $menu_select[0]==5 && isset($menu_select[1]) && $menu_select[1]==0){
+					if(isset($menu_select[0]) && $menu_select[0]==6 && isset($menu_select[1]) && $menu_select[1]==0){
 						$selected_class = "active";
 
 					}else{
@@ -415,7 +438,7 @@
 				</li>
 
 				<?php
-					if(isset($menu_select[0]) && $menu_select[0]==5 && isset($menu_select[1]) && $menu_select[1]==1){
+					if(isset($menu_select[0]) && $menu_select[0]==6 && isset($menu_select[1]) && $menu_select[1]==1){
 						$selected_class = "active";
 
 					}else{
@@ -434,7 +457,7 @@
 				</li>
 
 				<?php
-					if(isset($menu_select[0]) && $menu_select[0]==5 && isset($menu_select[1]) && $menu_select[1]==2){
+					if(isset($menu_select[0]) && $menu_select[0]==6 && isset($menu_select[1]) && $menu_select[1]==2){
 						$selected_class = "active";
 
 					}else{
@@ -453,7 +476,7 @@
 				</li>
 
 				<?php
-					if(isset($menu_select[0]) && $menu_select[0]==5 && isset($menu_select[1]) && $menu_select[1]==3){
+					if(isset($menu_select[0]) && $menu_select[0]==6 && isset($menu_select[1]) && $menu_select[1]==3){
 						$selected_class = "active";
 
 					}else{

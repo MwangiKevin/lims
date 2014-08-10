@@ -13,7 +13,7 @@
     </div>
 
     <div class="widget-body">
-        <div class="widget-body-inner my-widget-md" style="">
+        <div class="widget-body-inner my-widget-sm" style="">
             <div class="widget-main no-padding">
                 <table class="table table-bordered table-striped">
 
@@ -23,7 +23,7 @@
                                 <span class="label label-info ">Facilities served by this lab</span>
                             </td>
                             <td>
-                                <b class="green">0</b>
+                                <b id="fac_served" class="green">0</b>
                             </td>
 
                         </tr>
@@ -34,7 +34,7 @@
                             </td>
 
                             <td>
-                                <b class="green">0</b>
+                                <b id="fac_without_emails" class="green">0</b>
                             </td>
                         </tr>
 
@@ -44,22 +44,43 @@
                             </td>
 
                             <td>
-                                <b class="red">0</b>
+                                <b id="fac_without_g4s" class="red">0</b>
                             </td>
                         </tr>
 
-                        <tr>
+                     <!--    <tr>
                             <td><span class="label label-success">Facilities with|without|total SMS Printers</span></td>
 
                             <td>
                                 <b class="red">0</b>
                             </td>
-                        </tr>
-
+                        </tr> -->
                        
+                        <tr>
+                            <td>
+                                <span class="label label-success ">No of SMS printers served by lab</span>
+                            </td>
+
+                            <td>
+
+                                <b id="fac_sms_printers" class="green">0</b>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </div><!-- /.widget-main -->
         </div>
     </div><!-- /.widget-body -->
 </div><!-- /.widget-box -->
+
+
+<script>
+$(function () {
+    $.getJSON("<?php echo base_url('dashboard/stat/facility').'/'.$program;?>", function(data) {
+        $("#fac_served").html(data.fac_served);
+        $("#fac_without_emails").html(data.fac_without_emails);
+        $("#fac_without_g4s").html(data.fac_without_g4s);
+        $("#fac_sms_printers").html(data.fac_sms_printers);
+    });
+});
+</script>

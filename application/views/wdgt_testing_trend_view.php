@@ -26,7 +26,7 @@
 $(function () {
 
     var testing_trends_series;
-    $.getJSON("<?php echo base_url('dashboard/chart/testing_trends');?>", function(data) {
+    $.getJSON("<?php echo base_url('dashboard/chart/testing_trends').'/'.$program;?>", function(data) {
         $('#samples').highcharts({
             chart: {
                 type: 'column'
