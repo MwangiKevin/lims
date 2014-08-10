@@ -8,21 +8,21 @@ class chart extends MY_Controller {
 
 		parent::__construct();
 
-		$this->load->model("dashboard_model");
+		$this->load->model("chart_model");
 	}
 
 	public function testing_trends(){
-		echo json_encode($this->dashboard_model->testing_trends());
+		echo json_encode($this->chart_model->testing_trends());
 	}
 
 	public function tat($program = 0){
-		echo  json_encode($this->dashboard_model->tat($program));
+		echo  json_encode($this->chart_model->tat($program));
 
 	}
 
 	public function summary($type){
 		
-		echo  json_encode($this->dashboard_model->summary($type));
+		echo  json_encode($this->chart_model->summary($type));
 	}
 
 }

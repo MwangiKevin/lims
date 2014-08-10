@@ -36,6 +36,7 @@ class vl_requisition extends MY_Controller {
 																	"class"		=>	"active"
 																	)
 												);
+		$this->view_data['program']  = 2;
 
 	}
 
