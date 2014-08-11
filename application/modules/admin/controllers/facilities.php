@@ -30,6 +30,7 @@ class facilities extends MY_Controller {
 																	"class"		=>	"active"
 																	)
 												);
+		$this->view_data['program']  = 2;
 		$this->view_data['menu_select']		= 	"side_facilities";
 	}
 

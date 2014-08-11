@@ -135,4 +135,27 @@ html{
     overflow-y:auto;
     height:350px !important;
 }
+.sidebar-shortcuts-large{
+	.btn{
+		a{
+			color:#fff;
+		}
+	}
+}
+@-webkit-keyframes rotating {
+    from{
+        -webkit-transform: rotate(0deg);
+    }
+    to{
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+.rotating {
+    -webkit-animation: rotating 1s linear 3s;
+}
+
+.reports_spaced{
+		padding-right:4px;
+}
 
