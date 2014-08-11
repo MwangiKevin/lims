@@ -319,6 +319,10 @@
 								</td>
 							</tr>
 						</form>
+
+						<tr style="height:20px;">
+							<td colspan="5"><div class="hr hr8 hr-double"></div><td>
+						</tr>
 						<form method="post" action="<?php echo base_url().'eid/reports/lab_reports/1' ?>">
 							<tr style = "">
 								<td style="height:37px;">
@@ -490,6 +494,10 @@
 								</td>
 							</tr>
 						</form>
+						
+						<tr style="height:20px;">
+							<td colspan="5"><div class="hr hr8 hr-double"></div><td>
+						</tr>
 						<form method="post" action="<?php echo base_url().'eid/reports/lab_reports/4' ?>">
 							<tr style = "">
 								<td style="height:37px;">
