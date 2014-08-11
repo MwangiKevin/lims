@@ -5,8 +5,33 @@ if (!defined('BASEPATH'))
 class reports_model extends MY_Model {
 	
 	public function all_samples_m($start_date, $end_date){
-		$sql = "SELECT 
-				WHERE date BETWEEN ".$start_date." ".$end_date." ";
+		$sql = "SELECT
+					`vsd`.`sample_id`,
+					`vsd`.`no_of_dbs_spots`,
+					`vsd`.`prohilaxis`,
+					`vsd`.`date_dispatched`,
+					`vsd`.`result`,
+					`vsd`.`acceptance_status`,
+					`vsd`.`date_collected`,
+					`vsd`.`patient_id`,
+					`p`.`dob`,
+					`p`.`gender`,
+					`p`.`facility_id`,
+					`vfd`.`facility_name`,
+					`vfd`.`district_name`,
+					`vfd`.`region_name`,
+					`w`.`date_created`
+				FROM 
+					 `v_sample_details` AS `vsd`
+					 `patient` AS `p`	 
+					 `worksheets` AS `w`
+				 	 `worksheets_and_sampls` AS `ws`
+				 	 `v_facility_details` AS `vfd`
+				WHERE 
+					date BETWEEN ".$start_date." ".$end_date." 
+					AND `w`.`id` = `ws`.`worksheet_id`
+					AND `p`.`id` = `vsd`.`patient_id`	
+					AND `p`.`facility_id` = `vfd`.`v_facility_details`";
 		
 		$result = R::getAll($sql);
 		return $result;
