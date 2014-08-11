@@ -70,10 +70,11 @@
 								</td>
 							</tr>
 						</form>
-						<tr style="height:10px;">
+						<tr style="height:20px;">
+							<td colspan="5"><div class="hr hr8 hr-double"></div><td>
 						</tr>
 						<form method="post" action="<?php echo base_url().'eid/reports/reports_by_area/0';?>">
-							<tr>
+							<tr style="">
 								<td>									
 									<div class="input-group my-input-group nb" style="width:100%">
 										<span class="input-group-addon my-input-group-caption">
@@ -270,8 +271,7 @@
 				
 				<div id ="" class ="reports_spaced" style="">
 					<table class="my-infobox infobox">
-
-						<form method="post" action="<?php echo base_url().'eid/reports/lab_reports' ?>">
+						<form method="post" action="<?php echo base_url().'eid/reports/lab_reports/0' ?>">
 							<tr style = "">
 								<td style="height:37px;">
 									<div style="vertical-align:middle;float:right;padding-right:15%" >
@@ -279,11 +279,11 @@
 									</div>
 								</td>
 								<td>
-									<div class="input-group my-input-group reports_spaced">
+									<div class="input-group my-input-group reports_spaced" style="width: 98.5%;">
 										<span class="input-group-addon my-input-group-caption">
 											Start<br/>Date:
 										</span>
-										<input name="all_start_date" id="all_start_date" class="form-control datepicker" type="text" style="width:100%;" required data-date-format="dd-mm-yyyy" />
+										<input name="range_start_date" id="range_start_date" class="form-control datepicker" type="text" style="width:100%;" required data-date-format="dd-mm-yyyy" />
 										<span class="input-group-addon my-input-group-icon">
 											<i class="ace-icon fa fa-calendar"></i>
 										</span>
@@ -294,7 +294,7 @@
 										<span class="input-group-addon my-input-group-caption">
 											End<br/>Date:
 										</span>
-										<input name="all_end_date" id="all_end_date" class="form-control datepicker" type="text" style="width:100%;" required data-date-format="dd-mm-yyyy" />
+										<input name="range_end_date" id="range_end_date" class="form-control datepicker" type="text" style="width:100%;" required data-date-format="dd-mm-yyyy" />
 										<span class="input-group-addon my-input-group-icon">
 											<i class="ace-icon fa fa-calendar"></i>
 										</span>
@@ -308,6 +308,7 @@
 										<select name="all_type" id="all_type" style="width: 100px;" >
 											<option value="1">Samples Summaries</option>
 											<option value="2">Kit Usage</option>
+											<option value="3">TAT</option>
 										</select>
 									</div>
 								</td>
@@ -318,7 +319,7 @@
 								</td>
 							</tr>
 						</form>
-						<form method="post" action="<?php echo base_url().'eid/reports/lab_reports' ?>">
+						<form method="post" action="<?php echo base_url().'eid/reports/lab_reports/1' ?>">
 							<tr style = "">
 								<td style="height:37px;">
 									<div style="vertical-align:middle;float:right;padding-right:15%" >
@@ -326,25 +327,40 @@
 									</div>
 								</td>
 								<td>
-									<div class="input-group my-input-group reports_spaced">
-										<span class="input-group-addon my-input-group-caption">
-											Start<br/>Date:
+									<div class="input-group my-input-group reports_spaced" style="width: 98.5%;">
+										<span class="input-group-addon my-input-group-caption" style="">
+											MONTH
 										</span>
-										<input name="all_start_date" id="all_start_date" class="form-control datepicker" type="text" style="width:100%;" required data-date-format="dd-mm-yyyy" />
-										<span class="input-group-addon my-input-group-icon">
-											<i class="ace-icon fa fa-calendar"></i>
-										</span>
+										<select class="textfield form-control" style="" name="monthly_month" id="monthly_month" required="">
+											<option value="">*Select Month*</option>
+											<option value="00">January</option>
+											<option value="01">February</option>
+											<option value="02">March</option>
+											<option value="03">April</option>
+											<option value="04">May</option>
+											<option value="05">June</option>
+											<option value="06">July</option>
+											<option value="07">August</option>
+											<option value="08">September</option>
+											<option value="09">October</option>
+											<option value="10">November</option>
+											<option value="11">December</option>                 					
+										</select>
 									</div>
 								</td>
-								<td>									
-									<div class="input-group my-input-group reports_spaced">
-										<span class="input-group-addon my-input-group-caption">
-											End<br/>Date:
+								<td>
+									<div class="input-group my-input-group reports_spaced" style="width: 98.5%;">
+										<span class="input-group-addon my-input-group-caption" style="">
+											YEAR
 										</span>
-										<input name="all_end_date" id="all_end_date" class="form-control datepicker" type="text" style="width:100%;" required data-date-format="dd-mm-yyyy" />
-										<span class="input-group-addon my-input-group-icon">
-											<i class="ace-icon fa fa-calendar"></i>
-										</span>
+										<select class="textfield form-control" style="" name="monthly_year" id="monthly_year" required="">
+											<option value="">*Select Year*</option>
+											<option value="2011">2011</option>
+											<option value="2012">2012</option>
+											<option value="2013">2013</option>
+											<option value="2014">2014</option>
+
+										</select>
 									</div>
 								</td>
 								<td>									
@@ -352,9 +368,10 @@
 										<span class="input-group-addon my-input-group-caption">
 											Report Type
 										</span>
-										<select name="all_type" id="all_type" style="width: 100px;" >
+										<select name="monthly_month" id="monthly_month" style="width: 100px;" >
 											<option value="1">Samples Summaries</option>
 											<option value="2">Kit Usage</option>
+											<option value="3">TAT</option>
 										</select>
 									</div>
 								</td>
@@ -365,7 +382,7 @@
 								</td>
 							</tr>
 						</form>
-						<form method="post" action="<?php echo base_url().'eid/reports/lab_reports' ?>">
+						<form method="post" action="<?php echo base_url().'eid/reports/lab_reports/2' ?>">
 							<tr style = "">
 								<td style="height:37px;">
 									<div style="vertical-align:middle;float:right;padding-right:15%" >
@@ -373,25 +390,32 @@
 									</div>
 								</td>
 								<td>
-									<div class="input-group my-input-group reports_spaced">
-										<span class="input-group-addon my-input-group-caption">
-											Start<br/>Date:
+									<div class="input-group my-input-group reports_spaced" style="width: 98.5%;">
+										<span class="input-group-addon my-input-group-caption" style="">
+											QUARTER
 										</span>
-										<input name="all_start_date" id="all_start_date" class="form-control datepicker" type="text" style="width:100%;" required data-date-format="dd-mm-yyyy" />
-										<span class="input-group-addon my-input-group-icon">
-											<i class="ace-icon fa fa-calendar"></i>
-										</span>
+										<select class="textfield form-control" style="" name="quarterly_quarter" id="quarterly_quarter" required="">
+											<option value="">*Select a Quarter*</option>
+											<option value="1">January - March</option>
+											<option value="2">April - June</option>
+											<option value="3">July - September</option>
+											<option value="4">October - December</option>                 					
+										</select>
 									</div>
 								</td>
-								<td>									
-									<div class="input-group my-input-group reports_spaced">
-										<span class="input-group-addon my-input-group-caption">
-											End<br/>Date:
+								<td>
+									<div class="input-group my-input-group reports_spaced" style="width: 98.5%;">
+										<span class="input-group-addon my-input-group-caption" style="">
+											YEAR
 										</span>
-										<input name="all_end_date" id="all_end_date" class="form-control datepicker" type="text" style="width:100%;" required data-date-format="dd-mm-yyyy" />
-										<span class="input-group-addon my-input-group-icon">
-											<i class="ace-icon fa fa-calendar"></i>
-										</span>
+										<select class="textfield form-control" style="" name="quarterly_year" id="quarterly_year" required="">
+											<option value="">*Select Year*</option>
+											<option value="2011">2011</option>
+											<option value="2012">2012</option>
+											<option value="2013">2013</option>
+											<option value="2014">2014</option>
+
+										</select>
 									</div>
 								</td>
 								<td>									
@@ -402,6 +426,7 @@
 										<select name="all_type" id="all_type" style="width: 100px;" >
 											<option value="1">Samples Summaries</option>
 											<option value="2">Kit Usage</option>
+											<option value="3">TAT</option>
 										</select>
 									</div>
 								</td>
@@ -412,33 +437,38 @@
 								</td>
 							</tr>
 						</form>
-						<form method="post" action="<?php echo base_url().'eid/reports/lab_reports' ?>">
+						<form method="post" action="<?php echo base_url().'eid/reports/lab_reports/3' ?>">
 							<tr style = "">
 								<td style="height:37px;">
 									<div style="vertical-align:middle;float:right;padding-right:15%" >
 										<button type="button" class="btn btn-white btn-sm btn-primary" style="width:223px;">Bi-Annually</button>
 									</div>
 								</td>
-								<td>
-									<div class="input-group my-input-group reports_spaced">
-										<span class="input-group-addon my-input-group-caption">
-											Start<br/>Date:
+								<td>									
+									<div class="input-group my-input-group reports_spaced" style="width: 98.5%;">
+										<span class="input-group-addon my-input-group-caption" style="">
+											Bi-Annually
 										</span>
-										<input name="all_start_date" id="all_start_date" class="form-control datepicker" type="text" style="width:100%;" required data-date-format="dd-mm-yyyy" />
-										<span class="input-group-addon my-input-group-icon">
-											<i class="ace-icon fa fa-calendar"></i>
-										</span>
+										<select class="textfield form-control" style="" name="biannually_bian" id="biannually_bian" required="">
+											<option value="">*Select a bi-annual*</option>
+											<option value="1">January - June</option>
+											<option value="2">July - December</option>                  					
+										</select>
 									</div>
 								</td>
-								<td>									
-									<div class="input-group my-input-group reports_spaced">
-										<span class="input-group-addon my-input-group-caption">
-											End<br/>Date:
+								<td>
+									<div class="input-group my-input-group reports_spaced" style="width: 98.5%;">
+										<span class="input-group-addon my-input-group-caption" style="">
+											YEAR
 										</span>
-										<input name="all_end_date" id="all_end_date" class="form-control datepicker" type="text" style="width:100%;" required data-date-format="dd-mm-yyyy" />
-										<span class="input-group-addon my-input-group-icon">
-											<i class="ace-icon fa fa-calendar"></i>
-										</span>
+										<select class="textfield form-control" style="" name="biannually_year" id="biannually_year" required="">
+											<option value="">*Select Year*</option>
+											<option value="2011">2011</option>
+											<option value="2012">2012</option>
+											<option value="2013">2013</option>
+											<option value="2014">2014</option>
+
+										</select>
 									</div>
 								</td>
 								<td>									
@@ -449,6 +479,7 @@
 										<select name="all_type" id="all_type" style="width: 100px;" >
 											<option value="1">Samples Summaries</option>
 											<option value="2">Kit Usage</option>
+											<option value="3">TAT</option>
 										</select>
 									</div>
 								</td>
@@ -459,7 +490,7 @@
 								</td>
 							</tr>
 						</form>
-						<form method="post" action="<?php echo base_url().'eid/reports/lab_reports' ?>">
+						<form method="post" action="<?php echo base_url().'eid/reports/lab_reports/4' ?>">
 							<tr style = "">
 								<td style="height:37px;">
 									<div style="vertical-align:middle;float:right;padding-right:15%" >
@@ -467,25 +498,21 @@
 									</div>
 								</td>
 								<td>
-									<div class="input-group my-input-group reports_spaced">
-										<span class="input-group-addon my-input-group-caption">
-											Start<br/>Date:
-										</span>
-										<input name="all_start_date" id="all_start_date" class="form-control datepicker" type="text" style="width:100%;" required data-date-format="dd-mm-yyyy" />
-										<span class="input-group-addon my-input-group-icon">
-											<i class="ace-icon fa fa-calendar"></i>
-										</span>
-									</div>
 								</td>
-								<td>									
-									<div class="input-group my-input-group reports_spaced">
-										<span class="input-group-addon my-input-group-caption">
-											End<br/>Date:
+								<td>
+
+									<div class="input-group my-input-group reports_spaced" style="width: 98.5%;">
+										<span class="input-group-addon my-input-group-caption" style="">
+											YEAR
 										</span>
-										<input name="all_end_date" id="all_end_date" class="form-control datepicker" type="text" style="width:100%;" required data-date-format="dd-mm-yyyy" />
-										<span class="input-group-addon my-input-group-icon">
-											<i class="ace-icon fa fa-calendar"></i>
-										</span>
+										<select class="textfield form-control" style="" name="yearly_year" id="yearly_year" required="">
+											<option value="">*Select Year*</option>
+											<option value="2011">2011</option>
+											<option value="2012">2012</option>
+											<option value="2013">2013</option>
+											<option value="2014">2014</option>
+
+										</select>
 									</div>
 								</td>
 								<td>									
@@ -496,6 +523,7 @@
 										<select name="all_type" id="all_type" style="width: 100px;" >
 											<option value="1">Samples Summaries</option>
 											<option value="2">Kit Usage</option>
+											<option value="3">TAT</option>
 										</select>
 									</div>
 								</td>
