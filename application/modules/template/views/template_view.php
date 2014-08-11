@@ -12,14 +12,29 @@
 	<!-- <link rel='stylesheet' href='<?php echo base_url();?>assets/plugins/font-awesome/css/font-awesome.min.css' type='text/css'></link> -->
 	<link rel='stylesheet' href='<?php echo base_url();?>assets/sass_assets/stylesheets/styles.css' type='text/css'></link>
 
-	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" />
+	<!-- <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" /> -->
+
+	<style>
+	@font-face {
+		font-family: 'Open Sans';
+		font-style: normal;
+		font-weight: 300;
+		src: local('Open Sans Light'), local('OpenSans-Light'), url(<?php echo base_url("assets/fonts/DXI1ORHCpsQm3Vp6mXoaTXhCUOGz7vYGh680lGh-uXM.woff");?>) format('woff');
+	}
+	@font-face {
+		font-family: 'Open Sans';
+		font-style: normal;
+		font-weight: 400;
+		src: local('Open Sans'), local('OpenSans'), url(<?php echo base_url("assets/fonts/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff");?>) format('woff');
+	}
+	</style>
 
 
 	<script src='<?php echo base_url();?>assets/sass_assets/sass/theme/js/ace-extra.min.js' type='text/javascript'></script>
 
 	
 	<?php      	
-		$this->load->view('utils/dynamicLoads');
+	$this->load->view('utils/dynamicLoads');
 	?>
 
 	<meta name="description" content="overview &amp; stats" />
@@ -61,11 +76,11 @@
 				<div class="page-content">
 					<div class="ace-settings-container" id="ace-settings-container">
 						<div class="btn btn-app btn-xs btn-warning ace-settings-btn" id="ace-settings-btn">
-							<i class="ace-icon fa fa-cog bigger-150"></i>
+							<i class="ace-icon fa fa-cog bigger-150 rotating "></i>
 						</div>
 						<div class="ace-settings-box clearfix" id="ace-settings-box">
 							<div class="pull-left width-50">
-								<div class="ace-settings-item">
+							<!-- 	<div class="ace-settings-item">
 									<div class="pull-left">
 										<select id="skin-colorpicker" class="hide">
 											<option data-skin="no-skin" value="#438EB9">#438EB9</option>
@@ -75,7 +90,7 @@
 										</select>
 									</div>
 									<span>&nbsp; Choose Skin</span>
-								</div>
+								</div> -->
 
 								<div class="ace-settings-item">
 									<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-navbar" />
@@ -125,7 +140,7 @@
 						</div><!-- /.ace-settings-box -->
 					</div><!-- /.ace-settings-container -->
 					<?php 
-						$this->load->view($content_view);
+					$this->load->view($content_view);
 					?>
 				</div><!-- /.page-content-container -->
 			</div><!-- /.main-content -->
@@ -151,13 +166,14 @@
 		<script src="<?php echo base_url();?>assets/sass_assets/sass/theme/js/ace-elements.min.js"></script>
 		<script src="<?php echo base_url();?>assets/sass_assets/sass/theme/js/ace.min.js"></script>
 		<script type="text/javascript"> 
-			$(document).ready(function() {
+		$(document).ready(function() {
 
-				$("#sidebar").addClass("sidebar-fixed sidebar-scroll");
-				$("#navbar").addClass("navbar-default navbar-fixed-top");
-				$("#breadcrumbs").addClass("breadcrumbs-fixed");
-				
-			});
+			$("#sidebar").addClass("sidebar-fixed sidebar-scroll");
+			$("#navbar").addClass("navbar-default navbar-fixed-top");
+			$("#breadcrumbs").addClass("breadcrumbs-fixed");
+
+			$( document ).tooltip();
+		});
 		</script>
 	</body>
 

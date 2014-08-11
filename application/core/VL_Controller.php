@@ -2,7 +2,7 @@
 if (!defined('BASEPATH'))
 	exit('No direct script access allowed');
 
-class vl extends MY_Controller {
+class EID_Controller extends MY_Controller {
 
 	public function __construct(){
 		$this->view_data['content_view'] 	= "dashboard/dashboard";
@@ -34,17 +34,6 @@ class vl extends MY_Controller {
 												);
 		$this->view_data['program']  = 2;
 	}
-	
-	
-	public function index(){
-		$this->login_reroute(array(2));
 
-		$this->dashboard();
-	}
-	public function dashboard(){		
-		
-		$this->load->module("dashboard");
-		$this->dashboard->load_dashboard(2,$this->view_data);
-	}	
+
 }
-?>

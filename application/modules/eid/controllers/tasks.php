@@ -33,6 +33,7 @@ class tasks extends MY_Controller {
 																	"class"		=>	"active"
 																	)
 												);
+		$this->view_data['program']  = 1;
 
 	}
 

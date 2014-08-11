@@ -51135,3 +51135,30 @@ html {
   overflow-y: auto;
   height: 350px !important;
 }
+
+/* line 140, ../sass/styles.scss */
+.sidebar-shortcuts-large .btn a {
+  color: #fff;
+}
+
+@-webkit-keyframes rotating {
+  /* line 146, ../sass/styles.scss */
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  /* line 149, ../sass/styles.scss */
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+/* line 154, ../sass/styles.scss */
+.rotating {
+  -webkit-animation: rotating 1s linear 3s;
+}
+
+/* line 158, ../sass/styles.scss */
+.reports_spaced {
+  padding-right: 4px;
+}

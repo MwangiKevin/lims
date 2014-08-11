@@ -42,6 +42,8 @@ class results extends MY_Controller {
 				)
 			);
 
+		$this->view_data['program']  = 1;
+
 	}
 
 	public function index(){

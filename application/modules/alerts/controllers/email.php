@@ -47,10 +47,14 @@ public function admin_mail()
 		$recepient = $this->input->post("recepients");
 		$subject   = $this->input->post("subject");
 		$message   = $this->input->post("message");
-		$tim = date('Y-m-d');
 
-		$this->mail_model->send_mail($id, $recepient, $subject, $message, $tim);
-		
+		$this->email($id, $recepient, $subject, $message);
+	}
+
+	function email($id, $recepient, $subject, $message)  
+	{
+		$time=date('Y-m-d');
+
 		$config = array(
 			'protocol' => 'smtp',
 			'smtp_host' => 'ssl://smtp.googlemail.com',
@@ -68,7 +72,9 @@ public function admin_mail()
 		$this->email->message($message);
 
 		if($this->email->send())
-			{
+			{	
+
+				$this->mail_model->send_mail($id, $recepient, $subject, $message, $time);
 				$this->admin_mail();
 			} else 
 			{
