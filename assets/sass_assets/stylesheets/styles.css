@@ -51157,3 +51157,8 @@ html {
 .rotating {
   -webkit-animation: rotating 1s linear 3s;
 }
+
+/* line 158, ../sass/styles.scss */
+.reports_spaced {
+  padding-right: 5px;
+}
