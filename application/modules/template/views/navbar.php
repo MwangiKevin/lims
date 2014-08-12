@@ -25,71 +25,14 @@
 		<div class="navbar-buttons navbar-header pull-right" role="navigation">
 
 			<ul  class="nav ace-nav">
-				<li id="nav_itm_batches" class="grey">
-					
+				<li id="nav_itm_batches" class="grey" >					
 				</li>
-
 				<li id="nav_itm_notifications" class="green">
-					<a data-toggle="dropdown" class="dropdown-toggle" href="#">
-						<i class="ace-icon fa fa-bell icon-animated-bell"></i>
-						<span class="badge badge-important">0</span>
-					</a>
-
-					<ul class="dropdown-menu-right dropdown-navbar navbar-pink dropdown-menu dropdown-caret dropdown-close">
-						<li class="dropdown-header">
-							<i class="ace-icon fa fa-exclamation-triangle"></i>
-							0 Notifications
-						</li>
-
-						<li>
-							<a href="#">
-								<div class="clearfix">
-									<span class="pull-left">
-										<i class="btn btn-xs no-hover btn-pink fa fa-comment"></i>
-										New Comments
-									</span>
-									<span class="pull-right badge badge-info">+12</span>
-								</div>
-							</a>
-						</li>
-						<li class="dropdown-footer">
-							<a href="#">
-								See all notifications
-								<i class="ace-icon fa fa-arrow-right"></i>
-							</a>
-						</li>
-						
-					</ul>
 				</li>
-
 				<li id="nav_itm_messages" class="purple">
-					<a data-toggle="dropdown" class="dropdown-toggle" href="#">
-						<i class="ace-icon fa fa-envelope icon-animated-vertical"></i>
-						<span class="badge badge-success">0</span>
-					</a>
-
-					<ul class="dropdown-menu-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close">
-						<li class="dropdown-header">
-							<i class="ace-icon fa fa-envelope-o"></i>
-							0 Messages
-						</li>
-
-						<li class="dropdown-content">
-							<ul class="dropdown-menu dropdown-navbar">
-								
-							</ul>
-						</li>
-
-						<li class="dropdown-footer">
-							<a href="inbox.html">
-								See all messages
-								<i class="ace-icon fa fa-arrow-right"></i>
-							</a>
-						</li>
-					</ul>
 				</li>
 
-				<li class="">
+				<li class="" title="Todays Date">
 					<a data-toggle="dropdown" href="#" class="dropdown-toggle">
 						<span class="user-info">
 							<small><?php echo "<b>" . date("F d Y,") . "</b>"; ?></small>

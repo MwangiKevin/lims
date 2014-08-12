@@ -126,7 +126,9 @@ class reports extends MY_Controller {
 	
 	
 	
-	
+	public function download_report(){
+		$this->load->view("download_report");
+	}
 	
 	
 	
