@@ -553,3 +553,7 @@
 	</div>
 </div>
 
+<div id='header' background-image=".base_url('img/tz.png')." height='140' width='70%' alt='NACP'>
+		<h1> ".$area. " Summary</h1>
+		<h2> ".$location."</h2>
+	</div>
