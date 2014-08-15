@@ -15,6 +15,20 @@ $( document ).ready(function() {
 	});	
 });
 
+$( document ).ready(function() {
+
+	$('#tests_table_region').dataTable({
+		"bProcessing": true,
+		"iDisplayLength": 10,
+	 	"bJQueryUI":true,
+		"bSort":true,
+		 "sPaginationType": "bootstrap",
+	  	//"bPaginate":false,
+	 	//"sScrollY": "200px",
+	  	//"bFilter": false
+	});	
+});
+
     function edit_facility(id,name,code,district,region,email,phone){
 
 	var str = "#tr_"+id;
