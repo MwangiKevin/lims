@@ -94,9 +94,17 @@ public function admin_mail()
     	$this->index();
 	}
 
-	public function LoadMailConfig()
+	public function get_inbox()
 	{
-		
+		$mb = imap_open("{host:port/imap}","lims.eidvl@gmail.com", "eidvl.tz2014" );
+
+		$messageCount = imap_num_msg($mb);
+		for( $MID = 1; $MID <= $messageCount; $MID++ )
+		{
+		   $EmailHeaders = imap_headerinfo( $mb, $MID );
+		   $Body = imap_fetchbody( $mb, $MID, 1 );
+		   doSomething( $EmailHeaders, $Body );
+		}
 	}
 
 

@@ -30,4 +30,16 @@ function hide_edit(){
 		
 	}
 
+	$( document ).ready(function() {
+
+    var test_reason;
+
+    $.getJSON("<?php echo base_url('assets/json/test_reasons_eid.json');?>", function(data) {
+        test_reason = data;
+        $(".test_reason").select2({ data: test_reason ,multiple: true});
+    });
+
+
+});
+
 </script>
