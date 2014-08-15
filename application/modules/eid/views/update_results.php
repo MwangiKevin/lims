@@ -30,6 +30,7 @@
 		</table>
 
 	</div>
+	
 	<div class="row my-infobox">
 		<form action="<?php echo base_url("eid/results/upload_file");?>" class="dropzone" id="dz" method="post">
 			<div class="fallback">
@@ -51,4 +52,4 @@
   			}
 			};
 
-</script>
+	</script>
