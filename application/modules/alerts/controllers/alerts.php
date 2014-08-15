@@ -17,14 +17,14 @@ class alerts extends MY_Controller {
 											WHERE `req`.`results_dispached`='0'
 									");
 
-		//requisitions to dispatch requisitions
+		//initialize requisitions to dispatch requisitions
 		$req_to_dispach 	=	array();
 
 
 		//remove requisitions not completely tested
 		foreach ($non_disp_req as $key => $req) {
+			
 			$id = $req["id"];
-
 			//check if any sample in the req is pending testing
 
 			$samples_pending = R::getAll("	SELECT 
@@ -44,8 +44,33 @@ class alerts extends MY_Controller {
 													) `t1`
 												WHERE `t1`.`failed_test_runs`< '$max'
 												AND `t1`.`successfull_test_runs`< '1'
-											");
-			
-		}						
+											");			
+
+			//exclude samples not pending
+
+			if(sizeof($samples_pending)==0){
+				$req_to_dispach[] = 	$id;
+			}
+
+		}
+		$this->req_to_dispach($req_to_dispach);		
 	}	
+
+	public function req_to_dispach($req_to_dispach = array()){
+
+		foreach ($req_to_dispach as $key => $value) {
+			$this->dispatch_re_results($value);
+		}
+	}
+
+	public function dispatch_re_results($req_id){
+
+		$results 	=	R::getAll("SELECT 
+											`sa`.`id`,
+											`sa`.``,
+											`sa`.``,
+											`sa`.``,
+											`sa`.``,
+									");
+	}
 }
