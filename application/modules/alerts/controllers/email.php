@@ -49,7 +49,7 @@ public function admin_mail()
 	function email($id, $recepient, $subject, $message)  
 	{
 		$time=date('Y-m-d');
-
+		$attached_file = $this->config->item("server_root")."downloads/doc1.pdf";
 		$config = array(
 			'protocol' => 'smtp',
 			'smtp_host' => 'ssl://smtp.googlemail.com',
@@ -61,15 +61,17 @@ public function admin_mail()
 		$this->load->library('email', $config);
 		$this->email->set_newline("\r\n");
 
-		$this->email->from('cd4lims.tz@gmail.com', 'CD4');
+		$this->email->from('cd4lims.tz@gmail.com', 'EID');
 		$this->email->to($recepient);
 		$this->email->subject($subject);
+		$this->email->attach($attached_file);
 		$this->email->message($message);
 
+		
 		if($this->email->send())
 			{	
 
-				$this->mail_model->send_mail($id, $recepient, $subject, $message, $time);
+				//$this->mail_model->send_mail($id, $recepient, $subject, $message, $time);
 				$this->admin_mail();
 			} else 
 			{
