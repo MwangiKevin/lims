@@ -51,7 +51,7 @@ public function admin_mail()
 		$this->email($id, $recepient, $subject, $message);
 	}
 
-	function email($id, $recepient, $subject, $message)  
+	function email($id, $recepient, $subject, $message, $attached_file =null)  
 	{
 		$time=date('Y-m-d');
 		$attached_file = $this->config->item("server_root")."downloads/doc1.pdf";
