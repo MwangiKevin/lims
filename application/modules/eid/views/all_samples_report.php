@@ -12,7 +12,7 @@
 		</strong>
 		<!--Enable on-click dislay modal to select pdf or excel -->		
 		<div id="report_download" style="position: absolute; right: 5%; top: 50%; cursor: pointer;">
-			<a href="<?php echo base_url().'eid/reports/download_report' ?>">
+			<a href="<?php echo base_url().'eid/reports/download_report/'.$format.'/'. $start_date.'/'. $end_date.'/'?>">
 				<i class="ace-icon fa fa-cloud-download"></i>
 				Download Report
 			</a>
@@ -54,32 +54,50 @@
 		<tbody>
 			<?php
 				$i = 0;
-				foreach($sample as $key => $value){
+				foreach($all_samples as $key => $value){
 					$i++;
+					$sample_id = $value['sample_id'];
+					$region_name = $value['region_name'];
+					$district_name = $value['district_name'];
+					$facility_name = $value['facility_name'];
+					$gender = $value['gender'];
+					$dob = $value['dob'];
+					$propholaxis = $value['propholaxis'];
+					$date_collected = $value['date_collected'];
+					$dbs_spots = $value['dbs_spots'];
+					$acceptance_status = $value['acceptance_status'];
+					$age = date("Y") - $dob; 
+					$dispatch = $value['dispatch'];
+					$date_tested = $value['date_tested'];
+			?>
+			<tr>
+				<td><?php echo $i ?></td>
+				<td><?php echo $sample_id ?></td>
+				<td><?php echo 44 ?></td>
+				<td><?php echo $region_name ?></td>
+				<td><?php echo $district_name ?></td>
+				<td><?php echo $facility_name ?></td>
+				<td><?php echo $gender ?></td>
+				<td><?php echo $dob ?></td>
+				<td><?php echo  $age ?></td>
+				<td><?php echo $propholaxis ?></td>
+				<td><?php echo $date_collected ?></td>
+				<td><?php echo $dbs_spots ?></td>
+				<td><?php echo $acceptance_status ?></td>
+				<td><?php echo 44 ?></td>
+				<td><?php echo 44 ?></td>
+				<td><?php echo 44 ?></td>
+				<td><?php echo 44 ?></td>
+				<td><?php echo 44 ?></td>
+				<td><?php echo 44 ?></td>
+				<td><?php echo $date_tested ?></td>
+				<td><?php echo $dispatch ?></td>
+				<td><?php echo 44 ?></td>
+			<?php
 				}
 			?>
-				<th><?php echo $i ?></th>
-				<th><?php echo 44 ?></th>
-				<th><?php echo 44 ?></th>
-				<th><?php echo 44 ?></th>
-				<th><?php echo 44 ?></th>
-				<th><?php echo 44 ?></th>
-				<th><?php echo 44 ?></th>
-				<th><?php echo 44 ?></th>
-				<th><?php echo 44 ?></th>
-				<th><?php echo 44 ?></th>
-				<th><?php echo 44 ?></th>
-				<th><?php echo 44 ?></th>
-				<th><?php echo 44 ?></th>
-				<th><?php echo 44 ?></th>
-				<th><?php echo 44 ?></th>
-				<th><?php echo 44 ?></th>
-				<th><?php echo 44 ?></th>
-				<th><?php echo 44 ?></th>
-				<th><?php echo 44 ?></th>
-				<th><?php echo 44 ?></th>
-				<th><?php echo 44 ?></th>
-				<th><?php echo 44 ?></th>
+			</tr>
 		</tbody>
 	</table>
 </div>
+

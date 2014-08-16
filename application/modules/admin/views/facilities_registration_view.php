@@ -92,7 +92,7 @@
 			</div>
 			<!-- Region -->
 			<div class="tab-pane" id="tabs1-Region" style="width: 60%;padding:4px;" >	
-				<table style="font-size:90%" id="tests_table" class="table table-bordered table-responsive">
+				<table style="font-size:90%" id="tests_table_region" class="table table-bordered table-responsive">
 					<thead>
 						<tr>
 							<th>#</th>				

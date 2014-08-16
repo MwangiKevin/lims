@@ -11,7 +11,7 @@
     <div class="table-header">
 			Users Details
 		</div>
-		<table style="font-size:90%" id="tests_table" class="table table-bordered table-responsive">
+		<table style="font-size:90%" id="tests_table_users" class="table table-bordered table-responsive">
 			<thead>
 				<tr class="active">
                     <th rowspan="2">#</th>

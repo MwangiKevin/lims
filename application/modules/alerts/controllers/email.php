@@ -10,6 +10,11 @@ public function __construct()
 	$this->load->model('mail_model');
 }
 
+public function index()
+{
+	$this->admin_mail();
+}
+
 public function admin_mail()
 {
 	$this->login_reroute(array(1));
@@ -46,30 +51,32 @@ public function admin_mail()
 		$this->email($id, $recepient, $subject, $message);
 	}
 
-	function email($id, $recepient, $subject, $message)  
+	function email($id, $recepient, $subject, $message, $attached_file =null)  
 	{
 		$time=date('Y-m-d');
-
+		$attached_file = $this->config->item("server_root")."downloads/doc1.pdf";
 		$config = array(
 			'protocol' => 'smtp',
 			'smtp_host' => 'ssl://smtp.googlemail.com',
 			'smtp_port' => 465,
-			'smtp_user' => 'cd4lims.tz@gmail.com',
-			'smtp_pass' => 'cd4lims.tz2014',
+			'smtp_user' => 'lims.eidvl@gmail.com',
+			'smtp_pass' => 'eidvl.tz2014',
 			);
 
 		$this->load->library('email', $config);
 		$this->email->set_newline("\r\n");
 
-		$this->email->from('cd4lims.tz@gmail.com', 'CD4');
+		$this->email->from('lims.eidvl@gmail.com', 'EID/LIMS');
 		$this->email->to($recepient);
 		$this->email->subject($subject);
+		$this->email->attach($attached_file);
 		$this->email->message($message);
 
+		
 		if($this->email->send())
 			{	
 
-				$this->mail_model->send_mail($id, $recepient, $subject, $message, $time);
+				//$this->mail_model->send_mail($id, $recepient, $subject, $message, $time);
 				$this->admin_mail();
 			} else 
 			{
@@ -78,9 +85,28 @@ public function admin_mail()
 		
 	}
 
-	public function LoadMailConfig()
+	public function remove_email($id)
 	{
-		
+		$remove = R::getAll("UPDATE `mailerlog` 
+							SET 
+								`send_status`='0'
+							WHERE 
+								`id`='$id'
+						");
+    	$this->index();
+	}
+
+	public function get_inbox()
+	{
+		$mb = imap_open("{host:port/imap}","lims.eidvl@gmail.com", "eidvl.tz2014" );
+
+		$messageCount = imap_num_msg($mb);
+		for( $MID = 1; $MID <= $messageCount; $MID++ )
+		{
+		   $EmailHeaders = imap_headerinfo( $mb, $MID );
+		   $Body = imap_fetchbody( $mb, $MID, 1 );
+		   doSomething( $EmailHeaders, $Body );
+		}
 	}
 
 

@@ -22,7 +22,7 @@ $( document ).ready(function() {
 
     $.getJSON("<?php echo base_url('assets/json/facilities.json');?>", function(data) {
         facilities = data;
-        $(".facility-select").select2({ data: facilities });
+        $(".facility-select").select2({ placeholder:"Select a Facility",data: facilities });
     });  
 
 
