@@ -1,221 +1,61 @@
-<div id="sidebar" class="sidebar   responsive">
+
+<div id="sidebar" class="sidebar   responsive sidebar-fixed sidebar-scroll">
 	<script type="text/javascript">
-	try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
+	//try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
 	</script>
 
-	<div class="sidebar-shortcuts" id="sidebar-shortcuts">
-		<div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
-			<button class="btn btn-success">
-				<i class="ace-icon fa fa-signal"></i>
-			</button>
 
-			<button class="btn btn-info">
-				<i class="ace-icon fa fa-pencil"></i>
-			</button>
-
-			<button class="btn btn-warning">
-				<i class="ace-icon fa fa-users"></i>
-			</button>
-
-			<button class="btn btn-danger">
-				<i class="ace-icon fa fa-cogs"></i>
-			</button>
-		</div>
-
-		<div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
-			<span class="btn btn-success"></span>
-
-			<span class="btn btn-info"></span>
-
-			<span class="btn btn-warning"></span>
-
-			<span class="btn btn-danger"></span>
-		</div>
-	</div><!-- /.sidebar-shortcuts -->
+	<?php      	
+		$this->load->view('sidebar_shortcuts_view');
+	?>
 
 	<ul class="nav nav-list" style="top: 0px;">
-		<li class="active">
-			<a href="index-2.html">
-				<i class="menu-icon fa fa-tachometer"></i>
+
+		<li class="hsub " id="side_dashboard">
+			<!--projects-->
+			<a href="<?php echo base_url('admin/admin/dashboard');?>">
+				<i class="menu-icon fa fa-dashboard fa-tint"></i>
 				<span class="menu-text"> Dashboard </span>
 			</a>
-
-			<b class="arrow"></b>
 		</li>
 
-		<li class="hsub">
+
+		<li class="hsub" id="side_facilities">
 			<a href="#" class="dropdown-toggle">
 				<i class="menu-icon fa fa-desktop"></i>
-				<span class="menu-text"> UI &amp; Elements </span>
+				<span class="menu-text"> Facilities </span>
 
 				<b class="arrow fa fa-angle-down"></b>
 			</a>
 
 			<b class="arrow"></b>
 
-			<ul class="submenu nav-hide" style="display: none;">
-				<li class="hsub">
-					<a href="#" class="dropdown-toggle">
+			<ul class="submenu nav-hide" style="">
+				<li class="hsub" id="side_fac_details">
+					<a href="<?php echo base_url('admin/facilities/facilities_details') ?>" >
 						<i class="menu-icon fa fa-caret-right"></i>
-
-						Layouts
-						<b class="arrow fa fa-angle-down"></b>
-					</a>
-
-					<b class="arrow"></b>
-
-					<ul class="submenu">
-						<li class="">
-							<a href="top-menu.html">
-								<i class="menu-icon fa fa-caret-right"></i>
-								Top Menu
-							</a>
-
-							<b class="arrow"></b>
-						</li>
-
-						<li class="">
-							<a href="mobile-menu-1.html">
-								<i class="menu-icon fa fa-caret-right"></i>
-								Default Mobile Menu
-							</a>
-
-							<b class="arrow"></b>
-						</li>
-
-						<li class="">
-							<a href="mobile-menu-2.html">
-								<i class="menu-icon fa fa-caret-right"></i>
-								Mobile Menu 2
-							</a>
-
-							<b class="arrow"></b>
-						</li>
-
-						<li class="">
-							<a href="mobile-menu-3.html">
-								<i class="menu-icon fa fa-caret-right"></i>
-								Mobile Menu 3
-							</a>
-
-							<b class="arrow"></b>
-						</li>
-					</ul>
-				</li>
-
-				<li class="">
-					<a href="typography.html">
-						<i class="menu-icon fa fa-caret-right"></i>
-						Typography
+						Facility Details
 					</a>
 
 					<b class="arrow"></b>
 				</li>
 
-				<li class="">
-					<a href="elements.html">
+				<li class="hsub" id="side_fac_registration">
+					<a href="<?php echo base_url().'admin/facilities/facilities_registration' ?>">
 						<i class="menu-icon fa fa-caret-right"></i>
-						Elements
+						Facility Registration
 					</a>
 
 					<b class="arrow"></b>
 				</li>
 
-				<li class="">
-					<a href="buttons.html">
-						<i class="menu-icon fa fa-caret-right"></i>
-						Buttons &amp; Icons
-					</a>
-
-					<b class="arrow"></b>
-				</li>
-
-				<li class="">
-					<a href="treeview.html">
-						<i class="menu-icon fa fa-caret-right"></i>
-						Treeview
-					</a>
-
-					<b class="arrow"></b>
-				</li>
-
-				<li class="">
-					<a href="jquery-ui.html">
-						<i class="menu-icon fa fa-caret-right"></i>
-						jQuery UI
-					</a>
-
-					<b class="arrow"></b>
-				</li>
-
-				<li class="">
-					<a href="nestable-list.html">
-						<i class="menu-icon fa fa-caret-right"></i>
-						Nestable Lists
-					</a>
-
-					<b class="arrow"></b>
-				</li>
-
-				<li class="hsub">
-					<a href="#" class="dropdown-toggle">
-						<i class="menu-icon fa fa-caret-right"></i>
-
-						Three Level Menu
-						<b class="arrow fa fa-angle-down"></b>
-					</a>
-
-					<b class="arrow"></b>
-
-					<ul class="submenu">
-						<li class="">
-							<a href="#">
-								<i class="menu-icon fa fa-leaf"></i>
-								Item #1
-							</a>
-
-							<b class="arrow"></b>
-						</li>
-
-						<li class="hsub">
-							<a href="#" class="dropdown-toggle">
-								<i class="menu-icon fa fa-pencil"></i>
-
-								4th level
-								<b class="arrow fa fa-angle-down"></b>
-							</a>
-
-							<b class="arrow"></b>
-
-							<ul class="submenu">
-								<li class="">
-									<a href="#">
-										<i class="menu-icon fa fa-plus"></i>
-										Add Product
-									</a>
-
-									<b class="arrow"></b>
-								</li>
-
-								<li class="">
-									<a href="#">
-										<i class="menu-icon fa fa-eye"></i>
-										View Products
-									</a>
-
-									<b class="arrow"></b>
-								</li>
-							</ul>
-						</li>
-					</ul>
-				</li>
 			</ul>
 		</li>
 
-		<li class="hsub">
+		<li id="side_users" class="hsub">
 			<a href="#" class="dropdown-toggle">
-				<i class="menu-icon fa fa-list"></i>
-				<span class="menu-text"> Tables </span>
+				<i class="menu-icon fa fa-users "></i>
+				<span class="menu-text"> Users </span>
 
 				<b class="arrow fa fa-angle-down"></b>
 			</a>
@@ -223,19 +63,19 @@
 			<b class="arrow"></b>
 
 			<ul class="submenu">
-				<li class="">
-					<a href="tables.html">
+				<li class="hsub" id="side_user_details">
+					<a href="<?php echo base_url().'admin/users/users_details' ?>">
 						<i class="menu-icon fa fa-caret-right"></i>
-						Simple &amp; Dynamic
+						Users Details
 					</a>
 
 					<b class="arrow"></b>
 				</li>
 
-				<li class="">
-					<a href="jqgrid.html">
+				<li class="" id="side_user_registration">
+					<a href="<?php echo base_url().'admin/users/users_registration' ?>">
 						<i class="menu-icon fa fa-caret-right"></i>
-						jqGrid plugin
+						Users Registration
 					</a>
 
 					<b class="arrow"></b>
@@ -243,93 +83,21 @@
 			</ul>
 		</li>
 
-		<li class="hsub">
+		<li id="side_reports" class="hsub">
 			<a href="#" class="dropdown-toggle">
 				<i class="menu-icon fa fa-pencil-square-o"></i>
-				<span class="menu-text"> Forms </span>
+				<span class="menu-text"> Reports </span>
 
-				<b class="arrow fa fa-angle-down"></b>
-			</a>
-
-			<b class="arrow"></b>
-
-			<ul class="submenu">
-				<li class="">
-					<a href="form-elements.html">
-						<i class="menu-icon fa fa-caret-right"></i>
-						Form Elements
-					</a>
-
-					<b class="arrow"></b>
-				</li>
-
-				<li class="">
-					<a href="form-wizard.html">
-						<i class="menu-icon fa fa-caret-right"></i>
-						Wizard &amp; Validation
-					</a>
-
-					<b class="arrow"></b>
-				</li>
-
-				<li class="">
-					<a href="wysiwyg.html">
-						<i class="menu-icon fa fa-caret-right"></i>
-						Wysiwyg &amp; Markdown
-					</a>
-
-					<b class="arrow"></b>
-				</li>
-
-				<li class="">
-					<a href="dropzone.html">
-						<i class="menu-icon fa fa-caret-right"></i>
-						Dropzone File Upload
-					</a>
-
-					<b class="arrow"></b>
-				</li>
-			</ul>
-		</li>
-
-		<li class="">
-			<a href="widgets.html">
-				<i class="menu-icon fa fa-list-alt"></i>
-				<span class="menu-text"> Widgets </span>
-			</a>
+            </a>
 
 			<b class="arrow"></b>
+
 		</li>
 
-		<li class="">
-			<a href="calendar.html">
-				<i class="menu-icon fa fa-calendar"></i>
-
-				<span class="menu-text">
-					Calendar
-
-					<span class="badge badge-transparent tooltip-error" title="" data-original-title="2 Important Events">
-						<i class="ace-icon fa fa-exclamation-triangle red bigger-130"></i>
-					</span>
-				</span>
-			</a>
-
-			<b class="arrow"></b>
-		</li>
-
-		<li class="">
-			<a href="gallery.html">
-				<i class="menu-icon fa fa-picture-o"></i>
-				<span class="menu-text"> Gallery </span>
-			</a>
-
-			<b class="arrow"></b>
-		</li>
-
-		<li class="hsub">
+		<li id="side_mail" class="hsub">
 			<a href="#" class="dropdown-toggle">
-				<i class="menu-icon fa fa-tag"></i>
-				<span class="menu-text"> More Pages </span>
+				<i class="menu-icon fa fa-users "></i>
+				<span class="menu-text"> Mail </span>
 
 				<b class="arrow fa fa-angle-down"></b>
 			</a>
@@ -337,55 +105,19 @@
 			<b class="arrow"></b>
 
 			<ul class="submenu">
-				<li class="">
-					<a href="profile.html">
+				<li class="hsub" id="side_email_details">
+					<a href="<?php echo base_url().'alerts/email/admin_mail' ?>">
 						<i class="menu-icon fa fa-caret-right"></i>
-						User Profile
+						Email
 					</a>
 
 					<b class="arrow"></b>
 				</li>
 
-				<li class="">
-					<a href="inbox.html">
+				<li class="" id="side_sms">
+					<a href="<?php echo base_url().'alerts/sms/load_sms' ?>">
 						<i class="menu-icon fa fa-caret-right"></i>
-						Inbox
-					</a>
-
-					<b class="arrow"></b>
-				</li>
-
-				<li class="">
-					<a href="pricing.html">
-						<i class="menu-icon fa fa-caret-right"></i>
-						Pricing Tables
-					</a>
-
-					<b class="arrow"></b>
-				</li>
-
-				<li class="">
-					<a href="invoice.html">
-						<i class="menu-icon fa fa-caret-right"></i>
-						Invoice
-					</a>
-
-					<b class="arrow"></b>
-				</li>
-
-				<li class="">
-					<a href="timeline.html">
-						<i class="menu-icon fa fa-caret-right"></i>
-						Timeline
-					</a>
-
-					<b class="arrow"></b>
-				</li>
-
-				<li class="">
-					<a href="login.html">
-						<i class="menu-icon fa fa-caret-right"></i>
-						Login &amp; Register
+						SMS
 					</a>
 
 					<b class="arrow"></b>
@@ -393,69 +125,37 @@
 			</ul>
 		</li>
 
-		<li class="hsub">
-			<a href="#" class="dropdown-toggle">
-				<i class="menu-icon fa fa-file-o"></i>
 
-				<span class="menu-text">
-					Other Pages
 
-					<span class="badge badge-primary">5</span>
-				</span>
 
-				<b class="arrow fa fa-angle-down"></b>
-			</a>
-
-			<b class="arrow"></b>
-
-			<ul class="submenu">
-				<li class="">
-					<a href="faq.html">
-						<i class="menu-icon fa fa-caret-right"></i>
-						FAQ
-					</a>
-
-					<b class="arrow"></b>
-				</li>
-
-				<li class="">
-					<a href="error-404.html">
-						<i class="menu-icon fa fa-caret-right"></i>
-						Error 404
-					</a>
-
-					<b class="arrow"></b>
-				</li>
-
-				<li class="">
-					<a href="error-500.html">
-						<i class="menu-icon fa fa-caret-right"></i>
-						Error 500
-					</a>
-
-					<b class="arrow"></b>
-				</li>
-
-				<li class="">
-					<a href="grid.html">
-						<i class="menu-icon fa fa-caret-right"></i>
-						Grid
-					</a>
-
-					<b class="arrow"></b>
-				</li>
-
-				<li class="">
-					<a href="blank.html">
-						<i class="menu-icon fa fa-caret-right"></i>
-						Blank Page
-					</a>
-
-					<b class="arrow"></b>
-				</li>
-			</ul>
-		</li>
 	</ul><!-- /.nav-list -->
+
+	<script type="text/javascript">
+	try{ace.settings.check('sidebar' , 'collapsed')}catch(e){}
+
+	try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
+
+	$(function(){
+		var menu_select='<?php echo  $menu_select; ?>';
+		var submenu_select='<?php echo  $submenu_select; ?>';
+		  //select menu
+		  if(menu_select !=''){
+		  	$("#"+menu_select).removeClass("hsub");
+		  	$("#"+menu_select).addClass("active");
+		  	if(submenu_select !=''){
+		  		$("#"+menu_select).addClass("open");		  	}
+		  }
+
+          //select submenu
+          if(submenu_select !=''){
+          	$("#"+submenu_select).removeClass("hsub");
+          	$("#"+submenu_select).addClass("active");      
+
+          }
+
+      });
+	</script>
+
 
 	<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
 		<i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>

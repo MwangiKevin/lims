@@ -7,66 +7,59 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Patient
  *
- * @ORM\Table(name="patient")
- * @ORM\Entity
+ * Table(name="patient")
+ * Entity
  */
 class Patient
 {
     /**
      * @var integer
      *
-     * @ORM\Column(name="id", type="integer", nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * Column(name="id", type="integer", nullable=false)
+     * Id
+     * GeneratedValue(strategy="IDENTITY")
      */
     private $id;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="code", type="integer", nullable=false)
+     * Column(name="code", type="integer", nullable=false)
      */
     private $code;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=100, nullable=false)
+     * Column(name="name", type="string", length=100, nullable=false)
      */
     private $name;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="dob", type="date", nullable=false)
+     * Column(name="dob", type="date", nullable=false)
      */
     private $dob;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="gender", type="integer", nullable=false)
+     * Column(name="gender", type="integer", nullable=false)
      */
     private $gender;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="prophylaxis", type="integer", nullable=false)
+     * Column(name="prophylaxis_id", type="integer", nullable=false)
      */
-    private $prophylaxis;
+    private $prophylaxisId;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="status", type="integer", nullable=false)
-     */
-    private $status;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="synced", type="integer", nullable=false)
+     * Column(name="synced", type="integer", nullable=false)
      */
     private $synced;
 
@@ -174,49 +167,26 @@ class Patient
     }
 
     /**
-     * Set prophylaxis
+     * Set prophylaxisId
      *
-     * @param integer $prophylaxis
+     * @param integer $prophylaxisId
      * @return Patient
      */
-    public function setProphylaxis($prophylaxis)
+    public function setProphylaxisId($prophylaxisId)
     {
-        $this->prophylaxis = $prophylaxis;
+        $this->prophylaxisId = $prophylaxisId;
     
         return $this;
     }
 
     /**
-     * Get prophylaxis
+     * Get prophylaxisId
      *
      * @return integer 
      */
-    public function getProphylaxis()
+    public function getProphylaxisId()
     {
-        return $this->prophylaxis;
-    }
-
-    /**
-     * Set status
-     *
-     * @param integer $status
-     * @return Patient
-     */
-    public function setStatus($status)
-    {
-        $this->status = $status;
-    
-        return $this;
-    }
-
-    /**
-     * Get status
-     *
-     * @return integer 
-     */
-    public function getStatus()
-    {
-        return $this->status;
+        return $this->prophylaxisId;
     }
 
     /**

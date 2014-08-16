@@ -1,41 +1,30 @@
-<div id="sidebar" class="sidebar   responsive">
+<?php
+	$selected_class = 	"hsub";
+	$display 		=	"display: none;";
+?>
+<div id="sidebar" class="sidebar   responsive sidebar-fixed sidebar-scroll">
 	<script type="text/javascript">
 	try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
 	</script>
 
-	<div class="sidebar-shortcuts" id="sidebar-shortcuts">
-		<div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
-			<button class="btn btn-success">
-				<i class="ace-icon fa fa-signal"></i>
-			</button>
 
-			<button class="btn btn-info">
-				<i class="ace-icon fa fa-pencil"></i>
-			</button>
-
-			<button class="btn btn-warning">
-				<i class="ace-icon fa fa-users"></i>
-			</button>
-
-			<button class="btn btn-danger">
-				<i class="ace-icon fa fa-cogs"></i>
-			</button>
-		</div>
-
-		<div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
-			<span class="btn btn-success"></span>
-
-			<span class="btn btn-info"></span>
-
-			<span class="btn btn-warning"></span>
-
-			<span class="btn btn-danger"></span>
-		</div>
-	</div><!-- /.sidebar-shortcuts -->
+	<?php      	
+		$this->load->view('sidebar_shortcuts_view');
+	?>
 
 	<ul class="nav nav-list" style="top: 0px;">
-		<li class="active">
-			<a href="index-2.html">
+
+		<?php
+			if(isset($menu_select[0]) && $menu_select[0]==0){
+				$selected_class = "active ";
+				$display 		=	"";
+			}else{
+				$selected_class = "hsub";
+				$display 		=	"display: none;";
+			}
+		?>
+		<li class="<?php echo $selected_class;?>">
+			<a href="<?php echo base_url()?>vl/">
 				<i class="menu-icon fa fa-tachometer"></i>
 				<span class="menu-text"> Dashboard </span>
 			</a>
@@ -43,418 +32,300 @@
 			<b class="arrow"></b>
 		</li>
 
-		<li class="hsub">
-			<a href="#" class="dropdown-toggle">
-				<i class="menu-icon fa fa-desktop"></i>
-				<span class="menu-text"> UI &amp; Elements </span>
+		<?php
+			if(isset($menu_select[0]) && $menu_select[0]==1){
+				$selected_class = "active open ";
+				$display 		=	"";
+			}else{
+				$selected_class = "hsub";
+				$display 		=	"display: none;";
+			}
+		?>
+
+		<li class="<?php echo $selected_class;?>">
+
+			<a href="#"  class="dropdown-toggle">
+				<i class="menu-icon fa fa-share-square fa-tint"></i>
+				<span class="menu-text"> Tests Requisition </span>
 
 				<b class="arrow fa fa-angle-down"></b>
 			</a>
 
 			<b class="arrow"></b>
 
-			<ul class="submenu nav-hide" style="display: none;">
-				<li class="hsub">
-					<a href="#" class="dropdown-toggle">
-						<i class="menu-icon fa fa-caret-right"></i>
+			<ul class="submenu nav-hide" style="<?php echo $display;?>">
 
-						Layouts
-						<b class="arrow fa fa-angle-down"></b>
+				<?php
+					if(isset($menu_select[0]) && $menu_select[0]==1 && isset($menu_select[1]) && $menu_select[1]==0){
+						$selected_class = "active";
+
+					}else{
+						$selected_class = "hsub";
+					}
+				?>
+				<li class="<?php echo $selected_class;?>">
+					<a href="<?php echo base_url()?>vl/vl_requisition/fill" >
+						<i class="menu-icon fa fa-caret-right"></i>
+						<i class="fa fa-table"></i>
+						&nbsp;Fill Requisition form
 					</a>
 
-					<b class="arrow"></b>
+					<b class="arrow"></b>	
 
-					<ul class="submenu">
-						<li class="">
-							<a href="top-menu.html">
-								<i class="menu-icon fa fa-caret-right"></i>
-								Top Menu
-							</a>
-
-							<b class="arrow"></b>
-						</li>
-
-						<li class="">
-							<a href="mobile-menu-1.html">
-								<i class="menu-icon fa fa-caret-right"></i>
-								Default Mobile Menu
-							</a>
-
-							<b class="arrow"></b>
-						</li>
-
-						<li class="">
-							<a href="mobile-menu-2.html">
-								<i class="menu-icon fa fa-caret-right"></i>
-								Mobile Menu 2
-							</a>
-
-							<b class="arrow"></b>
-						</li>
-
-						<li class="">
-							<a href="mobile-menu-3.html">
-								<i class="menu-icon fa fa-caret-right"></i>
-								Mobile Menu 3
-							</a>
-
-							<b class="arrow"></b>
-						</li>
-					</ul>
 				</li>
 
-				<li class="">
-					<a href="typography.html">
+
+				<?php
+					if(isset($menu_select[0]) && $menu_select[0]==1 && isset($menu_select[1]) && $menu_select[1]==1){
+						$selected_class = "active";
+
+					}else{
+						$selected_class = "hsub";
+					}
+				?>
+				<li class="<?php echo $selected_class;?>">
+					<a href="<?php echo base_url()?>vl/vl_requisition/samples">
 						<i class="menu-icon fa fa-caret-right"></i>
-						Typography
+						<i class="fa fa-tint"></i>
+						&nbsp;Samples Entered
 					</a>
 
 					<b class="arrow"></b>
 				</li>
 
-				<li class="">
-					<a href="elements.html">
+
+				<?php
+					if(isset($menu_select[0]) && $menu_select[0]==1 && isset($menu_select[1]) && $menu_select[1]==2){
+						$selected_class = "active";
+
+					}else{
+						$selected_class = "hsub";
+					}
+				?>
+				<li class="<?php echo $selected_class;?>">
+					<a href="<?php echo base_url()?>vl/vl_vl_requisition">
 						<i class="menu-icon fa fa-caret-right"></i>
-						Elements
+						<i class="fa fa-calendar"></i>
+						&nbsp;Facility Consumption 
 					</a>
 
 					<b class="arrow"></b>
-				</li>
-
-				<li class="">
-					<a href="buttons.html">
-						<i class="menu-icon fa fa-caret-right"></i>
-						Buttons &amp; Icons
-					</a>
-
-					<b class="arrow"></b>
-				</li>
-
-				<li class="">
-					<a href="treeview.html">
-						<i class="menu-icon fa fa-caret-right"></i>
-						Treeview
-					</a>
-
-					<b class="arrow"></b>
-				</li>
-
-				<li class="">
-					<a href="jquery-ui.html">
-						<i class="menu-icon fa fa-caret-right"></i>
-						jQuery UI
-					</a>
-
-					<b class="arrow"></b>
-				</li>
-
-				<li class="">
-					<a href="nestable-list.html">
-						<i class="menu-icon fa fa-caret-right"></i>
-						Nestable Lists
-					</a>
-
-					<b class="arrow"></b>
-				</li>
-
-				<li class="hsub">
-					<a href="#" class="dropdown-toggle">
-						<i class="menu-icon fa fa-caret-right"></i>
-
-						Three Level Menu
-						<b class="arrow fa fa-angle-down"></b>
-					</a>
-
-					<b class="arrow"></b>
-
-					<ul class="submenu">
-						<li class="">
-							<a href="#">
-								<i class="menu-icon fa fa-leaf"></i>
-								Item #1
-							</a>
-
-							<b class="arrow"></b>
-						</li>
-
-						<li class="hsub">
-							<a href="#" class="dropdown-toggle">
-								<i class="menu-icon fa fa-pencil"></i>
-
-								4th level
-								<b class="arrow fa fa-angle-down"></b>
-							</a>
-
-							<b class="arrow"></b>
-
-							<ul class="submenu">
-								<li class="">
-									<a href="#">
-										<i class="menu-icon fa fa-plus"></i>
-										Add Product
-									</a>
-
-									<b class="arrow"></b>
-								</li>
-
-								<li class="">
-									<a href="#">
-										<i class="menu-icon fa fa-eye"></i>
-										View Products
-									</a>
-
-									<b class="arrow"></b>
-								</li>
-							</ul>
-						</li>
-					</ul>
-				</li>
+				</li>				
 			</ul>
 		</li>
 
-		<li class="hsub">
+		<?php
+			if(isset($menu_select[0]) && $menu_select[0]==2){
+				$selected_class = "active open ";
+				$display 		=	"";
+			}else{
+				$selected_class = "hsub";
+				$display 		=	"display: none;";
+			}
+		?>
+
+
+		<li class="<?php echo $selected_class;?>">
+
 			<a href="#" class="dropdown-toggle">
-				<i class="menu-icon fa fa-list"></i>
-				<span class="menu-text"> Tables </span>
+				<i class="menu-icon fa  fa-table"></i>
+				<span class="menu-text"> Worksheets </span>
 
 				<b class="arrow fa fa-angle-down"></b>
 			</a>
 
+
 			<b class="arrow"></b>
 
-			<ul class="submenu">
-				<li class="">
-					<a href="tables.html">
+			<ul class="submenu nav-hide" style="<?php echo $display;?>">
+
+				<?php
+					if(isset($menu_select[0]) && $menu_select[0]==2 && isset($menu_select[1]) && $menu_select[1]==0){
+						$selected_class = "active";
+
+					}else{
+						$selected_class = "hsub";
+					}
+				?>
+
+				<li class="<?php echo $selected_class;?>">
+					<a href="<?php echo base_url()?>vl/worksheet/cobas" >
 						<i class="menu-icon fa fa-caret-right"></i>
-						Simple &amp; Dynamic
+						<i class="fa fa-barcode"></i>
+						&nbsp;Cobas
+					</a>
+
+					<b class="arrow"></b>	
+
+				</li>
+
+
+				<?php
+					if(isset($menu_select[0]) && $menu_select[0]==2 && isset($menu_select[1]) && $menu_select[1]==1){
+						$selected_class = "active";
+
+					}else{
+						$selected_class = "hsub";
+					}
+				?>
+
+				<li class="<?php echo $selected_class;?>">
+					<a href="<?php echo base_url()?>vl/worksheet/abbott">
+						<i class="menu-icon fa fa-caret-right"></i>
+						<i class="fa fa-barcode"></i>
+						&nbsp;Abbott
 					</a>
 
 					<b class="arrow"></b>
 				</li>
 
-				<li class="">
-					<a href="jqgrid.html">
+				<?php
+					if(isset($menu_select[0]) && $menu_select[0]==2 && isset($menu_select[1]) && $menu_select[1]==2){
+						$selected_class = "active";
+
+					}else{
+						$selected_class = "hsub";
+					}
+				?>
+
+				<li class="<?php echo $selected_class;?>">
+					<a href="<?php echo base_url()?>vl/worksheet/history">
 						<i class="menu-icon fa fa-caret-right"></i>
-						jqGrid plugin
+						<i class="fa fa-clock-o"></i>
+						&nbsp;Worksheet History
 					</a>
 
 					<b class="arrow"></b>
-				</li>
+				</li>				
 			</ul>
 		</li>
 
-		<li class="hsub">
+		<?php
+			if(isset($menu_select[0]) && $menu_select[0]==3){
+				$selected_class = "active open ";
+				$display 		=	"";
+			}else{
+				$selected_class = "hsub";
+				$display 		=	"display: none;";
+			}
+		?>
+
+		<li class="<?php echo $selected_class;?>">
+
 			<a href="#" class="dropdown-toggle">
-				<i class="menu-icon fa fa-pencil-square-o"></i>
-				<span class="menu-text"> Forms </span>
+				<i class="menu-icon fa  fa-share-square-o"></i>
+				<span class="menu-text"> Results </span>
 
 				<b class="arrow fa fa-angle-down"></b>
 			</a>
 
+
 			<b class="arrow"></b>
 
-			<ul class="submenu">
-				<li class="">
-					<a href="form-elements.html">
+			<ul class="submenu nav-hide" style="<?php echo $display;?>">
+
+				<?php
+					if(isset($menu_select[0]) && $menu_select[0]==3 && isset($menu_select[1]) && $menu_select[1]==0){
+						$selected_class = "active";
+
+					}else{
+						$selected_class = "hsub";
+					}
+				?>
+
+				<li class="<?php echo $selected_class;?>">
+					<a href="<?php echo base_url()?>vl/results/update">
 						<i class="menu-icon fa fa-caret-right"></i>
-						Form Elements
+						<i class="fa fa-pencil-square"></i>
+						&nbsp;Update Results						
+					</a>
+
+					<b class="arrow"></b>	
+
+				</li>
+
+				<?php
+					if(isset($menu_select[0]) && $menu_select[0]==3 && isset($menu_select[1]) && $menu_select[1]==1){
+						$selected_class = "active";
+
+					}else{
+						$selected_class = "hsub";
+					}
+				?>
+
+				<li class="<?php echo $selected_class;?>">
+					<a href="<?php echo base_url()?>vl/results/dispatch">
+						<i class="menu-icon fa fa-caret-right"></i>
+						<i class="fa fa-truck"></i>
+						&nbsp;Dispatch Results
 					</a>
 
 					<b class="arrow"></b>
 				</li>
 
-				<li class="">
-					<a href="form-wizard.html">
+				<?php
+					if(isset($menu_select[0]) && $menu_select[0]==3 && isset($menu_select[1]) && $menu_select[1]==2){
+						$selected_class = "active";
+
+					}else{
+						$selected_class = "hsub";
+					}
+				?>
+
+				<li class="<?php echo $selected_class;?>">
+					<a href="<?php echo base_url()?>vl/results/view">
 						<i class="menu-icon fa fa-caret-right"></i>
-						Wizard &amp; Validation
+						<i class="fa fa-eye"></i>
+						&nbsp;View Results
 					</a>
 
 					<b class="arrow"></b>
-				</li>
-
-				<li class="">
-					<a href="wysiwyg.html">
-						<i class="menu-icon fa fa-caret-right"></i>
-						Wysiwyg &amp; Markdown
-					</a>
-
-					<b class="arrow"></b>
-				</li>
-
-				<li class="">
-					<a href="dropzone.html">
-						<i class="menu-icon fa fa-caret-right"></i>
-						Dropzone File Upload
-					</a>
-
-					<b class="arrow"></b>
-				</li>
+				</li>				
 			</ul>
 		</li>
 
-		<li class="">
-			<a href="widgets.html">
-				<i class="menu-icon fa fa-list-alt"></i>
-				<span class="menu-text"> Widgets </span>
-			</a>
+		<?php
+			if(isset($menu_select[0]) && $menu_select[0]==4){
+				$selected_class = "active open ";
+				$display 		=	"";
+			}else{
+				$selected_class = "hsub";
+				$display 		=	"display: none;";
+			}
+		?>
 
-			<b class="arrow"></b>
-		</li>
+		<?php
+			if(isset($menu_select[0]) && $menu_select[0]==5){
+				$selected_class = "active open ";
+				$display 		=	"";
+			}else{
+				$selected_class = "hsub";
+				$display 		=	"display: none;";
+			}
+		?>
 
-		<li class="">
-			<a href="calendar.html">
-				<i class="menu-icon fa fa-calendar"></i>
+	
+				<?php
+					if(isset($menu_select[0]) && $menu_select[0]==5 && isset($menu_select[1]) && $menu_select[1]==3){
+						$selected_class = "active";
 
-				<span class="menu-text">
-					Calendar
-
-					<span class="badge badge-transparent tooltip-error" title="" data-original-title="2 Important Events">
-						<i class="ace-icon fa fa-exclamation-triangle red bigger-130"></i>
-					</span>
-				</span>
-			</a>
-
-			<b class="arrow"></b>
-		</li>
-
-		<li class="">
-			<a href="gallery.html">
-				<i class="menu-icon fa fa-picture-o"></i>
-				<span class="menu-text"> Gallery </span>
-			</a>
-
-			<b class="arrow"></b>
-		</li>
-
-		<li class="hsub">
-			<a href="#" class="dropdown-toggle">
-				<i class="menu-icon fa fa-tag"></i>
-				<span class="menu-text"> More Pages </span>
-
-				<b class="arrow fa fa-angle-down"></b>
-			</a>
-
-			<b class="arrow"></b>
-
-			<ul class="submenu">
-				<li class="">
-					<a href="profile.html">
-						<i class="menu-icon fa fa-caret-right"></i>
-						User Profile
-					</a>
-
-					<b class="arrow"></b>
-				</li>
-
-				<li class="">
-					<a href="inbox.html">
-						<i class="menu-icon fa fa-caret-right"></i>
-						Inbox
-					</a>
-
-					<b class="arrow"></b>
-				</li>
-
-				<li class="">
-					<a href="pricing.html">
-						<i class="menu-icon fa fa-caret-right"></i>
-						Pricing Tables
-					</a>
-
-					<b class="arrow"></b>
-				</li>
-
-				<li class="">
-					<a href="invoice.html">
-						<i class="menu-icon fa fa-caret-right"></i>
-						Invoice
-					</a>
-
-					<b class="arrow"></b>
-				</li>
-
-				<li class="">
-					<a href="timeline.html">
-						<i class="menu-icon fa fa-caret-right"></i>
-						Timeline
-					</a>
-
-					<b class="arrow"></b>
-				</li>
-
-				<li class="">
-					<a href="login.html">
-						<i class="menu-icon fa fa-caret-right"></i>
-						Login &amp; Register
-					</a>
-
-					<b class="arrow"></b>
-				</li>
+					}else{
+						$selected_class = "hsub";
+					}
+				?>
 			</ul>
 		</li>
 
-		<li class="hsub">
-			<a href="#" class="dropdown-toggle">
-				<i class="menu-icon fa fa-file-o"></i>
 
-				<span class="menu-text">
-					Other Pages
-
-					<span class="badge badge-primary">5</span>
-				</span>
-
-				<b class="arrow fa fa-angle-down"></b>
-			</a>
-
-			<b class="arrow"></b>
-
-			<ul class="submenu">
-				<li class="">
-					<a href="faq.html">
-						<i class="menu-icon fa fa-caret-right"></i>
-						FAQ
-					</a>
-
-					<b class="arrow"></b>
-				</li>
-
-				<li class="">
-					<a href="error-404.html">
-						<i class="menu-icon fa fa-caret-right"></i>
-						Error 404
-					</a>
-
-					<b class="arrow"></b>
-				</li>
-
-				<li class="">
-					<a href="error-500.html">
-						<i class="menu-icon fa fa-caret-right"></i>
-						Error 500
-					</a>
-
-					<b class="arrow"></b>
-				</li>
-
-				<li class="">
-					<a href="grid.html">
-						<i class="menu-icon fa fa-caret-right"></i>
-						Grid
-					</a>
-
-					<b class="arrow"></b>
-				</li>
-
-				<li class="">
-					<a href="blank.html">
-						<i class="menu-icon fa fa-caret-right"></i>
-						Blank Page
-					</a>
-
-					<b class="arrow"></b>
-				</li>
-			</ul>
-		</li>
+		<?php
+			if(isset($menu_select[0]) && $menu_select[0]==7){
+				$selected_class = "active open ";
+				$display 		=	"";
+			}else{
+				$selected_class = "hsub";
+				$display 		=	"display: none;";
+			}
+		?>
 	</ul><!-- /.nav-list -->
 
 	<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
@@ -463,5 +334,9 @@
 
 	<script type="text/javascript">
 	try{ace.settings.check('sidebar' , 'collapsed')}catch(e){}
+	</script>
+
+	<script type="text/javascript">
+		//$("#ss").toggle("dropdown");
 	</script>
 </div>

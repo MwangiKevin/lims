@@ -14,6 +14,7 @@ class blank extends MY_Controller{
 
 	public function __construct(){
 
+		parent::__construct();
 		$this->view_data['content_view'] 	= "test/blank_view";
 		$this->view_data['sidebar'] 		= "eid_sidebar";
 		$this->view_data['title'] 			= "Equipment";

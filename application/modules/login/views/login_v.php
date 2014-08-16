@@ -13,7 +13,7 @@
 	<link rel='stylesheet' href='<?php echo base_url();?>assets/sass_assets/stylesheets/styles.css' type='text/css'></link>
 
 	<?php      	
-	$this->load->view('utils/dynamicLoads');
+		$this->load->view('utils/dynamicLoads');
 	?>
 
 	<!-- text fonts -->
@@ -21,21 +21,32 @@
 </head>
 
 <body class="login-layout light-login">
+	<div id="navbar" class="navbar navbar-default ">
+	</div>
 	<div class="main-container">
 		<div class="main-content">
+			<br/>
+			<br/>
+			<br/>
 			<div class="row">
-				<div class="col-sm-10 col-sm-offset-1">
-					<div class="login-container"  style = "float:left; margin-top:5%;">
-						<h1 >
-							<i class="ace-icon fa fa-leaf green"></i>
-							<span class="blue" style="font-size:50px;">EID</span>
-							<span style="font-size:50px;">/</span>
-							<span class="red"  style="font-size:50px;">VL</span>
-							<span class="grey" id="id-text2" style="font-size:50px;">LIMS</span>
-						</h1>
-						Logo/crest goes here
-					</div>
-					<div class="login-container"  style = "float:right; margin-top:5%;">						
+				<div class="col-sm-6 col-sm-offset-1">
+					<center>
+						<div class="login-container"  style = " width:100%">
+							<h1 >
+								<i class="ace-icon fa fa-leaf green"></i>
+								<span class="blue" style="font-size:60px;">EID</span>
+								<span style="font-size:60px;">/</span>
+								<span class="red"  style="font-size:60px;">VL</span>
+								<span class="grey" id="id-text2" style="font-size:60px;">LIMS</span>
+							</h1>
+						</div>
+						<h2 class="blue"> (Early Infant Diagnosis)</h2>
+						<h2 class="red"> (Viral Load) </h2>
+					</center>
+					<img src="<?php echo base_url("img/tz.png");?>" height="140" width="100%" alt="NACP">
+				</div>
+				<div class="col-sm-3 ">
+					<div class="login-container"  style = "">						
 
 						<div class="space-6"></div>
 
@@ -49,215 +60,238 @@
 										</h4>
 
 										<div class="space-6"></div>
+										<?php 
+										if($login_fail){
+											?>
+											<div class="alert alert-danger" fade in>											
+												Login Unsuccessfull!
+												<button class="close" data-dismiss="alert">
+													<i class="ace-icon fa fa-times"></i>
+												</button>
+											</div>
+											<?php
+										}
+										?>
+										<?php echo form_open('login/process_credentials');?>
+										<fieldset>
+											<label class="block clearfix">
+												<span class="block input-icon input-icon-right">
+													<input type="text" class="form-control" name="username" placeholder="Username">
+													<i class="ace-icon fa fa-user"></i>
+												</span>
+											</label>
 
-										<form>
-											<fieldset>
-												<label class="block clearfix">
-													<span class="block input-icon input-icon-right">
-														<input type="text" class="form-control" placeholder="Username">
-														<i class="ace-icon fa fa-user"></i>
-													</span>
+											<label class="block clearfix">
+												<span class="block input-icon input-icon-right">
+													<input type="password" class="form-control" name="password" placeholder="Password">
+													<i class="ace-icon fa fa-lock"></i>
+												</span>
+											</label>
+
+											<label class="block clearfix">
+												<span class="block input-icon input-icon-right">
+													<select name="program" >
+														<option value="eid">Early Infant Diagnosis</option>
+														<option value="vl">Viral load</option>
+													</select>
+													<i class="ace-icon fa fa-lock"></i>
+												</span>
+											</label>
+
+											<div class="space"></div>
+
+											<div class="clearfix">
+												<label class="inline">
+													<input type="checkbox" class="ace">
+													<span class="lbl"> Remember Me</span>
 												</label>
 
-												<label class="block clearfix">
-													<span class="block input-icon input-icon-right">
-														<input type="password" class="form-control" placeholder="Password">
-														<i class="ace-icon fa fa-lock"></i>
-													</span>
-												</label>
+												<button type="submit" class="width-35 pull-right btn btn-sm btn-primary">
+													<i class="ace-icon fa fa-key"></i>
+													<span class="bigger-110">Login</span>
+												</button>
+											</div>
 
-												<div class="space"></div>
+											<div class="space-4"></div>
+										</fieldset>
+									</form>
+								</div><!-- /.widget-main -->
 
-												<div class="clearfix">
-													<label class="inline">
-														<input type="checkbox" class="ace">
-														<span class="lbl"> Remember Me</span>
-													</label>
-
-													<button type="button" class="width-35 pull-right btn btn-sm btn-primary">
-														<i class="ace-icon fa fa-key"></i>
-														<span class="bigger-110">Login</span>
-													</button>
-												</div>
-
-												<div class="space-4"></div>
-											</fieldset>
-										</form>
-									</div><!-- /.widget-main -->
-
-									<div class="toolbar clearfix">
-										<div>
-											<a href="#" data-target="#forgot-box" class="forgot-password-link">
-												<i class="ace-icon fa fa-arrow-left"></i>
-												I forgot my password
-											</a>
-										</div>
-
-										<div>
-											<a href="#" data-target="#signup-box" class="user-signup-link">
-												I want to register
-												<i class="ace-icon fa fa-arrow-right"></i>
-											</a>
-										</div>
+								<div class="toolbar clearfix">
+									<div>
+										<a href="#" data-target="#forgot-box" class="forgot-password-link">
+											<i class="ace-icon fa fa-arrow-left"></i>
+											I forgot my password
+										</a>
 									</div>
-								</div><!-- /.widget-body -->
-							</div><!-- /.login-box -->
 
-							<div id="forgot-box" class="forgot-box widget-box no-border">
-								<div class="widget-body">
-									<div class="widget-main">
-										<h4 class="header red lighter bigger">
-											<i class="ace-icon fa fa-key"></i>
-											Retrieve Password
-										</h4>
-
-										<div class="space-6"></div>
-										<p>
-											Enter your email and to receive instructions
-										</p>
-
-										<form>
-											<fieldset>
-												<label class="block clearfix">
-													<span class="block input-icon input-icon-right">
-														<input type="email" class="form-control" placeholder="Email">
-														<i class="ace-icon fa fa-envelope"></i>
-													</span>
-												</label>
-
-												<div class="clearfix">
-													<button type="button" class="width-35 pull-right btn btn-sm btn-danger">
-														<i class="ace-icon fa fa-lightbulb-o"></i>
-														<span class="bigger-110">Send Me!</span>
-													</button>
-												</div>
-											</fieldset>
-										</form>
-									</div><!-- /.widget-main -->
-
-									<div class="toolbar center">
-										<a href="#" data-target="#login-box" class="back-to-login-link">
-											Back to login
+									<div>
+										<a href="#" data-target="#signup-box" class="user-signup-link">
+											I want to register
 											<i class="ace-icon fa fa-arrow-right"></i>
 										</a>
 									</div>
-								</div><!-- /.widget-body -->
-							</div><!-- /.forgot-box -->
+								</div>
+							</div><!-- /.widget-body -->
+						</div><!-- /.login-box -->
 
-							<div id="signup-box" class="signup-box widget-box no-border">
-								<div class="widget-body">
-									<div class="widget-main">
-										<h4 class="header green lighter bigger">
-											<i class="ace-icon fa fa-users blue"></i>
-											New User Registration
-										</h4>
+						<div id="forgot-box" class="forgot-box widget-box no-border">
+							<div class="widget-body">
+								<div class="widget-main">
+									<h4 class="header red lighter bigger">
+										<i class="ace-icon fa fa-key"></i>
+										Retrieve Password
+									</h4>
 
-										<div class="space-6"></div>
-										<p> Enter your details to begin: </p>
+									<div class="space-6"></div>
+									<p>
+										Enter your email and to receive instructions
+									</p>
 
-										<form>
-											<fieldset>
-												<label class="block clearfix">
-													<span class="block input-icon input-icon-right">
-														<input type="email" class="form-control" placeholder="Email">
-														<i class="ace-icon fa fa-envelope"></i>
-													</span>
-												</label>
 
-												<label class="block clearfix">
-													<span class="block input-icon input-icon-right">
-														<input type="text" class="form-control" placeholder="Username">
-														<i class="ace-icon fa fa-user"></i>
-													</span>
-												</label>
+									<?php echo form_open('login/request_pwd_reset');?>
 
-												<label class="block clearfix">
-													<span class="block input-icon input-icon-right">
-														<input type="password" class="form-control" placeholder="Password">
-														<i class="ace-icon fa fa-lock"></i>
-													</span>
-												</label>
+									<fieldset>
+										<label class="block clearfix">
+											<span class="block input-icon input-icon-right">
+												<input type="email" class="form-control" placeholder="Email">
+												<i class="ace-icon fa fa-envelope"></i>
+											</span>
+										</label>
 
-												<label class="block clearfix">
-													<span class="block input-icon input-icon-right">
-														<input type="password" class="form-control" placeholder="Repeat password">
-														<i class="ace-icon fa fa-retweet"></i>
-													</span>
-												</label>
+										<div class="clearfix">
+											<button type="button" class="width-35 pull-right btn btn-sm btn-danger">
+												<i class="ace-icon fa fa-lightbulb-o"></i>
+												<span class="bigger-110">Send Me!</span>
+											</button>
+										</div>
+									</fieldset>
+								</form>
+							</div><!-- /.widget-main -->
 
-												<label class="block">
-													<input type="checkbox" class="ace">
-													<span class="lbl">
-														I accept the
-														<a href="#">User Agreement</a>
-													</span>
-												</label>
+							<div class="toolbar center">
+								<a href="#" data-target="#login-box" class="back-to-login-link">
+									Back to login
+									<i class="ace-icon fa fa-arrow-right"></i>
+								</a>
+							</div>
+						</div><!-- /.widget-body -->
+					</div><!-- /.forgot-box -->
 
-												<div class="space-24"></div>
+					<div id="signup-box" class="signup-box widget-box no-border">
+						<div class="widget-body">
+							<div class="widget-main">
+								<h4 class="header green lighter bigger">
+									<i class="ace-icon fa fa-users blue"></i>
+									New User Registration
+								</h4>
 
-												<div class="clearfix">
-													<button type="reset" class="width-30 pull-left btn btn-sm">
-														<i class="ace-icon fa fa-refresh"></i>
-														<span class="bigger-110">Reset</span>
-													</button>
+								<div class="space-6"></div>
+								<p> Enter your details to begin: </p>
 
-													<button type="button" class="width-65 pull-right btn btn-sm btn-success">
-														<span class="bigger-110">Register</span>
+								<form>
+									<fieldset>
+										<label class="block clearfix">
+											<span class="block input-icon input-icon-right">
+												<input type="email" class="form-control" placeholder="Email">
+												<i class="ace-icon fa fa-envelope"></i>
+											</span>
+										</label>
 
-														<i class="ace-icon fa fa-arrow-right icon-on-right"></i>
-													</button>
-												</div>
-											</fieldset>
-										</form>
-									</div>
+										<label class="block clearfix">
+											<span class="block input-icon input-icon-right">
+												<input type="text" class="form-control" placeholder="Username">
+												<i class="ace-icon fa fa-user"></i>
+											</span>
+										</label>
 
-									<div class="toolbar center">
-										<a href="#" data-target="#login-box" class="back-to-login-link">
-											<i class="ace-icon fa fa-arrow-left"></i>
-											Back to login
-										</a>
-									</div>
-								</div><!-- /.widget-body -->
-							</div><!-- /.signup-box -->
-						</div><!-- /.position-relative -->
+										<label class="block clearfix">
+											<span class="block input-icon input-icon-right">
+												<input type="password" class="form-control" placeholder="Password">
+												<i class="ace-icon fa fa-lock"></i>
+											</span>
+										</label>
 
-					</div>
-				</div><!-- /.col -->
-			</div><!-- /.row -->
-		</div><!-- /.main-content -->
-	</div><!-- /.main-container -->
+										<label class="block clearfix">
+											<span class="block input-icon input-icon-right">
+												<input type="password" class="form-control" placeholder="Repeat password">
+												<i class="ace-icon fa fa-retweet"></i>
+											</span>
+										</label>
 
-	<div class="footer">
-		<div class="footer-inner" style="position :fixed;background:#fff;">
-			<div class="footer-content" style = "height: 35px;">
-				<span class="bigger-120" >
-					<span class="blue"><?php echo $this->config->item("copyrights");?></span>
-				</span>
+										<label class="block">
+											<input type="checkbox" class="ace">
+											<span class="lbl">
+												I accept the
+												<a href="#">User Agreement</a>
+											</span>
+										</label>
+
+										<div class="space-24"></div>
+
+										<div class="clearfix">
+											<button type="reset" class="width-30 pull-left btn btn-sm">
+												<i class="ace-icon fa fa-refresh"></i>
+												<span class="bigger-110">Reset</span>
+											</button>
+
+											<button type="button" class="width-65 pull-right btn btn-sm btn-success">
+												<span class="bigger-110">Register</span>
+
+												<i class="ace-icon fa fa-arrow-right icon-on-right"></i>
+											</button>
+										</div>
+									</fieldset>
+								</form>
+							</div>
+
+							<div class="toolbar center">
+								<a href="#" data-target="#login-box" class="back-to-login-link">
+									<i class="ace-icon fa fa-arrow-left"></i>
+									Back to login
+								</a>
+							</div>
+						</div><!-- /.widget-body -->
+					</div><!-- /.signup-box -->
+				</div><!-- /.position-relative -->
+
 			</div>
+		</div><!-- /.col -->
+	</div><!-- /.row -->
+</div><!-- /.main-content -->
+</div><!-- /.main-container -->
+
+<div class="footer">
+	<div class="footer-inner" style="position :fixed;background:#fff;">
+		<div class="footer-content" style = "height: 35px;">
+			<span class="bigger-120" >
+				<span class="blue"><?php echo $this->config->item("copyrights");?></span>
+			</span>
 		</div>
 	</div>
+</div>
 
 
-	<script type="text/javascript">
-	window.jQuery || document.write("<script src='assets/js/jquery.min.js'>"+"<"+"/script>");
-	</script>
+<script type="text/javascript">
+window.jQuery || document.write("<script src='assets/js/jquery.min.js'>"+"<"+"/script>");
+</script>
 
 
-	<script type="text/javascript">
-	if('ontouchstart' in document.documentElement) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
-	</script>
+<script type="text/javascript">
+if('ontouchstart' in document.documentElement) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+</script>
 
-	<script type="text/javascript">
-	jQuery(function($) {
-		$(document).on('click', '.toolbar a[data-target]', function(e) {
-			e.preventDefault();
-			var target = $(this).data('target');
+<script type="text/javascript">
+jQuery(function($) {
+	$(document).on('click', '.toolbar a[data-target]', function(e) {
+		e.preventDefault();
+		var target = $(this).data('target');
 				$('.widget-box.visible').removeClass('visible');//hide others
 				$(target).addClass('visible');//show target
 			});
-	});
+});
 
-	</script>
+</script>
 
 </body>
 </html>

@@ -2,83 +2,87 @@
 
 namespace models\Entities;
 
-use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Mapping as ORM;
 
 /**
  * Facility
  *
- * @ORM\Table(name="facility")
- * @ORM\Entity
+ * @Table(name="facility")
+ * @Entity
  */
 class Facility
 {
     /**
      * @var integer
      *
-     * @ORM\Column(name="id", type="integer", nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @Column(name="id", type="integer", nullable=false)
+     * @Id
+     * @GeneratedValue(strategy="IDENTITY")
      */
     private $id;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=100, nullable=false)
+     * @Column(name="code", type="string", length=20, nullable=false)
+     */
+    private $code;
+
+    /**
+     * @var string
+     *
+     * @Column(name="name", type="string", length=100, nullable=false)
      */
     private $name;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="partner_id", type="integer", nullable=false)
+     * @Column(name="district_id", type="integer", nullable=true)
+     */
+    private $districtId;
+
+    /**
+     * @var integer
+     *
+     * @Column(name="partner_id", type="integer", nullable=false)
      */
     private $partnerId;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="email", type="string", length=250, nullable=false)
+     * @Column(name="email", type="string", length=250, nullable=false)
      */
     private $email;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="phone", type="string", length=50, nullable=false)
+     * @Column(name="telephone", type="string", length=50, nullable=false)
      */
-    private $phone;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="rollout_status", type="integer", nullable=false)
-     */
-    private $rolloutStatus;
-
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="rollout_date", type="date", nullable=true)
-     */
-    private $rolloutDate;
+    private $telephone;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="google_maps", type="string", length=500, nullable=true)
+     * @Column(name="telephone2", type="string", length=40, nullable=false)
      */
-    private $googleMaps;
+    private $telephone2;
 
     /**
-     * @var \models\Entities\District
+     * @var integer
      *
-     * @ORM\ManyToOne(targetEntity="models\Entities\District")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="district_id", referencedColumnName="id")
-     * })
+     * @Column(name="contact_person_phone", type="integer", nullable=false)
      */
-    private $district;
+    private $contactPersonPhone;
+
+    /**
+     * @var string
+     *
+     * @Column(name="google_maps", type="string", length=500, nullable=true)
+     */
+    private $googleMaps;
 
 
     /**
@@ -89,6 +93,29 @@ class Facility
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set code
+     *
+     * @param string $code
+     * @return Facility
+     */
+    public function setCode($code)
+    {
+        $this->code = $code;
+    
+        return $this;
+    }
+
+    /**
+     * Get code
+     *
+     * @return string 
+     */
+    public function getCode()
+    {
+        return $this->code;
     }
 
     /**
@@ -112,6 +139,29 @@ class Facility
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Set districtId
+     *
+     * @param integer $districtId
+     * @return Facility
+     */
+    public function setDistrictId($districtId)
+    {
+        $this->districtId = $districtId;
+    
+        return $this;
+    }
+
+    /**
+     * Get districtId
+     *
+     * @return integer 
+     */
+    public function getDistrictId()
+    {
+        return $this->districtId;
     }
 
     /**
@@ -161,72 +211,72 @@ class Facility
     }
 
     /**
-     * Set phone
+     * Set telephone
      *
-     * @param string $phone
+     * @param string $telephone
      * @return Facility
      */
-    public function setPhone($phone)
+    public function setTelephone($telephone)
     {
-        $this->phone = $phone;
+        $this->telephone = $telephone;
     
         return $this;
     }
 
     /**
-     * Get phone
+     * Get telephone
      *
      * @return string 
      */
-    public function getPhone()
+    public function getTelephone()
     {
-        return $this->phone;
+        return $this->telephone;
     }
 
     /**
-     * Set rolloutStatus
+     * Set telephone2
      *
-     * @param integer $rolloutStatus
+     * @param string $telephone2
      * @return Facility
      */
-    public function setRolloutStatus($rolloutStatus)
+    public function setTelephone2($telephone2)
     {
-        $this->rolloutStatus = $rolloutStatus;
+        $this->telephone2 = $telephone2;
     
         return $this;
     }
 
     /**
-     * Get rolloutStatus
+     * Get telephone2
+     *
+     * @return string 
+     */
+    public function getTelephone2()
+    {
+        return $this->telephone2;
+    }
+
+    /**
+     * Set contactPersonPhone
+     *
+     * @param integer $contactPersonPhone
+     * @return Facility
+     */
+    public function setContactPersonPhone($contactPersonPhone)
+    {
+        $this->contactPersonPhone = $contactPersonPhone;
+    
+        return $this;
+    }
+
+    /**
+     * Get contactPersonPhone
      *
      * @return integer 
      */
-    public function getRolloutStatus()
+    public function getContactPersonPhone()
     {
-        return $this->rolloutStatus;
-    }
-
-    /**
-     * Set rolloutDate
-     *
-     * @param \DateTime $rolloutDate
-     * @return Facility
-     */
-    public function setRolloutDate($rolloutDate)
-    {
-        $this->rolloutDate = $rolloutDate;
-    
-        return $this;
-    }
-
-    /**
-     * Get rolloutDate
-     *
-     * @return \DateTime 
-     */
-    public function getRolloutDate()
-    {
-        return $this->rolloutDate;
+        return $this->contactPersonPhone;
     }
 
     /**
@@ -250,28 +300,5 @@ class Facility
     public function getGoogleMaps()
     {
         return $this->googleMaps;
-    }
-
-    /**
-     * Set district
-     *
-     * @param \models\Entities\District $district
-     * @return Facility
-     */
-    public function setDistrict(\models\Entities\District $district = null)
-    {
-        $this->district = $district;
-    
-        return $this;
-    }
-
-    /**
-     * Get district
-     *
-     * @return \models\Entities\District 
-     */
-    public function getDistrict()
-    {
-        return $this->district;
     }
 }
