@@ -50,11 +50,11 @@ $this->mpdf = new mPDF();
 					</tr>";	
 	}
 
-	$content_1 ="
+	$content_1 =" 
 	<img src=".base_url('img/tz.png')."  height='140' width='100%' alt='NACP'>
 	<h2> ".$area. " Summary</h2>
 	<h1 style='position: absolute; right:45%; top:15%;'> ".$location."</h1>
-	<h4 style='position: absolute; right:10%; top:19%;'> Start Date: ".$start_date."  End Date: ".$end_date." </h4>
+	<h4 style='position: absolute; right:10%; top:19%;'> Start Date:".$start_date."  End Date: ".$end_date." </h4>
 	<hr/>
 		<table border='1' align='center'>
 			<tbody>
@@ -93,10 +93,17 @@ $this->mpdf = new mPDF();
 		
 		$final_content = $content_1.$content_2.$content_3;
 		$this->mpdf->WriteHTML($final_content);
-		$title = "doc1";
+		$title = $location." Report";
 		$file_name = $this->config->item('server_root').'downloads/'.$title.'.pdf';
-		$this->mpdf->Output($file_name,I);//F to save to the above location
-		exit;	
+		$downloaded = $this->mpdf->Output($file_name,F);//F to save to the above location I to display
+		echo "report downloaded";
+		exit;
+		
+		if($this->mpdf->Output($file_name,F)){
+			return "Report Downloaded";
+		}else{
+			return "Not downloaded";
+		}
 ?>
 
 

@@ -17,10 +17,7 @@
 				Download Report
 			</a>
 			&nbsp;
-			<a href="<?php echo base_url().'reports/email/compose_mail'?>">
-				<i class="ace-icon fa fa-envelope"></i>
-				Send Email
-			</a>
+			<?php echo $email_download_path ?>
 		</div>
 	</div>
 </div>

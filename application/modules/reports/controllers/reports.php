@@ -25,7 +25,7 @@ class reports extends MY_Controller {
 		$this->view_data['breadcrumbs'] 	=	array(
 														0 	=>	array(
 																	"title" 	=>	"Home",
-																	"link"		=>	base_url()."reports/",
+																	"link"		=>	base_url()."eid/dashboard",
 																	"class"		=>	""
 																	),
 														1 	=>	array(
@@ -52,7 +52,7 @@ class reports extends MY_Controller {
 		$this->view_data['breadcrumbs'] 	=	array(
 														0 	=>	array(
 																	"title" 	=>	"Home",
-																	"link"		=>	base_url()."reports/",
+																	"link"		=>	base_url()."eid/dashboard",
 																	"class"		=>	""
 																	),
 														1 	=>	array(
@@ -73,7 +73,7 @@ class reports extends MY_Controller {
 		$this->view_data['breadcrumbs'] 	=	array(
 														0 	=>	array(
 																	"title" 	=>	"Home",
-																	"link"		=>	base_url()."reports/",
+																	"link"		=>	base_url()."eid/dashboard",
 																	"class"		=>	""
 																	),
 														1 	=>	array(
@@ -105,10 +105,13 @@ class reports extends MY_Controller {
 		$format = $_POST['all_type'];//pdf or excel	
 		if($format == 1){//all samples for excel 
 			$this->view_data['format'] = $format."/0";			
-			// $worksheet["column_data"]	=	$col_data;
-			// $worksheet["row_data"]		=	$row_data;
+			$this->view_data['email_download_path'] = "";
 		}else if($format == 2){//all samples for pdf
 			$this->view_data['format'] = $format."/0";
+			$this->view_data['email_download_path'] = "<a href='".base_url()."reports/email/send_email/All Regions'>
+															<i class='ace-icon fa fa-envelope'></i>
+															Send Email
+														</a>";
 		}else{
 			
 		}
@@ -139,6 +142,14 @@ class reports extends MY_Controller {
 			$this->view_data['end_date'] = $_POST['region_end_date'];
 			$this->view_data['area_name'] = $region[1]; 
 			$this->view_data['format'] = $format.'/1'; //format and type i.e all reports or limited by date
+			if($format == 1){
+				$this->view_data['email_download_path'] = "";
+			}else if($format == 2){
+				$this->view_data['email_download_path'] = "<a href='".base_url()."reports/email/send_email/".$region[1]."'>
+															<i class='ace-icon fa fa-envelope'></i>
+															Send Email
+														</a>";
+			}else{}
 			$this->view_data['area'] = "Regional"; 
 			$this->view_data['sample'] = $this->reports_model->reports_by_area(0,$region[1],$start_date,$end_date);//gets the samples from a particular region_ID
 		}else if($area == 1){
@@ -153,6 +164,14 @@ class reports extends MY_Controller {
 			$this->view_data['end_date'] =  $_POST['district_end_date'];
 			$this->view_data['area_name'] = $district[1]; 
 			$this->view_data['format'] = $format.'/1';//format and type i.e all reports or limited by date
+			if($format == 1){
+				$this->view_data['email_download_path'] = "";
+			}else if($format == 2){
+				$this->view_data['email_download_path'] = "<a href='".base_url()."reports/email/send_email/".$district[1]."'>
+															<i class='ace-icon fa fa-envelope'></i>
+															Send Email
+														</a>";
+			}else{}
 			$this->view_data['area'] = "District";  
 			$this->view_data['sample'] = $this->reports_model->reports_by_area(1,$district[1],$start_date,$end_date);//gets the samples from a particular region_ID
 		}else if($area == 2){
@@ -167,6 +186,14 @@ class reports extends MY_Controller {
 			$this->view_data['end_date'] = $_POST['facility_end_date'];
 			$this->view_data['area_name'] = $facility[1];
 			$this->view_data['format'] = $format.'/1';//format and type i.e all reports or limited by date
+			if($format == 1){
+				$this->view_data['email_download_path'] = "";
+			}else if($format == 2){
+				$this->view_data['email_download_path'] = "<a href='".base_url()."reports/email/send_email/".$facility[1]." '>
+															<i class='ace-icon fa fa-envelope'></i>
+															Send Email
+														</a>";
+			}else{}
 			$this->view_data['area'] = "Facility";  
 			$this->view_data['sample'] = $this->reports_model->reports_by_area(2,$facility[1],$start_date,$end_date);//gets the samples from a particular region_ID
 		}else{}
@@ -186,7 +213,7 @@ class reports extends MY_Controller {
 		if($format == 1 && $type == 0){
 			$worksheet["doc_creator"] 	= $this->session->userdata("username");
 			$worksheet["doc_title"] 	= $this->session->userdata("username");
-			$worksheet["file_name"] 	= "(All_Regions,National)EID-Report_(".$this->session->userdata("username").").xls";
+			$worksheet["file_name"] 	= "EID(".$area_name.")LIMS_Report_(".$this->session->userdata("username").").xls";
 			//get all samples
 			$all_samples = $this->reports_model->all_samples_m(date('Y-m-d',strtotime($start_date)),date('Y-m-d',strtotime($end_date)));
 			//excel worksheet styling
@@ -228,8 +255,8 @@ class reports extends MY_Controller {
 			$this->view_data['samples'] = $all_samples = $this->reports_model->all_samples_m(date('Y-m-d',strtotime($start_date)),date('Y-m-d',strtotime($end_date)));
 			$this->view_data['area'] = $area;
 			$this->view_data['location'] = "All Regions";
-			$this->view_data['start_date'] = $start_date;
-		 	$this->view_data['end_date'] = $end_date;
+			$this->view_data['start_date'] = "All Samples";
+		 	$this->view_data['end_date'] = "All Samples";
 			$this->load->view('pdf_report',$this->view_data);
 			//EXCEL DOWNLOAD REGIONS BY AREA
 		}else if($format == 1 && $type == 1){

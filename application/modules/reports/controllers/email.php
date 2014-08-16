@@ -8,7 +8,6 @@ class email extends MY_Controller {
 		$this->view_data['content_view'] 	= 	"reports/send_email_view";
 		$this->view_data['menu_select']		= 	"side_mail";
 		$this->load->model('mail_model');
-		$this->load->module("upload/upload");
 	}
 	
 	public function index(){
@@ -42,21 +41,42 @@ class email extends MY_Controller {
 	}
 	
 	
-	function send_email()  
-		{
-			
-			$id = $this->session->userdata("id");
-			$recepient = $this->input->post("recepients");
-			$subject   = $this->input->post("subject");
-			$message   = $this->input->post("message");
+	//function send_email($format,$type,$start_date,$end_date,$area_name)//trying to download the report from this end
+	function send_email($area_name)
+		//if not downloaded  
+	//download report
+		//if downloaded
+	//get the current report and send it
 	
-			$this->email($id, $recepient, $subject, $message);
+		{
+			$area_name =  str_replace("%20", " ", $area_name);
+			$id = $this->session->userdata("id");
+			$recepient = "shohiek@gmail.com";//to facility
+			$subject   = "reports";//change to cater for varriation
+			$message   = "Hi \n\n";
+			$message  .= "Donwload the attached report.\n\n";
+			$message  .= "Regards.";
+			$report = $area_name;
+	
+			$this->email($id, $recepient, $subject, $message, $report);
 		}
 	
-	function email($id, $recepient, $subject, $message)  
+	function email($id, $recepient, $subject, $message, $report)  
 		{
 			$time=date('Y-m-d');
-	
+			$attached_file = $this->config->item("server_root")."downloads/".$report." Report.pdf";
+			// echo $attached_file;
+			// die;
+			
+			//check if file exists
+			// if(file_exists($attached_file)){
+				// echo "exists";
+			// }else{
+				// echo "download";
+				// $this->reports->download_report($format,$type,$start_date,$end_date,$area_name);
+				 // redirect('/account/login', 'refresh');// if i redirect to reports_by_area do i have to include the parameters?
+			// }
+			
 			$config = array(
 				'protocol' => 'smtp',
 				'smtp_host' => 'ssl://smtp.googlemail.com',
@@ -70,14 +90,17 @@ class email extends MY_Controller {
 	
 			$this->email->from('cd4lims.tz@gmail.com', 'CD4');
 			$this->email->to($recepient);
+			$this->email->attach($attached_file);
 			$this->email->subject($subject);
 			$this->email->message($message);
 	
 			if($this->email->send())
 				{	
 	
-					$this->mail_model->send_mail($id, $recepient, $subject, $message, $time);
-					$this->admin_mail();
+					//$this->mail_model->send_mail($id, $recepient, $subject, $message, $time);
+					//$this->admin_mail();
+					echo "redircet to previous page";
+					die;
 				} else 
 				{
 					show_error($this->email->print_debugger());
@@ -86,25 +109,27 @@ class email extends MY_Controller {
 	
 	//function email_with_attachment($from,$to , $subject, $mail_msg_head, $mail_msg_body,$mail_msg_footer,$file_path,$file_name){
 	function email_with_attachment(){
-				
-		// $fileatt_name = $file_name;
-		// $fileatt = $file_path.$file_name;
+		// echo "email with attachment";
+		// die;
+		
+		$fileatt_name = $file_name;
+		$fileatt = $file_path.$file_name;
 		
 		$fileatt_type = "application/octet-stream";
 		$email_from = "keginski@gmail.com";
 		$email_subject = $_POST['subject'];
 		
 		$email_msg = $_POST['message'];//$mail_msg_head."<br/> ";
-		// $email_msg .= $mail_msg_body."<br/ >";
-		// $email_msg .= $mail_msg_footer;
+		$email_msg .= $mail_msg_body."<br/ >";
+		$email_msg .= $mail_msg_footer;
 		
 		$email_to = $_POST["recepients"];
 		
 		$headers = "From:   ".$email_from;
 		
-		// $file = fopen($fileatt, 'rb');
-		// $data = fread($filw, filesize($fileatt));
-		// fclose($file);
+		$file = fopen($fileatt, 'rb');
+		$data = fread($filw, filesize($fileatt));
+		fclose($file);
 		$semi_rand = md5(time());
 		$mime_boundary = "==Multipart_Boundary_x{$semi_rand}XMLReader
 		$headers .=\nMIME-Version: 1,0 \n".
@@ -118,10 +143,10 @@ class email extends MY_Controller {
 		 
 		 //$data = chunk_split(base64_encode($data));
 		 $email_message .= "--{$mime_boundary}\n";
-		 // "Content_type: {$fileatt_type};\n".
-		 // " name=\"{$fileatt_name}\"\n".
-		 // "Content-Transfer-Encoding: base64\n\n".
-		 //$data .="\n\n".
+		 "Content_type: {$fileatt_type};\n".
+		 " name=\"{$fileatt_name}\"\n".
+		 "Content-Transfer-Encoding: base64\n\n".
+		 $data .="\n\n".
 		 "--{$mime_boundary}--\n";
 		 
 		 if(@mail($email_to,$subject,$email_message,$headers)){
