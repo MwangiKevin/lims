@@ -92,8 +92,7 @@ $sql["v_sample_details"]	=	"SELECT
 									`sample`.`infant_feeding`,
 									`sample`.`prohilaxis`,
 									`sample`.`prophilaxis_weeks`,
-									`sample`.`acceptance_status`,
-									
+									`sample`.`acceptance_status`,								
 									`test`.`sample_id`,
 									`test`.`test_run_no`,
 									`test`.`result`,
@@ -177,7 +176,22 @@ $sql["v_testing_trend_vl"]				=			"SELECT
 													";
 
 $sql["v_tat"]							= 			"SELECT 
-															*
+															`req`.*,
+															`sa`.`id` AS `sample_id`,
+															`sa`.`patient_id`,
+															`sa`.`requisition_id`,
+															`sa`.`date_collected`,
+															`sa`.`date_dispatched`,
+															`sa`.`program`,
+															`sa`.`sample_type`,
+															`sa`.`clinician_name`,
+															`sa`.`no_of_dbs_spots`,
+															`sa`.`infant_feeding`,
+															`sa`.`prohilaxis`,
+															`sa`.`prophilaxis_weeks`,
+															`sa`.`acceptance_status`,
+															`sa`.`status`,
+															`sa`.`timestamp` AS `sample_timestamp`
 														FROM `test_requisition` `req`
 
 														INNER JOIN `sample` `sa`
