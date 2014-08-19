@@ -202,6 +202,53 @@ $sql["v_tat"]							= 			"SELECT
 															AND (`tr`.`result`='P' OR `tr`.`result`='N')
 
 														
-													";						
+													";			
+$sql["v_results"]			 			=			"SELECT 
+															`str`.*,
+															`sa`.`patient_id`      		,
+															`sa`.`requisition_id`   	,
+															`sa`.`date_collected`   	,
+															`sa`.`date_dispatched`  	,
+															`sa`.`program`      		,
+															`sa`.`sample_type`      	,
+															`sa`.`clinician_name`   	,
+															`sa`.`no_of_dbs_spots`  	,
+															`sa`.`infant_feeding`   	,
+															`sa`.`prohilaxis`      		,
+															`sa`.`prophilaxis_weeks`    ,
+															`sa`.`acceptance_status`    ,
+															`sa`.`status`      			,
+															`sa`.`timestamp`      		,
+															`pa`.`facility_id`	AS `pa_facility_id`,
+															`pa`.`code`         AS `patient_code`,
+															`pa`.`dob`,
+															`pa`.`gender`,
+															`pa`.`synced` 		AS 	`patient_synced`	,
+															`pa`.`timestamp` 	AS 	`patient_timestamp`	,
+															`req`.`facility_id`,
+															`req`.`date_received`,
+															`req`.`program_id`,
+															`req`.`rejection_address`,
+															`req`.`comments`,
+															`req`.`lab_comments`,
+															`req`.`flag`		AS 	`req_flag`,
+															`req`.`synced` 		AS 	`req_synced`,
+															`req`.`timestamp` 	AS 	`req_timestamp`,
+															`req`.`entered_by`,
+															`req`.`results_dispached`,
+															`fac`.`name` 		AS `facility_name`
+														FROM `sample_test_run` `str`
+															LEFT JOIN `sample` `sa`
+															ON `sa`.`id`= `str`.`sample_id`
+															LEFT JOIN `patient` `pa`
+															ON `sa`.`patient_id`= `pa`.`id`
+															LEFT JOIN `test_requisition` `req`
+															ON `sa`.`requisition_id`= `req`.`id`
+																LEFT JOIN `facility` `fac`
+																ON `req`.`facility_id` = `fac`.`id`
+
+														GROUP BY `str`.`id`
+														ORDER BY `str`.`id` DESC
+											";
 
 $config["views_sql"] =$sql;
