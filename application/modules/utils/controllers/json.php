@@ -144,4 +144,25 @@ class json extends MY_Controller {
 
 	}
 
+	/**
+	* @job = reads an array value in json 
+	* var 	$file  	= json file [without the extension]
+	*		$id 	= uses this to find the file
+	*/
+	public function find_in_json($file, $id){
+
+		$output = array();
+
+		$string = file_get_contents($this->path."$file.json");
+		$json_a = json_decode($string, true);
+
+		foreach($json_a as $key => $value){
+			if ((int) $value["id"] = (int) $id){
+				$output = $value;
+			}
+		}
+
+		return $output;
+	}
+
 }
