@@ -65,12 +65,75 @@ class alerts extends MY_Controller {
 
 	public function dispatch_re_results($req_id){
 
-		$results 	=	R::getAll("SELECT 
-											`sa`.`id`,
-											`sa`.``,
-											`sa`.``,
-											`sa`.``,
-											`sa`.``,
-									");
+		$results 	=	R::getAll("SELECT *
+										FROM `v_results`
+										WHERE `requisition_id` ='$req_id'
+
+								");
+		try{
+			$this->email($results);
+			$this->sms($results);
+			$this->mark_dispached($results);
+
+
+		}catch(Exception $e){
+
+		}
+
+	}
+
+	private function email($results){
+		$rows = "";
+
+		foreach ($results as $key => $value) {
+			$rows .= "
+						<tr>
+							<td>".$value["patient_code"]."</td>
+							<td>".$value["date_collected"]."</td>
+							<td>".$value["date_released"]."</td>
+							<td>".$value["result"]."</td>
+						</tr>
+					";
+		}
+
+		$message=	"
+
+					<div>
+					Hello  ".$value["facility_name"].",<br/>
+
+					Find below the test results for requisition made ".$value["req_timestamp"].",
+						<br/>
+						<div style='float:left;width:33%;'>Requisition No : </div>
+						<div style='float:left;width:33%;'>Requisition Date :</div>
+						<div style='float:left;width:33%;'>Facility Name:</div>
+
+						<table style='width:60%'>
+							<thead>
+								<tr>
+									<th>Patient Code</th>
+									<th>Date Sample <br/>was Collected</th>
+									<th>Date Results <br/>were released</th>
+									<th>Result</th>
+								</tr>
+							</thead>
+							<tbody>
+								$rows
+							</tbody>
+						</table>
+					</div>
+				";
+		$this->load->module("alerts/email");
+		$this->email->email(1, "mwangikevinn@gmail.com", "Test Results", "$message");
+
+		echo $message;
+	}
+
+	private function sms($results){
+
+
+
+	}
+	private function mark_dispached($req_id){
+		 $this->db->query("UPDATE `test_requisition` SET  `results_dispached`='1' WHERE `id`='$req_id'");
 	}
 }

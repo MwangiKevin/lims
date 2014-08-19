@@ -60,14 +60,25 @@ class reports extends MY_Controller {
 													"class"		=>	"active"
 													);
 		
-		$start_date = $_POST['all_start_date'];
-		$end_date = $_POST['all_end_date'];
-		
+		$start_date = date('Y-m-d',strtotime($_POST['all_start_date']));
+		$end_date = date('Y-m-d',strtotime($_POST['all_end_date']));
+		$format = $_POST['all_type'];//pdf or excel
+		//get all samples between two dates 
+		$this->view_data['all_samples'] = $this->reports_model->all_samples_m($start_date,$end_date);
+				
+		if($format == 1){//all samples for excel 
+			$this->view_data['format'] = $format."/0";			
+			// $worksheet["column_data"]	=	$col_data;
+			// $worksheet["row_data"]		=	$row_data;
+		}else if($format == 2){//all samples for pdf
+			$this->view_data['format'] = $format."/0";
+		}else{
+			
+		}
 		$this->view_data['start_date'] = $_POST['all_start_date'];
 		$this->view_data['end_date'] = $_POST['all_end_date'];
 		//get the tested samples for a certain range
 		//$this->view_data['sample'] = $this->reports_model->all_samples_m($start_date,$end_date);
-		
 		
 		$this->template($this->view_data);
 	}
@@ -126,8 +137,58 @@ class reports extends MY_Controller {
 	
 	
 	
-	public function download_report(){
-		$this->load->view("download_report");
+	public function download_report($format,$type,$start_date,$end_date){
+		$this->load->module("utils/report_format_download");
+		$row_data = array();
+		if($format == 1 && $type == 0){//excel and all samples
+			//echo "Excel".$format;
+			//echo "Type".$type;
+		//die;
+			$worksheet["doc_creator"] 	= $this->session->userdata("username");
+			$worksheet["doc_title"] 	= $this->session->userdata("username");
+			$worksheet["file_name"] 	= "EID/LIMS_Report_(".$this->session->userdata("username").").xls";
+			//get all samples
+			$all_samples = $this->reports_model->all_samples_m($start_date,$end_date);
+			//excel worksheet styling
+			//header
+			$row_data[0] = array("Sample ID","Testing Lab","Region", "District", "Facility","Sex","DOB","Age","Infant Propholaxyis", "Date Collected","Blood Spots","Received Status","Rejected Reason or Repeat Reason","Status of Mother", "PMTCT Intervention", "Breast Feeding", "Entry Point", "Date of Receving", "Date of Testing", "Date of Dispatch", "Test Result");      
+			//content
+			foreach ($all_samples as $key => $value) {
+				$age = date('Y') - $value["dob"];
+				$row_data[$key+1][0] 	=	$value["sample_id"]; 
+				//$row_data[$key+1][1] 	=	$value[""]; 
+				$row_data[$key+1][2] 	=	$value["region_name"]; 
+				$row_data[$key+1][3] 	=	$value["district_name"]; 
+				$row_data[$key+1][5] 	=	$value["facility_name"];
+				$row_data[$key+1][6] 	=	$value["gender"]; 
+				$row_data[$key+1][7] 	=	$value["dob"]; 
+				$row_data[$key+1][8] 	=	$age; 
+				$row_data[$key+1][9] 	=	$value["propholaxis"]; 
+				$row_data[$key+1][10] 	=	$value["date_collected"]; 
+				$row_data[$key+1][11] 	=	$value["dbs_spots"]; 
+				$row_data[$key+1][12] 	=	$value["acceptance_status"]; 
+				// $row_data[$key+1][13] 	=	$value[" "]; 
+				// $row_data[$key+1][14] 	=	$value[""];
+				// $row_data[$key+1][15] 	=	$value[""];
+				// $row_data[$key+1][16] 	=	$value[""];
+				// $row_data[$key+1][17] 	=	$value[""];
+				// $row_data[$key+1][18] 	=	$value[""];
+				// $row_data[$key+1][19] 	=	$value[""];
+				$row_data[$key+1][20] 	=	$value["date_tested"];
+				$row_data[$key+1][21] 	=	$value["dispatch"];
+				$row_data[$key+1][22] 	=	$value["test_result"];  
+			}
+			$worksheet['row_data'] = $row_data; 
+			
+			$this->report_format_download->excel_worksheet($worksheet);
+		}else if($format == 2 && $type == 0){//pdf and all samples
+			$this->load->view('pdf_report');
+		}else if($type == 1 && $type == 1){//excel and reports by region
+			
+		}else if($type == 1 && $type == 1){//pdf and reports by region
+			
+		}else{}
+		//$this->load->view("download_report");
 	}
 	
 	

@@ -295,7 +295,7 @@
 		?>		
 		
 		<li class="<?php echo $selected_class;?>">
-			<a href="<?php echo base_url()?>eid/reports">
+			<a href="<?php echo base_url()?>reports/reports">
 				<i class="menu-icon fa fa-list-alt"></i>
 				<span class="menu-text"> Reports </span>
 			</a>
