@@ -15,6 +15,8 @@ class  MY_Controller  extends  MX_Controller {
 	protected $em;	
 	public $program;
 
+	protected $maximum_test_runs = 3;
+
 	function __construct() {
 		
 		parent::__construct();

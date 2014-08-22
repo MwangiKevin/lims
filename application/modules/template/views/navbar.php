@@ -25,11 +25,11 @@
 		<div class="navbar-buttons navbar-header pull-right" role="navigation">
 
 			<ul  class="nav ace-nav">
-				<li id="nav_itm_batches" class="grey" title="Batches">					
+				<li id="nav_itm_batches" class="grey" >					
 				</li>
-				<li id="nav_itm_notifications" class="green" title="Notifications">
+				<li id="nav_itm_notifications" class="green">
 				</li>
-				<li id="nav_itm_messages" class="purple" title="Messages">
+				<li id="nav_itm_messages" class="purple">
 				</li>
 
 				<li class="" title="Todays Date">

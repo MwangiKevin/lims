@@ -80,7 +80,7 @@
 										<span class="input-group-addon my-input-group-caption">
 											Region
 										</span>
-										<Select name="region" id="region" style="width:76%" >
+										<Select name="region" id="region" style="width:76%" required>
 											<option value=""> Select a Region </option>
 											<?php 
 											foreach ($regions as $key => $value) {
@@ -494,7 +494,7 @@
 								</td>
 							</tr>
 						</form>
-						
+
 						<tr style="height:20px;">
 							<td colspan="5"><div class="hr hr8 hr-double"></div><td>
 						</tr>

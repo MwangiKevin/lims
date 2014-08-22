@@ -1,6 +1,6 @@
 <h4 class="lighter">
 	<i class="ace-icon fa fa-hand-o-right icon-animated-hand-pointer blue"></i>
-	<a class="pink" data-toggle="modal" href="#"> <?php echo "Area" ?> Report </a>
+	<a class="pink" data-toggle="modal" href="#"> Area Report </a>
 </h4>
 <div class="hr hr-18 hr-double dotted"></div>
 
@@ -17,10 +17,7 @@
 				Download Report
 			</a>
 			&nbsp;
-			<a href="<?php echo base_url().'reports/email/compose_mail/'?>">
-				<i class="ace-icon fa fa-envelope"></i>
-				Send Email
-			</a>
+			<?php echo $email_download_path ?>
 		</div>
 	</div>
 </div>
@@ -107,3 +104,102 @@
 		</tbody>
 	</table>
 </div>
+
+
+<div class="modal fade" id="writemail">
+	<div class="modal-dialog" style="width:60%;margin-bottom:2px;">
+		<div class="modal-content" >
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title">
+					<div class="widget-header widget-header-blue widget-header-flat">
+						<h4 class="widget-title lighter">Send Email</h4>				
+					</div>
+				</h4>
+			</div><!--End of modal-header-->
+			<div class="modal-body" style="padding-bottom:0px;">	
+				<?php //echo form_open('alerts/email/email_with_attachment');?>
+				
+				<form action="<?php echo base_url()?>reports/email/email_with_attachment" method="post">
+				<div class="widget-box">
+					<h4 class="lighter">
+					    <i class="ace-icon fa fa-hand-o-right icon-animated-hand-pointer green"></i>
+					    <a href="#" data-toggle="modal" class="green"> Write email </a>
+					</h4>
+				    
+					<div class="hr hr-18 hr-single dotted"></div>
+					<div class="widget-body">
+						<div class="widget-main">
+							<div class="row my-infobox">
+								<div class="input-group" style="width: 100%;padding:4px;">
+									<span class="input-group-addon" style="width: 40%;">To:</span>
+									<input required id="recepients" name="recepients" class="textfield form-control" />	
+								</div>	
+
+
+								<div class="input-group" style="width: 100%;padding:4px;">
+									<div class="row my-infobox">
+										<form action="<?php echo base_url("reports/email/upload_file");?>" class="dropzone" id="dz" method="post" name="dz">
+											<div class="fallback">
+												<input name="file" type="file" multiple="">
+											</div>
+										</form>
+									</div>
+								
+									<script>
+								
+											Dropzone.options.dz = {
+									  			paramName: "file", 
+									  			maxFilesize: 10, 
+									  			accept: function(file, done) {
+									  			 	if ((file.name.substring((file.name.length-4),file.name.length) != ".txt")&&(file.name.substring((file.name.length-4),file.name.length) != ".csv")&&(file.name.substring((file.name.length-4),file.name.length) != ".TXT")&&(file.name.substring((file.name.length-4),file.name.length) != ".CSV")) {
+									  			 		done("Wrong File Type");
+									  			 	}
+									  			 	else { done(); }
+									  			}
+											};
+								
+									</script>
+								</div>
+		
+
+
+
+								<div class="input-group" style="width: 100%;padding:4px;">
+									<span class="input-group-addon" style="width: 40%;">Subject:</span>
+									<input required id="subject" name="subject" class="textfield form-control" />	
+								</div>	
+									            					
+								<div id="messagediv" class="input-group" style="width: 100%;padding:4px;">
+									<span class="input-group-addon" style="width: 20%;">Message:</span>
+									<textarea required id="message" name="message" cols="50" rows="5" class="textfield form-control"></textarea>
+									<!--<input required id="message" name = "message" class="textfield form-control"  readonly />-->
+								</div>	          
+																		
+								<div class="modal-footer" style="height:11px;padding-top:11px;">	
+									<div class="wizard-actions" style="float:right;">
+										<button type="submit" class="btn btn-success btn-next btn-sm" name="send_email_bttn" >
+											Send Email
+											<i class="ace-icon fa fa-arrow-right icon-on-right"></i>
+										</button>
+										<button name="discard" type="button"  onclick="hide_edit()" class="btn btn-xs btn-danger bigger-120">
+											<i class="ace-icon fa fa-trash-o bigger-120"></i>
+											Discard
+										</button>
+									</div>							
+									
+								</div> 
+							</form>
+							</div><!--End of my-infobox-->	
+						</div><!--End of widget-main-->	
+					</div><!--End of widget-body-->		
+				</div><!--End of widget-box-->
+
+				<div class="modal-footer" style="height:4px;padding-top:11px;">
+					<?php echo $this->config->item("copyrights");?>
+				</div> 
+			</div>
+		</div>
+	</div>
+</div>
+
