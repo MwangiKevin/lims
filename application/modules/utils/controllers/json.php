@@ -132,7 +132,10 @@ class json extends MY_Controller {
 		echo "Test reasons Written <br/> ";
 	}
 
-
+	public function write_emails()
+	{
+		
+	}
 
 /**
 * @section = reader functions

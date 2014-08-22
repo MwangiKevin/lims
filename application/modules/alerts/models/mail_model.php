@@ -56,7 +56,16 @@ class mail_model extends MY_Model
 						`email`
 					FROM user";
 
-		return $emails = R::getAll($sql);
+		$emails = R::getAll($sql);
+		//print_r($emails); die();
+
+		$response['name']  = $emails[0]['name']; 
+		$response['mail']= $emails[0]['email'];
+		$data = $response;
+
+		$json_string = json_encode($data);
+		$file = 'assets/json/emails.json';
+		file_put_contents($file, $json_string);
 	}
 }
 
