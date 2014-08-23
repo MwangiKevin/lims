@@ -149,8 +149,8 @@
 							<div class="row my-infobox">
 								<div class="input-group" style="width: 100%;padding:4px;">
 									<span class="input-group-addon" style="width: 40%;">To:</span>
-									<input name="emailto[]" id="test_reason" class="form-control test_reason"  type="text">
-									<!--<input required id="recepients" name="recepients" class="textfield form-control"  />	-->
+									<!--<input name="emailto[]" id="test_reason" class="form-control test_reason"  type="text">-->
+									<input required id="emailto[]" name="recepients" class="form-control emailto"  />
 								</div>	
 
 								<div class="input-group" style="width: 100%;padding:4px;">

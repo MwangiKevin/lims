@@ -36,7 +36,7 @@ function hide_edit(){
 
     $.getJSON("<?php echo base_url('assets/json/emails.json');?>", function(data) {
         test_reason = data;
-        $(".test_reason").select2({ data: emailto ,multiple: true});
+        $(".emailto").select2({ data: emailto ,multiple: true});
     });
 
 

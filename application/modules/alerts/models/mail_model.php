@@ -61,7 +61,7 @@ class mail_model extends MY_Model
 
 		$response['name']  = $emails[0]['name']; 
 		$response['mail']= $emails[0]['email'];
-		$data = $response;
+		$data['emailto'] = $response;
 
 		$json_string = json_encode($data);
 		$file = 'assets/json/emails.json';
