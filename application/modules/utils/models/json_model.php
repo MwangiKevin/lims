@@ -4,4 +4,8 @@ if (!defined('BASEPATH'))
 
 class json_model extends MY_Model {
 	
+	public function FunctionName($value='')
+	{
+		# code...
+	}
 }

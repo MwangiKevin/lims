@@ -132,7 +132,23 @@ class json extends MY_Controller {
 		echo "Test reasons Written <br/> ";
 	}
 
+	public function write_emails()
+	{
+		$assoc	=	$this->json_model->test_reasons();
+		$emails_to  =	array();
 
+		foreach ($assoc as $key => $value) {
+			if($value["eid"]==1){
+			$eid_reasons[] = array(
+										"id" 	=> $value["id"],
+										"name" 	=> $value["desc"],
+										"value" => $value["id"],
+										"text" 	=> $value["desc"]
+								);
+			}
+		}
+		
+	}
 
 /**
 * @section = reader functions
