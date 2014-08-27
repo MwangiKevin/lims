@@ -141,7 +141,7 @@ class json extends MY_Controller {
 		foreach ($mail_assoc as $key => $value) {
 			
 			$emails_to[$key] = array(
-										"id" 	=> $value["id"],
+										"id" 	=> $value["email"],
 										"name" 	=> $value["name"],
 										"value" => $value["email"],
 										"text" 	=> $value["name"]

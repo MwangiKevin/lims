@@ -150,7 +150,7 @@
 								<div class="input-group" style="width: 100%;padding:4px;">
 									<span class="input-group-addon" style="width: 40%;">To:</span>
 									<!--<input name="test_reason[]" id="test_reason" class="form-control test_reason"  type="text">-->
-									<input required id="email_to" name="recepients[]" class="form-control email_to"  />
+									<input required id="email_to" name="recepients" class="form-control email_to"  />
 								</div>	
 
 								<div class="input-group" style="width: 100%;padding:4px;">
