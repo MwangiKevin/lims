@@ -102,6 +102,103 @@ class worksheet extends MY_Controller {
 		$this->template($this->view_data);
 	}
 	
+	//handles control for the zoom function in worksheet history
+	public function view_zoom($worksheet_id){	
+		$this->view_data['content_view'] 		= "eid/worksheet_history_zoom_view";
+		$this->view_data['title'] 				= "EID | Worksheet ";		
+		$this->view_data['menu_select']			= 	array(2,2);
+		$this->view_data['breadcrumbs']		=	array(
+													0 	=>	array(
+																	"title" 	=>	"Home",
+																	"link"		=>	base_url()."eid/",
+																	"class"		=>	""
+																	),
+													1 => array(
+															"title" 	=>	"Worksheet History",
+															"link"		=>	base_url()."eid/worksheet/history",
+															"class"		=>	"active"
+														),
+													2 =>	array(
+															"title" 	=>	"Worksheet Content",
+															"link"		=>	base_url()."eid/worksheet/view_zoom",
+															"class"		=>	"active"
+														)
+													
+													);
+		$this->view_data['worksheet_id'] = $worksheet_id;												
+		$this->view_data['sample_details'] = $this->worksheets_model->view_worksheet($worksheet_id);
+		
+		$this->template($this->view_data);
+	}
+
+	//handles control for the edit function in worksheet history
+	public function edit_zoom($worksheet_id){	
+		$this->view_data['content_view'] 		= "eid/worksheet_edit_zoom";
+		$this->view_data['title'] 				= "EID | Worksheet ";		
+		$this->view_data['menu_select']			= 	array(2,2);
+		$this->view_data['breadcrumbs']		=	array(
+													0 	=>	array(
+																	"title" 	=>	"Home",
+																	"link"		=>	base_url()."eid/",
+																	"class"		=>	""
+																	),
+													1 => array(
+															"title" 	=>	"Worksheet History",
+															"link"		=>	base_url()."eid/worksheet/history",
+															"class"		=>	"active"
+														),
+													2 =>	array(
+															"title" 	=>	"Sample Edit",
+															"link"		=>	base_url()."eid/worksheet/worksheet_edit_zoom",
+															"class"		=>	"active"
+														)
+													
+													);
+		$this->view_data['worksheet_id'] = $worksheet_id;												
+		$this->view_data['sample_details'] = $this->worksheets_model->view_worksheet($worksheet_id);
+		$this->template($this->view_data);
+	}
+
+	//handles control for delete function in worksheet history
+	public function delete_zoom($worksheet_id){	
+		$this->view_data['content_view'] 		= "eid/worksheet_history_delete";
+		$this->view_data['title'] 				= "EID | Worksheet ";		
+		$this->view_data['menu_select']			= 	array(2,2);
+		$this->view_data['breadcrumbs']		=	array(
+													0 	=>	array(
+																	"title" 	=>	"Home",
+																	"link"		=>	base_url()."eid/",
+																	"class"		=>	""
+																	),
+													1 => array(
+															"title" 	=>	"Worksheet History",
+															"link"		=>	base_url()."eid/worksheet/history",
+															"class"		=>	"active"
+														),
+													2 =>	array(
+															"title" 	=>	"Sample Delete",
+															"link"		=>	base_url()."eid/worksheet/delete_zoom",
+															"class"		=>	"active"
+														)
+													
+													);
+		$this->view_data['worksheet_id'] = $worksheet_id;												
+		$this->view_data['sample_details'] = $this->worksheets_model->view_worksheet($worksheet_id);													
+		$this->template($this->view_data);
+	}
+	
+	//handles cotrol for print function in worksheet history
+	public function print_worksheet_history(){
+		// $this->view_data['history'] = $this->worksheets_model->history();
+		// $this->load->view("worksheet_history_print",$this->$view_data);
+
+		$this->view_data['history'] = $this->worksheets_model->history();
+	
+		$this->load->view("worksheet_history_print",$this->view_data);
+	}	
+
+	
+	
 	public function cobas_print_worksheet(){
 		//get the values from the textfields
 		$worksheet_and_samples['worksheet_id']  = $_POST['worksheet_no'];

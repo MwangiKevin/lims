@@ -4,6 +4,7 @@ if (!defined('BASEPATH'))
 
 class worksheets_model extends MY_Model {
 	
+	//gets all samples that have not yet been assigned to a machine to run the test
 	public function unclassified_samples($program){//Program = eid or vl. flag = Cobas/Abbot
 		$sql= "SELECT 
 					id,
@@ -23,7 +24,7 @@ class worksheets_model extends MY_Model {
 		return $result;
 	}
 	
-	//samples waiting printing
+	//gets samples waiting printing
 	public function ready_samples($program,$flag){
 		$sql= "SELECT 
 				 vsd.id,
@@ -48,6 +49,7 @@ class worksheets_model extends MY_Model {
 		return $result;
 	}
 	
+	
 	public function history(){
 		$sql = "SELECT  `ws`.`date_reviewed`,
 						`ws`.`date_updated`, 
@@ -65,9 +67,11 @@ class worksheets_model extends MY_Model {
 				GROUP BY `ws`.`id`";
 				
 		$result = R::getAll($sql);
+		
 		return $result;
 	}
 	
+	//gets samples for the cobas rack to print the worksheet
 	public function cobas_rack($id){
 		$sql = "SELECT
 					`cw`.`id`,
@@ -96,6 +100,7 @@ class worksheets_model extends MY_Model {
 			return $result;		
 	}
 	
+	//gets samples for the abbott rack to print the worksheet
 	public function abbott_rack($id){
 		$sql = "SELECT
 					`w`.`cdc_worksheet_no`,
@@ -139,6 +144,28 @@ class worksheets_model extends MY_Model {
 		return $result;	
 	}
 	
+	public function view_worksheet($id){
+		$sql = "SELECT
+				   vsd.no_of_dbs_spots,
+				   vsd.id,
+				   vsd.date_collected,
+				   vsd.clinician_name,
+				   w.flag,
+				   w.created_by
+
+				FROM v_sample_details vsd
+				
+				LEFT JOIN worksheets_and_samples ws
+				ON ws.sample_id  =  vsd.id
+				
+				LEFT JOIN worksheet w
+				ON ws.worksheet_id = w.id
+				WHERE w.id = ".$id."
+				";
+		$result = R::getAll($sql);
+		return	$result;
+	}
+	
 	public function delete_worksheet($id){
 		$sql = "DELETE FROM worksheet WHERE id = ".$id." ";
 		$this->db->query($sql);
@@ -154,7 +181,7 @@ class worksheets_model extends MY_Model {
 		$date_updated = $_POST['date_updated_zoome'];
 		$date_reviewed = $_POST['date_reviewed_zoome'];
 		
-		$sql = "UPDATE worksheet SET date_created = ".$date_created.",created_by = '".$created_by."',date_run=".$date_run.", date_reviewed = ".$date_reviewed." WHERE id = ".$id." ";
+		$sql = "UPDATE worksheet SET date_created = '".$date_created."',created_by = '".$created_by."',date_run='".$date_run."', date_reviewed = '".$date_reviewed."' WHERE id = ".$id." ";
 		$this->db->query($sql);
 	}
 	
