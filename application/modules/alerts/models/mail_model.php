@@ -57,10 +57,13 @@ class mail_model extends MY_Model
 					FROM user";
 
 		$emails = R::getAll($sql);
+			$response['id']    = $emails[0]['id'];
+			$response['name']  = $emails[0]['name']; 
+			$response['mail']= $emails[0]['email'];
+		
 		//print_r($emails); die();
 
-		$response['name']  = $emails[0]['name']; 
-		$response['mail']= $emails[0]['email'];
+		
 		$data['emailto'] = $response;
 
 		$json_string = json_encode($data);

@@ -37,6 +37,7 @@ class json extends MY_Controller {
 		$this->write_facilities();
 		$this->write_test_reasons();
 		$this->write_infant_feeding();
+		$this->write_emails();
 	}
 
 
@@ -134,19 +135,26 @@ class json extends MY_Controller {
 
 	public function write_emails()
 	{
-		$assoc	=	$this->json_model->test_reasons();
-		$emails_to  =	array();
+		$mail_assoc	=	$this->json_model->write_emails();
+		$emails_to[]  =	array();
 
-		foreach ($assoc as $key => $value) {
-			if($value["eid"]==1){
-			$eid_reasons[] = array(
+		foreach ($mail_assoc as $key => $value) {
+			
+			$emails_to[$key] = array(
 										"id" 	=> $value["id"],
-										"name" 	=> $value["desc"],
-										"value" => $value["id"],
-										"text" 	=> $value["desc"]
+										"name" 	=> $value["name"],
+										"value" => $value["email"],
+										"text" 	=> $value["name"]
 								);
-			}
+			
 		}
+		$email_details 	= 	json_encode($emails_to);
+		
+		$p_email 	=	$this->path."emails.json";
+		
+		file_put_contents($p_email, $email_details);
+
+		echo "Emails Written <br/> ";
 		
 	}
 

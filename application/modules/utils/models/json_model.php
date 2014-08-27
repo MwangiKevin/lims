@@ -4,8 +4,14 @@ if (!defined('BASEPATH'))
 
 class json_model extends MY_Model {
 	
-	public function FunctionName($value='')
+	public function write_emails()
 	{
-		# code...
+		$sql = "SELECT
+						`id`,
+						`name`,
+						`email`
+					FROM user";
+
+		return $emails = R::getAll($sql);
 	}
 }
