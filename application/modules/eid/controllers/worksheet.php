@@ -50,7 +50,7 @@ class worksheet extends MY_Controller {
 		$this->view_data['content_view'] 	= "eid/cobas_view";		
 		$this->view_data['title'] 			= "EID | Worksheet | COBAS";
 		$this->view_data['menu_select']		= 	array(2,0);
-		$this->view_data['result'] = $this->worksheets_model->cobas_samples(1);
+		$this->view_data['result'] = $this->worksheets_model->unclassified_samples(1);//parameters -> program
 		//$res = $this->worksheets_model->cobas_samples(1);
 		//$this->view_data['save_and_print_cobas'] = base_url()."eid/worksheet/cobas_print_worksheet";
 		$this->view_data['worksheet_id'] = $this->worksheets_model->last();				
@@ -71,7 +71,7 @@ class worksheet extends MY_Controller {
 		$this->view_data['content_view'] 		= "eid/abbott_view";
 		$this->view_data['title'] 				= "EID | Worksheet | ABBOT";		
 		$this->view_data['menu_select']			= 	array(2,1);
-		$this->view_data['result'] = $this->worksheets_model->abbott_samples(1);
+		$this->view_data['result'] = $this->worksheets_model->unclassified_samples(1);//parameters -> program
 		//$this->view_data['save_and_print_abbott'] = base_url()."eid/worksheet/abbott_print_worksheet";
 		$this->view_data['worksheet_id'] = $this->worksheets_model->last();	
 		// $result = $this->worksheets_model->abbott_samples(1);
@@ -103,6 +103,7 @@ class worksheet extends MY_Controller {
 	}
 	
 	public function cobas_print_worksheet(){
+		//get the values from the textfields
 		$worksheet_and_samples['worksheet_id']  = $_POST['worksheet_no'];
 		$worksheet_id = $_POST['worksheet_no'];
 		
@@ -120,19 +121,21 @@ class worksheet extends MY_Controller {
 		$post_datas['date_created'] = date('Y-m-d',strtotime($_POST['date_created']));
 		$post_datas['status'] = 'r';				
 		$post_datas['date_cut'] = date('Y-m-d',strtotime($_POST['date_cut']));
-		$post_datas['updated_by'] = $_POST['updated_by'];
-		$post_datas['reviewed_by'] =  $_POST['reviewed_by']; 
+		// $post_datas['updated_by'] = $_POST['updated_by'];
+		// $post_datas['reviewed_by'] =  $_POST['reviewed_by']; 
 		$post_datas['created_by'] =  $_POST['created_by'];
-		$post_datas['flag'] = 0;
-		$post_datas['date_run'] = date('Y-m-d',strtotime($_POST['date_run']));
-		$post_datas['date_reviewed'] = date('Y-m_d',strtotime($_POST['date_reviewed']));
+		$post_datas['flag'] = 0;//cobas = 0, abbott = 1
+		//$post_datas['date_run'] = date('Y-m-d',strtotime($_POST['date_run']));
+		//$post_datas['date_reviewed'] = date('Y-m_d',strtotime($_POST['date_reviewed']));
+		
+		
 		
 		//insert into tables via active record
 		$this->db->insert('cobas_worksheet',$post_data);
 		$this->db->insert('worksheet',$post_datas);
 		
 		//get all the sample ids that are in this worksheet
-		$samples = $this->worksheets_model->cobas_samples(1);
+		$samples = $this->worksheets_model->unclassified_samples(1,0);
 		if($samples == NULL){
 		//	echo "No samples available";
 		}else{			
@@ -163,36 +166,36 @@ class worksheet extends MY_Controller {
 					$this->db->update('sample',$post_ndata);//updates new value
 				}
 	
-				//TABLE:SAMPLE_TEST_RUN
-				$sql = "SELECT test_run_no FROM sample_test_run WHERE sample_id = ".$id." ";
-				$qry = $this->db->query($sql);
-				//echo $id."\n";
-				// print_r($qry);
-				// die;
-				if($qry->num_rows()==0){//if no match found, this is a new sample thus we need to add it
-				//echo "null";
-					$sample_test_run['sample_id'] = $id;//get the current ID
-					$sample_test_run['test_run_no'] = 1;//this is the first test
-					$sample_test_run['result'] = "";
-					$sample_test_run['date_released'] = "";
-					$this->db->insert('sample_test_run',$sample_test_run);//insert the values
-				}else{//if a match is found
-				//echo "content";					
-					$result=$qry->result_array();
-					$test_run_no = 0;
-					if($result){
-					   $test_run_no=$result[0]['test_run_no'];
-					}
-		
-					$test_run_no = $test_run_no + 1;//incremeant test_run_no
-					$sql = "UPDATE sample_test_run SET test_run_no = ".$test_run_no." WHERE sample_id = ".$id." ";
-					$this->db->query($sql);//update new value where sample id matches id
-				}		
+				// //TABLE:SAMPLE_TEST_RUN
+				// $sql = "SELECT test_run_no FROM sample_test_run WHERE sample_id = ".$id." ";
+				// $qry = $this->db->query($sql);
+				// //echo $id."\n";
+				// // print_r($qry);
+				// // die;
+				// if($qry->num_rows()==0){//if no match found, this is a new sample thus we need to add it
+				// //echo "null";
+					// $sample_test_run['sample_id'] = $id;//get the current ID
+					// $sample_test_run['test_run_no'] = 1;//this is the first test
+					// $sample_test_run['result'] = "";
+					// $sample_test_run['date_released'] = "";
+					// $this->db->insert('sample_test_run',$sample_test_run);//insert the values
+				// }else{//if a match is found
+				// //echo "content";					
+					// $result=$qry->result_array();
+					// $test_run_no = 0;
+					// if($result){
+					   // $test_run_no=$result[0]['test_run_no'];
+					// }
+// 		
+					// $test_run_no = $test_run_no + 1;//incremeant test_run_no
+					// $sql = "UPDATE sample_test_run SET test_run_no = ".$test_run_no." WHERE sample_id = ".$id." ";
+					// $this->db->query($sql);//update new value where sample id matches id
+				// }		
 			}
 		}	
 			
 		//the barcodes
-		$this->view_data['result'] = $this->worksheets_model->ready_samples(1);
+		$this->view_data['result'] = $this->worksheets_model->ready_samples(1,0);//parameters -> program,machine
 		//the worksheet details
 		$this->view_data['worksheet_details'] = $this->worksheets_model->cobas_rack($_POST['worksheet_no']);
 		//load rack view
@@ -223,17 +226,17 @@ class worksheet extends MY_Controller {
 		$post_datas['date_cut'] = date('Y-m-d',strtotime($_POST['date_cut']));
 		$post_datas['cdc_worksheet_no'] = $_POST['cdc_worksheet_no'];
 		$post_datas['date_created'] = date('Y-m-d',strtotime($_POST['date_created']));
-		$post_datas['reviewed_by'] = $_POST['reviewed_by'];
+		// $post_datas['reviewed_by'] = $_POST['reviewed_by'];
 		$post_datas['created_by'] = $_POST['created_by'];
-		$post_datas['date_run'] = date('Y-m-d',strtotime($_POST['date_run']));
-		$post_datas['date_reviewed'] = date('Y-m-d',strtotime($_POST['date_reviewed']));
+		//$post_datas['date_run'] = date('Y-m-d',strtotime($_POST['date_run']));
+		// $post_datas['date_reviewed'] = date('Y-m-d',strtotime($_POST['date_reviewed']));
 		
 		//inserting
 		$this->db->insert('abbot_worksheet',$post_data);
 		$this->db->insert('worksheet',$post_datas);
 		
 		//getting the number of samples that will be tested
-		$samples = $this->worksheets_model->abbott_samples(1);
+		$samples = $this->worksheets_model->unclassified_samples(1);//parameters -> program
 		foreach($samples as $sam){
 			$id = $sam['id'];
 			$dbs = $sam['no_of_dbs_spots'];//number of spots that this ID,sample has
@@ -255,7 +258,7 @@ class worksheet extends MY_Controller {
 			//TABLE: SAMPLE
 			if($dbs >= 2){
 				$no_of_dbs_spots = $dbs - 2;	//less 2 spots that have been used in this test
-				$sql = "UPDATE sample SET no_of_dbs_spots = ".$no_of_dbs_spots." WHERE id = ".$id." ";
+				$sql = "UPDATE sample SET no_of_dbs_spots = ".$no_of_dbs_spots.", program = 1 WHERE id = ".$id." ";
 				$this->db->query($sql);//update sample table
 			}else{
 				$no_of_dbs_spots = 0;//use the one spot and change value to 0
@@ -263,28 +266,28 @@ class worksheet extends MY_Controller {
 				$this->db->query($sql);
 			}
 			//TABLE: SAMPLE_TEST_RUN
-			$sql2 = "SELECT test_run_no FROM sample_test_run WHERE sample_id = ".$id." ";//get samples where id matches
-			$query = $this->db->query($sql2);
-			if($query->num_rows()==0){//if no match found, this is a new sample thus we need to add it
-			//echo "null";
-				$sample_test_run['sample_id'] = $id;//get the current ID
-				$sample_test_run['test_run_no'] = 1;//this is the first test
-				$sample_test_run['result'] = "";
-				$sample_test_run['date_released'] = "";
-				$this->db->insert('sample_test_run',$sample_test_run);//insert the values
-			}else{//if a match is found
-			//echo "content";
-				$this->db->select('SELECT test_run_no FROM sample_test_run WHERE sample_id = '.$id.' ',FALSE);
-				$test_run_no = $this->db->get('sample_test_run');//SELECT test_run_no FROM sample_test_run WHERE sample_id = $id
-				$sample_test_run['test_run_no'] = $test_run_no + 1;//incremeant test_run_no
-				$this->db->where('sample_id',$id);
-				$this->db->update('sample_test_run',$sample_test_run);//update new value where sample id matches id
-			}
+			// $sql2 = "SELECT test_run_no FROM sample_test_run WHERE sample_id = ".$id." ";//get samples where id matches
+			// $query = $this->db->query($sql2);
+			// if($query->num_rows()==0){//if no match found, this is a new sample thus we need to add it
+			// //echo "null";
+				// $sample_test_run['sample_id'] = $id;//get the current ID
+				// $sample_test_run['test_run_no'] = 1;//this is the first test
+				// $sample_test_run['result'] = "";
+				// $sample_test_run['date_released'] = "";
+				// $this->db->insert('sample_test_run',$sample_test_run);//insert the values
+			// }else{//if a match is found
+			// //echo "content";
+				// $this->db->select('SELECT test_run_no FROM sample_test_run WHERE sample_id = '.$id.' ',FALSE);
+				// $test_run_no = $this->db->get('sample_test_run');//SELECT test_run_no FROM sample_test_run WHERE sample_id = $id
+				// $sample_test_run['test_run_no'] = $test_run_no + 1;//incremeant test_run_no
+				// $this->db->where('sample_id',$id);
+				// $this->db->update('sample_test_run',$sample_test_run);//update new value where sample id matches id
+			// }
 		}
 
 		
 		//getting the samples
-		$this->view_data['result'] = $this->worksheets_model->ready_samples(1);
+		$this->view_data['result'] = $this->worksheets_model->ready_samples(1,1);//parameters->programEID 1,flag->machine 1 for abbott
 		// $val = $this->worksheets_model->ready_samples(1);
 		// print_r($val);
 		// die;
