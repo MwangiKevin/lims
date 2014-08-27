@@ -15,7 +15,10 @@
 </style>
 
 <center style="margin-top: 2%;">
-<h1> COBAS Rack EID</h1>
+	<div id = "title" style="background-image:'http://127.0.0.1/lims/img/tz.png' ">
+		<img src="<?php echo base_url("img/tz.png");?>" height="140" width="70%" alt="NACP">
+		<h1> COBAS Rack EID</h1>
+	</div>
 <?php 
 	foreach($worksheet_details AS $wd){
 		$rack_no = $wd['rack_no'];
@@ -96,7 +99,7 @@
 	foreach ($result as $res) {
 		$i++;
 		if($i <= 22){
-		$test_No = $res["runs"];
+		$test_No = $res["num"];
 		$id = $res["id"];
 		?>
 		<center>
@@ -133,7 +136,7 @@
 							<h6 style="color: 	#FC1501" >Negative Control</h6>
 						</li>
 						<li>
-							Result Goes Here
+							&nbsp;
 						</li>
 						<li class="divider"></li>
 						<li>
@@ -147,7 +150,7 @@
 							<h6 style="color: #78AB46" >Positive Control</h6>
 						</li>
 						<li>
-							Result Goes Here
+							&nbsp;
 						</li>
 						<li class="divider"></li>
 						<li>
