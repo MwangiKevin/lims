@@ -34,17 +34,19 @@
 			
 		
 	<?php
-	echo "workss";
+		$i = 0;
 		foreach ($history as $key => $value) {
+			$i++;
 			$worksheet_id = $value['id'];
 			$date_created = $value['date_created'];
 			$created_by = $value['created_by'];
 			$machine = $value['flag'];
 			$status = $value['status'];
-			$result = $value['result'];
+			//$result = $value['result'];
 			$date_run = $value['date_run'];
 			$date_updated = $value['date_updated'];
 			$date_reviewed = $value['date_reviewed'];
+			$total = $value['Total'];
 			
 			
 			if($machine == 0){//cobas
@@ -54,7 +56,7 @@
 			}else{}
 	?>
 	<tr>
-				<td></td>
+				<td><?php echo $i ?></td>
 				<td><?php echo $worksheet_id ?></td>
 				<td><?php echo $date_created ?></td>
 				<td><?php echo $created_by ?></td>
@@ -65,7 +67,7 @@
 				<td> FAILED </td>
 				<td> REDRAW </td>
 				<td> NO RESULT </td>
-				<td> TOTAL </td>
+				<td><?php echo $total ?> </td>
 				<td><?php echo $date_run ?></td>
 				<td><?php echo $date_updated ?> </td>
 				<td><?php echo $date_reviewed ?></td>

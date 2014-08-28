@@ -92,7 +92,13 @@ $sql["v_sample_details"]	=	"SELECT
 									`sample`.`infant_feeding`,
 									`sample`.`prohilaxis`,
 									`sample`.`prophilaxis_weeks`,
+<<<<<<< HEAD
 									`sample`.`acceptance_status`,								
+=======
+									`sample`.`acceptance_status`,
+									`sample`.`delete`,
+									
+>>>>>>> af0b12bf63476cc4aec4ba76cf92bcb729f4317d
 									`test`.`sample_id`,
 									`test`.`test_run_no`,
 									`test`.`result`,

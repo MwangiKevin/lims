@@ -48,28 +48,7 @@ class mail_model extends MY_Model
 		return $sent = R::getAll($sql);
 	}
 
-	public function get_emails()
-	{
-		$sql = "SELECT
-						`id`,
-						`name`,
-						`email`
-					FROM user";
-
-		$emails = R::getAll($sql);
-			$response['id']    = $emails[0]['id'];
-			$response['name']  = $emails[0]['name']; 
-			$response['mail']= $emails[0]['email'];
-		
-		//print_r($emails); die();
-
-		
-		$data['emailto'] = $response;
-
-		$json_string = json_encode($data);
-		$file = 'assets/json/emails.json';
-		file_put_contents($file, $json_string);
-	}
+	
 }
 
 ?>

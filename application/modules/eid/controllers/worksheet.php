@@ -398,14 +398,16 @@ class worksheet extends MY_Controller {
 		$this->worksheets_model->edit_worksheet($worksheet_id);
 	}
 	
-	public function delete_worksheet(){
-		echo($_POST['worksheet_id_zoomd']);
-		die;
-		$worksheet_id = $_POST['worksheet_id_zoomd'];
-		$this->worksheets_model->delete_worksheet($worksheet_id);
+	//deletes a sample
+	public function delete_worksheet($sample_id,$worksheet_id){//parameters -> sample_id,worksheet_id
+		$this->worksheets_model->delete_worksheet($sample_id);
+		redirect(base_url()."eid/worksheet/delete_zoom/".$worksheet_id."");
 	}
 	
-	
+	public function restore_worksheet($sample_id,$worksheet_id){
+		$this->worksheets_model->restore_sample($sample_id);
+		redirect(base_url()."eid/worksheet/delete_zoom/".$worksheet_id."");
+	}
 	
 	
 	
