@@ -58,11 +58,12 @@
 						$flag = $res['flag'];
 						$status = $res['status'];
 						$worksheet_id= $res['id'];
-						$result = $res['result'];
+						//$result = $res['result'];
 						
 						$date_run = $res['date_run'];
 						$date_update = $res['date_updated'];
 						$date_reviewed = $res['date_reviewed'];
+						$total = $res['Total'];
 						?>
 						<script>
 							var clickedrow;
@@ -79,48 +80,48 @@
 							<td id="status<?php echo $i?>"><?php echo $status?></td>
 							
 							<?php
-								if($result == 0){
-									//positive
-									$positive++;
-								}else if($result == 1){
-									//negative
-									$negative++;
-								}else if($result == 2){
-									//failed
-									$failed++;
-								}else if($result == 3){
-									//redraw
-									$redo++;
-								}else{
-									//no result
-									$no_result;
-								}
+								// if($result == 0){
+									// //positive
+									// $positive++;
+								// }else if($result == 1){
+									// //negative
+									// $negative++;
+								// }else if($result == 2){
+									// //failed
+									// $failed++;
+								// }else if($result == 3){
+									// //redraw
+									// $redo++;
+								// }else{
+									// //no result
+									// $no_result;
+								// }
 							 ?>
 							<td id="positive_result"><?php echo $positive ?></td>
 							<td id="negative_result"> <?php echo $negative ?> </td>
 							<td id="failed_result"> <?php echo $failed ?> </td>
 							<td id="redo_result"> - </td>
 							<td id="failed_result"> - </td>
-							<td id="total_samples"> - </td>
+							<td id="total_samples"> <?php echo $total ?> </td>
 							
 							<td id="date_run<?php echo $i?>"> <?php echo $date_run?></td>
 							<td id="date_updated<?php echo $i?>"> <?php echo $date_update?></td>
 							<td id="date_reviewed<?php echo $i?>"> <?php echo $date_reviewed?></td>	
 							<td>
 								<div class="action-buttons">
-									<a class="blue" href="<?php echo base_url()."eid/worksheet/view_zoom/".$i ?>" data-toggle:"modal">
+									<a class="blue" href="<?php echo base_url()."eid/worksheet/view_zoom/".$worksheet_id ?>" data-toggle:"modal">
 										<i class="ace-icon fa fa-search-plus bigger-130"></i>
 									</a>
 		
-									<a class="green" href="<?php echo base_url()."eid/worksheet/edit_zoom/".$i ?>">
+									<a class="green" href="<?php echo base_url()."eid/worksheet/edit_zoom/".$worksheet_id ?>">
 										<i class="ace-icon fa fa-pencil bigger-130"></i>
 									</a>
 		
-									<a class="red" href="<?php echo base_url()."eid/worksheet/delete_zoom/".$i ?>">
+									<a class="red" href="<?php echo base_url()."eid/worksheet/delete_zoom/".$worksheet_id ?>">
 										<i class="ace-icon fa fa-trash-o bigger-130"></i>
 									</a>
 		
-									<a class="green" href="<?php echo base_url()."eid/worksheet/print_worksheet_history/".$i ?>" id="print_sample">
+									<a class="green" href="<?php echo base_url()."eid/worksheet/print_worksheet_history/".$worksheet_id ?>" id="print_sample">
 										<i class="ace-icon fa fa-print bigger-130"></i>
 									</a>
 								</div>

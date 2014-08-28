@@ -93,6 +93,7 @@ $sql["v_sample_details"]	=	"SELECT
 									`sample`.`prohilaxis`,
 									`sample`.`prophilaxis_weeks`,
 									`sample`.`acceptance_status`,
+									`sample`.`delete`,
 									
 									`test`.`sample_id`,
 									`test`.`test_run_no`,

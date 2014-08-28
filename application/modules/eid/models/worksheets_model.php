@@ -51,20 +51,25 @@ class worksheets_model extends MY_Model {
 	
 	
 	public function history(){
-		$sql = "SELECT  `ws`.`date_reviewed`,
-						`ws`.`date_updated`, 
-						`ws`.`date_run`,
-						`ws`.`status`, 
-						`ws`.`flag`,
-						`ws`.`created_by`,
-						`ws`.`date_created`,
-						`ws`.`id`,
-						`vsd`.`result`,
-						`vsd`.`sample_id`
-				FROM worksheet AS ws
-				LEFT JOIN v_sample_details AS vsd
-				ON `vsd`.`worksheet_id` = `ws`.`id`	
-				GROUP BY `ws`.`id`";
+		$sql = "SELECT 
+				   COUNT(`str`.`result`) AS Total,
+				   `w`.`id`,
+				   `w`.`date_created`,
+				   `w`.`created_by`,
+				   `w`.`flag`,
+				   `w`.`status`,
+				   `w`.`date_run`,
+				   `w`.`date_updated`,
+				   `w`.`date_reviewed`
+				FROM `sample_test_run` `str`
+				
+				LEFT JOIN `worksheets_and_samples` `ws`
+				ON `ws`.`sample_id` = `str`.`sample_id`
+				
+				LEFT JOIN `worksheet` `w`
+				ON `w`.`id` = `ws`.`worksheet_id`
+				
+				GROUP BY `w`.`id`";
 				
 		$result = R::getAll($sql);
 		
@@ -150,6 +155,7 @@ class worksheets_model extends MY_Model {
 				   vsd.id,
 				   vsd.date_collected,
 				   vsd.clinician_name,
+				   vsd.delete,
 				   w.flag,
 				   w.created_by
 
@@ -161,15 +167,23 @@ class worksheets_model extends MY_Model {
 				LEFT JOIN worksheet w
 				ON ws.worksheet_id = w.id
 				WHERE w.id = ".$id."
+				ORDER BY vsd.id;
 				";
 		$result = R::getAll($sql);
 		return	$result;
 	}
 	
-	public function delete_worksheet($id){
-		$sql = "DELETE FROM worksheet WHERE id = ".$id." ";
-		$this->db->query($sql);
-		echo "sucess";
+	public function delete_worksheet($sample_id){
+		$post_ndata ['delete'] = 1;
+		$this->db->where('id',$sample_id);
+		$this->db->update('sample',$post_ndata);//updates new value where ID matches ID
+	}
+	
+	public function restore_sample($sample_id){
+		$post_ndata['delete'] = NULL;
+		$this->db->where('id',$sample_id);
+		$this->db->update('sample',$post_ndata);
+		echo "success";
 	}
 	
 	
