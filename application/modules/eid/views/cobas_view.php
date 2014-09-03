@@ -87,25 +87,25 @@
 													<span class="input-group-addon my-input-group-caption">
 														Created By.:
 													</span>
-													<input name="created_by" id="created_by" class="form-control date-picker" type="text" style="width:100%;"  type="text"/>
+													<input name="created_by" id="created_by" class="form-control date-picker" type="text" style="width:100%;" value="<?php echo $this->session->userdata("name"); ?>"  type="text"/>
 												</div>
 
 												<div class="input-group my-input-group nb">
 													<span class="input-group-addon my-input-group-caption">
 														Date Created:
 													</span>
-													<input name="date_created" id="date_created" class="form-control datepicker" required data-date-format="Y-M-d" >
+													<input name="date_created" id="date_created" class="form-control datepicker" required data-date-format="Y-M-d" value="<?php echo( date("d - m - Y",time())); ?> ">
 													<span class="input-group-addon my-input-group-icon">
 														<i class="ace-icon fa fa-calendar"></i>
 													</span>
 												</div>
 												
-												<div class="input-group my-input-group nb" style="width:100%">
+												<!-- <div class="input-group my-input-group nb" style="width:100%">
 													<span class="input-group-addon my-input-group-caption">
 														Updated By:
 													</span>
 													<input name="updated_by" id="updated_by" class="form-control date-picker" type="text" style="width:100%;" /> 
-												</div>
+												</div> -->
 
 												<!-- <div class="input-group my-input-group nb" style="width:100%">
 													<span class="input-group-addon my-input-group-caption">
@@ -115,14 +115,13 @@
 												</div> -->
 											</div>	
 																					
-											<div class = "col-xs-6 " style="padding-left:0px;">												
+											<!-- <div class = "col-xs-6 " style="padding-left:0px;">												
 												<div class="input-group my-input-group nb" style="width:100%">
 													<span class="input-group-addon my-input-group-caption">
 														Reviewed <br/> By
 													</span>
 													<input name="reviewed_by" id="reviewed_by" class="form-control date-picker" type="text" style="width:100%;	" required data-date-format="dd-mm-yyyy" />
 												</div>
-												
 												<div class="input-group my-input-group nb" style="width:100%">
 													<span class="input-group-addon my-input-group-caption">
 														Date <br /> Reviewed
@@ -141,8 +140,8 @@
 														<i class="ace-icon fa fa-calendar"></i>
 													</span>
 												</div>
-												
-											</div>
+											</div> -->
+											
 										</div>
 									</td>
 									
@@ -198,7 +197,7 @@
 		
 		<div class="widget-header widget-header-flat" style="margin-bottom: 10px;">
 			<div class="widget-title smaller">
-				<strong><h4>COBAS EID Worksheet for <?php echo( date("d/m/y",time())) ?> (24)</h4></strong>
+				<strong><h4>COBAS EID Worksheet for <?php echo( date("d - m - y",time())) ?> (24)</h4></strong>
 			</div>
 		</div><!--widget-header widget-header-flat-->
 		
@@ -220,9 +219,6 @@
 									Tests-Done: '.$test_No.'
 								</li>
 								<li class="divider"></li>
-								<li>
-									<h6>Location of the bar-code</h6>
-								</li>
 							</ul>
 						</div>');
 					}
@@ -234,12 +230,9 @@
 							<h6 style="color: 	#FC1501" >Negative Control</h6>
 						</li>
 						<li>
-							Result Goes Here
+							&nbsp;
 						</li>
 						<li class="divider"></li>
-						<li>
-							<h6>Location of the bar-code</h6>
-						</li>
 					</ul>
 				</div>
 				<div class="dropdown dropdown-preview">
@@ -248,12 +241,9 @@
 							<h6 style="color: #78AB46" >Positive Control</h6>
 						</li>
 						<li>
-							Result Goes Here
+							&nbsp;
 						</li>
 						<li class="divider"></li>
-						<li>
-							<h6>Location of the bar-code</h6>
-						</li>
 					</ul>
 				</div>
 			</center>
@@ -263,7 +253,7 @@
 			<?php 
 			if($i <= 22){
 			?>
-			<input type="submit" value="Save & Print"/>
+			<input type="submit" value="Save & Print"/><!-- Disable this and enable the below HTML-->
 				<!-- <input type="submit" value="Save & Print" disabled="disabled"/> -->
 			<?php
 			}else{

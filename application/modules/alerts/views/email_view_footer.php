@@ -30,13 +30,13 @@ function hide_edit(){
 		
 	}
 
-	$( document ).ready(function() {
+$( document ).ready(function() {
 
-    var test_reason;
+    var email_to;
 
     $.getJSON("<?php echo base_url('assets/json/emails.json');?>", function(data) {
-        test_reason = data;
-        $(".emailto").select2({ data: emailto ,multiple: true});
+        email_to = data;
+        $(".email_to").select2({ data: email_to ,multiple: true});
     });
 
 

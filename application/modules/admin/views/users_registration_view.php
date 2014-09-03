@@ -54,16 +54,16 @@
 						                  	?>
 						                </select>
 					                </div>		               
-					                <div class="input-group" style="width: 100%;padding:4px;" id="par_div">
+					                <!--<div class="input-group" style="width: 100%;padding:4px;" id="par_div">
 										<span class="input-group-addon" style="width: 40%;">Partner :</span>
 										<select name="par" id="par" class="textfield form-control" >
 						                   	<option value="">*Select a user partner*</option>
 						                   	<?php
-						                   		foreach ($partners as $par) {
+						                   		//foreach ($partners as $par) {
 						                  	?>     
-											<option value="<?php echo $par["id"];?>"><?php echo $par["name"];?></option>
+											<option value="<?php //echo $par["id"];?>"><?php //echo $par["name"];?></option>
 											<?php
-						                   		}
+						                   		//}
 						                  	?>                   					
 						                </select>
 					                </div>
@@ -72,11 +72,11 @@
 										<select name="reg" id="reg" class="textfield form-control" >
 						                   	<option value="">*Select a user region*</option>  
 						                   	<?php
-						                   		foreach ($regions as $reg) {
+						                   		//foreach ($regions as $reg) {
 						                  	?>     
-											<option value="<?php echo $reg["region_id"];?>"><?php echo $reg["region_name"];?></option>
+											<option value="<?php //echo $reg["region_id"];?>"><?php //echo $reg["region_name"];?></option>
 											<?php
-						                   		}
+						                   		//}
 						                  	?>                  					
 						                </select>
 					                </div>
@@ -85,11 +85,11 @@
 										<select name="dis" id="dis" class="textfield form-control" >
 						                   	<option value="">*Select a user district*</option>    
 						                   	<?php
-						                   		foreach ($districts as $dis) {
+						                   		//foreach ($districts as $dis) {
 						                  	?>     
-											<option value="<?php echo $dis["district_id"];?>"><?php echo $dis["district_name"];?></option>
+											<option value="<?php //echo $dis["district_id"];?>"><?php //echo $dis["district_name"];?></option>
 											<?php
-						                   		}
+						                   		//}
 						                  	?>                					
 						                </select>
 					                </div>
@@ -98,13 +98,13 @@
 										<select name="fac" id="fac" class="textfield form-control" >
 						                   	<option value="">*Select a user facility*</option>    
 						                   	<?php
-						                   		foreach ($facilities as $fac) {
+						                   		//foreach ($facilities as $fac) {
 						                  	?>     
-											<option value="<?php echo $fac["facility_id"];?>"><?php echo $fac["facility_name"];?></option>
+											<option value="<?php //echo $fac["facility_id"];?>"><?php //echo $fac["facility_name"];?></option>
 											<?php
-						                   		}
+						                   		//}
 						                  	?>                					
-						                </select>
+						                </select>-->
 					                </div>						
 									<div class="right" style="padding:7px;">
 										<button name="viewData" type="submit" onclick="viewData()" class="btn btn-primary btn-minii"><i class="ace-icon fa fa-thumbs"></i>Save</button>

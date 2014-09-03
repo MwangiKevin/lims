@@ -81,22 +81,24 @@ $i = 0;
 	foreach ($result as $res) {
 		$i++;
 		if($i <= 46){
-			$runs = $res["runs"];
+			$runs = $res["num"];
 			$id = $res["id"];
 	?>
 	
 	<div class='dropdown dropdown-preview' style='padding-left:5%; height:auto' >
 		<ul class='dropdown-menu' style='list-style: none; float:left;'>
-			<li>
-				<h6>Sample Code <?php echo $id ?> </h6>
-			</li> 
-			<li>
-				Lab-Code (Number of runs <?php echo $runs ?>)
-			</li>
-			<li class='divider'></li>
-			<li id = barcode<?php echo $id ?>>
-				<h6>Location of the bar-code</h6>
-			</li>
+			<center>
+				<li>
+					<h6>Sample Code <?php echo $id ?> </h6>
+				</li> 
+				<li>
+					Number of runs <?php echo $runs ?>
+				</li>
+				<li class='divider'></li>
+				<li id = barcode<?php echo $id ?>>
+					<h6>Location of the bar-code</h6>
+				</li>
+			</center>
 		</ul>
 	</div>
 	
