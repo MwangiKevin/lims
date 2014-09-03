@@ -4,7 +4,7 @@ if (!defined('BASEPATH'))exit('No direct script access allowed');
 class gsm_send_sms extends MY_Controller {
 
 	public $port = 'COM1';
-	public $baud = 115200;
+	public $baud = 9600;
 
 	public $debug = false;
 
