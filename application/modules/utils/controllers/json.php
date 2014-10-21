@@ -37,6 +37,7 @@ class json extends MY_Controller {
 		$this->write_facilities();
 		$this->write_test_reasons();
 		$this->write_infant_feeding();
+		$this->write_emails();
 	}
 
 
@@ -132,7 +133,30 @@ class json extends MY_Controller {
 		echo "Test reasons Written <br/> ";
 	}
 
+	public function write_emails()
+	{
+		$mail_assoc	=	$this->json_model->write_emails();
+		$emails_to[]  =	array();
 
+		foreach ($mail_assoc as $key => $value) {
+			
+			$emails_to[$key] = array(
+										"id" 	=> $value["email"],
+										"name" 	=> $value["name"],
+										"value" => $value["email"],
+										"text" 	=> $value["name"]
+								);
+			
+		}
+		$email_details 	= 	json_encode($emails_to);
+		
+		$p_email 	=	$this->path."emails.json";
+		
+		file_put_contents($p_email, $email_details);
+
+		echo "Emails Written <br/> ";
+		
+	}
 
 /**
 * @section = reader functions
@@ -142,6 +166,27 @@ class json extends MY_Controller {
 	*/
 	public function read_facilities(){
 
+	}
+
+	/**
+	* @job = reads an array value in json 
+	* var 	$file  	= json file [without the extension]
+	*		$id 	= uses this to find the file
+	*/
+	public function find_in_json($file, $id){
+
+		$output = array();
+
+		$string = file_get_contents($this->path."$file.json");
+		$json_a = json_decode($string, true);
+
+		foreach($json_a as $key => $value){
+			if ((int) $value["id"] = (int) $id){
+				$output = $value;
+			}
+		}
+
+		return $output;
 	}
 
 }

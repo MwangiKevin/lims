@@ -15,7 +15,10 @@
 </style>
 
 <center style="margin-top: 2%;">
-<h1> COBAS Rack EID</h1>
+	<div id = "title" style="background-image:'http://127.0.0.1/lims/img/tz.png' ">
+		<img src="<?php echo base_url("img/tz.png");?>" height="140" width="70%" alt="NACP">
+		<h1> COBAS Rack EID</h1>
+	</div>
 <?php 
 	foreach($worksheet_details AS $wd){
 		$rack_no = $wd['rack_no'];
@@ -96,7 +99,7 @@
 	foreach ($result as $res) {
 		$i++;
 		if($i <= 22){
-		$test_No = $res["runs"];
+		$test_No = $res["num"];
 		$id = $res["id"];
 		?>
 		<center>
@@ -106,11 +109,11 @@
 					<h6>Sample Code: <?php echo $id ?></h6>
 				</li>
 				<li>
-					Lab-Code (No of tests.: <?php echo $test_No ?>)
+					Lab-Code/No of tests.: <?php echo $test_No ?>
 				</li>
 				<li class="divider"></li>
 				<li id = barcode<?php echo $id ?>>
-					<h6>Location of the bar-code</h6>
+					
 				</li>
 			</ul>
 		</div>
@@ -128,30 +131,24 @@
 	}
 ?>
 			<div class="dropdown dropdown-preview" style="padding-left:5%; height:auto">
-					<ul class="dropdown-menu" style="list-style: none; float:left;">					
+					<ul class="dropdown-menu" style="list-style: none; float:left; border: solid;">					
 						<li>
 							<h6 style="color: 	#FC1501" >Negative Control</h6>
 						</li>
-						<li>
-							Result Goes Here
-						</li>
 						<li class="divider"></li>
 						<li>
-							<h6>Location of the bar-code</h6>
+							&nbsp;
 						</li>
 					</ul>
 				</div>
 				<div class="dropdown dropdown-preview" style="padding-left:5%; height:auto">
-					<ul class="dropdown-menu" style="list-style: none; float:left;">					
+					<ul class="dropdown-menu" style="list-style: none; float:left; border: solid;">					
 						<li>
 							<h6 style="color: #78AB46" >Positive Control</h6>
 						</li>
-						<li>
-							Result Goes Here
-						</li>
 						<li class="divider"></li>
 						<li>
-							<h6>Location of the bar-code</h6>
+							&nbsp;
 						</li>
 					</ul>
 				</div>

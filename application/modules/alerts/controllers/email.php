@@ -3,11 +3,22 @@ if (!defined('BASEPATH'))exit('No direct script access allowed');
 
 class email extends MY_Controller {
 
+	        // IMAP/POP3 (mail server) LOGIN
+        var $imap_server    = 'imap.gmail.com:993/imap/ssl';
+        var $imap_user        = 'lims.eidvl@gmail.com';
+        var $imap_pass        = 'eidvl.tz2014';
+
+	
+
 public function __construct()
 {
 	$this->view_data['content_view'] 	= 	"alerts/email_view";
 	$this->view_data['menu_select']		= 	"side_mail";
 	$this->load->model('mail_model');
+	$this->load->library('Imap');
+	//$this->mail_model->get_emails();
+	
+	
 }
 
 public function index()
@@ -36,7 +47,14 @@ public function admin_mail()
 																	"class"		=>	"active"
 																	)
 												);
+	// $inbox = $this->imap->cimap_open($this->imap_server, 'INBOX', $this->imap_user, $this->imap_pass) or die(imap_last_error());
+
+ //            $this->view_data['totalmsg']    = $this->imap->cimap_num_msg($inbox);
+ //            $this->view_data['quota']    = $this->imap->cimap_get_quota($inbox);
+
+ //            $this->load->view('mail_view', $data_array); 
 	$this->view_data['sent_emails']    =    $this->mail_model->sent_mail();
+
 	
 	$this -> template($this->view_data);
 }
@@ -51,7 +69,44 @@ public function admin_mail()
 		$this->email($id, $recepient, $subject, $message);
 	}
 
-	function email($id, $recepient, $subject, $message, $attached_file =null)  
+	public function email($id, $recepient, $subject, $message)  
+	{
+		$time=date('Y-m-d');
+		//$attached_file = $this->config->item("server_root")."downloads/doc1.pdf";
+		$config = array(
+			'protocol' => 'smtp',
+			'smtp_host' => 'ssl://smtp.googlemail.com',
+			'smtp_port' => 465,
+			'smtp_user' => "lims.eidvl@gmail.com",
+			'smtp_pass' => "eidvl.tz2014"
+			);
+		
+		$this->load->library('email', $config);
+		$this->email->set_newline("\r\n");
+
+		$this->email->from('lims.eidvl@gmail.com', 'EID LIMS');
+		$this->email->to($recepient);
+		$this->email->subject($subject);
+		$this->email->message($message);
+		$this->email->set_mailtype("html");
+		// if(!is_null($attached_file)){
+		// 	$this->email->attach($attached_file);
+		// }
+		
+		if($this->email->send())
+			{	
+
+				$this->mail_model->send_mail($id, $recepient, $subject, $message, $time);
+				$this->admin_mail();
+			} else 
+			{
+				show_error($this->email->print_debugger());
+			}
+		
+	}
+
+
+	public function email_attachment($id, $recepient, $subject, $message, $attached_file =null)
 	{
 		$time=date('Y-m-d');
 		$attached_file = $this->config->item("server_root")."downloads/doc1.pdf";
@@ -59,30 +114,31 @@ public function admin_mail()
 			'protocol' => 'smtp',
 			'smtp_host' => 'ssl://smtp.googlemail.com',
 			'smtp_port' => 465,
-			'smtp_user' => 'lims.eidvl@gmail.com',
-			'smtp_pass' => 'eidvl.tz2014',
+			'smtp_user' => "lims.eidvl@gmail.com",
+			'smtp_pass' => "eidvl.tz2014"
 			);
 
 		$this->load->library('email', $config);
 		$this->email->set_newline("\r\n");
 
-		$this->email->from('lims.eidvl@gmail.com', 'EID/LIMS');
+		$this->email->from('lims.eidvl@gmail.com', 'EID LIMS');
 		$this->email->to($recepient);
 		$this->email->subject($subject);
-		$this->email->attach($attached_file);
 		$this->email->message($message);
-
+		$this->email->set_mailtype("html");
+		if(!is_null($attached_file)){
+			$this->email->attach($attached_file);
+		}
 		
 		if($this->email->send())
 			{	
 
-				//$this->mail_model->send_mail($id, $recepient, $subject, $message, $time);
+				$this->mail_model->send_mail($id, $recepient, $subject, $message, $time);
 				$this->admin_mail();
 			} else 
 			{
 				show_error($this->email->print_debugger());
 			}
-		
 	}
 
 	public function remove_email($id)
@@ -96,9 +152,21 @@ public function admin_mail()
     	$this->index();
 	}
 
+	public function fetch_emails()
+	{
+            
+		$inbox = $this->imap->cimap_open($this->imap_server, 'INBOX', $this->imap_user, $this->imap_pass) or die(imap_last_error());
+
+            $this->view_data['totalmsg']    = $this->imap->cimap_num_msg($inbox);
+            $this->view_data['quota']    = $this->imap->cimap_get_quota($inbox);
+
+            $this->load->view('mail_view', $data_array);    
+	}
+
+
 	public function get_inbox()
 	{
-		$mb = imap_open("{host:port/imap}","lims.eidvl@gmail.com", "eidvl.tz2014" );
+		$mb = imap_open("{host:port/imap}", 'lims.eidvl@gmail.com', 'eidvl.tz2014' );
 
 		$messageCount = imap_num_msg($mb);
 		for( $MID = 1; $MID <= $messageCount; $MID++ )
@@ -108,6 +176,5 @@ public function admin_mail()
 		   doSomething( $EmailHeaders, $Body );
 		}
 	}
-
 
 }

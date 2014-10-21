@@ -61,8 +61,6 @@ class reports_model extends MY_Model {
 	public function regions(){
 		$sql = "SELECT * FROM region";
 		$result = R::getAll($sql);
-		// print_r($result);
-		// die;
 		return $result;	
 	}
 	public function districts(){

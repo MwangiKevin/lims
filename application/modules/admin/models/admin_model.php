@@ -51,13 +51,13 @@ class admin_model extends MY_Model {
          $register_users = array(
 			'id' 			             =>   NULL,
 			'username'                   =>   $this->input->post('username'),
-            'password'                   =>   $default_password,
+      'password'                   =>   $default_password,
 			'name'                       =>   $this->input->post('name'),
 			'user_group_id'              =>   $this->input->post('user_group'),
 			'phone'                      =>   $this->input->post('phone'),
 			'email'                      =>   $this->input->post('email'),
 			'status'                     =>   1,
-            'activation_clause'          =>   ""
+      'activation_clause'          =>   ""
 			);
 
 		$register = $this->db->insert('user', $register_users);

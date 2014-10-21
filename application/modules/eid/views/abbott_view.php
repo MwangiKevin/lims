@@ -57,7 +57,7 @@
 														<span class="input-group-addon my-input-group-caption">
 															Date<br/>Created:
 														</span>
-														<input name="date_created" id="date_created" class="form-control datepicker" type="text" style="width:100%;" required data-date-format="Y-m-d" />
+														<input name="date_created" id="date_created" class="form-control datepicker" type="text" style="width:100%;" value="<?php echo( date("d - m - y",time())) ?>" required data-date-format="Y-m-d" />
 														<span class="input-group-addon my-input-group-icon">
 															<i class="ace-icon fa fa-calendar"></i>
 														</span>
@@ -67,9 +67,9 @@
 														<span class="input-group-addon my-input-group-caption" >
 															Created by:
 														</span>
-														<input name="created_by" id="created_by" type="text" style="width:100%;" />
+														<input name="created_by" id="created_by" type="text" value="<?php echo $this->session->userdata("name"); ?>" style="width:100%;" />
 													</div>
-													<div class="input-group my-input-group nb" style="width:100%">
+													<!-- <div class="input-group my-input-group nb" style="width:100%">
 														<span class="input-group-addon my-input-group-caption" >
 															Reviewed by:
 														</span>
@@ -83,16 +83,16 @@
 														<span class="input-group-addon my-input-group-icon">
 															<i class="ace-icon fa fa-calendar"></i>
 														</span>
-													</div>
-													<div class="input-group my-input-group nb">
+													</div> -->
+													<!-- <div class="input-group my-input-group nb">
 														<span class="input-group-addon my-input-group-caption">
 															Date<br/>Run:
 														</span>
-														<input name="date_run" id="date_run" class="form-control datepicker" type="text" style="width:100%;" required data-date-format="dd-mm-yyyy" />
+														<input name="date_run" id="date_run" class="form-control datepicker" type="text" style="width:100%;" value="<?php echo( date("d - m - y",time())) ?>" required data-date-format="dd-mm-yyyy" />
 														<span class="input-group-addon my-input-group-icon">
 															<i class="ace-icon fa fa-calendar"></i>
 														</span>
-													</div>
+													</div> -->
 												</td>
 												
 												<td>
@@ -201,7 +201,7 @@
 
 		<div class="widget-header widget-header-flat" style="margin-bottom: 10px;">
 			<div class="widget-title smaller">
-				<strong><h4>Abbort EID Worksheet for <?php echo( date("d/m/y",time())) ?> (96)</h4></strong>
+				<strong><h4>Abbort EID Worksheet for <?php echo( date("d - m - y",time())) ?> (96)</h4></strong>
 			</div>
 		</div><!--widget-header widget-header-flat-->
 
@@ -223,9 +223,6 @@
 										Tests Done: ".$tests_No."
 									</li>
 									<li class='divider'></li>
-									<li>
-										<h6>Location of the bar-code</h6>
-									</li>
 								</ul>
 							</div>");
 					}
@@ -236,12 +233,9 @@
 							<h6 style="color: 	#FC1501" >Negative Control</h6>
 						</li>
 						<li>
-							Result Goes Here
+							&nbsp;
 						</li>
 						<li class="divider"></li>
-						<li>
-							<h6>Location of the bar-code</h6>
-						</li>
 					</ul>
 				</div>
 				<div class="dropdown dropdown-preview">
@@ -250,12 +244,9 @@
 							<h6 style="color: #78AB46" >Positive Control</h6>
 						</li>
 						<li>
-							Result Goes Here
+							&nbsp;
 						</li>
 						<li class="divider"></li>
-						<li>
-							<h6>Location of the bar-code</h6>
-						</li>
 					</ul>
 				</div>
 			</center>

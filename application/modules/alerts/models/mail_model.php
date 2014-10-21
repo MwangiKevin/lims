@@ -48,16 +48,7 @@ class mail_model extends MY_Model
 		return $sent = R::getAll($sql);
 	}
 
-	public function get_emails()
-	{
-		$sql = "SELECT
-						`id`,
-						`name`,
-						`email`
-					FROM user";
-
-		return $emails = R::getAll($sql);
-	}
+	
 }
 
 ?>

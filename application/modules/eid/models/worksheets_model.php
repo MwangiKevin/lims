@@ -4,51 +4,79 @@ if (!defined('BASEPATH'))
 
 class worksheets_model extends MY_Model {
 	
-	public function cobas_samples($program){//either eid or vl
-		$sql= "SELECT id,no_of_dbs_spots,sample_id, COUNT(sample_id) AS runs FROM `v_sample_details` 
-				WHERE program = ".$program." AND result IS NULL AND status IS NULL AND no_of_dbs_spots > 0
-				GROUP BY id ORDER BY runs DESC";
-		$result = R::getAll($sql);
-		
-		return $result;
-	}
-	public function ready_samples($program){
-		$sql= "SELECT id,no_of_dbs_spots,sample_id, COUNT(sample_id) AS runs FROM `v_sample_details` 
-				WHERE program = 1 AND result = ' ' AND status = 'r'	GROUP BY id ORDER BY runs DESC";
+	//gets all samples that have not yet been assigned to a machine to run the test
+	public function unclassified_samples($program){//Program = eid or vl. flag = Cobas/Abbot
+		$sql= "SELECT 
+					id,
+					no_of_dbs_spots,
+					sample_id, 
+					date_collected,
+					COUNT(sample_id) AS runs 
+				FROM `v_sample_details` 
+				WHERE program = ".$program."
+				AND result IS NULL 
+				AND status IS NULL 
+				AND no_of_dbs_spots > 0
+				GROUP BY id 
+				ORDER BY date_collected";
 		$result = R::getAll($sql);
 		
 		return $result;
 	}
 	
-	public function abbott_samples($program){//either DBS or plasma
-		//query gets all the samples, how do i filter btwn abbott and cobas destined sample
-		$sql = "SELECT id,no_of_dbs_spots,sample_id, COUNT(sample_id) AS runs FROM `v_sample_details` 
-				WHERE program = ".$program." AND result IS NULL AND status IS NULL AND no_of_dbs_spots > 0
-				GROUP BY id ORDER BY runs DESC";
+	//gets samples waiting printing
+	public function ready_samples($program,$flag){
+		$sql= "SELECT 
+				 vsd.id,
+				 vsd.no_of_dbs_spots,
+				 vsd.num,
+				 ws.sample_id,
+				 vsd.result
+				FROM v_sample_details vsd
+				
+				LEFT JOIN worksheets_and_samples ws
+				ON vsd.id = ws.sample_id
+				LEFT JOIN worksheet wrk
+				ON wrk.id = ws.worksheet_id
+				
+				WHERE  vsd.program = ".$program."
+				AND wrk.flag = ".$flag."
+				AND vsd.status = 'r'
+				AND vsd.result IS NULL 
+		";
 		$result = R::getAll($sql);
+		
 		return $result;
 	}
+	
 	
 	public function history(){
-		$sql = "SELECT  `ws`.`date_reviewed`,
-						`ws`.`date_updated`, 
-						`ws`.`date_run`,
-						`ws`.`status`, 
-						`ws`.`flag`,
-						`ws`.`created_by`,
-						`ws`.`date_created`,
-						`ws`.`id`,
-						`vsd`.`result`,
-						`vsd`.`sample_id`
-				FROM worksheet AS ws
-				LEFT JOIN v_sample_details AS vsd
-				ON `vsd`.`worksheet_id` = `ws`.`id`	
-				GROUP BY `ws`.`id`";
+		$sql = "SELECT 
+				   COUNT(`str`.`result`) AS Total,
+				   `w`.`id`,
+				   `w`.`date_created`,
+				   `w`.`created_by`,
+				   `w`.`flag`,
+				   `w`.`status`,
+				   `w`.`date_run`,
+				   `w`.`date_updated`,
+				   `w`.`date_reviewed`
+				FROM `sample_test_run` `str`
+				
+				LEFT JOIN `worksheets_and_samples` `ws`
+				ON `ws`.`sample_id` = `str`.`sample_id`
+				
+				LEFT JOIN `worksheet` `w`
+				ON `w`.`id` = `ws`.`worksheet_id`
+				
+				GROUP BY `w`.`id`";
 				
 		$result = R::getAll($sql);
+		
 		return $result;
 	}
 	
+	//gets samples for the cobas rack to print the worksheet
 	public function cobas_rack($id){
 		$sql = "SELECT
 					`cw`.`id`,
@@ -77,6 +105,7 @@ class worksheets_model extends MY_Model {
 			return $result;		
 	}
 	
+	//gets samples for the abbott rack to print the worksheet
 	public function abbott_rack($id){
 		$sql = "SELECT
 					`w`.`cdc_worksheet_no`,
@@ -120,10 +149,41 @@ class worksheets_model extends MY_Model {
 		return $result;	
 	}
 	
-	public function delete_worksheet($id){
-		$sql = "DELETE FROM worksheet WHERE id = ".$id." ";
-		$this->db->query($sql);
-		echo "sucess";
+	public function view_worksheet($id){
+		$sql = "SELECT
+				   vsd.no_of_dbs_spots,
+				   vsd.id,
+				   vsd.date_collected,
+				   vsd.clinician_name,
+				   vsd.delete,
+				   w.flag,
+				   w.created_by
+
+				FROM v_sample_details vsd
+				
+				LEFT JOIN worksheets_and_samples ws
+				ON ws.sample_id  =  vsd.id
+				
+				LEFT JOIN worksheet w
+				ON ws.worksheet_id = w.id
+				WHERE w.id = ".$id."
+				ORDER BY vsd.id;
+				";
+		$result = R::getAll($sql);
+		return	$result;
+	}
+	
+	public function delete_worksheet($sample_id){
+		$post_ndata ['delete'] = 1;
+		$this->db->where('id',$sample_id);
+		$this->db->update('sample',$post_ndata);//updates new value where ID matches ID
+	}
+	
+	public function restore_sample($sample_id){
+		$post_ndata['delete'] = NULL;
+		$this->db->where('id',$sample_id);
+		$this->db->update('sample',$post_ndata);
+		echo "success";
 	}
 	
 	
@@ -135,7 +195,7 @@ class worksheets_model extends MY_Model {
 		$date_updated = $_POST['date_updated_zoome'];
 		$date_reviewed = $_POST['date_reviewed_zoome'];
 		
-		$sql = "UPDATE worksheet SET date_created = ".$date_created.",created_by = '".$created_by."',date_run=".$date_run.", date_reviewed = ".$date_reviewed." WHERE id = ".$id." ";
+		$sql = "UPDATE worksheet SET date_created = '".$date_created."',created_by = '".$created_by."',date_run='".$date_run."', date_reviewed = '".$date_reviewed."' WHERE id = ".$id." ";
 		$this->db->query($sql);
 	}
 	
