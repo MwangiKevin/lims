@@ -1,0 +1,28 @@
+body{
+	font-family:"Helvetica" !important;
+}
+#contentView{
+	padding:1%;
+}
+#contentView .col-md-6{
+
+	border:1px solid #aaa;
+}
+.col-content{
+		padding:3%;
+}
+#contentView .row{
+	margin:0;
+	margin-top:10px;
+}
+button i{
+	padding-right:5%;
+}
+.myGroup{
+	margin-top:5px;
+	display:inline-block !important;
+	vertical-align:top;
+}
+.myGroup:nth-child(even){
+	float:right;
+}
