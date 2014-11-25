@@ -7,7 +7,7 @@ class reports extends MY_Controller {
 	public function __construct(){
 		$this->login_reroute(array(1));
 
-		$this->view_data['content_view'] 	= 	"admin/blank";
+		$this->view_data['content_view'] 	= 	"reports/reports_view";
 		$this->view_data['sidebar'] 		= 	"admin_sidebar";
 		$this->view_data['title'] 			= 	"EID | Dashboard";
 		$this->view_data['filter']			=	false;
@@ -15,6 +15,8 @@ class reports extends MY_Controller {
 
 		$this->view_data['b_color']			=	"skin-1";
 		$this->view_data['topleft_title']	=	"Admin";
+		
+		$this->load->model("reports_model");
 
 		$this->view_data['menu_select']		= 	"side_reports";
 		$this->view_data['submenu_select']	= 	"";
@@ -29,7 +31,7 @@ class reports extends MY_Controller {
 																	),
 														1 	=>	array(
 																	"title" 	=>	"Dashboard",
-																	"link"		=>	base_url()."admin/dashboard",
+																	"link"		=>	base_url()."admin/reports",
 																	"class"		=>	"active"
 																	)
 												);
@@ -37,13 +39,12 @@ class reports extends MY_Controller {
 	}
 
 	public function index(){
-
-		$this->dashboard();
+		$this->view_data['all_samples'] = $this->reports_model->samples();
+		$this -> template($this->view_data);
 	}
 
 	public function dashboard(){		
 		
-		$this -> template($this->view_data);
 	}
 
 

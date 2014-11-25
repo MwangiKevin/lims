@@ -84,7 +84,7 @@
 		</li>
 
 		<li id="side_reports" class="hsub">
-			<a href="<?php echo base_url()?>reports/reports">
+			<a href="<?php echo base_url()?>admin/reports">
 				<i class="menu-icon fa fa-pencil-square-o"></i>
 				<span class="menu-text"> Reports </span>
 

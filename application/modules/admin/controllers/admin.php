@@ -39,7 +39,9 @@ class admin extends MY_Controller {
 		$this->dashboard();
 	}
 
-	public function dashboard(){		
+	public function dashboard(){	
+	
+		redirect("admin/facilities");	
 		
 		$this -> template($this->view_data);
 	}
