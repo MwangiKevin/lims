@@ -248,7 +248,8 @@ class requisition extends MY_Controller {
 				    $this->db->trans_commit();
 				}
 		}
-
+		
+		redirect("eid/requisition");
 	}
 
 	public function samples(){		
