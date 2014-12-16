@@ -21,7 +21,7 @@
                     
 			                   		foreach ($districts as $dis) {
 				                  	?>    
-									<option value="<?php echo $dis["district_id"];?>"><?php echo $dis["district_name"];?></option>
+									<option value="<?php echo $dis["district_id"];?>"  <?php if(set_value('dis')==$dis["district_id"]){echo "selected";} ?>  ><?php echo $dis["district_name"];?></option>
 									<?php
 				                   		}
 				                  	?>                  					
@@ -29,32 +29,33 @@
 		                </div>
 		               <div id="fac_name_div" class="input-group" style="width: 100%;padding:4px;">
 							<span class="input-group-addon" style="width: 40%;">Facility Code:</span>
-							<input name="fac_code" id="fac_code" required class="textfield form-control" type="text" />
+							<input name="fac_code" id="fac_code" required class="textfield form-control" type="text" value="<?php echo set_value('fac_code'); ?>" />
 						</div>	
 						<div id="fac_name_div" class="input-group" style="width: 100%;padding:4px;">
 							<span class="input-group-addon" style="width: 40%;">Facility Name:</span>
-							<input name="fac_name" id="fac_name" required class="textfield form-control" type="text" />
+							<input name="fac_name" id="fac_name" required class="textfield form-control" type="text"  value="<?php echo set_value('fac_name'); ?>"/>
 						</div>	
 						<div id="fac_email_div" class="input-group" style="width: 100%;padding:4px;">
 							<span class="input-group-addon" style="width: 40%;">email:</span>
-							<input name="fac_email" id="fac_email" required class="textfield form-control" type="text" />
+							<input name="fac_email" id="fac_email" required class="textfield form-control" type="text" value="<?php echo set_value('fac_email'); ?>" />
 						</div>																
 						<div id="fac_phone_div" class="input-group" style="width: 100%;padding:4px;">
 							<span class="input-group-addon" style="width: 40%;">Phone no:</span>
-							<input name="fac_phone" id="fac_phone" required class="textfield form-control" type="text" />
+							<input name="fac_phone" id="fac_phone" required class="textfield form-control" type="text" value="<?php echo set_value('fac_phone'); ?>" />
 						</div>							
                         <div id="fac_tel1_div" class="input-group" style="width: 100%;padding:4px;">
 							<span class="input-group-addon" style="width: 40%;">Telephone Line 1:</span>
-							<input name="fac_tel1" id="fac_tel1" required class="textfield form-control" type="text" />
+							<input name="fac_tel1" id="fac_tel1" required class="textfield form-control" type="text" value="<?php echo set_value('fac_tel1'); ?>" />
 						</div>
                         <div id="fac_tel2_div" class="input-group" style="width: 100%;padding:4px;">
 							<span class="input-group-addon" style="width: 40%;">Telephone Line 2:</span>
-							<input name="fac_tel2" id="fac_tel2" required class="textfield form-control" type="text" />
+							<input name="fac_tel2" id="fac_tel2" required class="textfield form-control" type="text" value="<?php echo set_value('fac_tel2'); ?>" />
 						</div>
 						<div class="right" style="padding:7px;">
-							<button name="viewData" type="submit" onclick="viewData()" class="btn btn-primary btn-minii"><i class="glyphicon glyphicon-save"></i>Save</button>
-							<button name="reset" type="reset"  class="btn btn-default btn-minii"><i class="glyphicon glyphicon-remove"></i>Discard</button>
-						</div>						
+							<button name="viewData" type="submit" onclick="viewData()" class="btn btn-primary btn-mini"><i class="fa fa-save"></i>Save</button>
+							<button name="reset" type="reset"  class="btn btn-default btn-minii"><i class="fa fa-trash"></i>Discard</button>
+						</div>	
+						<?php echo validation_errors(); ?>					
 					</form>
 				</div>
 			</div>

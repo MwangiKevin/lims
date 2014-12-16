@@ -99,7 +99,6 @@ class facilities extends MY_Controller {
 									
 							ORDER BY `region_name`
 							");
-    	//print_r($regions); die();
     	
     	$this->view_data['details']         =   $result;
         $this->view_data['districts']       =   $districts;
@@ -113,25 +112,26 @@ class facilities extends MY_Controller {
         $this->form_validation->set_rules('fac_code', 'Region', 'trim|required');
 		$this->form_validation->set_rules('dis', 'District', 'trim|required');
 		$this->form_validation->set_rules('fac_name', 'Facility Name', 'trim|(str)');
-		$this->form_validation->set_rules('fac_email', 'Facility Email', 'trim|required');
-        $this->form_validation->set_rules('fac_phone', 'Facility Phone', 'trim|required');
-        $this->form_validation->set_rules('fac_tel1', 'Facility Telephone 1', 'trim|required');
-        $this->form_validation->set_rules('fac_tel2', 'Facility Telephone 2', 'trim|required');
+		$this->form_validation->set_rules('fac_email', 'Facility Email', 'trim|required|valid_email');
+        $this->form_validation->set_rules('fac_phone', 'Facility Phone', 'trim|required|numeric');
+        $this->form_validation->set_rules('fac_tel1', 'Facility Telephone 1', 'trim|required|numeric');
+        $this->form_validation->set_rules('fac_tel2', 'Facility Telephone 2', 'trim|required|numeric');
+
+        $this->form_validation->set_error_delimiters('<div class="error">', '</div>');
         
 		if ($this->form_validation->run() == FALSE) 
 		{
 			
-            $this->index();
+            $this->facilities_registration();
 		} else 
 		{
 			
             $this->load->model('admin_model');
 
-			$insert = $this->admin_model->register_facilities();
+			//$insert = $this->admin_model->register_facilities();
 			if($insert)
 			{
                 $this->index();
-				//redirect('admin/facilities');
 			}
 		}
 		
